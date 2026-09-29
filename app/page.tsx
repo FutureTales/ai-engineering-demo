@@ -2,10 +2,15 @@ import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { REPO_URL } from "@/components/site-footer";
+import { LINE_LABELS, LINES } from "@/lib/catalog/lines";
 
-const FLOW = [
+const FLOW: { title: string; text: string; items?: string[] }[] = [
   { title: "Diagnóstico", text: "Cuentas tu problema con tus palabras. El copiloto hace hasta 3 preguntas." },
-  { title: "Clasificación", text: "Lo encuadra en una de las 3 líneas de trabajo del centro." },
+  {
+    title: "Clasificación",
+    text: `Lo encuadra en una de las ${LINES.length} líneas de trabajo del centro:`,
+    items: LINES.map((line) => LINE_LABELS[line]),
+  },
   { title: "Recomendación", text: "Busca en el catálogo y recomienda 1–2 servicios, citando la fuente." },
   {
     title: "Simulación “what if”",
@@ -50,7 +55,16 @@ export default function Home() {
                   {i + 1}. {step.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="text-muted-foreground text-sm">{step.text}</CardContent>
+              <CardContent className="text-muted-foreground text-sm">
+                {step.text}
+                {step.items && (
+                  <ul className="mt-2 list-disc space-y-1 pl-4">
+                    {step.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                )}
+              </CardContent>
             </Card>
           </li>
         ))}
