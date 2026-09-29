@@ -1,12 +1,12 @@
 {
   "base": "https://innova-copilot.vercel.app",
-  "startedAt": "2026-09-29T18:11:00.559Z",
-  "firstAnswerSeconds": 15,
+  "startedAt": "2026-09-29T18:32:09.838Z",
+  "firstAnswerSeconds": 20,
   "classified": true,
   "citesCatalog": true,
   "simulationChart": true,
   "savedBadge": true,
   "panelFirstRow": "Hotel Brisas de Getsemaní Marcela Pérez · Diseño, mejora y sostenibilidad de procesos · 29/9/2026 Nueva",
   "inPanel": true,
-  "totalSeconds": 26
+  "totalSeconds": 32
 }
