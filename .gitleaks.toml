@@ -1,0 +1,11 @@
+# gitleaks configuration: default rules + a small allowlist for files that
+# document key *patterns* (not real keys).
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Files that describe secret patterns or contain only placeholders"
+paths = [
+  '''^\.env\.example$''',
+  '''^\.claude/hooks/block-secrets\.sh$''',
+]

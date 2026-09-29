@@ -1,0 +1,40 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# next.js / build
+.next/
+out/
+build/
+*.tsbuildinfo
+next-env.d.ts
+
+# env files — secrets never go in git (only .env.example is versioned)
+.env
+.env.*
+!.env.example
+
+# vercel / supabase local state
+.vercel/
+supabase/.temp/
+supabase/.branches/
+
+# python
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# tests
+playwright-report/
+test-results/
+coverage/
+
+# os / editors
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# claude code personal settings (project settings.json IS versioned)
+.claude/settings.local.json
