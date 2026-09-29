@@ -1,0 +1,26 @@
+{
+  "recordedAt": "2026-09-29T16:27:55.424Z",
+  "base": "http://localhost:3100",
+  "gitSha": "85068c7",
+  "conversationId": "99619c4d-b455-4d8d-ad20-c11d0a080b47",
+  "turns": [
+    {
+      "user": "Somos una startup de bolsos con fibras recicladas y queremos exportar. ¿Qué servicios tienen para proteger la marca, cuánto cuestan y cuánto se demora el registro?",
+      "assistant": "¡Qué buen proyecto! Proteger la marca antes de exportar es un paso inteligente. Antes de darte la pre-propuesta, tengo que ser transparente con algo:\n\n**Esta es una demo educativa**: el centro y sus servicios son ficticios, y en esta conversación no tengo un catálogo con precios ni tiempos reales. No quiero inventarte cifras que parezcan oficiales, así que te doy lo que sí puedo: el encuadre del caso y un alcance orientativo.\n\n## Clasificación\nTu caso es de **`business_innovation`** (Innovación y desarrollo empresarial), porque incluye propiedad intelectual y una estrategia de expansión.\n\n## Servicios que recomendaría\n- **Acompañamiento en propiedad intelectual:** revisar si el nombre y el logo están disponibles, definir en qué clases y países registrar, y preparar la solicitud.\n- **Ruta de financiación para exportar:** identificar convocatorias o líneas de apoyo para cubrir costos de registro y entrada a mercados.\n\n## Sobre costos y tiempos\n- **Tasas y plazos de registro:** los fija cada oficina de marcas (en Colombia, la SIC; en otros países, la entidad local). Varían por país y por número de clases, así que conviene confirmarlos en la fuente oficial o con un abogado especialista.\n- **Asesoría legal definitiva:** yo no la doy, y el registro formal puede requerir un profesional en propiedad industrial.\n- **Honorarios del centro:** en una propuesta real te darían un rango tras el diagnóstico. Aquí no puedo darte una cifra confiable.\n\n## Para afinar la propuesta, cuéntame (en un solo mensaje):\n1. ¿A qué país o países quieren exportar primero?\n2. ¿Ya tienen la marca registrada en Colombia, o aún no?\n3. ¿Cuántas personas son en el equipo y hace cuánto venden?\n\nCon eso te armo la pre-propuesta completa: problema, alcance, siguiente paso y cómo pedir el rango de inversión al centro.",
+      "metadata": {
+        "model": "claude-sonnet-5-5",
+        "promptVersion": "v1-solo-prompt",
+        "mode": "live",
+        "usage": {
+          "inputTokens": 73,
+          "cacheReadTokens": 935,
+          "cacheWriteTokens": 0,
+          "outputTokens": 728
+        },
+        "costUsd": 0.007613,
+        "latencyMs": 6193,
+        "ttftMs": 812
+      }
+    }
+  ]
+}

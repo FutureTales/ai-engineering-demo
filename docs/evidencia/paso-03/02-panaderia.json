@@ -1,0 +1,44 @@
+{
+  "recordedAt": "2026-09-29T16:28:26.755Z",
+  "base": "http://localhost:3100",
+  "gitSha": "85068c7",
+  "conversationId": "1b105fc9-94a2-44dd-a47f-27e3f2ffa03c",
+  "turns": [
+    {
+      "user": "Tengo una panadería con tres sedes en Turbaco y al final del día botamos mucho pan. ¿Qué servicio del centro me sirve y cuánto cuesta?",
+      "assistant": "¡Hola! Gracias por contarme. Por lo que describes, tu caso encaja en la línea de **Diseño, mejora y sostenibilidad de procesos** (`process_design`), porque el problema es desperdicio de producto en la producción y la planeación.\n\nPara recomendarte bien el servicio y darte un rango de inversión realista, cuéntame:\n\n1. **¿Cuánto pan botan aproximadamente?** (por ejemplo, kilos o unidades por sede al día, o qué porcentaje de lo que producen).\n2. **¿Cómo deciden cuánto pan hacer cada día?** ¿Producen todo en un solo punto y reparten, o cada sede hornea por su cuenta? ¿Llevan algún registro de ventas?\n3. **¿Cuántas personas trabajan en total** entre producción y ventas?\n\nCon eso te armo la pre-propuesta con servicio recomendado, alcance, rango de inversión y siguiente paso. Como referencia, esto suele resolverse con un diagnóstico de desperdicios y un ajuste de la planeación de producción, pero el costo exacto depende de tus respuestas.",
+      "metadata": {
+        "model": "claude-sonnet-5-5",
+        "promptVersion": "v1-solo-prompt",
+        "mode": "live",
+        "usage": {
+          "inputTokens": 66,
+          "cacheReadTokens": 935,
+          "cacheWriteTokens": 0,
+          "outputTokens": 653
+        },
+        "costUsd": 0.006849,
+        "latencyMs": 6448,
+        "ttftMs": 3648
+      }
+    },
+    {
+      "user": "Somos 14 empleados. Producimos unos 2.000 panes al día entre las tres sedes, siempre la misma cantidad, y botamos más o menos el 15 %. Los lunes y martes es cuando más sobra. No llevamos registro de ventas por día, todo es en cuaderno.",
+      "assistant": "¡Gracias, con eso ya tengo lo necesario! Botas unos **300 panes al día** (15 % de 2.000), y el patrón es claro: producen siempre lo mismo aunque la demanda cambia, sobre todo lunes y martes. Además, sin registros de ventas es difícil ajustar.\n\n## Clasificación\n**Diseño, mejora y sostenibilidad de procesos** (`process_design`).\n\n## Servicios recomendados\n1. **Diagnóstico de desperdicios y flujo de producción.** Medimos cuánto y qué tipo de pan sobra, por sede y por día, y encontramos dónde se pierde.\n2. **Digitalización básica de procesos.** Cambiamos el cuaderno por un registro simple de ventas y sobrantes (por ejemplo, una hoja de cálculo o app sencilla) para producir según la demanda real de cada día y sede.\n\n**¿Por qué estos dos?** El primero te dice dónde ajustar; el segundo hace que el ajuste se mantenga en el tiempo.\n\n## Pre-propuesta\n- **Problema:** Panadería con 3 sedes en Turbaco y 14 empleados. Produce 2.000 panes diarios fijos y desperdicia cerca del 15 % (unos 300 panes/día), con más sobrantes lunes y martes. No hay registro de ventas digital.\n- **Línea de trabajo:** Diseño, mejora y sostenibilidad de procesos.\n- **Servicios:** Diagnóstico de desperdicios + digitalización básica del registro de ventas y producción.\n- **Alcance sugerido (aprox. 6 a 8 semanas):**\n  - 2 semanas de medición en las 3 sedes.\n  - Plan de producción por día y por sede (con metas para lunes y martes).\n  - Formato digital de ventas y sobrantes, con capacitación al personal.\n  - Seguimiento de resultados al final.\n- **Rango de inversión aproximado:** entre **COP 4 y 7 millones**, según el nivel de digitalización que elijas. *(Es una estimación de la demo; el valor final se confirma tras la primera reunión.)*\n- **Meta razonable:** bajar el desperdicio del 15 % a un 5-8 %, lo que sería evitar unos 150-200 panes botados al día.\n\n## Siguiente paso\nAgendar una reunión corta con el equipo del centro para validar el alcance y el costo. Para eso solo necesito el **nombre de tu panadería** y el **nombre de la persona de contacto**. ¿Me los compartes?",
+      "metadata": {
+        "model": "claude-sonnet-5-5",
+        "promptVersion": "v1-solo-prompt",
+        "mode": "live",
+        "usage": {
+          "inputTokens": 560,
+          "cacheReadTokens": 935,
+          "cacheWriteTokens": 0,
+          "outputTokens": 886
+        },
+        "costUsd": 0.010167,
+        "latencyMs": 7430,
+        "ttftMs": 880
+      }
+    }
+  ]
+}

@@ -1,16 +1,24 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { Chat } from "@/components/chat/chat";
+
+export const metadata: Metadata = { title: "Copiloto — Innova Copilot" };
 
 export default function CopilotPage() {
   return (
-    <main className="mx-auto max-w-2xl px-6 py-16 text-center">
-      <h1 className="text-2xl font-semibold">El copiloto llega en el paso 03</h1>
-      <p className="text-muted-foreground mt-3">
-        En este punto del proyecto (paso 02) solo existen la arquitectura, la base de datos y el despliegue.
-        Revisa <code>git checkout paso-03-primer-llm</code>.
-      </p>
-      <Link href="/" className="mt-6 inline-block underline underline-offset-2">
-        Volver al inicio
-      </Link>
+    <main className="mx-auto flex max-w-3xl flex-col px-4 pt-6 sm:px-6">
+      <header className="mb-4 flex items-baseline justify-between gap-4">
+        <div>
+          <h1 className="text-xl font-semibold">Innova Copilot</h1>
+          <p className="text-muted-foreground text-xs">
+            Centro de Innovación Caribe · demo con datos ficticios
+          </p>
+        </div>
+        <Link href="/" className="text-sm underline underline-offset-2">
+          Inicio
+        </Link>
+      </header>
+      <Chat />
     </main>
   );
 }

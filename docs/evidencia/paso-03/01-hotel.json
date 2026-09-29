@@ -1,0 +1,26 @@
+{
+  "recordedAt": "2026-09-29T16:27:42.845Z",
+  "base": "http://localhost:3100",
+  "gitSha": "85068c7",
+  "conversationId": "a85e0cfb-90b0-4a7a-b6ab-7cc6e66cd067",
+  "turns": [
+    {
+      "user": "Tengo un hotel boutique de 24 habitaciones en Getsemaní, el Hotel Brisas de Getsemaní. En temporada alta (diciembre y enero) se forman filas de hasta 40 minutos en el check-in entre las 2 y las 5 de la tarde. Tenemos 2 recepcionistas. Llegan unos 18 huéspedes por hora en el pico y cada check-in toma unos 6 minutos. Los huéspedes se quejan en las reseñas. ¿Qué me recomiendan?",
+      "assistant": "¡Gracias por los detalles! Con lo que me cuentas ya tengo suficiente para el diagnóstico, así que no necesito hacerte más preguntas.\n\n## Diagnóstico\nHagamos la cuenta rápida:\n- Llegan ~18 huéspedes/hora y cada check-in toma ~6 min.\n- Cada recepcionista atiende ~10 check-ins/hora, o sea ~20 entre las dos.\n- Con 18 llegadas por hora, tus recepcionistas están al ~90% de su capacidad. Casi no hay margen, y cualquier check-in que se demore (un pago, una reserva con problemas) hace crecer la fila rápidamente.\n\nAdemás, todo el volumen se concentra en 3 horas (2 a 5 p. m.), y ahí se acumula la espera.\n\n## Línea de trabajo\n**`process_design`**: Diseño, mejora y sostenibilidad de procesos. Es un caso clásico de fila y cuello de botella en el check-in.\n\n## Servicios recomendados\n1. **Diagnóstico y mapeo del proceso de check-in.** Medimos cada paso (documentos, pago, entrega de llaves, explicación) para ver cuáles se pueden quitar, acortar o hacer antes de que el huésped llegue.\n2. **Digitalización del proceso.** Por ejemplo, pre-check-in en línea (datos y registro antes de llegar) y pago anticipado. Si baja el tiempo de 6 a 3-4 minutos, la capacidad sube bastante y la fila casi desaparece.\n\n## Pre-propuesta\n- **Empresa:** Hotel Brisas de Getsemaní\n- **Problema:** filas de hasta 40 min en el check-in de 2 a 5 p. m. en temporada alta, con quejas en reseñas.\n- **Línea de trabajo:** `process_design`\n- **Servicios:** mapeo y mejora del proceso de check-in + digitalización (pre-check-in en línea).\n- **Alcance sugerido:**\n  - Observación y medición de tiempos (2 semanas).\n  - Rediseño del proceso y meta de reducir el check-in a ≤4 min.\n  - Implementación de pre-check-in digital y capacitación al equipo.\n  - Seguimiento durante la siguiente temporada alta.\n- **Inversión aproximada:** entre **COP 6 y 12 millones**, según la herramienta digital que elijan (valor de referencia de la demo).\n- **Siguiente paso:** dime el nombre de la persona de contacto y el centro te agenda una visita de diagnóstico. Ojo con el tiempo: para llegar listos a diciembre conviene empezar con varios meses de anticipación.\n\n¿Me compartes el nombre de contacto para dejar lista la solicitud?",
+      "metadata": {
+        "model": "claude-sonnet-5-5",
+        "promptVersion": "v1-solo-prompt",
+        "mode": "live",
+        "usage": {
+          "inputTokens": 187,
+          "cacheReadTokens": 935,
+          "cacheWriteTokens": 0,
+          "outputTokens": 963
+        },
+        "costUsd": 0.010191,
+        "latencyMs": 8418,
+        "ttftMs": 1022
+      }
+    }
+  ]
+}

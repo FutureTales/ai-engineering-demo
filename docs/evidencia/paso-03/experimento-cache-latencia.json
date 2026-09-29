@@ -1,0 +1,148 @@
+{
+  "recordedAt": "2026-09-29T16:30:17.046Z",
+  "gitSha": "85068c7",
+  "model": "claude-sonnet-5-5",
+  "effort": "low",
+  "runsPerConfig": 3,
+  "message": "Tengo un hotel boutique de 24 habitaciones en Getsemaní. En temporada alta se forman filas de hasta 40 minutos en el check-in entre las 2 y las 5 p. m. Tenemos 2 recepcionistas, llegan unos 18 huéspedes por hora y cada check-in toma unos 6 minutos. ¿Qué me recomiendan?",
+  "results": [
+    {
+      "config": {
+        "name": "sin-cache · thinking adaptativo",
+        "cache": false,
+        "thinking": "adaptive"
+      },
+      "medianTtftMs": 918,
+      "medianLatencyMs": 9088,
+      "medianCostUsd": 0.012352,
+      "medianOutputTokens": 1021,
+      "samples": [
+        {
+          "ttftMs": 1124,
+          "latencyMs": 9093,
+          "usage": {
+            "inputTokens": 1071,
+            "cacheReadTokens": 0,
+            "cacheWriteTokens": 0,
+            "outputTokens": 1021
+          },
+          "costUsd": 0.012352
+        },
+        {
+          "ttftMs": 918,
+          "latencyMs": 8514,
+          "usage": {
+            "inputTokens": 1071,
+            "cacheReadTokens": 0,
+            "cacheWriteTokens": 0,
+            "outputTokens": 896
+          },
+          "costUsd": 0.011102
+        },
+        {
+          "ttftMs": 713,
+          "latencyMs": 9088,
+          "usage": {
+            "inputTokens": 1071,
+            "cacheReadTokens": 0,
+            "cacheWriteTokens": 0,
+            "outputTokens": 1071
+          },
+          "costUsd": 0.012852
+        }
+      ]
+    },
+    {
+      "config": {
+        "name": "con-cache · thinking adaptativo",
+        "cache": true,
+        "thinking": "adaptive"
+      },
+      "medianTtftMs": 869,
+      "medianLatencyMs": 8538,
+      "medianCostUsd": 0.010109,
+      "medianOutputTokens": 965,
+      "samples": [
+        {
+          "ttftMs": 869,
+          "latencyMs": 8611,
+          "usage": {
+            "inputTokens": 136,
+            "cacheReadTokens": 935,
+            "cacheWriteTokens": 0,
+            "outputTokens": 972
+          },
+          "costUsd": 0.010179
+        },
+        {
+          "ttftMs": 914,
+          "latencyMs": 7830,
+          "usage": {
+            "inputTokens": 136,
+            "cacheReadTokens": 935,
+            "cacheWriteTokens": 0,
+            "outputTokens": 926
+          },
+          "costUsd": 0.009719
+        },
+        {
+          "ttftMs": 822,
+          "latencyMs": 8538,
+          "usage": {
+            "inputTokens": 136,
+            "cacheReadTokens": 935,
+            "cacheWriteTokens": 0,
+            "outputTokens": 965
+          },
+          "costUsd": 0.010109
+        }
+      ]
+    },
+    {
+      "config": {
+        "name": "con-cache · thinking between_tools",
+        "cache": true,
+        "thinking": "between_tools"
+      },
+      "medianTtftMs": 941,
+      "medianLatencyMs": 9544,
+      "medianCostUsd": 0.011648799999999999,
+      "medianOutputTokens": 1119,
+      "samples": [
+        {
+          "ttftMs": 775,
+          "latencyMs": 9291,
+          "usage": {
+            "inputTokens": 136,
+            "cacheReadTokens": 0,
+            "cacheWriteTokens": 934,
+            "outputTokens": 1132
+          },
+          "costUsd": 0.013927
+        },
+        {
+          "ttftMs": 1178,
+          "latencyMs": 9677,
+          "usage": {
+            "inputTokens": 136,
+            "cacheReadTokens": 934,
+            "cacheWriteTokens": 0,
+            "outputTokens": 1107
+          },
+          "costUsd": 0.011528799999999999
+        },
+        {
+          "ttftMs": 941,
+          "latencyMs": 9544,
+          "usage": {
+            "inputTokens": 136,
+            "cacheReadTokens": 934,
+            "cacheWriteTokens": 0,
+            "outputTokens": 1119
+          },
+          "costUsd": 0.011648799999999999
+        }
+      ]
+    }
+  ]
+}
