@@ -7,6 +7,7 @@
  * so they work across serverless instances. In mock mode there is no database:
  * limits are not applied.
  */
+import { ipAddress } from "@vercel/functions";
 import { createHash } from "node:crypto";
 import { createAdminClient } from "@/lib/supabase/admin";
 
@@ -18,17 +19,38 @@ export interface LimitDecision {
 
 const num = (v: string | undefined, fallback: number) => (v && Number(v) > 0 ? Number(v) : fallback);
 
+/** Salted with a SECRET (RATE_LIMIT_SALT), so stored hashes cannot be reversed by brute force. */
 export function hashIp(ip: string): string {
   return createHash("sha256")
-    .update(`${ip}:${process.env.SUPABASE_PROJECT_REF ?? "innova"}`)
+    .update(`${ip}:${process.env.RATE_LIMIT_SALT ?? "dev-only-salt"}`)
     .digest("hex")
     .slice(0, 32);
 }
 
+/**
+ * Client IP as reported by Vercel's edge (not a client-supplied header).
+ * IPv6 addresses are bucketed by /64, since one client usually controls a whole /64.
+ */
 export function clientIp(req: Request): string {
-  return (
-    req.headers.get("x-forwarded-for")?.split(",")[0].trim() || req.headers.get("x-real-ip") || "unknown"
-  );
+  const ip = ipAddress(req) ?? req.headers.get("x-real-ip") ?? "unknown";
+  if (ip.includes(":")) return ip.split(":").slice(0, 4).join(":") + "::/64";
+  return ip;
+}
+
+/** True the first time a conversation id is seen (atomic insert-or-ignore). */
+export async function registerConversation(conversationId: string): Promise<boolean> {
+  const db = createAdminClient();
+  const { data, error } = await db
+    .from("conversations")
+    .upsert({ id: conversationId, session_id: conversationId }, { onConflict: "id", ignoreDuplicates: true })
+    .select("id");
+  if (error) throw error;
+  return (data ?? []).length === 1;
+}
+
+/** Limit for the staff magic-link form: 5 requests per IP every 10 minutes. */
+export async function checkLoginLimit(ipHash: string): Promise<boolean> {
+  return (await hit(`login:${ipHash}`, 600, 5)).allowed;
 }
 
 async function hit(key: string, windowSeconds: number, max: number) {

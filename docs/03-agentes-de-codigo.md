@@ -96,3 +96,7 @@ printf '{"tool_name":"Write","tool_input":{"file_path":"lib/x.ts","content":"k =
 Salida esperada: `BLOCKED by .claude/hooks/block-secrets.sh ...` y `exit: 2`; luego `exit: 0`.
 
 > **Ojo:** en zsh, `echo` interpreta secuencias como `\n` y puede romper el JSON. Usa `printf '%s'` para pasar JSON a un hook. (Nos pasó; está en la [bitácora del paso 01](bitacora/paso-01.md).)
+
+## Limitación: un "deny list" de comandos nunca es completo
+
+`settings.json` niega `Bash(cat .env*)`, pero `head .env.local` o `grep . .env.local` harían lo mismo. La revisión agéntica del paso 08 lo señaló. Las defensas que sí cuentan son otras: la negación de `Read(./.env.local)`, el hook que bloquea **escribir** secretos, gitleaks en CI y, sobre todo, que las claves nunca estén en archivos versionados. **Una lista de comandos prohibidos reduce accidentes; no detiene a quien quiere saltársela.**

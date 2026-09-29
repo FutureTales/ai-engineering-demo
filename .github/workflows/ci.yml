@@ -20,9 +20,14 @@ jobs:
       - name: Install gitleaks (pinned)
         env:
           GITLEAKS_VERSION: 8.30.1
+          # Pinned hash of gitleaks_8.30.1_linux_x64.tar.gz (from the release's checksums.txt on 2026-09-29).
+          GITLEAKS_SHA256: 551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb
         run: |
-          curl -sSfL "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz" \
-            | tar -xz -C /usr/local/bin gitleaks
+          base="https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}"
+          file="gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          curl -sSfLO "$base/$file"
+          echo "${GITLEAKS_SHA256}  $file" | sha256sum --check
+          tar -xzf "$file" -C /usr/local/bin gitleaks
           gitleaks version
       - name: Scan git history
         run: gitleaks git --redact --verbose --exit-code 1
@@ -46,3 +51,27 @@ jobs:
       - name: Evals (mock, replays evals/recordings — no API calls)
         run: pnpm eval --mock
       - run: pnpm build
+
+  e2e:
+    name: E2E (Playwright, AI_MODE=mock, no API keys)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm test:e2e
+        env:
+          CI: "true"
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7

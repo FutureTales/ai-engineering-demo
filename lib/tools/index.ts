@@ -19,25 +19,32 @@ const SERVICE_IDS = SERVICES.map((s) => s.id) as [string, ...string[]];
 
 export const lineSchema = z.enum(LINES);
 
-export const queueScenarioSchema = z.object({
-  scenario_label: z
-    .string()
-    .min(1)
-    .max(80)
-    .describe('Nombre corto del escenario, p. ej. "Actual: 2 recepcionistas"'),
-  arrival_rate_per_hour: z
-    .number()
-    .positive()
-    .max(10_000)
-    .describe("Llegadas de clientes por hora en el pico"),
-  service_time_min: z
-    .number()
-    .positive()
-    .max(24 * 60)
-    .describe("Minutos promedio que toma atender a un cliente"),
-  servers: z.number().int().min(1).max(200).describe("Número de puestos de atención en paralelo"),
-  hours: z.number().positive().max(24).optional().describe("Duración del pico en horas (por defecto 3)"),
-});
+/** Hard bounds so one tool call can never pin the server (code review, paso-08). */
+export const MAX_CUSTOMERS_PER_SCENARIO = 5000;
+
+export const queueScenarioSchema = z
+  .object({
+    scenario_label: z
+      .string()
+      .min(1)
+      .max(80)
+      .describe('Nombre corto del escenario, p. ej. "Actual: 2 recepcionistas"'),
+    arrival_rate_per_hour: z
+      .number()
+      .positive()
+      .max(2000)
+      .describe("Llegadas de clientes por hora en el pico"),
+    service_time_min: z
+      .number()
+      .positive()
+      .max(480)
+      .describe("Minutos promedio que toma atender a un cliente"),
+    servers: z.number().int().min(1).max(100).describe("Número de puestos de atención en paralelo"),
+    hours: z.number().positive().max(12).optional().describe("Duración del pico en horas (por defecto 3)"),
+  })
+  .refine((s) => s.arrival_rate_per_hour * (s.hours ?? 3) <= MAX_CUSTOMERS_PER_SCENARIO, {
+    message: `Como máximo ${MAX_CUSTOMERS_PER_SCENARIO} clientes por escenario (llegadas por hora × horas)`,
+  });
 
 /** Catalog range for a set of services, computed in code, never by the LLM. */
 export function catalogInvestmentRange(serviceIds: string[]): string {

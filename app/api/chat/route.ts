@@ -4,27 +4,17 @@ import { z } from "zod";
 import { aiMode, buildCopilotRequest, copilotModelId, COPILOT_MODEL, PROMPT_VERSION } from "@/lib/ai/copilot";
 import type { CopilotUIMessage, TurnMetadata } from "@/lib/ai/metadata";
 import { estimateCostUsd, toUsageBreakdown } from "@/lib/ai/models";
-import { checkLimits, clientIp, hashIp } from "@/lib/guardrails/rate-limit";
+import { validateChatMessages } from "@/lib/guardrails/input";
+import { checkLimits, clientIp, hashIp, registerConversation } from "@/lib/guardrails/rate-limit";
 import { logInteraction, type InteractionRecord } from "@/lib/telemetry/log-interaction";
 
 export const maxDuration = 60;
 
-// Guardrails on the input (the prompt covers off-topic requests and injection).
-const MAX_MESSAGE_CHARS = 2000;
-const MAX_MESSAGES = 40;
-
+// Shape only; size and part types of EVERY message are checked by validateChatMessages.
 const bodySchema = z.object({
   id: z.uuid(),
-  messages: z.array(z.custom<CopilotUIMessage>()).min(1).max(MAX_MESSAGES),
+  messages: z.array(z.custom<CopilotUIMessage>()),
 });
-
-function lastUserText(messages: CopilotUIMessage[]): string {
-  const last = messages.findLast((m) => m.role === "user");
-  return (last?.parts ?? [])
-    .map((p) => (p.type === "text" ? p.text : ""))
-    .join("")
-    .trim();
-}
 
 const LIMIT_MESSAGES = {
   rate_limit: "Estás enviando mensajes muy rápido. Espera unos minutos e intenta de nuevo.",
@@ -38,20 +28,19 @@ export async function POST(req: Request) {
     return Response.json({ error: "Solicitud inválida." }, { status: 400 });
   }
   const { id: conversationId, messages } = parsed.data;
-  if (lastUserText(messages).length > MAX_MESSAGE_CHARS) {
-    return Response.json(
-      { error: `El mensaje es demasiado largo (máximo ${MAX_MESSAGE_CHARS} caracteres).` },
-      { status: 413 },
-    );
-  }
+  const invalid = validateChatMessages(messages);
+  if (invalid) return Response.json({ error: invalid.error }, { status: invalid.status });
 
   const mode = aiMode();
   if (mode === "live") {
     try {
+      // "New conversation" is decided by the server (first time this id is seen),
+      // never by the client-controlled history length (code review, paso-08).
+      const isNewConversation = await registerConversation(conversationId);
       const decision = await checkLimits({
         ipHash: hashIp(clientIp(req)),
         sessionId: conversationId,
-        isNewConversation: messages.length === 1,
+        isNewConversation,
       });
       if (!decision.allowed) {
         return Response.json(

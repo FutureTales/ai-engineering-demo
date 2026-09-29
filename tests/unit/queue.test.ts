@@ -79,6 +79,19 @@ describe("simulateDES", () => {
   });
 });
 
+describe("resource bounds (code review)", () => {
+  it("uses 200 replications for the hotel and fewer for huge inputs", () => {
+    expect(simulateDES(18, 6, 2, 3).replications).toBe(200);
+    expect(simulateDES(1600, 1, 30, 3).replications).toBe(62);
+  });
+
+  it("finishes a worst-case allowed scenario quickly", () => {
+    const t = Date.now();
+    simulateDES(1666, 0.5, 20, 3); // ~5000 customers per replication
+    expect(Date.now() - t).toBeLessThan(5000);
+  });
+});
+
 describe("simulateQueue (tool entry point)", () => {
   const hotel = simulateQueue([
     {
@@ -117,5 +130,17 @@ describe("simulateQueue (tool entry point)", () => {
 
   it("digital check-in with 2 receptionists equals 4 receptionists in utilization", () => {
     expect(hotel[3].utilization).toBe(hotel[2].utilization);
+  });
+});
+
+describe("queueScenarioSchema", () => {
+  it("rejects scenarios with more than 5000 customers", async () => {
+    const { queueScenarioSchema } = await import("@/lib/tools");
+    const base = { scenario_label: "x", service_time_min: 6, servers: 2 };
+    expect(queueScenarioSchema.safeParse({ ...base, arrival_rate_per_hour: 18 }).success).toBe(true);
+    expect(queueScenarioSchema.safeParse({ ...base, arrival_rate_per_hour: 2000, hours: 12 }).success).toBe(
+      false,
+    );
+    expect(queueScenarioSchema.safeParse({ ...base, arrival_rate_per_hour: 10_000 }).success).toBe(false);
   });
 });

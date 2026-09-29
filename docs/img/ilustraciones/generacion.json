@@ -1,0 +1,242 @@
+[
+  {
+    "prompt": "docs/img/prompts/harness-agente.md",
+    "output": "docs/img/ilustraciones/harness-agente.jpg",
+    "model": "gemini-3.1-flash-image",
+    "bytes": 1728003,
+    "usage": {
+      "total_tokens": 2180,
+      "total_input_tokens": 163,
+      "input_tokens_by_modality": [
+        {
+          "modality": "text",
+          "tokens": 163
+        }
+      ],
+      "total_cached_tokens": 0,
+      "total_output_tokens": 2017,
+      "output_tokens_by_modality": [
+        {
+          "modality": "image",
+          "tokens": 1680
+        }
+      ],
+      "total_tool_use_tokens": 0,
+      "total_thought_tokens": 0,
+      "raw_prompt_token": 605,
+      "model_invocation_token_counts": [
+        {
+          "prompt_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 605
+            }
+          ],
+          "candidates_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 339
+            }
+          ]
+        }
+      ],
+      "non_grounding_model_invocation_token_counts": [
+        {
+          "prompt_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 605
+            }
+          ],
+          "candidates_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 339
+            }
+          ]
+        }
+      ]
+    },
+    "generatedAt": "2026-09-29T18:00:47.314Z"
+  },
+  {
+    "prompt": "docs/img/prompts/hotel-getsemani.md",
+    "output": "docs/img/ilustraciones/hotel-getsemani.jpg",
+    "model": "gemini-3.1-flash-image",
+    "bytes": 3647318,
+    "usage": {
+      "total_tokens": 2199,
+      "total_input_tokens": 116,
+      "input_tokens_by_modality": [
+        {
+          "modality": "text",
+          "tokens": 116
+        }
+      ],
+      "total_cached_tokens": 0,
+      "total_output_tokens": 2083,
+      "output_tokens_by_modality": [
+        {
+          "modality": "image",
+          "tokens": 1680
+        }
+      ],
+      "total_tool_use_tokens": 0,
+      "total_thought_tokens": 0,
+      "raw_prompt_token": 558,
+      "model_invocation_token_counts": [
+        {
+          "prompt_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 558
+            }
+          ],
+          "candidates_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 405
+            }
+          ]
+        }
+      ],
+      "non_grounding_model_invocation_token_counts": [
+        {
+          "prompt_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 558
+            }
+          ],
+          "candidates_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 405
+            }
+          ]
+        }
+      ]
+    },
+    "generatedAt": "2026-09-29T18:01:06.333Z"
+  },
+  {
+    "prompt": "docs/img/prompts/llm-no-calcula.md",
+    "output": "docs/img/ilustraciones/llm-no-calcula.jpg",
+    "model": "gemini-3.1-flash-image",
+    "bytes": 1609282,
+    "usage": {
+      "total_tokens": 2147,
+      "total_input_tokens": 127,
+      "input_tokens_by_modality": [
+        {
+          "modality": "text",
+          "tokens": 127
+        }
+      ],
+      "total_cached_tokens": 0,
+      "total_output_tokens": 2020,
+      "output_tokens_by_modality": [
+        {
+          "modality": "image",
+          "tokens": 1680
+        }
+      ],
+      "total_tool_use_tokens": 0,
+      "total_thought_tokens": 0,
+      "raw_prompt_token": 569,
+      "model_invocation_token_counts": [
+        {
+          "prompt_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 569
+            }
+          ],
+          "candidates_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 342
+            }
+          ]
+        }
+      ],
+      "non_grounding_model_invocation_token_counts": [
+        {
+          "prompt_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 569
+            }
+          ],
+          "candidates_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 342
+            }
+          ]
+        }
+      ]
+    },
+    "generatedAt": "2026-09-29T18:01:21.222Z"
+  },
+  {
+    "prompt": "docs/img/prompts/personas.md",
+    "output": "docs/img/ilustraciones/personas.jpg",
+    "model": "gemini-3.1-flash-image",
+    "bytes": 2077741,
+    "usage": {
+      "total_tokens": 2136,
+      "total_input_tokens": 147,
+      "input_tokens_by_modality": [
+        {
+          "modality": "text",
+          "tokens": 147
+        }
+      ],
+      "total_cached_tokens": 0,
+      "total_output_tokens": 1989,
+      "output_tokens_by_modality": [
+        {
+          "modality": "image",
+          "tokens": 1680
+        }
+      ],
+      "total_tool_use_tokens": 0,
+      "total_thought_tokens": 0,
+      "raw_prompt_token": 589,
+      "model_invocation_token_counts": [
+        {
+          "prompt_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 589
+            }
+          ],
+          "candidates_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 311
+            }
+          ]
+        }
+      ],
+      "non_grounding_model_invocation_token_counts": [
+        {
+          "prompt_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 589
+            }
+          ],
+          "candidates_tokens_details": [
+            {
+              "modality": "text",
+              "tokens": 311
+            }
+          ]
+        }
+      ]
+    },
+    "generatedAt": "2026-09-29T18:01:38.093Z"
+  }
+]

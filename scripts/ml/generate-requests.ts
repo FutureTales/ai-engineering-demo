@@ -22,9 +22,12 @@ const PER_LINE = 40;
 const BATCH = 10;
 
 const LINE_HINTS: Record<Line, string> = {
-  quality_assurance: "defectos, devoluciones, reclamos de calidad, variación entre lotes o turnos, certificaciones (ISO), procedimientos que no se siguen, capacitación en seguridad o en procedimientos",
-  business_innovation: "producto nuevo o rediseño, prototipos, proteger marca o invento, patentes, buscar financiación o convocatorias, transformación digital o uso de IA sin saber por dónde empezar",
-  process_design: "filas y tiempos de espera, capacidad, cuellos de botella, desperdicio de materia prima o energía, procesos en papel o WhatsApp, inventarios desordenados, falta de indicadores",
+  quality_assurance:
+    "defectos, devoluciones, reclamos de calidad, variación entre lotes o turnos, certificaciones (ISO), procedimientos que no se siguen, capacitación en seguridad o en procedimientos",
+  business_innovation:
+    "producto nuevo o rediseño, prototipos, proteger marca o invento, patentes, buscar financiación o convocatorias, transformación digital o uso de IA sin saber por dónde empezar",
+  process_design:
+    "filas y tiempos de espera, capacidad, cuellos de botella, desperdicio de materia prima o energía, procesos en papel o WhatsApp, inventarios desordenados, falta de indicadores",
 };
 
 const REGISTERS = [
@@ -40,7 +43,8 @@ const schema = z.object({
 });
 
 async function main() {
-  const rows: { id: string; text: string; line: Line; sector: string; register: string; source: string }[] = [];
+  const rows: { id: string; text: string; line: Line; sector: string; register: string; source: string }[] =
+    [];
   let cost = 0;
   for (const line of LINES) {
     for (let b = 0; b < PER_LINE / BATCH; b++) {
@@ -77,10 +81,14 @@ Reglas:
   const unique = new Map(rows.map((r) => [r.text.toLowerCase(), r]));
   const csvCell = (v: string) => `"${v.replaceAll('"', '""')}"`;
   const header = "id,text,line,sector,register,source";
-  const lines = [...unique.values()].map((r) => [r.id, r.text, r.line, r.sector, r.register, r.source].map(csvCell).join(","));
+  const lines = [...unique.values()].map((r) =>
+    [r.id, r.text, r.line, r.sector, r.register, r.source].map(csvCell).join(","),
+  );
   mkdirSync("ml/data", { recursive: true });
   writeFileSync("ml/data/requests_labeled.csv", [header, ...lines].join("\n") + "\n");
-  console.log(`saved ml/data/requests_labeled.csv: ${unique.size} unique rows (${rows.length - unique.size} duplicates removed) · cost US$ ${cost.toFixed(4)}`);
+  console.log(
+    `saved ml/data/requests_labeled.csv: ${unique.size} unique rows (${rows.length - unique.size} duplicates removed) · cost US$ ${cost.toFixed(4)}`,
+  );
 }
 
 main().catch((e) => {

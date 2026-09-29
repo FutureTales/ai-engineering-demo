@@ -48,6 +48,9 @@ export function buildCopilotRequest(
     messages,
     tools,
     toolApproval: { create_request: "user-approval" as const },
+    // Signs the approval requests the server issues, so a client cannot fabricate
+    // an "approved" create_request in the history (code review, paso-08).
+    experimental_toolApprovalSecret: process.env.TOOL_APPROVAL_SECRET,
     stopWhen: isStepCount(MAX_AGENT_STEPS),
     providerOptions: { anthropic: { effort: "low" as const } },
   };

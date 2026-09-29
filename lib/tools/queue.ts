@@ -175,13 +175,21 @@ const percentile = (xs: number[], p: number) => {
   return s[Math.min(s.length - 1, Math.floor(p * s.length))];
 };
 
+/** Total simulated customers across all replications is kept around this budget. */
+const CUSTOMER_BUDGET = 300_000;
+
 export function simulateDES(
   lambdaPerHour: number,
   serviceTimeMin: number,
   servers: number,
   hours: number,
-  { replications = 200, seed = 42 } = {},
+  { replications: requested, seed = 42 }: { replications?: number; seed?: number } = {},
 ): SimulationResult {
+  // Adaptive replications: 200 for small cases (e.g. the hotel: ~54 customers per afternoon),
+  // fewer for huge ones, so the cost of one call is bounded.
+  const replications =
+    requested ??
+    Math.max(20, Math.min(200, Math.floor(CUSTOMER_BUDGET / Math.max(1, lambdaPerHour * hours))));
   const rand = mulberry32(seed);
   const allWaits: number[] = [];
   let queueAreaSum = 0;
@@ -190,7 +198,7 @@ export function simulateDES(
   let customers = 0;
   for (let r = 0; r < replications; r++) {
     const rep = simulateOnce(lambdaPerHour, serviceTimeMin, servers, hours, rand);
-    allWaits.push(...rep.waits);
+    for (const w of rep.waits) allWaits.push(w); // no spread: avoids call-stack limits on big arrays
     queueAreaSum += rep.queueArea;
     durationSum += rep.duration;
     dailyMax.push(rep.maxQueue);

@@ -16,5 +16,6 @@ Este repositorio se construye paso a paso. Cada paso es un tag de git (`git chec
 | 05 | `paso-05-rag` | 1 Construir apps de IA | [paso-05-rag.md](docs/pasos/paso-05-rag.md) |
 | 06 | `paso-06-agente` | 1 Construir apps de IA · 2 Software | [paso-06-agente.md](docs/pasos/paso-06-agente.md) |
 | 07 | `paso-07-ml-clasico` | 1 Construir apps de IA · 4 Dar forma | [paso-07-ml-clasico.md](docs/pasos/paso-07-ml-clasico.md) |
+| 08 | `paso-08-producto-completo` | 2 Software · 3 Agentes de código | [paso-08-producto-completo.md](docs/pasos/paso-08-producto-completo.md) |
 
 *La portada completa (app en vivo, QR, diagrama de pilares y cómo correrlo) se escribe en los pasos siguientes.*
