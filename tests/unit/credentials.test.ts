@@ -1,10 +1,16 @@
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { InvalidKeyError, resolveCredentials } from "@/lib/ai/credentials";
 
 const KEY = `sk-ant-api03-${"a".repeat(40)}`;
 const VOYAGE = `pa-${"b".repeat(40)}`;
 const h = (entries: Record<string, string> = {}) => new Headers(entries);
 
+// CI runs with AI_MODE=mock; every test starts from a neutral environment.
+beforeEach(() => {
+  vi.stubEnv("AI_MODE", "");
+  vi.stubEnv("ANTHROPIC_API_KEY", "");
+  vi.stubEnv("VOYAGE_API_KEY", "");
+});
 afterEach(() => vi.unstubAllEnvs());
 
 describe("resolveCredentials (bring your own key)", () => {
