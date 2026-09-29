@@ -1,93 +1,95 @@
 /**
- * The copilot's model configuration, shared by /api/chat and the evals, so that
- * evals always measure exactly what runs in production.
+ * The copilot agent, shared by /api/chat and the evals, so that evals always
+ * measure exactly what runs in production.
+ *
+ * paso-06: an agent loop. The model decides when to call search_services,
+ * simulate_queue and create_request (the last one needs the user's approval).
  */
 import { anthropic } from "@ai-sdk/anthropic";
-import { streamText, type ModelMessage } from "ai";
-import { retrieve, type RetrievalResult } from "@/lib/rag/search";
+import { isStepCount, streamText, type ModelMessage } from "ai";
+import { createTools } from "@/lib/tools";
+import { createMockModel, MOCK_MODEL_ID } from "./mock-model";
 import { estimateCostUsd, MODELS, toUsageBreakdown, type UsageBreakdown } from "./models";
-import { PROMPT_VERSION, retrievedContext, SYSTEM_PROMPT } from "./prompts";
+import { PROMPT_VERSION, SYSTEM_PROMPT } from "./prompts";
 
 export const COPILOT_MODEL = MODELS.agent;
 export { PROMPT_VERSION };
 
-function messageText(m: ModelMessage): string {
-  if (typeof m.content === "string") return m.content;
-  return m.content.map((p) => ("text" in p && typeof p.text === "string" ? p.text : "")).join(" ");
+/** Upper bound on agent steps per user turn (each model call or tool round is a step). */
+export const MAX_AGENT_STEPS = 6;
+
+export type AiMode = "live" | "mock";
+export function aiMode(): AiMode {
+  return process.env.AI_MODE === "mock" ? "mock" : "live";
 }
 
-/** The retrieval query: the last three user messages (follow-ups need earlier context). */
-export function retrievalQuery(messages: ModelMessage[]): string {
-  return messages
-    .filter((m) => m.role === "user")
-    .slice(-3)
-    .map(messageText)
-    .join(" ")
-    .slice(0, 2000);
+export function copilotModelId(mode: AiMode = aiMode()): string {
+  return mode === "mock" ? MOCK_MODEL_ID : COPILOT_MODEL;
 }
 
-export interface RetrievalSummary {
-  mode: RetrievalResult["modeUsed"];
-  fallbackReason: string | null;
-  latencyMs: number;
-  sources: { title: string; sourcePath: string }[];
-}
-
-export async function buildCopilotRequest(messages: ModelMessage[], { embedRetries = 0 } = {}) {
-  const retrieval = await retrieve(retrievalQuery(messages), { embedRetries });
-  const summary: RetrievalSummary = {
-    mode: retrieval.modeUsed,
-    fallbackReason: retrieval.fallbackReason,
-    latencyMs: retrieval.latencyMs,
-    sources: retrieval.documents.map((d) => ({ title: d.title, sourcePath: d.sourcePath })),
-  };
-  const options = {
-    model: anthropic(COPILOT_MODEL),
+export function buildCopilotRequest(
+  messages: ModelMessage[],
+  {
+    conversationId,
+    mode = aiMode(),
+    embedRetries = 0,
+  }: { conversationId: string; mode?: AiMode; embedRetries?: number },
+) {
+  const tools = createTools({ conversationId, offline: mode === "mock", embedRetries });
+  return {
+    model: mode === "mock" ? createMockModel() : anthropic(COPILOT_MODEL),
     maxOutputTokens: 4000,
-    instructions: [
-      {
-        role: "system" as const,
-        content: SYSTEM_PROMPT,
-        // Prompt caching: rules + policies + service index are identical on every request.
-        providerOptions: { anthropic: { cacheControl: { type: "ephemeral" as const } } },
-      },
-      // Changes per request, so it goes after the cache breakpoint.
-      { role: "system" as const, content: retrievedContext(retrieval.documents) },
-    ],
+    instructions: {
+      role: "system" as const,
+      content: SYSTEM_PROMPT,
+      // Prompt caching: rules + policies + service index are identical on every request.
+      providerOptions: { anthropic: { cacheControl: { type: "ephemeral" as const } } },
+    },
     messages,
+    tools,
+    toolApproval: { create_request: "user-approval" as const },
+    stopWhen: isStepCount(MAX_AGENT_STEPS),
     providerOptions: { anthropic: { effort: "low" as const } },
   };
-  return { options, retrieval: summary };
 }
 
 export interface CopilotRunResult {
   text: string;
   toolCalls: { toolName: string; input: unknown }[];
   toolResults: { toolName: string; output: unknown }[];
-  retrieval: RetrievalSummary;
   usage: UsageBreakdown;
   costUsd: number;
   latencyMs: number;
   ttftMs: number | null;
+  steps: number;
+  /** Everything the agent produced this turn (tool calls, tool results, text), to append to the history. */
+  responseMessages: ModelMessage[];
 }
 
 /** Run one copilot turn to completion (used by evals and scripts). */
 export async function runCopilot(
   messages: ModelMessage[],
-  { embedRetries = 0 } = {},
+  { embedRetries = 0, mode = "live" as AiMode } = {},
 ): Promise<CopilotRunResult> {
   const start = Date.now();
   let ttft: number | null = null;
-  const { options, retrieval } = await buildCopilotRequest(messages, { embedRetries });
-  const result = streamText(options);
+  const result = streamText(
+    buildCopilotRequest(messages, {
+      conversationId: "00000000-0000-0000-0000-000000000000",
+      mode,
+      embedRetries,
+    }),
+  );
   const toolCalls: CopilotRunResult["toolCalls"] = [];
   const toolResults: CopilotRunResult["toolResults"] = [];
   let text = "";
+  let steps = 0;
   for await (const part of result.stream) {
     if (part.type === "text-delta") {
       if (ttft === null) ttft = Date.now() - start;
       text += part.text;
     }
+    if (part.type === "finish-step") steps++;
     if (part.type === "tool-call") toolCalls.push({ toolName: part.toolName, input: part.input });
     if (part.type === "tool-result") toolResults.push({ toolName: part.toolName, output: part.output });
     if (part.type === "error") throw part.error;
@@ -97,10 +99,11 @@ export async function runCopilot(
     text,
     toolCalls,
     toolResults,
-    retrieval,
     usage,
     costUsd: estimateCostUsd(COPILOT_MODEL, usage),
     latencyMs: Date.now() - start,
     ttftMs: ttft,
+    steps,
+    responseMessages: await result.responseMessages,
   };
 }

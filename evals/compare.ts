@@ -66,7 +66,9 @@ for (const n of names) {
 for (const k of ["pertinencia", "fundamentacion", "claridad", "tono"] as const) {
   console.log([`juez ${k}`, ...versions.map((v) => String(v.summary.judge[k]))].join(" | "));
 }
-console.log(["simula en casos de filas", ...versions.map((v) => pct(v.summary.simulationRecall))].join(" | "));
+console.log(
+  ["simula en casos de filas", ...versions.map((v) => pct(v.summary.simulationRecall))].join(" | "),
+);
 console.log(["costo por caso (US$)", ...versions.map((v) => String(v.summary.costPerCaseUsd))].join(" | "));
 console.log(
   [

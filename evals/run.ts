@@ -23,13 +23,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { COPILOT_MODEL, PROMPT_VERSION, runCopilot } from "../lib/ai/copilot";
 import { loadServices } from "../lib/catalog/load";
-import {
-  casePassed,
-  detectLine,
-  runChecks,
-  type CaseOutput,
-  type EvalCase,
-} from "../lib/evals/checks";
+import { casePassed, detectLine, runChecks, type CaseOutput, type EvalCase } from "../lib/evals/checks";
 import { judge, type JudgeScores } from "../lib/evals/judge";
 import { round, summarize, type Recording } from "../lib/evals/summary";
 import { createAdminClient } from "../lib/supabase/admin";
@@ -106,7 +100,8 @@ async function runLive(c: EvalCase): Promise<Recording> {
   for (let i = 0; i < userTurns.length; i++) {
     messages.push({ role: "user", content: userTurns[i] });
     const r = await runCopilot(messages, { embedRetries: EMBED_RETRIES });
-    messages.push({ role: "assistant", content: r.text });
+    // Keep tool calls and results in the history, as the chat UI does.
+    messages.push(...r.responseMessages);
     turns.push({
       user: userTurns[i],
       assistant: r.text,
@@ -115,8 +110,12 @@ async function runLive(c: EvalCase): Promise<Recording> {
       costUsd: r.costUsd,
       latencyMs: r.latencyMs,
       ttftMs: r.ttftMs,
-      retrievalMode: r.retrieval?.mode ?? null,
-      retrievedSources: r.retrieval?.sources.map((x) => x.sourcePath) ?? [],
+      retrievalMode: r.toolCalls.some((t) => t.toolName === "search_services") ? "tool" : "none",
+      retrievedSources: r.toolResults
+        .filter((t) => t.toolName === "search_services")
+        .flatMap((t) =>
+          ((t.output as { results?: { source: string }[] }).results ?? []).map((x) => x.source),
+        ),
     });
     // If the copilot asked clarifying questions instead of classifying, answer once.
     if (

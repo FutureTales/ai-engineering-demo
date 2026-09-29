@@ -1,0 +1,114 @@
+{
+  "generatedAt": "2026-09-29T17:40:59.390Z",
+  "source": "lib/tools/queue.ts simulateQueue()",
+  "scenarios": [
+    {
+      "scenario_label": "Hoy: 2 recepcionistas",
+      "servers": 2,
+      "arrival_rate_per_hour": 18,
+      "service_time_min": 6,
+      "utilization": 0.9,
+      "stable": true,
+      "verdict": "Estable pero al límite: con esta utilización, cualquier variación produce filas largas.",
+      "analytic": {
+        "prob_wait": 0.853,
+        "avg_wait_min": 25.6,
+        "p90_wait_min": 64.3,
+        "avg_queue_len": 7.67,
+        "avg_time_in_system_min": 31.6
+      },
+      "simulation": {
+        "hours": 3,
+        "replications": 200,
+        "seed": 42,
+        "avg_wait_min": 11.2,
+        "p90_wait_min": 30.2,
+        "avg_queue_len": 2.99,
+        "typical_max_queue_len": 8,
+        "bad_day_max_queue_len": 15,
+        "customers_per_replication": 54.1
+      }
+    },
+    {
+      "scenario_label": "3 recepcionistas",
+      "servers": 3,
+      "arrival_rate_per_hour": 18,
+      "service_time_min": 6,
+      "utilization": 0.6,
+      "stable": true,
+      "verdict": "Estable y con holgura: la espera es baja.",
+      "analytic": {
+        "prob_wait": 0.355,
+        "avg_wait_min": 1.8,
+        "p90_wait_min": 6.3,
+        "avg_queue_len": 0.53,
+        "avg_time_in_system_min": 7.8
+      },
+      "simulation": {
+        "hours": 3,
+        "replications": 200,
+        "seed": 42,
+        "avg_wait_min": 1.8,
+        "p90_wait_min": 6.3,
+        "avg_queue_len": 0.51,
+        "typical_max_queue_len": 4,
+        "bad_day_max_queue_len": 7,
+        "customers_per_replication": 54.1
+      }
+    },
+    {
+      "scenario_label": "4 recepcionistas",
+      "servers": 4,
+      "arrival_rate_per_hour": 18,
+      "service_time_min": 6,
+      "utilization": 0.45,
+      "stable": true,
+      "verdict": "Estable y con holgura: la espera es baja.",
+      "analytic": {
+        "prob_wait": 0.129,
+        "avg_wait_min": 0.4,
+        "p90_wait_min": 0.7,
+        "avg_queue_len": 0.11,
+        "avg_time_in_system_min": 6.4
+      },
+      "simulation": {
+        "hours": 3,
+        "replications": 200,
+        "seed": 42,
+        "avg_wait_min": 0.4,
+        "p90_wait_min": 0.6,
+        "avg_queue_len": 0.1,
+        "typical_max_queue_len": 2,
+        "bad_day_max_queue_len": 4,
+        "customers_per_replication": 54.1
+      }
+    },
+    {
+      "scenario_label": "Check-in digital (3 min), 2 recepcionistas",
+      "servers": 2,
+      "arrival_rate_per_hour": 18,
+      "service_time_min": 3,
+      "utilization": 0.45,
+      "stable": true,
+      "verdict": "Estable y con holgura: la espera es baja.",
+      "analytic": {
+        "prob_wait": 0.279,
+        "avg_wait_min": 0.8,
+        "p90_wait_min": 2.8,
+        "avg_queue_len": 0.23,
+        "avg_time_in_system_min": 3.8
+      },
+      "simulation": {
+        "hours": 3,
+        "replications": 200,
+        "seed": 42,
+        "avg_wait_min": 0.8,
+        "p90_wait_min": 2.9,
+        "avg_queue_len": 0.24,
+        "typical_max_queue_len": 3,
+        "bad_day_max_queue_len": 5,
+        "customers_per_replication": 54.1
+      }
+    }
+  ]
+}

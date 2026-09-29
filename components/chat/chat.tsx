@@ -1,13 +1,14 @@
 "use client";
 
 import { useChat } from "@ai-sdk/react";
-import { DefaultChatTransport } from "ai";
+import { DefaultChatTransport, lastAssistantMessageIsCompleteWithApprovalResponses } from "ai";
 import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import type { CopilotUIMessage } from "@/lib/ai/metadata";
+import { ToolPart } from "./tool-part";
 import { UnderTheHood } from "./under-the-hood";
 
 export const HOTEL_CASE =
@@ -25,12 +26,23 @@ const EXAMPLES = [
   },
 ];
 
+/** The API returns {"error": "..."} with a friendly Spanish message (rate limit, too long...). */
+function safeError(raw: string): string {
+  try {
+    return (JSON.parse(raw.slice(raw.indexOf("{"))) as { error?: string }).error ?? raw;
+  } catch {
+    return "No pude responder. Intenta de nuevo en un momento.";
+  }
+}
+
 export function Chat() {
   const [chatId] = useState(() => crypto.randomUUID());
   const [input, setInput] = useState("");
-  const { messages, sendMessage, status, error, stop } = useChat<CopilotUIMessage>({
+  const { messages, sendMessage, status, error, stop, addToolApprovalResponse } = useChat<CopilotUIMessage>({
     id: chatId,
     transport: new DefaultChatTransport({ api: "/api/chat" }),
+    // After the user approves or denies saving, continue the agent automatically.
+    sendAutomaticallyWhen: lastAssistantMessageIsCompleteWithApprovalResponses,
   });
   const busy = status === "submitted" || status === "streaming";
   const bottomRef = useRef<HTMLDivElement>(null);
@@ -84,6 +96,8 @@ export function Chat() {
                       <ReactMarkdown remarkPlugins={[remarkGfm]}>{part.text}</ReactMarkdown>
                     </div>
                   )
+                ) : part.type.startsWith("tool-") ? (
+                  <ToolPart key={i} part={part} onApproval={addToolApprovalResponse} />
                 ) : null,
               )}
             </div>
@@ -95,12 +109,14 @@ export function Chat() {
       {status === "submitted" && <p className="text-muted-foreground text-sm">Pensando…</p>}
       {error && (
         <p role="alert" className="border-destructive/40 text-destructive rounded-md border p-3 text-sm">
-          No pude responder. Intenta de nuevo en un momento.
+          {error.message.includes("{")
+            ? safeError(error.message)
+            : "No pude responder. Intenta de nuevo en un momento."}
         </p>
       )}
 
       <form
-        className="bg-background sticky bottom-0 flex items-end gap-2 pt-2 pb-4"
+        className="bg-background sticky bottom-0 z-10 flex items-end gap-2 border-t pt-2 pb-4"
         onSubmit={(e) => {
           e.preventDefault();
           send(input);

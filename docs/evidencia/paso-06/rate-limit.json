@@ -1,0 +1,28 @@
+{
+  "recordedAt": "2026-09-29T17:40:29.772Z",
+  "atomicCounter": {
+    "allowed": [
+      true,
+      false,
+      true
+    ],
+    "counts": [
+      1,
+      2,
+      3
+    ],
+    "ok": true
+  },
+  "route": {
+    "first": 429,
+    "second": 429,
+    "retryAfter": "571",
+    "body": "{\"error\":\"Estás enviando mensajes muy rápido. Espera unos minutos e intenta de nuevo.\"}"
+  },
+  "dailyCap": {
+    "env": "DAILY_CONVERSATION_CAP=1",
+    "status": 429,
+    "body": "{\"error\":\"La demo alcanzó el máximo de conversaciones de hoy. Vuelve mañana o mira el video de la demo.\"}",
+    "note": "Mensaje de la respuesta actualizado después de esta prueba (ya no menciona un video, que no existe)."
+  }
+}

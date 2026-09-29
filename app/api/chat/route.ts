@@ -1,16 +1,17 @@
 import { convertToModelMessages, createUIMessageStreamResponse, streamText, toUIMessageStream } from "ai";
 import { after } from "next/server";
 import { z } from "zod";
+import { aiMode, buildCopilotRequest, copilotModelId, COPILOT_MODEL, PROMPT_VERSION } from "@/lib/ai/copilot";
 import type { CopilotUIMessage, TurnMetadata } from "@/lib/ai/metadata";
-import { buildCopilotRequest, COPILOT_MODEL, PROMPT_VERSION } from "@/lib/ai/copilot";
 import { estimateCostUsd, toUsageBreakdown } from "@/lib/ai/models";
+import { checkLimits, clientIp, hashIp } from "@/lib/guardrails/rate-limit";
 import { logInteraction, type InteractionRecord } from "@/lib/telemetry/log-interaction";
 
 export const maxDuration = 60;
 
-// Basic input limits (full guardrails and rate limiting arrive in paso-06).
+// Guardrails on the input (the prompt covers off-topic requests and injection).
 const MAX_MESSAGE_CHARS = 2000;
-const MAX_MESSAGES = 30;
+const MAX_MESSAGES = 40;
 
 const bodySchema = z.object({
   id: z.uuid(),
@@ -25,6 +26,12 @@ function lastUserText(messages: CopilotUIMessage[]): string {
     .trim();
 }
 
+const LIMIT_MESSAGES = {
+  rate_limit: "Estás enviando mensajes muy rápido. Espera unos minutos e intenta de nuevo.",
+  daily_cap:
+    "La demo alcanzó el máximo de conversaciones de hoy. Vuelve mañana; mientras tanto, puedes ver el código paso a paso en GitHub.",
+};
+
 export async function POST(req: Request) {
   const parsed = bodySchema.safeParse(await req.json().catch(() => null));
   if (!parsed.success) {
@@ -38,45 +45,63 @@ export async function POST(req: Request) {
     );
   }
 
-  const model = COPILOT_MODEL;
+  const mode = aiMode();
+  if (mode === "live") {
+    try {
+      const decision = await checkLimits({
+        ipHash: hashIp(clientIp(req)),
+        sessionId: conversationId,
+        isNewConversation: messages.length === 1,
+      });
+      if (!decision.allowed) {
+        return Response.json(
+          { error: LIMIT_MESSAGES[decision.reason!] },
+          { status: 429, headers: { "Retry-After": String(decision.retryAfterSeconds ?? 60) } },
+        );
+      }
+    } catch (err) {
+      // Fail closed: if the limits cannot be checked, do not spend API credits.
+      console.error("[chat] rate limit check failed", err);
+      return Response.json({ error: "El servicio no está disponible en este momento." }, { status: 503 });
+    }
+  }
+
+  const model = copilotModelId(mode);
   const startedAt = Date.now();
   let firstTokenAt: number | null = null;
+  const toolsUsed = new Set<string>();
 
   // Telemetry runs after the response has been streamed, without delaying the user.
   let resolveTelemetry: (r: InteractionRecord) => void = () => {};
   const telemetry = new Promise<InteractionRecord>((resolve) => (resolveTelemetry = resolve));
-  after(async () => logInteraction(await telemetry));
+  if (mode === "live") after(async () => logInteraction(await telemetry));
 
-  const { options, retrieval } = await buildCopilotRequest(await convertToModelMessages(messages));
+  const baseRecord = () => ({
+    conversationId,
+    mode,
+    model,
+    promptVersion: PROMPT_VERSION,
+    latencyMs: Date.now() - startedAt,
+    ttftMs: firstTokenAt ? firstTokenAt - startedAt : null,
+    toolsUsed: [...toolsUsed],
+  });
 
   const result = streamText({
-    ...options,
+    ...buildCopilotRequest(await convertToModelMessages(messages), { conversationId, mode }),
+    onStepFinish: ({ toolCalls }) => toolCalls.forEach((t) => toolsUsed.add(t.toolName)),
     onFinish: ({ totalUsage }) => {
       const usage = toUsageBreakdown(totalUsage);
-      const latencyMs = Date.now() - startedAt;
-      const ttftMs = firstTokenAt ? firstTokenAt - startedAt : null;
-      const costUsd = estimateCostUsd(model, usage);
       resolveTelemetry({
-        conversationId,
-        mode: "live",
-        model,
-        promptVersion: PROMPT_VERSION,
+        ...baseRecord(),
         usage,
-        costUsd,
-        latencyMs,
-        ttftMs,
+        costUsd: mode === "live" ? estimateCostUsd(COPILOT_MODEL, usage) : 0,
       });
     },
     onError: ({ error }) => {
       resolveTelemetry({
-        conversationId,
-        mode: "live",
-        model,
-        promptVersion: PROMPT_VERSION,
+        ...baseRecord(),
         usage: { inputTokens: 0, cacheReadTokens: 0, cacheWriteTokens: 0, outputTokens: 0 },
         costUsd: 0,
-        latencyMs: Date.now() - startedAt,
-        ttftMs: null,
         error: String(error),
       });
     },
@@ -87,15 +112,16 @@ export async function POST(req: Request) {
       stream: result.stream,
       originalMessages: messages,
       messageMetadata: ({ part }): TurnMetadata | undefined => {
-        if (part.type === "start") return { model, promptVersion: PROMPT_VERSION, mode: "live", retrieval };
+        if (part.type === "start") return { model, promptVersion: PROMPT_VERSION, mode };
         if (part.type === "text-delta" && firstTokenAt === null) firstTokenAt = Date.now();
         if (part.type === "finish") {
           const usage = toUsageBreakdown(part.totalUsage);
           return {
             usage,
-            costUsd: estimateCostUsd(model, usage),
+            costUsd: mode === "live" ? estimateCostUsd(COPILOT_MODEL, usage) : 0,
             latencyMs: Date.now() - startedAt,
             ttftMs: firstTokenAt ? firstTokenAt - startedAt : undefined,
+            toolsUsed: [...toolsUsed],
           };
         }
         return undefined;

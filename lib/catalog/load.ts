@@ -2,14 +2,9 @@ import { readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 
-export const LINES = ["quality_assurance", "business_innovation", "process_design"] as const;
-export type Line = (typeof LINES)[number];
+import { LINES, type Line } from "./lines";
 
-export const LINE_LABELS: Record<Line, string> = {
-  quality_assurance: "Aseguramiento de la calidad",
-  business_innovation: "Innovación y desarrollo empresarial",
-  process_design: "Diseño, mejora y sostenibilidad de procesos",
-};
+export { LINE_LABELS, LINES, type Line } from "./lines";
 
 export interface CatalogService {
   id: string;

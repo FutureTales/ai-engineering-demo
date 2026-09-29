@@ -14,7 +14,9 @@
     "check:mermaid": "scripts/check-mermaid.sh",
     "eval": "tsx evals/run.ts",
     "ingest": "tsx scripts/ingest.ts",
-    "eval:compare": "tsx evals/compare.ts"
+    "eval:compare": "tsx evals/compare.ts",
+    "record-mocks": "tsx scripts/record-mocks.ts",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@ai-sdk/anthropic": "^4.0.68",
