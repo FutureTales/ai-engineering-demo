@@ -49,6 +49,14 @@ Antes de cerrar el producto, el agente principal delegó la revisión a un **sub
 - **RLS:** activo en todas las tablas; `anon` sin permisos ni políticas; las funciones `SECURITY DEFINER` fijan `search_path = ''` y solo las ejecuta `service_role` (`is_staff` también `authenticated`, como se diseñó).
 - **Secretos:** ninguno en el historial de git.
 
+## Hallazgo posterior: el límite por IP habría bloqueado la charla
+
+En la revisión final antes de la charla (otra revisión independiente, después del paso 10) apareció un problema que ninguna prueba podía mostrar, porque todas se hicieron desde una sola máquina: **la IP y la sesión tenían el mismo límite (20 mensajes cada 10 minutos)**. En el Wi-Fi de un campus, toda la sala sale a internet con **una sola IP pública**. Bastaban unos pocos asistentes probando el QR para que todos los demás, incluida la demo del presentador, recibieran 429.
+
+**Corrección:** límite propio para la IP (`RATE_LIMIT_IP_MAX = 200` cada 10 minutos); la sesión sigue en 20. El costo queda acotado por el tope diario y el límite de gasto del proveedor. Además, el guion indica hacer la demo desde la red del celular.
+
+> Un guardrail mal calibrado es una forma de caída. La seguridad también se prueba pensando en **cómo** se va a usar el sistema: 200 personas, una red, al mismo tiempo.
+
 ## Lecciones
 
 1. **Revisar con contexto limpio encuentra lo que el autor no ve.** Los tres hallazgos graves venían del mismo supuesto implícito: "el historial que manda el cliente es el que mostró la UI". El autor escribió la UI y la ruta, y por eso no lo cuestionó.

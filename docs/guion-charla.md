@@ -11,6 +11,7 @@
 - [ ] Terminal lista con el plan B ya compilado: `AI_MODE=mock ANTHROPIC_API_KEY= pnpm dev` en otra pestaña (no lo inicies todavía si vas a usar producción).
 - [ ] Límite de gasto mensual configurado en console.anthropic.com.
 - [ ] Zoom del navegador al 125 % para que se lea desde el fondo.
+- [ ] **Hacer la demo en vivo desde la red del celular (hotspot), no desde el Wi-Fi del lugar.** Toda la sala sale a internet con la misma IP; si mucha gente usa el QR a la vez, el límite por IP (200 mensajes cada 10 min) podría alcanzarse.
 - [ ] Copiar al portapapeles el mensaje del hotel (abajo).
 
 **Mensaje exacto del hotel** (o usar el botón "Hotel con filas en el check-in"):
@@ -60,7 +61,7 @@ Preguntas que probablemente harán y dónde está la respuesta:
 
 | Pregunta | Respuesta corta | Dónde |
 |---|---|---|
-| ¿Cuánto costó construirlo? | Ver el total del informe final en el README | [README](../README.md) |
+| ¿Cuánto costó construirlo? | ~US$ 4,6 de API usada por la app (evals, pruebas, scripts), **más** el agente de código, que se mide aparte (`/cost` en Claude Code) | [README](../README.md) |
 | ¿Cuánto cuesta cada conversación? | ~US$ 0,016 por conversación en la telemetría real (muestra pequeña) | `/panel/salud`, [`datos-salud.json`](../presentacion/datos-salud.json) |
 | ¿Y si el modelo se equivoca? | Por eso las evals, la aprobación humana y que el precio lo ponga el código | [paso 04](pasos/paso-04-evals.md), [paso 06](pasos/paso-06-agente.md) |
 | ¿Puedo usarlo para mi proyecto? | Sí, licencia MIT; empieza por [`docs/setup.md`](setup.md) | — |

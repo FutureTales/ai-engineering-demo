@@ -18,7 +18,7 @@ Construimos un copiloto que, en una conversación de menos de un minuto, encuadr
 | Casos resueltos sin errores, versión final | **29 de 30** (y 28 de 30 en una segunda corrida; los fallos se deben a un defecto conocido de la prueba, no del copiloto) | [evals](../evals/results/) |
 | Mejora frente a un chatbot sin datos | de **3 de 30** a 29 de 30 | [comparación](../evals/results/comparacion.json) |
 | Respuestas con precios inventados | de **63 %** (sin datos) a **0 %** | ídem |
-| Caso del hotel en producción: diagnóstico + simulación + pre-propuesta guardada | **26 segundos** de punta a punta | [prueba](img/demo/resultado.json) |
+| Caso del hotel en producción: diagnóstico + simulación + pre-propuesta guardada | **26 y 32 segundos** de punta a punta (dos corridas) | [corrida 1](img/demo/resultado-2026-09-29T1811.json), [corrida 2](img/demo/resultado-2026-09-29T1832.json) |
 | Costo por conversación (telemetría real, muestra pequeña de 10 conversaciones) | **~US$ 0,016** | [salud](../presentacion/datos-salud.json) |
 | Intentos de manipulación resistidos (inyecciones de instrucciones) | 2 de 2 | evals adversariales |
 
@@ -28,7 +28,7 @@ Construimos un copiloto que, en una conversación de menos de un minuto, encuadr
 
 | Concepto | Estimado |
 |---|---|
-| Construcción del MVP (API de Claude durante el desarrollo, calculado con los tokens registrados) | ~US$ 4,6 |
+| Uso de API de la app durante el desarrollo (evals, pruebas, scripts; calculado con los tokens registrados). **No incluye** el agente de código que lo construyó | ~US$ 4,6 |
 | Operación por conversación | ~US$ 0,02 |
 | Piloto (20 empresas × ~5 conversaciones + evals semanales) | < US$ 20 en API |
 | Infraestructura (Vercel y Supabase, planes gratuitos) | US$ 0 en el piloto; para producción real, planes pagos de Vercel y Supabase (consultar precios vigentes: no los verificamos) |

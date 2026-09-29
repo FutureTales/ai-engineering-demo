@@ -1,6 +1,7 @@
 /**
  * Abuse protection for the public URL (the QR code at the talk):
- * - per IP and per session: RATE_LIMIT_MAX_MESSAGES every RATE_LIMIT_WINDOW_MINUTES
+ * - per session: RATE_LIMIT_MAX_MESSAGES (20) every RATE_LIMIT_WINDOW_MINUTES (10)
+ * - per IP: RATE_LIMIT_IP_MAX (200) in the same window (a room shares one IP)
  * - global: DAILY_CONVERSATION_CAP new conversations per day
  *
  * Counters live in Postgres (public.rate_limits, atomic upsert via hit_rate_limit),
@@ -73,11 +74,18 @@ export async function checkLimits(opts: {
   sessionId: string;
   isNewConversation: boolean;
 }): Promise<LimitDecision> {
-  const max = num(process.env.RATE_LIMIT_MAX_MESSAGES, 20);
+  const sessionMax = num(process.env.RATE_LIMIT_MAX_MESSAGES, 20);
+  // A whole room (the talk!) usually shares ONE public IP on campus Wi-Fi, so the
+  // per-IP budget must be much larger than the per-session one. Cost is bounded
+  // by the daily cap and the provider's spend limit, not by the IP key.
+  const ipMax = num(process.env.RATE_LIMIT_IP_MAX, 200);
   const windowSeconds = num(process.env.RATE_LIMIT_WINDOW_MINUTES, 10) * 60;
   const dailyCap = num(process.env.DAILY_CONVERSATION_CAP, 300);
 
-  for (const key of [`ip:${opts.ipHash}`, `session:${opts.sessionId}`]) {
+  for (const [key, max] of [
+    [`ip:${opts.ipHash}`, ipMax],
+    [`session:${opts.sessionId}`, sessionMax],
+  ] as const) {
     const r = await hit(key, windowSeconds, max);
     if (!r.allowed) return { allowed: false, reason: "rate_limit", retryAfterSeconds: r.retryAfterSeconds };
   }

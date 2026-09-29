@@ -75,4 +75,6 @@ await page.screenshot({ path: path.join(out, "06-salud.png"), fullPage: true });
 await browser.close();
 log.totalSeconds = Math.round((Date.now() - t0) / 1000);
 console.log(log);
-writeFileSync(path.join(out, "resultado.json"), JSON.stringify(log, null, 2) + "\n");
+// One file per run (never overwrite evidence that docs may cite).
+const stamp = String(log.startedAt).slice(0, 16).replaceAll(":", "");
+writeFileSync(path.join(out, `resultado-${stamp}.json`), JSON.stringify(log, null, 2) + "\n");

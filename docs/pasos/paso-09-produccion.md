@@ -26,7 +26,7 @@ Que el sistema se pueda **operar**: ver su costo, su latencia y sus errores con 
 
 ## El caso del hotel, de punta a punta en producción
 
-Prueba automatizada con un navegador real contra la URL pública ([resultado](../img/demo/resultado.json)):
+Prueba automatizada con un navegador real contra la URL pública ([corrida 1](../img/demo/resultado-2026-09-29T1811.json); una segunda corrida, [corrida 2](../img/demo/resultado-2026-09-29T1832.json), también pasó todo, con 20 s a la primera respuesta y 32 s en total):
 
 | Paso | Resultado |
 |---|---|

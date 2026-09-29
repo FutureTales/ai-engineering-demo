@@ -138,6 +138,11 @@ def footer(slide, n, dark=False, left="AI Engineering Skills Map · Caso prácti
     text(slide, 18.25, 10.09, 0.6, 0.36, f"{n:02d}", size=18, color=c, font=MONO, align=PP_ALIGN.RIGHT)
 
 
+def git_tag(slide, *tags):
+    """The git tag of the step, bottom right, like the original's footer style."""
+    text(slide, 9.8, 10.09, 8.2, 0.36, "  ·  ".join(tags), size=16, color=BLUE, font=MONO, align=PP_ALIGN.RIGHT)
+
+
 def card(slide, x, y, w, h, heading, body, dark=False, head_size=26, body_size=19, tag=None):
     rect(slide, x, y, w, h, fill=NAVY if dark else "FFFFFF", line=None if dark else LINE)
     pad = 0.38
@@ -262,6 +267,7 @@ def s_architecture(prs, n):
         rect(s, x, 8.55, 5.6, 0.01, fill=LINE2)
         text(s, x, 8.7, 5.6, 0.5, h, size=22, color=NAVY)
         text(s, x, 9.2, 5.6, 0.7, b, size=18, color=GRAY)
+    git_tag(s, "paso-02-arquitectura-datos")
     footer(s, n)
 
 
@@ -284,6 +290,7 @@ def s_first_llm(prs, n):
          ("temperature", {"font": MONO, "color": BLUE}),
          (" ya no existe en Sonnet 5.5: el control es ", {}), ("effort", {"font": MONO, "color": BLUE}), (".", {})],
     ], size=19, color=GRAY, line_spacing=1.1)
+    git_tag(s, "paso-03-primer-llm")
     footer(s, n)
 
 
@@ -302,6 +309,7 @@ def s_evals(prs, n):
         [("La eval también tuvo bugs: ", {"bold": True, "color": NAVY}),
          ("el primer juez premió un precio inventado y el primer dataset castigaba hacer preguntas. Lo vimos leyendo los fallos uno por uno.", {})],
     ], size=18, color=GRAY, line_spacing=1.1)
+    git_tag(s, "paso-04-evals")
     footer(s, n)
 
 
@@ -325,6 +333,7 @@ def s_rag(prs, n):
         rect(s, 1.25, y + 0.85, 17.5, 0.01, fill=LINE)
         text(s, 1.25, y + 0.15, 6.2, 0.5, h, size=21, color=NAVY)
         text(s, 7.6, y + 0.17, 11.1, 0.5, b_, size=19, color=GRAY)
+    git_tag(s, "paso-05-rag")
     footer(s, n)
 
 
@@ -345,6 +354,7 @@ def s_hotel(prs, n):
         [("simulate_queue", {"font": MONO, "color": BLUE}),
          (": Erlang C + simulación de eventos discretos con semilla fija, 17 tests. El texto del agente usó exactamente sus cifras en 4 de 4 casos de la eval.", {})],
     ], size=18, color=GRAY, line_spacing=1.1)
+    git_tag(s, "paso-06-agente")
     footer(s, n)
 
 
@@ -370,6 +380,7 @@ def s_agent(prs, n):
         rect(s, 11.4, y, 0.08, 1.35, fill=BRIGHT)
         text(s, 11.75, y, 7.0, 0.5, h, size=22, color=NAVY)
         text(s, 11.75, y + 0.5, 7.0, 1.0, b, size=18, color=GRAY, line_spacing=1.05)
+    git_tag(s, "paso-06-agente")
     footer(s, n)
 
 
@@ -395,6 +406,7 @@ def s_ml(prs, n):
             text(s, x, y + 0.05, 6.5, 0.45, v, size=19, color=NAVY)
     text(s, 1.25, 9.5, 17.5, 0.5, "36 casos de prueba sintéticos: 1 caso = 2,8 puntos. Decisión: el agente clasifica en la conversación; el modelo clásico, para triage masivo y drift.",
          size=17, color=GRAY)
+    git_tag(s, "paso-07-ml-clasico")
     footer(s, n)
 
 
@@ -421,6 +433,7 @@ def s_coding_agents(prs, n):
          ("\"te di cifras de simulación sin haber consultado las herramientas. No debí hacerlo\". ", {"color": "FFFFFF"}),
          ("Sí las había consultado: el bug era nuestro (el historial perdía las llamadas). El modelo \"confesando\" un error que no cometió fue la pista.", {"color": MUTED})],
     ], size=20, line_spacing=1.1)
+    git_tag(s, "paso-01-entorno-agente", "paso-08-producto-completo")
     footer(s, n)
 
 
@@ -446,6 +459,7 @@ def s_production(prs, n):
         rect(s, x, y, 8.5, 1.35, fill="FFFFFF", line=LINE)
         text(s, x + 0.35, y + 0.18, 7.8, 0.45, hh, size=21, color=NAVY)
         text(s, x + 0.35, y + 0.68, 7.8, 0.6, b, size=17, color=GRAY)
+    git_tag(s, "paso-09-produccion")
     footer(s, n)
 
 

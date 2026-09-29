@@ -114,7 +114,7 @@ pnpm eval --mock   # reproduce la última corrida de evals
 - **Muestras pequeñas.** 30 casos de eval y 36 de prueba de ML: una diferencia de 1 o 2 casos no es concluyente. La telemetría de producción tiene pocas conversaciones.
 - **Revisión humana pendiente** de la muestra de evals ([`evals/human-review.csv`](evals/human-review.csv)) y del dataset de ML.
 - **Límites conocidos:** ver [revisión agéntica](docs/revision-agentica.md) (riesgos aceptados), [runbook](docs/runbook.md) y [roadmap](docs/roadmap-v2.md).
-- **Costo de construcción:** ~US$ 4,6 en la API de Claude, calculado con los tokens registrados en el repo y los precios públicos.
+- **Costo de API de la app durante el desarrollo** (evals, pruebas y scripts): ~US$ 4,6, calculado con los tokens registrados en el repo y los precios públicos. No incluye la sesión del agente de código (Claude Code) que construyó el proyecto; ese costo se consulta con `/cost` en Claude Code o en console.anthropic.com → Usage.
 - Las ilustraciones conceptuales se generaron con IA y están rotuladas; los gráficos y las capturas son reales ([cómo se hicieron](docs/ilustraciones-con-ia.md)).
 
 ## Créditos

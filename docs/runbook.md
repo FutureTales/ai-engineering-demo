@@ -51,7 +51,7 @@ En modo mock el copiloto **solo reproduce el caso del hotel**, y la pre-propuest
 
 **Controles que ya existen:**
 - Límite de gasto mensual en la consola de Anthropic (**configúralo si no lo hiciste**).
-- Rate limit: 20 mensajes cada 10 minutos por IP y por sesión.
+- Rate limit: 20 mensajes cada 10 minutos **por sesión** y 200 **por IP** (en el Wi-Fi del campus, toda la sala comparte una IP).
 - Tope diario: `DAILY_CONVERSATION_CAP` (por defecto 300 conversaciones nuevas por día).
 
 **Acción:** bajar el tope diario y volver a desplegar:
@@ -67,9 +67,9 @@ Referencia para decidir el tope: cada caso de la eval del paso 06 costó en prom
 
 **Síntomas:** muchos 429 en los logs; conversaciones raras en `/panel`.
 
-**Controles automáticos:** rate limit por IP y sesión, tope diario, largo máximo de 2.000 caracteres, fallo cerrado si no se puede verificar el límite (503), inyección resistida (evals adversariales 2/2), y aprobación del usuario para guardar.
+**Controles automáticos:** rate limit por sesión (20 cada 10 min) y por IP (200 cada 10 min), tope diario, largo máximo de 2.000 caracteres, fallo cerrado si no se puede verificar el límite (503), inyección resistida (evals adversariales 2/2), y aprobación del usuario para guardar.
 
-**Acción si hace falta:** bajar `RATE_LIMIT_MAX_MESSAGES` (por ejemplo, a 8) o activar el modo mock (sección 1). Para bloquear IPs concretas: Vercel → Firewall.
+**Acción si hace falta:** bajar `RATE_LIMIT_MAX_MESSAGES` (por ejemplo, a 8) o `RATE_LIMIT_IP_MAX` o activar el modo mock (sección 1). Para bloquear IPs concretas: Vercel → Firewall.
 
 **Limitación conocida:** el límite por IP usa ventanas fijas de 10 minutos; en el borde de una ventana alguien puede enviar hasta el doble.
 

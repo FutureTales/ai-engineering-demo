@@ -41,7 +41,7 @@ Los primeros 10 términos son los del slide "Glosario de conceptos clave" de la 
 | **p50 / p90 / p95** | Percentiles: el valor que no supera el 50 / 90 / 95 % de los casos | Latencias y esperas |
 | **Utilización (ρ)** | Fracción del tiempo que los servidores están ocupados; con ρ ≥ 1 la fila crece sin límite | Hotel: 90 % con 2 recepcionistas |
 | **RLS** | *Row Level Security*: la base de datos decide qué filas ve cada usuario | Todas las tablas ([paso 02](pasos/paso-02-arquitectura-datos.md)) |
-| **Rate limit** | Límite de solicitudes por ventana de tiempo | 20 mensajes cada 10 min por IP y sesión |
+| **Rate limit** | Límite de solicitudes por ventana de tiempo | 20 mensajes cada 10 min por sesión; 200 por IP |
 | **ADR** | *Architecture Decision Record*: una decisión, su contexto y sus alternativas | [`docs/adr/`](adr/) |
 | **Hook** | Comando que el harness del agente ejecuta siempre, antes o después de una herramienta | [`.claude/hooks/`](../.claude/hooks/) |
 | **Subagente** | Otra instancia del modelo con contexto limpio y una tarea acotada | `code-reviewer` |
