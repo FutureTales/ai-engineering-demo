@@ -1,0 +1,35 @@
+{
+  "caseId": "sim-05-precio",
+  "label": "paso-05-rag-hybrid",
+  "recordedAt": "2026-09-29T17:18:32.183Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "¿Cuánto cuesta el servicio de simulación de operaciones y cuánto se demora? Tenemos filas en la recepción de un hostal.",
+      "assistant": "¡Claro! Con filas en la recepción de tu hostal, la **simulación de operaciones** encaja bien.\n\n**Línea de trabajo:** `process_design`\n\n**Servicio:** Simulación de operaciones y análisis \"what if\"\n- **Inversión:** entre **COP 8.000.000 y COP 25.000.000** (sin IVA ni costos de terceros).\n- **Duración típica:** de 4 a 8 semanas, según la complejidad del proceso y la disponibilidad de datos.\n- **Qué incluye:** levantamiento del proceso y de los datos, un modelo de simulación validado con tu operación real, comparación de 3 a 5 escenarios (por ejemplo, más recepcionistas, cambios de turno o check-in digital previo), un tablero con KPIs y un taller con tu equipo.\n\n**Descuentos:** si eres microempresa (hasta 10 empleados) el descuento es del 20 %, y si es pequeña empresa (11 a 50 empleados) del 10 %. Se aplica presentando el certificado de existencia y representación legal. El valor exacto se define en la propuesta formal.\n\nFuente: [Simulación de operaciones y análisis \"what if\"](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/simulacion-operaciones.md)\n\nPara armarte una pre-propuesta más ajustada, cuéntame en un solo mensaje:\n1. ¿Cuántos empleados tiene el hostal?\n2. ¿En qué horas o temporadas se forman las filas y cuánto esperan los huéspedes, más o menos?\n3. ¿Cuántas personas atienden la recepción hoy y tienen registros de llegadas o del tiempo de atención?",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0108424,
+      "latencyMs": 55471,
+      "ttftMs": 52035,
+      "retrievalMode": "hybrid",
+      "retrievedSources": [
+        "data/catalog/servicios/simulacion-operaciones.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/vigilancia-tecnologica-pi.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente el servicio 'Simulación de operaciones y análisis what if' de la línea process_design y cita de manera exacta el rango de inversión (COP 8–25 millones) y la duración (4 a 8 semanas) del catálogo. Explica claramente qué incluye el servicio con ejemplos pertinentes al problema del hostal (más recepcionistas, check-in digital), presenta las políticas de descuento sin inventar, y cierra con preguntas diagnósticas relevantes para la pre-propuesta. El tono es cercano, profesional y sin promesas exageradas."
+  },
+  "judgeCostUsd": 0.005841
+}

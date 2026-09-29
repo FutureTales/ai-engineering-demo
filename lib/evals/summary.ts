@@ -66,7 +66,14 @@ export function summarize(rows: ScoredRow[]) {
       return [cat, { passed: rs.filter((r) => r.passed).length, total: rs.length }];
     }),
   );
+  // Of the cases that NEED a simulation, how many got one? (tool_when_expected also
+  // rewards "did not simulate" on the other 25 cases, which hides this.)
+  const simCases = rows.filter((r) => r.c.expects_simulation);
+  const simulationRecall = simCases.length
+    ? round(simCases.filter((r) => r.checks.tool_when_expected.pass).length / simCases.length, 3)
+    : null;
   return {
+    simulationRecall,
     casePassRate: round(rows.filter((r) => r.passed).length / rows.length, 3),
     casesPassed: rows.filter((r) => r.passed).length,
     checks,

@@ -1,6 +1,6 @@
 # ADR 0003 — Recuperación híbrida: vectores + texto completo
 
-**Estado:** aceptada (paso 02; se implementa y se mide en el paso 05)
+**Estado:** aceptada y **confirmada con datos** en el paso 05: híbrido 8/8 frente a FTS 6/8 en paráfrasis; 100 % frente a 96,7 % sin precios inventados en la eval completa ([paso 05](../pasos/paso-05-rag.md))
 
 ## Contexto
 

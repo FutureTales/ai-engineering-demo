@@ -61,3 +61,31 @@ Analizar errores también sirve para **depurar la propia eval**. En la primera c
 | E5 | Un caso ambiguo; lo observamos, pero no justifica un cambio por sí solo | — |
 
 **Meta para el paso 05:** subir "sin precios fuera de catálogo" de 36,7 % a ≥ 90 % y "servicio del catálogo" de 29,6 % a ≥ 80 %, sin bajar la línea correcta (96,7 %). Son los objetivos de [`metricas.md`](00-dar-forma/metricas.md).
+
+---
+
+## Paso 05: RAG (híbrido y FTS)
+
+**Corridas:** [`paso-05-rag-fts`](../evals/results/2026-09-29-paso-05-rag-fts.json) y [`paso-05-rag-hybrid`](../evals/results/2026-09-29-paso-05-rag-hybrid.json), comparadas con la línea base en [`comparacion.json`](../evals/results/comparacion.json) usando los mismos chequeos.
+
+| Error del paso 03 | Antes | Paso 05 híbrido | ¿Resuelto? |
+|---|---|---|---|
+| E1 Precio inventado | 19/30 casos | 0/30 | ✅ |
+| E2 Servicio con nombre inventado | 19/27 | 0/27 | ✅ |
+| E3 Sin simulación en casos de filas | 5/5 | 5/5 | ❌ (esperado: la herramienta llega en el paso 06) |
+| E4 Desconoce las políticas | 1/1 | 0/1 | ✅ (las políticas están en el prompt) |
+| E5 Clasificación discutible | 1/30 | 0/30 | ✅ |
+
+### Errores nuevos o que persisten
+
+| # | Error | Frecuencia | Ejemplo real | Qué probar |
+|---|---|---|---|---|
+| E6 | **El LLM suma rangos de precios** | 1 caso (FTS) | "Con ambos servicios: COP 7.500.000 a 26.000.000": la suma es correcta, pero la calculó el modelo | Regla explícita: mostrar el rango de cada servicio por separado. El chequeo sigue siendo estricto a propósito: los números deben salir de fuentes deterministas |
+| E7 | **Supone datos que nadie dio** | Visto en el hotel (FTS y híbrido) | "Como tienes hasta 10 empleados, podrías tener un descuento del 20 %": el usuario nunca dijo cuántos empleados tiene | Regla en el prompt: preguntar o presentarlo como condición. **No lo detecta ningún chequeo ni el juez**: es un hueco de la eval |
+| E8 | Sin cita en la inyección oculta | 1/27 | Rechazó bien la inyección y recomendó el servicio correcto, pero sin enlace a la ficha | Menor; se observa |
+
+### Qué probamos después (decisión)
+
+- **E3** → herramienta `simulate_queue` (paso 06).
+- **E6, E7** → reglas nuevas en el prompt `v3-agente` (paso 06).
+- **Hueco de la eval (E7):** agregar al juez la pregunta "¿asumió datos que el usuario no dio?". Queda anotado para una próxima versión de la rúbrica.

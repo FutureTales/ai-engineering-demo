@@ -1,0 +1,35 @@
+{
+  "caseId": "cal-03-montacargas",
+  "label": "paso-05-rag-hybrid",
+  "recordedAt": "2026-09-29T17:22:19.744Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "En nuestra bodega hemos tenido varios accidentes leves con montacargas. Rota mucho el personal y entrenar en la bodega real es peligroso y para la operación. ¿Cómo capacitamos mejor?",
+      "assistant": "Lo que describes encaja bien con un servicio del centro: alta rotación, riesgo al entrenar en la operación real y errores repetidos con la maquinaria.\n\n**Línea de trabajo:** `quality_assurance`\n\n## Servicio recomendado\n**Capacitación en entornos inmersivos (realidad virtual)**\n\nPor qué aplica a tu caso:\n- El personal practica el manejo del montacargas en un entorno simulado, sin exponerse a riesgos ni frenar la bodega.\n- Con la rotación que tienes, la experiencia queda lista para entrenar rápido a cada persona nueva.\n- Se mide el aprendizaje antes y después, así ves si el entrenamiento funciona.\n\nFuente: [Capacitación en entornos inmersivos (realidad virtual)](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/capacitacion-realidad-virtual.md)\n\n## Pre-propuesta\n- **Problema:** accidentes leves con montacargas, alta rotación de personal y un entrenamiento en bodega real que es riesgoso e interrumpe la operación.\n- **Línea de trabajo:** `quality_assurance`\n- **Servicio:** Capacitación en entornos inmersivos (realidad virtual).\n- **Alcance sugerido:**\n  1. Guion instruccional del procedimiento de manejo seguro de montacargas.\n  2. Experiencia de realidad virtual de 1 a 3 escenarios.\n  3. Piloto con tu personal y medición de aprendizaje antes y después.\n- **Duración típica:** de 6 a 10 semanas.\n- **Rango de inversión:** entre **COP 6.000.000 y COP 20.000.000**. No incluye IVA ni costos de terceros como licencias de software. Según el tamaño de tu empresa aplica un descuento de 10 % a 20 % (o 15 % si eres cooperativa o asociación), que se confirma con el certificado de existencia y representación legal.\n- **Ojo:** no podemos prometer una reducción específica de accidentes. El piloto sirve para medir el aprendizaje del personal.\n- **Siguiente paso:** un coordinador revisa esta pre-propuesta y te contacta en 2 días hábiles para una reunión de diagnóstico de 45 a 60 minutos. Allí se valida el alcance y después llega la propuesta formal. Esta pre-propuesta no es una oferta comercial.\n\nPara ajustar el descuento y el alcance, ¿cuántas personas trabajan en tu empresa? Si quieres que guardemos la pre-propuesta, necesito tu autorización expresa, el nombre de la empresa y el de la persona de contacto (el correo es opcional). No compartas documentos de identidad ni datos bancarios.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.018176400000000002,
+      "latencyMs": 35607,
+      "ttftMs": 30010,
+      "retrievalMode": "hybrid",
+      "retrievedSources": [
+        "data/catalog/servicios/capacitacion-realidad-virtual.md",
+        "data/catalog/servicios/simulacion-operaciones.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente el problema (accidentes, rotación, riesgo operacional) y recomienda el servicio exacto del catálogo (capacitacion-realidad-virtual, línea quality_assurance). Todos los datos (rango COP 6–20 millones, duración 6–10 semanas, descuentos 10–20 %, política de datos y tiempos de respuesta) están respaldados por el catálogo y políticas. La estructura es clara, el tono es cercano y profesional sin prometer reducción de accidentes. Solicita autorización antes de guardar datos."
+  },
+  "judgeCostUsd": 0.006021
+}

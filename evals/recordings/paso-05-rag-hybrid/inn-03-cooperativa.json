@@ -1,0 +1,34 @@
+{
+  "caseId": "inn-03-cooperativa",
+  "label": "paso-05-rag-hybrid",
+  "recordedAt": "2026-09-29T17:25:06.606Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Somos una cooperativa de 45 pescadores en Bocachica. Queremos montar un centro de acopio con cadena de frío y buscar financiación, pero nunca hemos presentado un proyecto a una convocatoria.",
+      "assistant": "¡Qué buena iniciativa! Un centro de acopio con cadena de frío puede ayudarles a conservar mejor la pesca y negociar mejor. Con lo que cuentas ya puedo armar la pre-propuesta.\n\n**Línea de trabajo:** `business_innovation`\n\n## Servicio recomendado\n\n**Gerencia y formulación de proyectos de innovación (I+D+i)**\n\nAplica porque ustedes buscan financiación y no tienen experiencia formulando. Este servicio incluye:\n- Identificar convocatorias que encajen con su proyecto.\n- Redactar el documento técnico: problema, objetivos, metodología, presupuesto, cronograma e indicadores.\n- Revisar que cumplan los requisitos de la convocatoria.\n- Opcional: acompañar la gerencia del proyecto si lo aprueban.\n\nFuente: [Gerencia y formulación de proyectos de innovación (I+D+i)](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/formulacion-proyectos-idi.md)\n\n## Pre-propuesta\n\n- **Problema:** una cooperativa de 45 pescadores en Bocachica quiere financiar un centro de acopio con cadena de frío y nunca ha presentado un proyecto a una convocatoria.\n- **Línea de trabajo:** `business_innovation`.\n- **Servicio:** Gerencia y formulación de proyectos de innovación (I+D+i).\n- **Alcance sugerido:** identificar convocatorias y formular el proyecto. La gerencia durante la ejecución se cotiza aparte.\n- **Duración típica:** de 3 a 8 semanas para la formulación.\n- **Inversión:** entre **COP 4.000.000 y COP 15.000.000** por la formulación. No incluye IVA ni costos de terceros. El valor final se define en la propuesta formal.\n- **Descuento:** como cooperativa, les corresponde un **15 %** sobre el valor del servicio. Para acceder deben presentar el certificado de existencia y representación legal.\n- **Forma de pago:** 50 % al inicio y 50 % contra la entrega final.\n\n## Ten en cuenta\n\n- La aprobación depende del financiador y **no está garantizada**.\n- El centro formula el proyecto, pero **no hace obras civiles ni instalaciones eléctricas**. Esas partes del acopio irían como presupuesto del proyecto y las ejecutaría un tercero.\n- Esta pre-propuesta no es una oferta comercial. Un coordinador la revisa y luego hay una reunión de diagnóstico de 45 a 60 minutos para validar el alcance.\n\n## Siguiente paso\n\nSi quieres guardar la pre-propuesta para que un coordinador los contacte (en unos 2 días hábiles), necesito:\n1. El nombre de la cooperativa.\n2. El nombre de la persona de contacto.\n3. Opcionalmente, un correo electrónico.\n4. Tu autorización expresa para guardar estos datos.\n\nPor favor no compartas documentos de identidad ni datos bancarios.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0188304,
+      "latencyMs": 61511,
+      "ttftMs": 55758,
+      "retrievalMode": "hybrid",
+      "retrievedSources": [
+        "data/catalog/servicios/formulacion-proyectos-idi.md",
+        "data/catalog/servicios/simulacion-operaciones.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende perfectamente el problema concreto (cooperativa sin experiencia en convocatorias), recomienda el servicio exacto del catálogo con todos los datos correctos (COP 4.000.000–15.000.000, 3–8 semanas, descuento cooperativo del 15%), explica claramente qué incluye y qué no, y cierra con pasos siguientes bien estructurados respetando la política de confidencialidad."
+  },
+  "judgeCostUsd": 0.005944
+}

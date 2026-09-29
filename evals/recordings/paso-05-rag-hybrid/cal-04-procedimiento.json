@@ -1,0 +1,50 @@
+{
+  "caseId": "cal-04-procedimiento",
+  "label": "paso-05-rag-hybrid",
+  "recordedAt": "2026-09-29T17:23:28.421Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "En mi fábrica de muebles los operarios nuevos no siguen el procedimiento estándar de corte y se dañan muchas láminas. Capacitar en la máquina real es costoso. ¿Hay otra forma de entrenarlos?",
+      "assistant": "Sí, hay una opción que encaja bien con lo que cuentas. Los errores repetidos por no seguir el procedimiento, sumados a una capacitación en máquina real que sale cara (y con láminas desperdiciadas), son justo el caso donde entrenar en realidad virtual tiene sentido.\n\nAntes de armarte la pre-propuesta, necesito aclarar tres cosas:\n\n1. **¿Cuántos empleados tiene la fábrica?** Esto define si aplica un descuento para MIPYMES.\n2. **¿Cuántos operarios nuevos entran al año, aproximadamente?** Así vemos si la rotación justifica un entrenamiento reutilizable.\n3. **¿Cuántos procedimientos o tipos de corte quieres entrenar?** (por ejemplo, solo el corte estándar o también cortes especiales). Esto ayuda a definir cuántos escenarios necesitas.\n\nCon eso te dejo la pre-propuesta completa.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0079544,
+      "latencyMs": 29789,
+      "ttftMs": 27041,
+      "retrievalMode": "hybrid",
+      "retrievedSources": [
+        "data/catalog/servicios/capacitacion-realidad-virtual.md",
+        "data/catalog/servicios/prototipado-3d.md",
+        "data/catalog/servicios/simulacion-operaciones.md"
+      ]
+    },
+    {
+      "user": "Somos 22 operarios. Entran 3 o 4 nuevos cada trimestre y en su primer mes dañan unas 30 láminas. El procedimiento de corte está escrito, pero nadie lo sigue igual.",
+      "assistant": "Gracias, con eso ya tengo lo necesario.\n\n**Línea de trabajo:** `quality_assurance`\n\n## Servicio recomendado\n\n**Capacitación en entornos inmersivos (realidad virtual)**\n\nPor qué encaja:\n- Hay errores repetidos porque el personal nuevo no sigue el procedimiento estándar.\n- Entrenar en la máquina real es costoso y desperdicia láminas.\n- Entran 3 o 4 operarios cada trimestre, así que una experiencia virtual se reutiliza con cada ingreso.\n\nFuente: [Capacitación en entornos inmersivos (realidad virtual)](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/capacitacion-realidad-virtual.md)\n\n## Pre-propuesta\n\n- **Problema:** los operarios nuevos no siguen el procedimiento de corte, aunque está escrito, y dañan láminas durante su primer mes. Practicar en la máquina real sale caro.\n- **Línea de trabajo:** Aseguramiento de la calidad.\n- **Servicio:** Capacitación en entornos inmersivos (realidad virtual).\n- **Alcance sugerido:**\n  1. Guion instruccional del procedimiento de corte, partiendo del que ya tienen escrito.\n  2. Experiencia de realidad virtual de 1 a 3 escenarios (por ejemplo, corte estándar y algún corte especial).\n  3. Piloto con el personal y medición del aprendizaje antes y después.\n- **Duración típica:** de 6 a 10 semanas.\n- **Rango de inversión:** entre **COP 6.000.000 y COP 20.000.000**, sin IVA ni costos de terceros (por ejemplo, licencias de software).\n- **Descuento:** con 22 personas serías pequeña empresa (11 a 50 empleados), con **10 %** de descuento sobre el valor del servicio. Para aplicarlo hay que presentar el certificado de existencia y representación legal. El valor definitivo se fija en la propuesta formal.\n- **Pago:** 50 % al inicio y 50 % contra la entrega final.\n\nSobre resultados: la medición antes y después del piloto mostrará cuánto mejora el seguimiento del procedimiento, pero no puedo prometer una reducción concreta de láminas dañadas sin ese análisis.\n\n## Siguiente paso\n\nEsta pre-propuesta no es una oferta comercial ni compromete al centro. Un coordinador la revisa y te contacta en **2 días hábiles** para una reunión de diagnóstico de 45 a 60 minutos, donde se valida el alcance. Después llega la propuesta formal.\n\nSi quieres que la guarde para el seguimiento, necesito el **nombre de la empresa**, tu **nombre de contacto** y, si lo autorizas, un **correo electrónico**. Para guardarla también necesito tu autorización expresa. Por favor no compartas documentos de identidad ni datos bancarios.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.021232400000000002,
+      "latencyMs": 37608,
+      "ttftMs": 31713,
+      "retrievalMode": "hybrid",
+      "retrievedSources": [
+        "data/catalog/servicios/capacitacion-realidad-virtual.md",
+        "data/catalog/servicios/simulacion-operaciones.md",
+        "data/catalog/servicios/prototipado-3d.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente el servicio (capacitación-realidad-virtual) y lo justifica bien con el problema. Todos los datos de precio (COP 6.000.000–20.000.000), plazo (6 a 10 semanas) y descuento (10 % para pequeña empresa) coinciden exactamente con el catálogo. El copiloto evita prometer resultados numéricos sin respaldo, estructura clara la pre-propuesta y maneja la confidencialidad de datos correctamente. El tono es cercano y profesional sin exagerar."
+  },
+  "judgeCostUsd": 0.006371
+}

@@ -1,0 +1,35 @@
+{
+  "caseId": "pro-03-facturacion",
+  "label": "paso-05-rag-hybrid",
+  "recordedAt": "2026-09-29T17:19:56.502Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "En mi distribuidora de productos de aseo todo se maneja por WhatsApp y un cuaderno: pedidos, facturas e inventario. Se nos pierden pedidos y facturamos tarde. Somos 8 personas.",
+      "assistant": "¡Gracias por contarme! Con lo que describes ya tengo suficiente para orientarte: pedidos, facturas e inventario en WhatsApp y cuaderno explican que se pierdan pedidos y que la facturación se retrase.\n\n**Línea de trabajo:** `process_design`\n\n## Servicio recomendado\n\n**Modelado y digitalización de procesos administrativos**\n\nEncaja porque:\n- Tus procesos dependen de WhatsApp y papel.\n- Hay pérdida de información y demoras (pedidos perdidos, facturación tardía).\n- Primero se mapea cómo trabajan hoy (pedido → despacho → factura → inventario), se eliminan pasos que no agregan valor y luego se define qué herramienta digital les sirve (por ejemplo, software de inventario y facturación electrónica), sin comprar nada a ciegas.\n\nFuente: [Modelado y digitalización de procesos administrativos](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/digitalizacion-procesos-administrativos.md)\n\n**Opcional, en una segunda etapa:** *Tablero de indicadores y analítica operativa*, para ver ventas e inventario en un solo lugar una vez los datos estén ordenados.\nFuente: [Tablero de indicadores y analítica operativa](https://github.com/FutureTables/ai-engineering-demo/blob/main/data/catalog/servicios/tablero-indicadores-analitica.md)\n\n## Pre-propuesta\n\n- **Problema:** pedidos, facturas e inventario gestionados por WhatsApp y cuaderno; se pierden pedidos y se factura tarde. Empresa de 8 personas.\n- **Línea de trabajo:** `process_design`\n- **Servicio recomendado:** Modelado y digitalización de procesos administrativos.\n- **Alcance sugerido:**\n  1. Mapa de procesos actual (AS-IS) y propuesto (TO-BE) en BPMN.\n  2. Recomendación de herramientas digitales y plan de implementación.\n  3. Acompañamiento en la puesta en marcha de 1 o 2 procesos prioritarios (sugerido: toma de pedidos y facturación).\n- **Duración típica:** de 4 a 10 semanas.\n- **Rango de inversión:** entre **COP 5.000.000 y COP 18.000.000**. No incluye IVA ni licencias de software.\n- **Descuento:** con 8 empleados eres microempresa, y la política contempla un **20 %** sobre el valor del servicio. Se requiere el certificado de existencia y representación legal. El valor definitivo se fija en la propuesta formal.\n- **Pago:** 50 % al inicio y 50 % contra la entrega final.\n\n## Siguiente paso\n\nEsta pre-propuesta no es una oferta comercial ni compromete al centro. Un coordinador la revisaría y te contactaría en 2 días hábiles para una reunión de diagnóstico de 45 a 60 minutos.\n\nSi quieres que la guardemos, necesito tu autorización expresa y estos datos: nombre de la empresa, tu nombre y, si lo autorizas, un correo. Por favor no compartas documentos de identidad ni datos bancarios.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0159544,
+      "latencyMs": 33400,
+      "ttftMs": 26587,
+      "retrievalMode": "hybrid",
+      "retrievedSources": [
+        "data/catalog/servicios/digitalizacion-procesos-administrativos.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/simulacion-operaciones.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente el problema (gestión manual de procesos), recomienda el servicio exacto del catálogo (Modelado y digitalización de procesos administrativos) con rango de precio y plazo respaldados (COP 5–18 millones, 4–10 semanas). Aplica correctamente el descuento de microempresa (20 %) según la política, explica el alcance con claridad sin inventar, y estructura la pre-propuesta siguiendo el proceso del centro. El tono es cercano y profesional, y solicita autorización expresa antes de guardar datos."
+  },
+  "judgeCostUsd": 0.006151
+}

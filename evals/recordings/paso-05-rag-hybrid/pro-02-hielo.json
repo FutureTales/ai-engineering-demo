@@ -1,0 +1,50 @@
+{
+  "caseId": "pro-02-hielo",
+  "label": "paso-05-rag-hybrid",
+  "recordedAt": "2026-09-29T17:19:19.660Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Tenemos una planta de hielo en Mamonal y la factura de energía se nos disparó. Sospechamos que desperdiciamos agua y energía en el proceso, pero no sabemos dónde.",
+      "assistant": "¡Gracias por contarnos! Un aumento fuerte en la factura de energía en una planta de hielo puede tener varias causas, y conviene entender bien el caso antes de proponerte algo. Tengo 3 preguntas:\n\n1. **¿Qué tamaño tiene la empresa?** Cuántas personas trabajan en la planta (aproximado). Esto define el descuento que te corresponde.\n2. **¿Desde cuándo y cuánto subió la factura?** Y si en ese tiempo cambió algo: equipos nuevos o dañados, más producción, más horas de operación, etc.\n3. **¿Qué registros tienen hoy?** Por ejemplo, producción diaria de hielo, consumo de agua o energía, o medidores por área, aunque sea en hojas de cálculo o cuadernos.\n\nCon eso te clasifico el caso y te armo la pre-propuesta.\n\nPor favor, no compartas datos personales sensibles (documentos, datos bancarios). Solo necesito información de la operación.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0102284,
+      "latencyMs": 6302,
+      "ttftMs": 3566,
+      "retrievalMode": "hybrid",
+      "retrievedSources": [
+        "data/catalog/servicios/produccion-mas-limpia-desperdicios.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/simulacion-operaciones.md"
+      ]
+    },
+    {
+      "user": "Somos 20 empleados y producimos unas 15 toneladas de hielo al día. No medimos el consumo por etapa; solo vemos la factura mensual, que subió cerca de un 30 % este año.",
+      "assistant": "Gracias, con eso ya tengo lo necesario.\n\n## Diagnóstico\nTu planta produce unas 15 toneladas de hielo al día, la factura subió cerca de 30 % este año y hoy solo ves el total mensual. Sin medición por etapa no se sabe dónde se va el agua y la energía, así que primero hay que **ver y cuantificar**, y luego mejorar.\n\n**Línea de trabajo:** `process_design`\n\n## Servicios recomendados\n\n**1. Producción más limpia y reducción de desperdicios**\nEs el servicio principal. Mapea el proceso, cuantifica dónde se desperdician agua y energía, y arma un plan de mejora priorizado. Encaja con tu caso: costos altos de energía y agua, y ganas de mejorar el desempeño ambiental.\nFuente: [Producción más limpia y reducción de desperdicios](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/produccion-mas-limpia-desperdicios.md)\n\n**2. Tablero de indicadores y analítica operativa** (complementario)\nComo hoy solo tienes la factura mensual, este servicio define de 5 a 10 indicadores y un tablero para dar seguimiento y confirmar si las mejoras funcionan.\nFuente: [Tablero de indicadores y analítica operativa](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/tablero-indicadores-analitica.md)\n\n## Pre-propuesta\n\n- **Problema:** factura de energía ~30 % más alta este año en una planta de hielo (Mamonal, 20 empleados, ~15 t/día), sin medición de consumo de agua y energía por etapa.\n- **Línea de trabajo:** `process_design`\n- **Servicios:** Producción más limpia y reducción de desperdicios, más Tablero de indicadores y analítica operativa.\n- **Alcance sugerido:**\n  - Mapa del proceso y cuantificación de desperdicios de agua y energía.\n  - Plan de mejora priorizado.\n  - Indicadores y tablero para seguimiento.\n  - Duración típica: 4 a 8 semanas el primero y 3 a 6 semanas el segundo. Podrían hacerse en paralelo o en secuencia, según lo que se acuerde.\n- **Rango de inversión (sin IVA):**\n  - Producción más limpia: **COP 3.500.000 a COP 12.000.000**.\n  - Tablero de indicadores: **COP 4.000.000 a COP 14.000.000**.\n  - Con 20 empleados eres pequeña empresa y te corresponde un **10 % de descuento**, presentando el certificado de existencia y representación legal.\n  - El valor final se define en la propuesta formal. No incluye costos de terceros, como medidores si hicieran falta.\n- **Ojo:** no puedo prometer cuánto bajaría la factura. Eso solo se sabrá después de medir y analizar.\n- **Siguiente paso:** un coordinador revisa la pre-propuesta y te contacta en 2 días hábiles. Después viene una reunión de diagnóstico de 45 a 60 minutos. Esta pre-propuesta no es una oferta comercial ni te compromete.\n\n## ¿La guardamos?\nSi quieres que el centro te contacte, necesito tu autorización expresa y estos datos:\n- Nombre de la empresa\n- Nombre de la persona de contacto\n- Correo electrónico (opcional)\n\nNo compartas documentos de identidad ni datos bancarios.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.021846400000000002,
+      "latencyMs": 37753,
+      "ttftMs": 30122,
+      "retrievalMode": "hybrid",
+      "retrievedSources": [
+        "data/catalog/servicios/produccion-mas-limpia-desperdicios.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/simulacion-operaciones.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende de lleno el problema concreto (costos de energía y agua en planta de hielo), recomienda exactamente los dos servicios del catálogo que aplican (producción más limpia y tablero de indicadores), en la línea correcta (process_design). Todos los precios, rangos de tiempo y descuentos coinciden literalmente con el catálogo. El tono es cercano y profesional; evita promesas infundadas (explica que no puede garantizar cuánto baja la factura). La estructura es clara incluso para un celular, sin relleno innecesario."
+  },
+  "judgeCostUsd": 0.006612
+}

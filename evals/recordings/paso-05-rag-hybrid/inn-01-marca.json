@@ -1,0 +1,35 @@
+{
+  "caseId": "inn-01-marca",
+  "label": "paso-05-rag-hybrid",
+  "recordedAt": "2026-09-29T17:24:02.179Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Somos una startup que hace bolsos con fibras recicladas. Queremos exportar y alguien nos dijo que primero deberíamos proteger la marca. No sabemos si el nombre ya está registrado.",
+      "assistant": "¡Qué buen proyecto! Con lo que cuentas ya puedo encuadrar tu caso, así que no necesito hacerte más preguntas por ahora.\n\n**Diagnóstico:** vas a exportar y quieres proteger tu marca, pero no sabes si el nombre ya está registrado. Conviene resolver eso antes de invertir más en empaques, etiquetas y promoción con ese nombre.\n\n**Línea de trabajo:** `business_innovation`\n\n**Servicio recomendado:** Vigilancia tecnológica y propiedad intelectual\n\nAplica porque incluye la búsqueda de antecedentes de marcas (para saber si tu nombre o logo ya existe), una estrategia de protección y el acompañamiento en la solicitud de registro de marca ante la SIC.\n\nFuente: [Vigilancia tecnológica y propiedad intelectual](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/vigilancia-tecnologica-pi.md)\n\n## Pre-propuesta\n\n- **Problema:** startup de bolsos con fibras recicladas que quiere exportar y necesita verificar y proteger su marca.\n- **Línea de trabajo:** `business_innovation`\n- **Servicio:** Vigilancia tecnológica y propiedad intelectual\n- **Alcance sugerido:**\n  - Informe de búsqueda de antecedentes de marcas.\n  - Recomendación de estrategia de protección.\n  - Acompañamiento en la preparación de la solicitud ante la SIC.\n  - Informe de vigilancia tecnológica, si te sirve conocer qué hacen otros en bolsos sostenibles.\n- **Duración típica:** de 2 a 4 semanas, sin contar los tiempos de trámite de la SIC.\n- **Rango de inversión:** entre **COP 1.800.000 y COP 6.000.000**. No incluye IVA ni las tasas oficiales de la SIC, que paga directamente la empresa.\n- **Descuento:** si tienes hasta 10 empleados, aplica 20 % (11 a 50 empleados, 10 %). Se requiere el certificado de existencia y representación legal.\n- **Ojo:** el servicio no reemplaza la asesoría legal de un abogado, y el centro no garantiza que la SIC apruebe el registro.\n- **Siguiente paso:** un coordinador revisa la pre-propuesta y te contacta en 2 días hábiles. Luego hay una reunión de diagnóstico de 45 a 60 minutos para validar el alcance y después llega la propuesta formal.\n\nEsta pre-propuesta no es una oferta comercial ni compromete al centro.\n\nSi quieres que la dejemos guardada para el seguimiento, necesito tu autorización expresa y estos datos: nombre de la empresa, tu nombre y, si lo autorizas, un correo. Por favor no compartas documentos de identidad ni datos bancarios.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.014530399999999999,
+      "latencyMs": 32809,
+      "ttftMs": 26712,
+      "retrievalMode": "hybrid",
+      "retrievedSources": [
+        "data/catalog/servicios/vigilancia-tecnologica-pi.md",
+        "data/catalog/servicios/prototipado-3d.md",
+        "data/catalog/servicios/produccion-mas-limpia-desperdicios.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente el problema (protección de marca antes de exportar), recomienda el servicio exacto del catálogo (vigilancia-tecnologica-pi), respeta todos los precios (COP 1.800.000–6.000.000) y plazos (2 a 4 semanas), aplica la política de descuentos, advierte sobre limitaciones legales y solicita autorización clara para guardar datos. Es precisa, accesible y profesional."
+  },
+  "judgeCostUsd": 0.005915
+}

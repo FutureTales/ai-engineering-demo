@@ -1,0 +1,50 @@
+{
+  "caseId": "inn-02-patente",
+  "label": "paso-05-rag-hybrid",
+  "recordedAt": "2026-09-29T17:24:35.965Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Desarrollamos un proceso nuevo para secar pescado con energía solar. ¿Es patentable? ¿Qué está haciendo la competencia en otros países?",
+      "assistant": "¡Qué buen proyecto! Tu caso encaja bien con lo que hacemos. Antes de recomendarte algo, necesito aclarar tres cosas:\n\n1. **¿Qué tamaño tiene tu empresa?** (número aproximado de empleados, o si es cooperativa o asociación). Esto define el descuento que te aplica.\n2. **¿Ya has divulgado el proceso?** Por ejemplo, si lo has mostrado en ferias, redes sociales, publicaciones o a clientes sin acuerdo de confidencialidad. Esto es clave para saber si aún se puede proteger.\n3. **¿Qué necesitas más?** ¿Saber si el proceso es patentable, revisar qué hace la competencia, o ambas cosas? ¿Y planeas exportar o lanzarlo pronto?\n\nMientras tanto, te adelanto que el centro tiene un servicio pensado para esto (vigilancia tecnológica y propiedad intelectual), que incluye búsqueda de antecedentes de patentes y un informe de vigilancia sobre lo que hacen otros en el sector. Con tus respuestas te armo la pre-propuesta completa.\n\nTen en cuenta que no damos asesoría legal definitiva ni podemos garantizar que la SIC apruebe un registro. Y por favor, no compartas datos personales sensibles en la conversación.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0092804,
+      "latencyMs": 55575,
+      "ttftMs": 52085,
+      "retrievalMode": "hybrid",
+      "retrievedSources": [
+        "data/catalog/servicios/vigilancia-tecnologica-pi.md",
+        "data/catalog/servicios/produccion-mas-limpia-desperdicios.md",
+        "data/catalog/servicios/formulacion-proyectos-idi.md"
+      ]
+    },
+    {
+      "user": "Somos una empresa de 6 personas. Llevamos un año probando el secador en Bocachica y funciona. No hemos publicado nada sobre el proceso.",
+      "assistant": "Gracias, con eso ya tengo lo necesario. Que no hayas publicado nada es una buena noticia: por ahora no habrías perdido la posibilidad de proteger el proceso. Eso sí, conviene no divulgarlo hasta tener una estrategia clara. Además, te sugiero pedir a quienes hayan visto el secador en Bocachica (personal, aliados, visitantes) que mantengan la reserva.\n\n**Línea de trabajo:** `business_innovation`\n\n## Servicio recomendado\n\n**Vigilancia tecnológica y propiedad intelectual**\n\nPor qué encaja con tu caso:\n- Busca antecedentes de patentes para ver si algo parecido ya existe.\n- Entrega una recomendación de estrategia de protección.\n- Incluye un informe de vigilancia tecnológica, que responde a tu pregunta sobre qué hace la competencia en otros países.\n\nFuente: [Vigilancia tecnológica y propiedad intelectual](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/vigilancia-tecnologica-pi.md)\n\nSobre tu pregunta de si es patentable: no puedo darte esa respuesta ahora. Depende de la búsqueda de antecedentes y de un análisis que hace el equipo. Tampoco reemplazamos la asesoría de un abogado, ni podemos garantizar que la SIC conceda la patente.\n\n## Pre-propuesta\n\n- **Problema:** tienes un proceso nuevo de secado de pescado con energía solar, probado durante un año en Bocachica, y quieres saber si es patentable y qué hace la competencia en otros países.\n- **Línea de trabajo:** `business_innovation`\n- **Servicio recomendado:** Vigilancia tecnológica y propiedad intelectual.\n- **Alcance sugerido:**\n  1. Informe de búsqueda de antecedentes de patentes.\n  2. Recomendación de estrategia de protección.\n  3. Informe de vigilancia tecnológica sobre el sector.\n  4. Acompañamiento en la preparación de la solicitud ante la SIC, si se decide avanzar.\n- **Duración típica:** de 2 a 4 semanas, sin contar los trámites de la SIC.\n- **Rango de inversión:** entre **COP 1.800.000 y COP 6.000.000**, sin IVA. Las tasas oficiales de la SIC no están incluidas y las paga directamente tu empresa.\n- **Descuento:** con 6 personas eres microempresa, así que te corresponde un **20 %** sobre el valor del servicio. Para aplicarlo debes presentar el certificado de existencia y representación legal. El valor definitivo se fija en la propuesta formal.\n- **Forma de pago:** 50 % al inicio y 50 % contra la entrega final.\n\n## Siguiente paso\n\nEsta pre-propuesta no es una oferta comercial ni compromete al centro. Un coordinador la revisa y te contacta en **2 días hábiles**. Luego se hace una reunión de diagnóstico de 45 a 60 minutos para validar el alcance.\n\nSi quieres que la guardemos, necesito tu **autorización expresa** y estos datos:\n- Nombre de tu empresa\n- Nombre de la persona de contacto\n- Correo electrónico (opcional)\n\nTus datos se usarán solo para responder tu solicitud, conforme a la Ley 1581 de 2012.\n\n¿Quieres que la guardemos?",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0176924,
+      "latencyMs": 8312,
+      "ttftMs": 1560,
+      "retrievalMode": "hybrid",
+      "retrievedSources": [
+        "data/catalog/servicios/vigilancia-tecnologica-pi.md",
+        "data/catalog/servicios/formulacion-proyectos-idi.md",
+        "data/catalog/servicios/prototipado-3d.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente el servicio vigilancia-tecnologica-pi (línea business_innovation) y cita sus datos exactos del catálogo: COP 1.800.000–6.000.000 y 2 a 4 semanas. Calcula bien el descuento de microempresa (20%) y aplica sin sobrepromesas. El copiloto aclara sus límites (no da asesoría legal ni garantiza SIC), atiende el problema concreto con claridad y tono cercano, y sigue el protocolo de datos sin pedir información sensible."
+  },
+  "judgeCostUsd": 0.006597
+}

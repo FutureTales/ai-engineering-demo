@@ -1,0 +1,50 @@
+{
+  "caseId": "pro-01-panaderia",
+  "label": "paso-05-rag-hybrid",
+  "recordedAt": "2026-09-29T17:20:00.545Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Tengo una panadería con tres sedes en Turbaco y al final del día botamos mucho pan porque producimos siempre la misma cantidad.",
+      "assistant": "¡Hola! Gracias por contarme. Suena a un problema de **desperdicio por producir sin ajustar a la demanda real**, y eso lo podemos trabajar. Para armarte una pre-propuesta ajustada, necesito tres datos:\n\n1. **¿Cuántas personas trabajan en la panadería** (contando las tres sedes)? Con eso te digo qué descuento te corresponde.\n2. **¿Llevan algún registro** de cuánto pan producen y cuánto sobra por día y por sede (cuaderno, Excel, sistema), o hoy se calcula \"a ojo\"?\n3. **¿Qué tanto pan se bota más o menos** y si cambia según el día de la semana o la sede? Una idea aproximada me sirve, no hace falta que sea exacta.\n\nNo compartas datos personales sensibles ni de tus clientes, no los necesito.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0092204,
+      "latencyMs": 31464,
+      "ttftMs": 28670,
+      "retrievalMode": "hybrid",
+      "retrievedSources": [
+        "data/catalog/servicios/produccion-mas-limpia-desperdicios.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/digitalizacion-procesos-administrativos.md"
+      ]
+    },
+    {
+      "user": "Somos 14 empleados. Producimos unos 2.000 panes al día entre las tres sedes y botamos más o menos el 15 %. Los lunes y martes es cuando más sobra. No llevamos registro de ventas por día.",
+      "assistant": "Gracias, con eso ya tengo lo necesario.\n\n**Lo que entendí:** panadería con 3 sedes en Turbaco, 14 empleados, unos 2.000 panes al día y cerca del 15 % que se bota. El desperdicio se concentra los lunes y martes, y hoy no hay registro de ventas por día, así que la producción no se ajusta a lo que realmente se vende.\n\n**Línea de trabajo:** `process_design`\n\n## Servicios recomendados\n\n**1. Producción más limpia y reducción de desperdicios** (servicio principal)\nEs el que ataca el problema de fondo: mapear dónde se pierde el pan y ajustar la planeación de producción a la demanda, por ejemplo con producciones distintas los lunes y martes. Fuente: [Producción más limpia y reducción de desperdicios](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/produccion-mas-limpia-desperdicios.md)\n\n**2. Tablero de indicadores y analítica operativa** (complementario)\nComo hoy no llevan registro de ventas por día, no hay una base para decidir cuánto producir ni para comprobar si la mejora funciona. El tablero te da esa medición diaria por sede. Fuente: [Tablero de indicadores y analítica operativa](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/tablero-indicadores-analitica.md)\n\nSi prefieres empezar por uno solo, el primero es el más directo. Ten en cuenta que el segundo te ayudaría a sostener los resultados.\n\n## Pre-propuesta\n\n- **Problema:** se bota cerca del 15 % de una producción de unos 2.000 panes diarios, sobre todo lunes y martes, sin registro de ventas por día.\n- **Línea de trabajo:** `process_design`\n- **Servicios:** Producción más limpia y reducción de desperdicios; opcionalmente, Tablero de indicadores y analítica operativa.\n- **Alcance sugerido:**\n  - Mapa de flujo de valor y cuantificación del desperdicio por sede.\n  - Plan de mejora priorizado y ajuste de la producción a la demanda.\n  - Medición de resultados al cierre.\n  - Si añades el tablero: KPIs de producción y desperdicio diario, y capacitación para mantenerlo.\n- **Duración típica:** 4 a 8 semanas (producción más limpia) y 3 a 6 semanas (tablero).\n- **Rango de inversión (sin IVA ni costos de terceros):**\n  - Producción más limpia: **COP 3.500.000 a COP 12.000.000**.\n  - Tablero de indicadores: **COP 4.000.000 a COP 14.000.000**.\n- **Descuento:** con 14 empleados eres pequeña empresa, así que te corresponde un **10 %** sobre el valor del servicio. Se aplica presentando el certificado de existencia y representación legal. El valor final se define en la propuesta formal.\n- **Resultados:** no puedo prometerte una cifra de reducción del desperdicio. Eso se estima tras el diagnóstico con tus datos reales.\n\n**Siguiente paso:** un coordinador del centro revisa esta pre-propuesta y te contacta en 2 días hábiles. Luego sigue una reunión de diagnóstico de 45 a 60 minutos para validar el alcance. Esta pre-propuesta no es una oferta comercial ni compromete al centro.\n\nSi quieres que la guarde para el seguimiento, necesito tu **autorización expresa** y estos datos: nombre de la panadería, nombre de la persona de contacto y, si lo autorizas, un correo electrónico.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0177584,
+      "latencyMs": 110134,
+      "ttftMs": 102082,
+      "retrievalMode": "hybrid",
+      "retrievedSources": [
+        "data/catalog/servicios/produccion-mas-limpia-desperdicios.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/digitalizacion-procesos-administrativos.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende de lleno el problema concreto (desperdicio del 15% sin registro), recomienda los dos servicios del catálogo exactos esperados con precios y plazos correctos (COP 3.5–12M y 4–8 semanas para producción más limpia; COP 4–14M y 3–6 semanas para tablero), aplica el descuento de pequeña empresa (10%) de forma correcta, evita prometer resultados numéricos sin cálculo, respeta la política de datos personales y explica bien el siguiente paso. Estructura clara, profesional y cercana."
+  },
+  "judgeCostUsd": 0.006638
+}

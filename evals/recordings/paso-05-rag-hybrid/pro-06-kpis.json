@@ -1,0 +1,35 @@
+{
+  "caseId": "pro-06-kpis",
+  "label": "paso-05-rag-hybrid",
+  "recordedAt": "2026-09-29T17:21:16.955Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Ya mejoramos el proceso de despacho en nuestra bodega y ahora queremos medir si funcionó: tiempos de despacho, pedidos a tiempo y errores. ¿Qué nos sirve?",
+      "assistant": "¡Qué bueno que ya mejoraron el despacho! Medir el resultado es lo que permite saber si el cambio funcionó.\n\n**Línea de trabajo:** `process_design`\n\n## Qué te recomiendo\n**Tablero de indicadores y analítica operativa**, porque aplica cuando se quiere hacer seguimiento a una mejora y los datos están en hojas de cálculo o sistemas distintos. Convierte tus tres preguntas (tiempos de despacho, pedidos a tiempo y errores) en indicadores con fórmula clara, y los actualiza con los datos que ya tienes.\n\nFuente: [Tablero de indicadores y analítica operativa](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/tablero-indicadores-analitica.md)\n\n## Pre-propuesta\n- **Problema:** ya mejoraron el proceso de despacho de su bodega y necesitan medir si funcionó: tiempos de despacho, pedidos a tiempo y errores.\n- **Línea de trabajo:** `process_design`\n- **Servicio recomendado:** Tablero de indicadores y analítica operativa.\n- **Alcance sugerido:**\n  1. Definir de 5 a 10 KPIs con su fórmula y fuente de datos. Los tres que mencionas serían la base.\n  2. Construir un tablero interactivo conectado a las fuentes que ya usan.\n  3. Capacitar a tu equipo para mantenerlo.\n- **Duración típica:** de 3 a 6 semanas.\n- **Rango de inversión:** entre **COP 4.000.000 y COP 14.000.000**. No incluye IVA ni costos de terceros, como licencias de software. El valor final se define en la propuesta formal.\n- **Descuento:** según el tamaño de tu empresa puede aplicar uno (microempresa 20 %, pequeña 10 %, cooperativas 15 %). Se acredita con el certificado de existencia y representación legal.\n- **Siguiente paso:** un coordinador revisa la pre-propuesta y te contacta en unos 2 días hábiles. Luego sigue una reunión de diagnóstico de 45 a 60 minutos para validar el alcance.\n\nEsta pre-propuesta no es una oferta comercial ni compromete al centro.\n\nSi quieres que la deje lista para el coordinador, dime el nombre de tu empresa y el de la persona de contacto. El correo es opcional. Guardarla requiere tu autorización expresa, y por favor no compartas documentos de identidad ni datos bancarios.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0173984,
+      "latencyMs": 35368,
+      "ttftMs": 30274,
+      "retrievalMode": "hybrid",
+      "retrievedSources": [
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/simulacion-operaciones.md",
+        "data/catalog/servicios/produccion-mas-limpia-desperdicios.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende perfectamente el problema concreto: medir el éxito de una mejora de procesos mediante indicadores. Recomienda el servicio exacto del catálogo (tablero-indicadores-analitica) con todos los datos respaldados: duración 3–6 semanas, rango COP 4.000.000–14.000.000, descuentos según política. La estructura es clara, bien organizada y el tono es cercano y profesional sin prometer garantías imposibles."
+  },
+  "judgeCostUsd": 0.005872
+}

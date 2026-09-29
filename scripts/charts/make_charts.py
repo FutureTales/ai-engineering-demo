@@ -59,7 +59,7 @@ METRICS = [
     ("casePassRate", "Casos que pasan todo"),
     ("no_off_catalog_prices", "Sin precios inventados"),
     ("service_mentioned", "Servicio real del catálogo"),
-    ("tool_when_expected", "Simula cuando corresponde"),
+    ("simulationRecall", "Simula en los 5 casos de filas"),
 ]
 
 
@@ -81,7 +81,10 @@ def evals_chart(out: Path, dpi: int):
         vals = []
         for v in versions:
             s = v["summary"]
-            vals.append(100 * (s["casePassRate"] if key == "casePassRate" else (s["checks"][key]["rate"] or 0)))
+            if key in ("casePassRate", "simulationRecall"):
+                vals.append(100 * (s.get(key) or 0))
+            else:
+                vals.append(100 * (s["checks"][key]["rate"] or 0))
         xs = [j + (i - (len(METRICS) - 1) / 2) * width for j in range(len(versions))]
         bars = ax.bar(xs, vals, width=width * 0.92, color=colors[i], label=name)
         pct_label(ax, bars)

@@ -1,0 +1,35 @@
+{
+  "caseId": "inn-04-cofinanciacion",
+  "label": "paso-05-rag-hybrid",
+  "recordedAt": "2026-09-29T17:25:36.236Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Tenemos una empresa de software educativo y vimos una convocatoria para cofinanciar innovación. Cierra en 5 semanas y no sabemos formular el proyecto.",
+      "assistant": "¡Qué bueno que estén buscando cofinanciación! Con lo que cuentas ya puedo encuadrar el caso.\n\n**Línea de trabajo:** `business_innovation`\n\n**Servicio recomendado:** Gerencia y formulación de proyectos de innovación (I+D+i)\n\n**Por qué aplica:**\n- Buscan financiación para un proyecto de innovación.\n- Hay una convocatoria abierta y no tienen experiencia formulando.\n- La formulación toma de 3 a 8 semanas. Con 5 semanas de plazo es viable, pero conviene arrancar pronto para tener margen de revisión.\n\nFuente: [Gerencia y formulación de proyectos de innovación (I+D+i)](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/formulacion-proyectos-idi.md)\n\nAntes de armar la pre-propuesta, tengo **3 preguntas** que me ayudan a ajustar el alcance:\n1. ¿Cuántas personas trabajan en la empresa? (define el descuento que aplica).\n2. ¿Qué proyecto quieren presentar y qué convocatoria es? (nombre o entidad, si la tienen a la mano).\n3. ¿Ya tienen algo avanzado (idea definida, presupuesto, prototipo) o parten de cero?\n\nCon eso te entrego la pre-propuesta completa, con el rango de inversión y el siguiente paso.\n\n*Recuerda no compartir datos personales sensibles en la conversación.*",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.010282399999999999,
+      "latencyMs": 55475,
+      "ttftMs": 52184,
+      "retrievalMode": "hybrid",
+      "retrievedSources": [
+        "data/catalog/servicios/formulacion-proyectos-idi.md",
+        "data/catalog/servicios/simulacion-operaciones.md",
+        "data/catalog/servicios/digitalizacion-procesos-administrativos.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente la línea business_innovation y el servicio formulacion-proyectos-idi, respaldados en el catálogo. Los plazos (3 a 8 semanas) y la viabilidad respecto al cierre de 5 semanas coinciden exactamente con el catálogo. El copiloto hace preguntas pertinentes para ajustar el alcance (tamaño de empresa para descuento, detalles del proyecto, madurez de la idea) sin pedir datos sensibles. La estructura es clara, el tono es cercano y profesional, y no promete resultados que no pueda garantizar."
+  },
+  "judgeCostUsd": 0.005755
+}

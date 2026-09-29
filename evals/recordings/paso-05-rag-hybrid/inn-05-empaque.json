@@ -1,0 +1,35 @@
+{
+  "caseId": "inn-05-empaque",
+  "label": "paso-05-rag-hybrid",
+  "recordedAt": "2026-09-29T17:25:43.406Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Hacemos dulces típicos cartageneros y queremos un empaque nuevo para venderlos en el aeropuerto. Necesitamos ver un prototipo físico antes de mandar a producir.",
+      "assistant": "¡Qué buena idea! Un empaque pensado para viajeros puede marcar la diferencia en el aeropuerto.\n\nPor lo que cuentas, ya tengo claro el caso: quieren diseñar un empaque nuevo y validarlo con un prototipo físico antes de producir en serie.\n\n**Línea de trabajo:** `business_innovation`\n\n## Servicio recomendado\n\n**Prototipado 3D y fabricación rápida.** Aplica directamente: tiene una idea de producto nuevo (el empaque) y necesitan ver y probar un prototipo antes de fabricar. Incluye modelado CAD, impresión 3D y corte láser, y hasta 3 iteraciones físicas. Uno de sus ejemplos es justamente un empaque nuevo para una línea de dulces típicos.\n\nFuente: [Prototipado 3D y fabricación rápida](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/prototipado-3d.md)\n\n**Opcional:** si más adelante quieren buscar financiación para desarrollar esta línea, existe el servicio de **Gerencia y formulación de proyectos de innovación (I+D+i)**. Por ahora no parece necesario.\n\nFuente: [Gerencia y formulación de proyectos de innovación (I+D+i)](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/formulacion-proyectos-idi.md)\n\n## Pre-propuesta\n\n- **Problema:** necesitan un empaque nuevo para dulces típicos cartageneros, orientado a la venta en el aeropuerto, y validarlo con un prototipo físico antes de producir.\n- **Línea de trabajo:** `business_innovation`\n- **Servicio recomendado:** Prototipado 3D y fabricación rápida.\n- **Alcance sugerido:**\n  1. Modelo CAD del empaque.\n  2. Hasta 3 iteraciones de prototipo físico.\n  3. Informe de pruebas funcionales y recomendaciones para producción.\n- **Duración típica:** de 2 a 6 semanas.\n- **Rango de inversión:** entre **COP 2.500.000 y COP 12.000.000**, según tamaño, material y número de iteraciones. No incluye IVA ni costos de terceros.\n- **Descuento:** según el tamaño de tu empresa puede aplicar un descuento (microempresa 20 %, pequeña 10 %, cooperativa o asociación de productores 15 %). Para acceder, se pide el certificado de existencia y representación legal.\n- **Siguiente paso:** un coordinador del centro revisa la pre-propuesta y te contacta en unos 2 días hábiles para una reunión de diagnóstico de 45 a 60 minutos. Recuerda que esta pre-propuesta no es una oferta comercial; el valor definitivo se define en la propuesta formal.\n\nSi quieres que se guarde la pre-propuesta, necesito tu autorización expresa, el nombre de tu empresa, tu nombre y, si lo deseas, un correo de contacto. Por favor no compartas documentos de identidad ni datos bancarios.\n\n¿Cuántas personas trabajan en la empresa? Así te confirmo qué descuento podría aplicarte.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0156804,
+      "latencyMs": 33473,
+      "ttftMs": 26940,
+      "retrievalMode": "hybrid",
+      "retrievedSources": [
+        "data/catalog/servicios/prototipado-3d.md",
+        "data/catalog/servicios/produccion-mas-limpia-desperdicios.md",
+        "data/catalog/servicios/formulacion-proyectos-idi.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende de lleno el problema concreto (empaque + prototipo para aeropuerto), recomienda el servicio exacto del catálogo (prototipado-3d) con alcance bien definido, incluye el rango de precio correcto (COP 2.500.000–12.000.000), plazos respaldados (2 a 6 semanas), políticas de descuento exactas y solicita datos de forma confidencial. Es clara, concisa, cercana y profesional sin prometer de más."
+  },
+  "judgeCostUsd": 0.006084
+}

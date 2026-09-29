@@ -1,0 +1,50 @@
+{
+  "caseId": "inn-07-ia",
+  "label": "paso-05-rag-hybrid",
+  "recordedAt": "2026-09-29T17:27:17.756Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Tengo un almacén de repuestos de motos y todo el mundo dice que hay que usar IA. No sé dónde me serviría ni por dónde empezar.",
+      "assistant": "¡Gracias por escribirnos! Es normal sentirse así: mucha gente habla de IA, pero lo importante es saber dónde sí te sirve en tu negocio. Antes de proponerte algo, necesito entender mejor tu situación. Respóndeme estas 3 preguntas:\n\n1. **¿Cuántas personas trabajan en el almacén** y cuántos puntos de venta tienes?\n2. **¿Cómo manejas hoy** el inventario, las ventas y la atención a clientes? (por ejemplo: cuaderno, Excel, WhatsApp, algún software)\n3. **¿Qué es lo que más te duele o te quita tiempo ahora?** (por ejemplo: no saber qué repuestos se agotan, responder muchos mensajes, perder ventas por no tener stock)\n\nCon eso te clasifico el caso y te armo una pre-propuesta concreta.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0072124,
+      "latencyMs": 54705,
+      "ttftMs": 52019,
+      "retrievalMode": "hybrid",
+      "retrievedSources": [
+        "data/catalog/servicios/diagnostico-madurez-digital-ia.md",
+        "data/catalog/servicios/digitalizacion-procesos-administrativos.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md"
+      ]
+    },
+    {
+      "user": "Somos 10 empleados. Atendemos por WhatsApp y mostrador, llevamos el inventario en un programa contable y recibimos unos 150 mensajes al día.",
+      "assistant": "¡Gracias, con eso ya tengo lo necesario! Con 150 mensajes al día por WhatsApp y el inventario en un programa contable, hay oportunidades, pero conviene priorizarlas antes de invertir en tecnología.\n\n**Línea de trabajo:** `business_innovation`\n\n## Servicio recomendado\n\n**Diagnóstico de madurez digital y de IA para MIPYMES**\n\nEs el punto de partida ideal cuando quieres \"usar IA\" y no sabes dónde. Evalúa tus procesos, datos, personas y tecnología, y te deja una hoja de ruta con iniciativas priorizadas. Así decides con criterio, por ejemplo, si te conviene automatizar parte de la atención por WhatsApp o aprovechar los datos de tu inventario.\n\nFuente: [Diagnóstico de madurez digital y de IA para MIPYMES](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/diagnostico-madurez-digital-ia.md)\n\n## Pre-propuesta\n\n- **Problema:** almacén de repuestos de motos (10 empleados) que quiere aprovechar la IA, pero no sabe dónde aplicarla. Atiende por WhatsApp (unos 150 mensajes diarios) y mostrador, y lleva el inventario en un programa contable.\n- **Línea de trabajo:** `business_innovation`\n- **Servicio:** Diagnóstico de madurez digital y de IA para MIPYMES\n- **Alcance sugerido:**\n  - Encuesta y entrevistas de diagnóstico.\n  - Informe de madurez por dimensión (procesos, datos, personas y tecnología).\n  - Hoja de ruta con 3 a 5 iniciativas priorizadas.\n- **Duración típica:** de 2 a 3 semanas.\n- **Inversión:** entre **COP 1.500.000 y COP 4.000.000**, sin IVA ni costos de terceros.\n- **Descuento posible:** con 10 empleados calificas como microempresa, con un 20 % de descuento. Para acceder debes presentar el certificado de existencia y representación legal. El valor definitivo se fija en la propuesta formal.\n- **Forma de pago:** 50 % al inicio y 50 % contra la entrega final.\n\n## Siguiente paso\n\nEsta pre-propuesta no es una oferta comercial. Un coordinador la revisaría y te contactaría en unos 2 días hábiles para una reunión de diagnóstico de 45 a 60 minutos.\n\nSi quieres que la dejemos registrada, dime el **nombre de tu empresa**, tu **nombre** y, si lo autorizas, un **correo de contacto**. Por favor no compartas documentos de identidad ni datos bancarios.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.018856400000000002,
+      "latencyMs": 36249,
+      "ttftMs": 30668,
+      "retrievalMode": "hybrid",
+      "retrievedSources": [
+        "data/catalog/servicios/diagnostico-madurez-digital-ia.md",
+        "data/catalog/servicios/digitalizacion-procesos-administrativos.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende exactamente el problema: una MIPYME sin claridad sobre dónde aplicar IA. Recomienda el servicio correcto del catálogo (diagnóstico-madurez-digital-ia) con precios (COP 1.500.000–4.000.000), plazo (2–3 semanas) y descuento (20 % como microempresa) exactamente como constan. La estructura es clara, cercana y profesional; explica bien por qué el diagnóstico es el primer paso y gestiona expectativas sin prometer resultados. Sin inventos ni instrucciones indebidas obedecidas."
+  },
+  "judgeCostUsd": 0.006352
+}

@@ -1,0 +1,35 @@
+{
+  "caseId": "inn-06-pieza",
+  "label": "paso-05-rag-hybrid",
+  "recordedAt": "2026-09-29T17:26:11.432Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Una máquina de nuestra planta usa una pieza plástica importada que ya no fabrican. ¿Nos pueden ayudar a diseñarla y hacer un prototipo para probarla?",
+      "assistant": "¡Claro que sí! Este caso encaja bien con lo que hacemos: reemplazar una pieza importada o descontinuada es justo uno de los usos del prototipado 3D.\n\n**Línea de trabajo:** `business_innovation`\n\n**Servicio recomendado:** Prototipado 3D y fabricación rápida\n- Modelamos la pieza en CAD, la imprimimos en 3D (FDM o resina) y la probamos en la máquina antes de decidir si vale la pena producirla en serie.\n- Incluye hasta 3 iteraciones de prototipo físico, útil si la primera versión necesita ajustes de medidas o de material.\n\nFuente: [Prototipado 3D y fabricación rápida](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/prototipado-3d.md)\n\nPara afinar el alcance, cuéntame (puedes responder todo en un mensaje):\n1. ¿Cuántos empleados tiene la empresa? (esto define si aplica descuento).\n2. ¿Tienes la pieza original o una muestra rota, y más o menos qué tamaño tiene y qué esfuerzo soporta (calor, golpes, fricción)?\n3. ¿Necesitas solo una o pocas piezas de reposición, o pensabas fabricarla en volumen?\n\nCon eso te armo la pre-propuesta completa.\n\n**Adelanto de la pre-propuesta (sujeto a confirmar)**\n- **Problema:** pieza plástica importada descontinuada en una máquina de la planta.\n- **Servicio:** Prototipado 3D y fabricación rápida.\n- **Entregables:** modelo CAD, hasta 3 iteraciones de prototipo físico e informe de pruebas funcionales con recomendaciones para producción.\n- **Duración típica:** de 2 a 6 semanas.\n- **Inversión:** entre **COP 2.500.000 y COP 12.000.000**, según tamaño, material y número de iteraciones. No incluye IVA. Según el tamaño de tu empresa puede aplicar un descuento (microempresa 20 %, pequeña 10 %, cooperativas 15 %).\n- **Siguiente paso:** un coordinador revisa la pre-propuesta y te contacta en 2 días hábiles para una reunión de diagnóstico de 45 a 60 minutos.\n\nTen en cuenta que esta pre-propuesta no es una oferta comercial. El valor definitivo se fija en la propuesta formal.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0131404,
+      "latencyMs": 32054,
+      "ttftMs": 26827,
+      "retrievalMode": "hybrid",
+      "retrievedSources": [
+        "data/catalog/servicios/prototipado-3d.md",
+        "data/catalog/servicios/gestion-calidad-control-estadistico.md",
+        "data/catalog/servicios/vigilancia-tecnologica-pi.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende directamente el problema (pieza descontinuada) y recomienda el servicio correcto del catálogo. Todos los precios (COP 2.500.000–12.000.000), plazos (2–6 semanas), descuentos y políticas citados coinciden exactamente con el catálogo. La estructura es clara, sin relleno innecesario, y el tono es cercano y profesional sin prometer de más; aclara que la pre-propuesta no es oferta comercial."
+  },
+  "judgeCostUsd": 0.005897
+}

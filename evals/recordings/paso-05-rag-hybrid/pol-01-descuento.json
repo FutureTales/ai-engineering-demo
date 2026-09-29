@@ -1,0 +1,35 @@
+{
+  "caseId": "pol-01-descuento",
+  "label": "paso-05-rag-hybrid",
+  "recordedAt": "2026-09-29T17:27:47.163Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Somos una microempresa de 6 empleados interesada en el servicio de prototipado 3D. ¿Tienen algún descuento para microempresas y cómo se paga?",
+      "assistant": "¡Claro! Con 6 empleados eres **microempresa** (hasta 10 empleados), así que te aplica el descuento de la política de tarifas.\n\n**Descuento**\n- Microempresa: **20 %** sobre el valor del servicio.\n- Los descuentos no son acumulables: se aplica el mayor que corresponda.\n- Para acceder a él debes presentar el **certificado de existencia y representación legal**.\n\n**Forma de pago**\n- 50 % al inicio y 50 % contra la entrega final.\n- Si el servicio dura más de 8 semanas se puede acordar un pago intermedio (el prototipado 3D dura de 2 a 6 semanas, así que normalmente no aplicaría).\n\n**Sobre el servicio: Prototipado 3D y fabricación rápida**\n- Qué incluye: modelo CAD, hasta 3 iteraciones de prototipo físico e informe de pruebas funcionales con recomendaciones para producción.\n- Duración típica: de 2 a 6 semanas.\n- Inversión de referencia: **COP 2.500.000 a COP 12.000.000**, según tamaño, material y número de iteraciones.\n- Los rangos **no incluyen IVA** ni costos de terceros. El valor exacto y el descuento se definen en la propuesta formal.\n\nFuente: [Prototipado 3D y fabricación rápida](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/prototipado-3d.md)\n\n**Línea de trabajo:** `business_innovation`\n\nPara armarte una pre-propuesta más ajustada, cuéntame:\n1. ¿Qué producto, pieza o empaque quieres prototipar y para qué (mostrar a clientes, financiadores, producción)?\n2. ¿Ya tienes diseño o boceto, o parte de cero?\n3. ¿Tienes una fecha objetivo?\n\nRecuerda que la pre-propuesta no es una oferta comercial: un coordinador la revisa y te contacta en unos 2 días hábiles.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0119204,
+      "latencyMs": 55868,
+      "ttftMs": 51900,
+      "retrievalMode": "hybrid",
+      "retrievedSources": [
+        "data/catalog/servicios/prototipado-3d.md",
+        "data/catalog/servicios/vigilancia-tecnologica-pi.md",
+        "data/catalog/servicios/simulacion-operaciones.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende directamente la pregunta sobre descuentos para microempresas y forma de pago. Todos los datos (20% de descuento, requisito del certificado, estructura 50-50, duración 2-6 semanas, rango COP 2.500.000–12.000.000) coinciden exactamente con el catálogo y las políticas. El copiloto aclara que los rangos no incluyen IVA, evita prometer un valor exacto, explica que el descuento se define en la propuesta formal, y cierra con preguntas pertinentes sin presionar."
+  },
+  "judgeCostUsd": 0.005884
+}

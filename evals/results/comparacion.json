@@ -1,11 +1,12 @@
 {
-  "generatedAt": "2026-09-29T17:06:38.143Z",
+  "generatedAt": "2026-09-29T17:31:44.254Z",
   "note": "Re-scored with the checks at this commit; judge scores come from each recording.",
   "versions": [
     {
       "label": "paso-03-primer-llm",
       "promptVersion": "v1-solo-prompt",
       "summary": {
+        "simulationRecall": 0,
         "casePassRate": 0.1,
         "casesPassed": 3,
         "checks": {
@@ -114,6 +115,7 @@
       "label": "paso-05-rag-fts",
       "promptVersion": "v2-rag",
       "summary": {
+        "simulationRecall": 0,
         "casePassRate": 0.767,
         "casesPassed": 23,
         "checks": {
@@ -215,6 +217,115 @@
         "turns": 35,
         "retrievalModes": {
           "fts": 35
+        }
+      }
+    },
+    {
+      "label": "paso-05-rag-hybrid",
+      "promptVersion": "v2-rag",
+      "summary": {
+        "simulationRecall": 0,
+        "casePassRate": 0.8,
+        "casesPassed": 24,
+        "checks": {
+          "injection_resisted": {
+            "passed": 2,
+            "applicable": 2,
+            "rate": 1
+          },
+          "cites_catalog": {
+            "passed": 26,
+            "applicable": 27,
+            "rate": 0.963
+          },
+          "line_correct": {
+            "passed": 30,
+            "applicable": 30,
+            "rate": 1
+          },
+          "service_mentioned": {
+            "passed": 27,
+            "applicable": 27,
+            "rate": 1
+          },
+          "tool_when_expected": {
+            "passed": 25,
+            "applicable": 30,
+            "rate": 0.833
+          },
+          "simulation_numbers_match": {
+            "passed": 0,
+            "applicable": 0,
+            "rate": null
+          },
+          "no_off_catalog_prices": {
+            "passed": 30,
+            "applicable": 30,
+            "rate": 1
+          },
+          "constraints": {
+            "passed": 3,
+            "applicable": 3,
+            "rate": 1
+          }
+        },
+        "byCategory": {
+          "simulacion": {
+            "passed": 0,
+            "total": 5
+          },
+          "procesos": {
+            "passed": 6,
+            "total": 6
+          },
+          "calidad": {
+            "passed": 5,
+            "total": 5
+          },
+          "innovacion": {
+            "passed": 8,
+            "total": 8
+          },
+          "politicas": {
+            "passed": 1,
+            "total": 1
+          },
+          "fuera_de_tema": {
+            "passed": 2,
+            "total": 2
+          },
+          "prompt_injection": {
+            "passed": 1,
+            "total": 2
+          },
+          "datos_personales": {
+            "passed": 1,
+            "total": 1
+          }
+        },
+        "judge": {
+          "model": "claude-haiku-4-5-20251001",
+          "judged": 30,
+          "pertinencia": 5,
+          "fundamentacion": 5,
+          "claridad": 5,
+          "tono": 5
+        },
+        "costUsd": {
+          "copilot": 0.543,
+          "judge": 0.1829,
+          "total": 0.7259
+        },
+        "costPerCaseUsd": 0.0181,
+        "latencyMs": {
+          "turnP50": 35607,
+          "turnP95": 65281,
+          "ttftP50": 30122,
+          "ttftP95": 57370
+        },
+        "turns": 36,
+        "retrievalModes": {
+          "hybrid": 36
         }
       }
     }
