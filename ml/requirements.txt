@@ -1,0 +1,8 @@
+scikit-learn>=1.5
+pandas>=2.2
+matplotlib>=3.9
+jupyter
+nbconvert
+nbformat
+ipykernel
+anthropic>=1,<2

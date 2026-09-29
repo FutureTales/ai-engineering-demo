@@ -1,0 +1,19 @@
+id,line,revisor,veredicto,nota
+bus-018,business_innovation,agente de código (Claude Code); pendiente de revisión humana,de acuerdo,
+bus-038,business_innovation,agente de código (Claude Code); pendiente de revisión humana,ambigua,Mezcla prototipo de un dispositivo (business_innovation) con digitalizar historias clínicas (process_design).
+bus-035,business_innovation,agente de código (Claude Code); pendiente de revisión humana,ambigua,"Mezcla digitalizar el inventario (process_design) con inventar una herramienta (business_innovation). Tanda de estilo 'confuso', a propósito."
+bus-019,business_innovation,agente de código (Claude Code); pendiente de revisión humana,de acuerdo,
+bus-033,business_innovation,agente de código (Claude Code); pendiente de revisión humana,de acuerdo,
+bus-002,business_innovation,agente de código (Claude Code); pendiente de revisión humana,de acuerdo,
+pro-018,process_design,agente de código (Claude Code); pendiente de revisión humana,de acuerdo,
+pro-038,process_design,agente de código (Claude Code); pendiente de revisión humana,de acuerdo,
+pro-035,process_design,agente de código (Claude Code); pendiente de revisión humana,de acuerdo,
+pro-019,process_design,agente de código (Claude Code); pendiente de revisión humana,de acuerdo,
+pro-033,process_design,agente de código (Claude Code); pendiente de revisión humana,de acuerdo,
+pro-002,process_design,agente de código (Claude Code); pendiente de revisión humana,de acuerdo,
+qua-018,quality_assurance,agente de código (Claude Code); pendiente de revisión humana,de acuerdo,
+qua-038,quality_assurance,agente de código (Claude Code); pendiente de revisión humana,de acuerdo,
+qua-035,quality_assurance,agente de código (Claude Code); pendiente de revisión humana,de acuerdo,
+qua-019,quality_assurance,agente de código (Claude Code); pendiente de revisión humana,de acuerdo,
+qua-033,quality_assurance,agente de código (Claude Code); pendiente de revisión humana,de acuerdo,
+qua-002,quality_assurance,agente de código (Claude Code); pendiente de revisión humana,de acuerdo,

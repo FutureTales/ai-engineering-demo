@@ -1,0 +1,39 @@
+{
+  "generated_by": "ml/clasificador.ipynb",
+  "data": "ml/data/requests_labeled.csv (SINTÉTICO, 120 filas)",
+  "n_train": 84,
+  "n_test": 36,
+  "split_seed": 42,
+  "models": [
+    {
+      "name": "TF-IDF + LogReg",
+      "accuracy": 0.9166666666666666,
+      "macro_f1": 0.9162781662781664,
+      "train_accuracy": 1.0,
+      "latency_ms_p50": 0.6448954991356004,
+      "cost_per_1000_usd": 0.0,
+      "cost_note": "cómputo local en un portátil; no se midió costo de infraestructura (despreciable a esta escala)",
+      "fit_seconds": 0.04311862500253483
+    },
+    {
+      "name": "Haiku zero-shot",
+      "accuracy": 0.8611111111111112,
+      "macro_f1": 0.861369315342329,
+      "latency_ms_p50": 613.3317704989167,
+      "avg_input_tokens": 270.5,
+      "avg_output_tokens": 6.222222222222222,
+      "cost_per_1000_usd": 0.30161111111111105,
+      "invalid": 0
+    },
+    {
+      "name": "Haiku few-shot",
+      "accuracy": 0.9722222222222222,
+      "macro_f1": 0.9721739130434782,
+      "latency_ms_p50": 527.6676664998377,
+      "avg_input_tokens": 991.5,
+      "avg_output_tokens": 6.333333333333333,
+      "cost_per_1000_usd": 1.0231666666666666,
+      "invalid": 0
+    }
+  ]
+}

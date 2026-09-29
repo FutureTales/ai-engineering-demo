@@ -8,5 +8,6 @@ Un ADR es un documento corto que registra **una** decisión: el contexto, lo que
 | [0002](0002-supabase-pgvector.md) | Supabase y pgvector frente a una base vectorial dedicada | 02 |
 | [0003](0003-recuperacion-hibrida.md) | Recuperación híbrida (vector + texto completo) | 02 |
 | [0004](0004-ai-sdk.md) | Vercel AI SDK frente al SDK directo de Anthropic | 02 |
+| [0005](0005-clasificador.md) | Clasificador: LLM en el agente, ML clásico para triage masivo | 07 |
 
 Formato: Contexto · Decisión · Alternativas consideradas · Consecuencias · Estado.
