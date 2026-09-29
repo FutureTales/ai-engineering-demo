@@ -1,0 +1,68 @@
+{
+  "caseId": "pro-04-ferreteria",
+  "label": "paso-09-produccion",
+  "recordedAt": "2026-09-29T18:15:34.761Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v3-agente",
+  "turns": [
+    {
+      "user": "Tengo una ferretería en Bocagrande y quiero implementar un software de inventario, pero hoy todo está en hojas de cálculo sueltas y cada empleado lo hace distinto. No sé por dónde empezar.",
+      "assistant": "Gracias por contarme. Tu caso es muy común: antes de comprar un software conviene ordenar cómo se trabaja, porque si cada empleado lleva el inventario a su manera, el software solo digitalizaría ese desorden.\n\n**Línea de trabajo:** `process_design`\n\n**Servicio recomendado:** Modelado y digitalización de procesos administrativos\n- Aplica cuando los procesos dependen de hojas de cálculo sueltas y la empresa quiere adoptar un software pero no sabe por dónde empezar.\n- Entregables: mapa del proceso actual y del propuesto (BPMN), recomendación de herramientas con plan de implementación, y acompañamiento en la puesta en marcha de 1 o 2 procesos prioritarios (por ejemplo, inventario).\n- Duración típica: de 4 a 10 semanas.\n- Inversión: entre **COP 5.000.000 y COP 18.000.000**. No incluye licencias de software, IVA ni costos de terceros.\n- Fuente: [Modelado y digitalización de procesos administrativos](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/digitalizacion-procesos-administrativos.md)\n\n**Opcional, después:** Tablero de indicadores y analítica operativa, para ver rotación y existencias con los datos ya ordenados.\n- Inversión: entre **COP 4.000.000 y COP 14.000.000**. Duración: de 3 a 6 semanas.\n- Fuente: [Tablero de indicadores y analítica operativa](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/tablero-indicadores-analitica.md)\n\n**Descuento:** según la política del centro, hay descuentos por tamaño de empresa (por ejemplo, 20 % para microempresas de hasta 10 empleados y 10 % para pequeñas de 11 a 50). Para saber cuál te aplica necesito saber cuántos empleados tienes. Se acredita con el certificado de existencia y representación legal.\n\n**Pre-propuesta (resumen)**\n- **Problema:** inventario en hojas de cálculo sueltas y sin un método común; se quiere implementar un software.\n- **Alcance sugerido:** mapear cómo se maneja hoy el inventario (entradas, salidas, conteos), definir un proceso estándar, elegir la herramienta adecuada y acompañar la puesta en marcha.\n- **Siguiente paso:** un coordinador te contacta en 2 días hábiles y hace una reunión de diagnóstico de 45 a 60 minutos. La pre-propuesta no es una oferta comercial. El valor definitivo llega en la propuesta formal.\n\n¿Quieres que la guarde para que la revise un coordinador? Si es así, dime el nombre de tu ferretería, tu nombre y, si quieres, un correo de contacto. También me sirve saber cuántos empleados tienes.",
+      "toolCalls": [
+        {
+          "toolName": "search_services",
+          "input": {
+            "query": "ferretería inventario en hojas de cálculo sueltas, cada empleado lo hace distinto, implementar software de inventario"
+          }
+        }
+      ],
+      "toolResults": [
+        {
+          "toolName": "search_services",
+          "output": {
+            "results": [
+              {
+                "service_id": "tablero-indicadores-analitica",
+                "title": "Tablero de indicadores y analítica operativa",
+                "source": "data/catalog/servicios/tablero-indicadores-analitica.md",
+                "content": "# Tablero de indicadores y analítica operativa\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDefinimos los indicadores clave del negocio y construimos un tablero que se actualiza con los datos que la empresa ya tiene (ventas, inventario, producción, atención), para tomar decisiones con datos y no por intuición.\n\n## Cuándo aplica\n\n- La empresa **no sabe con precisión** cuánto vende, produce o desperdicia por día.\n- Los datos existen pero están dispersos en varias hojas de cálculo o sistemas.\n- Se quiere hacer seguimiento a una mejora (por ejemplo, después de una simulación).\n\n## Entregables\n\n1. Definición de 5 a 10 KPIs con su fórmula y fuente de datos.\n2. Tablero interactivo conectado a las fuentes.\n3. Capacitación para mantenerlo.\n\n## Duración típica\n\nDe 3 a 6 semanas.\n\n## Inversión\n\nEntre **COP 4.000.000 y COP 14.000.000**.\n\n## Ejemplos\n\n- Tablero de producción y desperdicio diario de una panadería.\n- Indicadores de tiempos de despacho de un operador logístico."
+              },
+              {
+                "service_id": "digitalizacion-procesos-administrativos",
+                "title": "Modelado y digitalización de procesos administrativos",
+                "source": "data/catalog/servicios/digitalizacion-procesos-administrativos.md",
+                "content": "# Modelado y digitalización de procesos administrativos\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDocumentamos los procesos administrativos de la empresa (compras, facturación, inventario, atención al cliente) con notación BPMN, eliminamos pasos que no agregan valor y definimos cómo digitalizarlos con herramientas accesibles para una MIPYME.\n\n## Cuándo aplica\n\n- Los procesos dependen de **papel, hojas de cálculo sueltas o WhatsApp**.\n- Hay **reprocesos, pérdidas de información o demoras** en trámites internos.\n- La empresa quiere adoptar un software (ERP, CRM, facturación electrónica) y no sabe por dónde empezar.\n\n## Entregables\n\n1. Mapa de procesos actual (AS-IS) y propuesto (TO-BE) en BPMN.\n2. Recomendación de herramientas digitales y plan de implementación.\n3. Acompañamiento en la puesta en marcha de 1 o 2 procesos prioritarios.\n\n## Duración típica\n\nDe 4 a 10 semanas.\n\n## Inversión\n\nEntre **COP 5.000.000 y COP 18.000.000**. Las licencias de software no están incluidas.\n\n## Ejemplos\n\n- Digitalización de pedidos e inventario de una panadería con tres sedes.\n- Estandarización del proceso de despacho de un operador logístico."
+              },
+              {
+                "service_id": "prototipado-3d",
+                "title": "Prototipado 3D y fabricación rápida",
+                "source": "data/catalog/servicios/prototipado-3d.md",
+                "content": "# Prototipado 3D y fabricación rápida\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDiseñamos y fabricamos prototipos físicos de productos, piezas o empaques con modelado CAD, impresión 3D (FDM y resina) y corte láser, para validar forma, función y aceptación de clientes antes de producir en serie.\n\n## Cuándo aplica\n\n- La empresa tiene una **idea de producto nuevo** o quiere rediseñar uno existente.\n- Necesita **mostrar un prototipo** a clientes, inversionistas o financiadores.\n- Quiere reemplazar una pieza importada o descontinuada.\n\n## Entregables\n\n1. Modelo CAD del producto o pieza.\n2. Hasta 3 iteraciones de prototipo físico.\n3. Informe de pruebas funcionales y recomendaciones para producción.\n\n## Duración típica\n\nDe 2 a 6 semanas.\n\n## Inversión\n\nEntre **COP 2.500.000 y COP 12.000.000**, según tamaño, material y número de iteraciones.\n\n## Ejemplos\n\n- Empaque nuevo para una línea de dulces típicos.\n- Prototipo de un dispositivo para una startup de agrotecnología."
+              }
+            ]
+          }
+        }
+      ],
+      "costUsd": 0.0177572,
+      "latencyMs": 9325,
+      "ttftMs": 8152,
+      "retrievalMode": "tool",
+      "retrievedSources": [
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/digitalizacion-procesos-administrativos.md",
+        "data/catalog/servicios/prototipado-3d.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente el problema (inventario disperso) y recomienda el servicio exacto del catálogo (digitalizacion-procesos-administrativos) con rango de precios COP 5–18 millones y plazo de 4 a 10 semanas exactos. Incluye entregables, sugiere un servicio complementario (tablero-indicadores-analitica) respaldado en el catálogo, explica la política de descuentos con rigor, y estructura la pre-propuesta conforme al proceso de atención del centro, sin prometer resultados numéricos. Tono profesional y cercano, sin excesos."
+  },
+  "judgeCostUsd": 0.006163
+}

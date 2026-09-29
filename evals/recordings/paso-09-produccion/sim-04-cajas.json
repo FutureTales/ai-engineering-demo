@@ -1,0 +1,206 @@
+{
+  "caseId": "sim-04-cajas",
+  "label": "paso-09-produccion",
+  "recordedAt": "2026-09-29T18:15:22.148Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v3-agente",
+  "turns": [
+    {
+      "user": "Tenemos un minimercado en el barrio Crespo con 2 cajas. Los sábados en la tarde llegan como 50 clientes por hora a pagar y cada cobro toma unos 2 minutos y medio. Las filas son larguísimas y la gente se va. ¿Qué hacemos?",
+      "assistant": "Tengo los datos clave, así que primero busco el servicio y simulo escenarios.**Línea de trabajo:** `process_design`\n\nCon 2 cajas, 50 clientes por hora y 2,5 minutos por cobro, las cajas no dan abasto. Simulé el pico de 3 horas del sábado en cuatro escenarios:\n\n- **Actual: 2 cajas, 2,5 min**\n  - Utilización: 104,2 %. Es inestable, porque llegan más clientes de los que se pueden atender.\n  - Espera media: 12,6 min.\n  - Espera p90: 29,3 min. Es decir, 1 de cada 10 clientes espera más que eso.\n  - Fila típica máxima: 21 personas.\n- **3 cajas, 2,5 min**\n  - Utilización: 69,4 %.\n  - Espera media: 1,2 min.\n  - Espera p90: 4,1 min.\n- **2 cajas, cobro de 2 min**\n  - Utilización: 83,3 %.\n  - Espera media: 3,7 min.\n  - Espera p90: 10 min.\n- **3 cajas, cobro de 2 min**\n  - Utilización: 55,6 %.\n  - Espera media: 0,4 min.\n  - Espera p90: 1,6 min.\n\n**Conclusión:** hoy las cajas están saturadas y por eso la fila crece toda la tarde. Una tercera caja los sábados resuelve casi todo el problema. Si además bajan el tiempo de cobro (por ejemplo con pago con QR o datáfono más ágil), la espera casi desaparece. Solo con cobrar más rápido, la fila mejora mucho, pero sigue habiendo momentos con esperas de 10 minutos.\n\n**Servicio recomendado:** Simulación de operaciones y análisis \"what if\".\n- Modelaríamos tu operación con datos reales y compararíamos entre 3 y 5 escenarios antes de que inviertas.\n- Entregables: levantamiento del proceso, modelo validado, escenarios, tablero de KPIs y taller para tu equipo.\n- Duración típica: de 4 a 8 semanas.\n- Inversión: entre COP 8.000.000 y COP 25.000.000, sin IVA.\n- Fuente: [Simulación de operaciones y análisis \"what if\"](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/simulacion-operaciones.md)\n\n**Opcional:** Tablero de indicadores y analítica operativa, para medir las ventas y las esperas después del cambio.\n- Duración típica: de 3 a 6 semanas.\n- Inversión: entre COP 4.000.000 y COP 14.000.000, sin IVA.\n- Fuente: [Tablero de indicadores y analítica operativa](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/tablero-indicadores-analitica.md)\n\n**Descuentos:** la política del centro da 20 % a microempresas (hasta 10 empleados) y 10 % a pequeñas (11 a 50). Dime cuántos empleados tienes y te digo cuál te corresponde. Para aplicarlo hay que presentar el certificado de existencia y representación legal.\n\n**Siguiente paso:** un coordinador te contacta en 2 días hábiles y agenda una reunión de diagnóstico de 45 a 60 minutos. Esta pre-propuesta no es una oferta comercial ni compromete al centro.\n\n¿Quieres que la guarde? Si es así, dime el nombre del minimercado y el de la persona de contacto. El correo es opcional.",
+      "toolCalls": [
+        {
+          "toolName": "search_services",
+          "input": {
+            "query": "filas en cajas, esperas, capacidad, simulación what if minimercado",
+            "line": "process_design"
+          }
+        },
+        {
+          "toolName": "simulate_queue",
+          "input": {
+            "scenarios": [
+              {
+                "scenario_label": "Actual: 2 cajas",
+                "arrival_rate_per_hour": 50,
+                "service_time_min": 2.5,
+                "servers": 2,
+                "hours": 3
+              },
+              {
+                "scenario_label": "3 cajas",
+                "arrival_rate_per_hour": 50,
+                "service_time_min": 2.5,
+                "servers": 3,
+                "hours": 3
+              },
+              {
+                "scenario_label": "2 cajas, cobro de 2 min",
+                "arrival_rate_per_hour": 50,
+                "service_time_min": 2,
+                "servers": 2,
+                "hours": 3
+              },
+              {
+                "scenario_label": "3 cajas, cobro de 2 min",
+                "arrival_rate_per_hour": 50,
+                "service_time_min": 2,
+                "servers": 3,
+                "hours": 3
+              }
+            ]
+          }
+        }
+      ],
+      "toolResults": [
+        {
+          "toolName": "simulate_queue",
+          "output": {
+            "scenarios": [
+              {
+                "scenario_label": "Actual: 2 cajas",
+                "servers": 2,
+                "arrival_rate_per_hour": 50,
+                "service_time_min": 2.5,
+                "utilization": 1.042,
+                "stable": false,
+                "verdict": "Inestable: llegan más clientes de los que se pueden atender (utilización ≥ 100 %). La fila crece sin límite mientras dure el pico.",
+                "analytic": null,
+                "simulation": {
+                  "hours": 3,
+                  "replications": 200,
+                  "seed": 42,
+                  "avg_wait_min": 12.6,
+                  "p90_wait_min": 29.3,
+                  "avg_queue_len": 9.25,
+                  "typical_max_queue_len": 21,
+                  "bad_day_max_queue_len": 35,
+                  "customers_per_replication": 149.7
+                }
+              },
+              {
+                "scenario_label": "3 cajas",
+                "servers": 3,
+                "arrival_rate_per_hour": 50,
+                "service_time_min": 2.5,
+                "utilization": 0.694,
+                "stable": true,
+                "verdict": "Estable y con holgura: la espera es baja.",
+                "analytic": {
+                  "prob_wait": 0.484,
+                  "avg_wait_min": 1.3,
+                  "p90_wait_min": 4.3,
+                  "avg_queue_len": 1.1,
+                  "avg_time_in_system_min": 3.8
+                },
+                "simulation": {
+                  "hours": 3,
+                  "replications": 200,
+                  "seed": 42,
+                  "avg_wait_min": 1.2,
+                  "p90_wait_min": 4.1,
+                  "avg_queue_len": 1,
+                  "typical_max_queue_len": 7,
+                  "bad_day_max_queue_len": 12,
+                  "customers_per_replication": 149.7
+                }
+              },
+              {
+                "scenario_label": "2 cajas, cobro de 2 min",
+                "servers": 2,
+                "arrival_rate_per_hour": 50,
+                "service_time_min": 2,
+                "utilization": 0.833,
+                "stable": true,
+                "verdict": "Estable, con filas moderadas en los momentos de más llegadas.",
+                "analytic": {
+                  "prob_wait": 0.758,
+                  "avg_wait_min": 4.5,
+                  "p90_wait_min": 12.1,
+                  "avg_queue_len": 3.79,
+                  "avg_time_in_system_min": 6.5
+                },
+                "simulation": {
+                  "hours": 3,
+                  "replications": 200,
+                  "seed": 42,
+                  "avg_wait_min": 3.7,
+                  "p90_wait_min": 10,
+                  "avg_queue_len": 2.98,
+                  "typical_max_queue_len": 11,
+                  "bad_day_max_queue_len": 18,
+                  "customers_per_replication": 149.7
+                }
+              },
+              {
+                "scenario_label": "3 cajas, cobro de 2 min",
+                "servers": 3,
+                "arrival_rate_per_hour": 50,
+                "service_time_min": 2,
+                "utilization": 0.556,
+                "stable": true,
+                "verdict": "Estable y con holgura: la espera es baja.",
+                "analytic": {
+                  "prob_wait": 0.3,
+                  "avg_wait_min": 0.4,
+                  "p90_wait_min": 1.6,
+                  "avg_queue_len": 0.37,
+                  "avg_time_in_system_min": 2.4
+                },
+                "simulation": {
+                  "hours": 3,
+                  "replications": 200,
+                  "seed": 42,
+                  "avg_wait_min": 0.4,
+                  "p90_wait_min": 1.6,
+                  "avg_queue_len": 0.35,
+                  "typical_max_queue_len": 5,
+                  "bad_day_max_queue_len": 7,
+                  "customers_per_replication": 149.7
+                }
+              }
+            ]
+          }
+        },
+        {
+          "toolName": "search_services",
+          "output": {
+            "results": [
+              {
+                "service_id": "simulacion-operaciones",
+                "title": "Simulación de operaciones y análisis \"what if\"",
+                "source": "data/catalog/servicios/simulacion-operaciones.md",
+                "content": "# Simulación de operaciones y análisis \"what if\"\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nConstruimos un modelo de simulación de eventos discretos de la operación de la empresa (manufactura, logística o servicios) para encontrar cuellos de botella y comparar escenarios antes de invertir. Usamos software especializado de simulación y teoría de colas para estimar tiempos de espera, utilización de recursos y capacidad.\n\n## Cuándo aplica\n\n- Hay **filas o tiempos de espera** de clientes, pedidos o vehículos (recepción de un hotel, caja de un almacén, muelle de despacho).\n- La empresa duda entre **contratar personal, comprar equipos o cambiar el proceso** y quiere saber qué conviene.\n- La demanda varía por temporada u horario y la capacidad no alcanza en los picos.\n- Se necesita definir **KPIs operativos** (tiempo de ciclo, utilización, nivel de servicio).\n\n## Entregables\n\n1. Levantamiento del proceso actual y de los datos (llegadas, tiempos de servicio, recursos).\n2. Modelo de simulación validado con la operación real.\n3. Comparación de 3 a 5 escenarios \"what if\" (más recursos, cambios de turno, digitalización de pasos).\n4. Tablero con los KPIs definidos y recomendaciones priorizadas.\n5. Taller de transferencia con el equipo de la empresa.\n\n## Duración típica\n\nDe 4 a 8 semanas, según la complejidad del proceso y la disponibilidad de datos.\n\n## Inversión\n\nEntre **COP 8.000.000 y COP 25.000.000**. Aplican los descuentos para MIPYMES de la política de tarifas.\n\n## Ejemplos\n\n- Hotel con filas en el check-in durante la temporada alta: se comparan 2, 3 y 4 recepcionistas y un check-in digital previo.\n- Operador logístico con camiones esperando en el muelle de despacho.\n- Clínica con tiempos de espera largos en admisiones."
+              },
+              {
+                "service_id": "tablero-indicadores-analitica",
+                "title": "Tablero de indicadores y analítica operativa",
+                "source": "data/catalog/servicios/tablero-indicadores-analitica.md",
+                "content": "# Tablero de indicadores y analítica operativa\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDefinimos los indicadores clave del negocio y construimos un tablero que se actualiza con los datos que la empresa ya tiene (ventas, inventario, producción, atención), para tomar decisiones con datos y no por intuición.\n\n## Cuándo aplica\n\n- La empresa **no sabe con precisión** cuánto vende, produce o desperdicia por día.\n- Los datos existen pero están dispersos en varias hojas de cálculo o sistemas.\n- Se quiere hacer seguimiento a una mejora (por ejemplo, después de una simulación).\n\n## Entregables\n\n1. Definición de 5 a 10 KPIs con su fórmula y fuente de datos.\n2. Tablero interactivo conectado a las fuentes.\n3. Capacitación para mantenerlo.\n\n## Duración típica\n\nDe 3 a 6 semanas.\n\n## Inversión\n\nEntre **COP 4.000.000 y COP 14.000.000**.\n\n## Ejemplos\n\n- Tablero de producción y desperdicio diario de una panadería.\n- Indicadores de tiempos de despacho de un operador logístico."
+              }
+            ]
+          }
+        }
+      ],
+      "costUsd": 0.0252232,
+      "latencyMs": 113449,
+      "ttftMs": 1566,
+      "retrievalMode": "tool",
+      "retrievedSources": [
+        "data/catalog/servicios/simulacion-operaciones.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 4,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente la línea (process_design) y recomienda el servicio adecuado (simulación-operaciones) con un análisis de cuatro escenarios creíbles y bien estructurados que responden al problema concreto. Todos los precios, plazos y políticas de descuento coinciden exactamente con el catálogo. El tono es profesional, cercano y no promete resultados garantizados. Claridad: muy buena, aunque el volumen de números (12,6 min, 29,3 min, etc.) es denso para una pantalla de móvil, lo que baja un punto; la estructura con viñetas ayuda."
+  },
+  "judgeCostUsd": 0.006469
+}

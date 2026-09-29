@@ -1,0 +1,69 @@
+{
+  "caseId": "pro-01-panaderia",
+  "label": "paso-09-produccion",
+  "recordedAt": "2026-09-29T18:14:26.853Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v3-agente",
+  "turns": [
+    {
+      "user": "Tengo una panadería con tres sedes en Turbaco y al final del día botamos mucho pan porque producimos siempre la misma cantidad.",
+      "assistant": "Gracias por contarme. Tu caso encaja bien con lo que hacemos.\n\n**Línea de trabajo:** `process_design`\n\n**Servicio recomendado:** Producción más limpia y reducción de desperdicios. Aplica porque produces más de lo que vendes y el pan sobrante se bota. El servicio ajusta la planeación de producción a la demanda real. En sus entregables incluye:\n- Un mapa de flujo de valor con la cuantificación de los desperdicios.\n- Un plan de mejora con acciones priorizadas.\n- El ajuste de la planeación de producción a la demanda.\n- La medición de resultados al cierre.\n\nDuración típica: de 4 a 8 semanas.\nInversión: entre **COP 3.500.000 y COP 12.000.000**. No incluye IVA.\nFuente: [Producción más limpia y reducción de desperdicios](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/produccion-mas-limpia-desperdicios.md)\n\n**Complemento opcional:** Tablero de indicadores y analítica operativa. Sirve si hoy no sabes con precisión cuánto produces, vendes y botas por sede y por día. Así podrías darle seguimiento a la mejora.\nInversión: entre **COP 4.000.000 y COP 14.000.000**.\nFuente: [Tablero de indicadores y analítica operativa](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/tablero-indicadores-analitica.md)\n\nPara afinar el alcance, respóndeme estas 3 preguntas:\n1. ¿Cuántos empleados tiene la panadería en total? De eso depende el descuento para MIPYMES, según la política de tarifas.\n2. ¿Registras hoy cuánto pan produces y cuánto sobra en cada sede, aunque sea en cuaderno o Excel?\n3. ¿Qué productos son los que más sobran (pan del día, pastelería, etc.)?\n\nCon eso te armo la pre-propuesta completa y, si quieres, la guardamos para que un coordinador la revise.",
+      "toolCalls": [
+        {
+          "toolName": "search_services",
+          "input": {
+            "query": "panadería desperdicio de pan sobreproducción producir la misma cantidad demanda",
+            "line": "process_design"
+          }
+        }
+      ],
+      "toolResults": [
+        {
+          "toolName": "search_services",
+          "output": {
+            "results": [
+              {
+                "service_id": "produccion-mas-limpia-desperdicios",
+                "title": "Producción más limpia y reducción de desperdicios",
+                "source": "data/catalog/servicios/produccion-mas-limpia-desperdicios.md",
+                "content": "# Producción más limpia y reducción de desperdicios\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nAplicamos herramientas de manufactura esbelta (lean) y producción más limpia para reducir desperdicios de materia prima, energía y agua, y para ajustar la producción a la demanda real. Mejora la rentabilidad y la sostenibilidad del proceso.\n\n## Cuándo aplica\n\n- Hay **desperdicio de producto** (se produce más de lo que se vende, se vence o se daña).\n- Los costos de materia prima, agua o energía son altos.\n- La empresa quiere mejorar su desempeño ambiental.\n\n## Entregables\n\n1. Mapa de flujo de valor y cuantificación de desperdicios.\n2. Plan de mejora con acciones priorizadas.\n3. Ajuste de la planeación de producción a la demanda.\n4. Medición de resultados al cierre.\n\n## Duración típica\n\nDe 4 a 8 semanas.\n\n## Inversión\n\nEntre **COP 3.500.000 y COP 12.000.000**.\n\n## Ejemplos\n\n- Panadería que bota una parte de su producción al final del día.\n- Planta de hielo con consumo de energía elevado."
+              },
+              {
+                "service_id": "tablero-indicadores-analitica",
+                "title": "Tablero de indicadores y analítica operativa",
+                "source": "data/catalog/servicios/tablero-indicadores-analitica.md",
+                "content": "# Tablero de indicadores y analítica operativa\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDefinimos los indicadores clave del negocio y construimos un tablero que se actualiza con los datos que la empresa ya tiene (ventas, inventario, producción, atención), para tomar decisiones con datos y no por intuición.\n\n## Cuándo aplica\n\n- La empresa **no sabe con precisión** cuánto vende, produce o desperdicia por día.\n- Los datos existen pero están dispersos en varias hojas de cálculo o sistemas.\n- Se quiere hacer seguimiento a una mejora (por ejemplo, después de una simulación).\n\n## Entregables\n\n1. Definición de 5 a 10 KPIs con su fórmula y fuente de datos.\n2. Tablero interactivo conectado a las fuentes.\n3. Capacitación para mantenerlo.\n\n## Duración típica\n\nDe 3 a 6 semanas.\n\n## Inversión\n\nEntre **COP 4.000.000 y COP 14.000.000**.\n\n## Ejemplos\n\n- Tablero de producción y desperdicio diario de una panadería.\n- Indicadores de tiempos de despacho de un operador logístico."
+              },
+              {
+                "service_id": "simulacion-operaciones",
+                "title": "Simulación de operaciones y análisis \"what if\"",
+                "source": "data/catalog/servicios/simulacion-operaciones.md",
+                "content": "# Simulación de operaciones y análisis \"what if\"\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nConstruimos un modelo de simulación de eventos discretos de la operación de la empresa (manufactura, logística o servicios) para encontrar cuellos de botella y comparar escenarios antes de invertir. Usamos software especializado de simulación y teoría de colas para estimar tiempos de espera, utilización de recursos y capacidad.\n\n## Cuándo aplica\n\n- Hay **filas o tiempos de espera** de clientes, pedidos o vehículos (recepción de un hotel, caja de un almacén, muelle de despacho).\n- La empresa duda entre **contratar personal, comprar equipos o cambiar el proceso** y quiere saber qué conviene.\n- La demanda varía por temporada u horario y la capacidad no alcanza en los picos.\n- Se necesita definir **KPIs operativos** (tiempo de ciclo, utilización, nivel de servicio).\n\n## Entregables\n\n1. Levantamiento del proceso actual y de los datos (llegadas, tiempos de servicio, recursos).\n2. Modelo de simulación validado con la operación real.\n3. Comparación de 3 a 5 escenarios \"what if\" (más recursos, cambios de turno, digitalización de pasos).\n4. Tablero con los KPIs definidos y recomendaciones priorizadas.\n5. Taller de transferencia con el equipo de la empresa.\n\n## Duración típica\n\nDe 4 a 8 semanas, según la complejidad del proceso y la disponibilidad de datos.\n\n## Inversión\n\nEntre **COP 8.000.000 y COP 25.000.000**. Aplican los descuentos para MIPYMES de la política de tarifas.\n\n## Ejemplos\n\n- Hotel con filas en el check-in durante la temporada alta: se comparan 2, 3 y 4 recepcionistas y un check-in digital previo.\n- Operador logístico con camiones esperando en el muelle de despacho.\n- Clínica con tiempos de espera largos en admisiones."
+              }
+            ]
+          }
+        }
+      ],
+      "costUsd": 0.0161412,
+      "latencyMs": 8432,
+      "ttftMs": 8413,
+      "retrievalMode": "tool",
+      "retrievedSources": [
+        "data/catalog/servicios/produccion-mas-limpia-desperdicios.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/simulacion-operaciones.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "El copiloto identifica correctamente la línea (process_design) y recomienda los dos servicios del catálogo que aplican: Producción más limpia (COP 3.500.000–12.000.000, 4–8 semanas) y Tablero de indicadores (COP 4.000.000–14.000.000). Todos los datos coinciden exactamente con el catálogo. Las preguntas son pertinentes para afinar el alcance y aplicar descuentos según política. Tono cercano, profesional y sin promesas infundadas."
+  },
+  "judgeCostUsd": 0.005857
+}

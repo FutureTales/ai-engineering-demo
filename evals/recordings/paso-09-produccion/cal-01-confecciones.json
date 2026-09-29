@@ -1,0 +1,62 @@
+{
+  "caseId": "cal-01-confecciones",
+  "label": "paso-09-produccion",
+  "recordedAt": "2026-09-29T18:16:51.792Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v3-agente",
+  "turns": [
+    {
+      "user": "Tengo un taller de confecciones con 30 operarias. Un cliente grande nos devolvió un lote porque muchas prendas tenían costuras torcidas y medidas fuera de tolerancia. Los defectos cambian mucho entre turnos.",
+      "assistant": "Siento lo del lote devuelto. Con lo que me cuentas ya puedo orientarte, así que no necesito más preguntas.\n\n**Línea de trabajo:** `quality_assurance`\n\n**Servicio recomendado: Sistema de gestión de calidad y control estadístico de procesos**\n- Aplica porque tienes defectos y devoluciones de un cliente grande. Además, la calidad cambia entre turnos, y la ficha lista ese caso.\n- Un caso de ejemplo de la ficha es un taller de confecciones con muchas prendas defectuosas.\n- **Entregables:**\n  1. Diagnóstico y análisis de causas raíz de los defectos principales, como costuras torcidas y medidas fuera de tolerancia.\n  2. Control estadístico en 1 o 2 puntos críticos, por ejemplo costura y corte o medición.\n  3. Procedimientos estandarizados y plan de capacitación.\n  4. Opcional: hoja de ruta hacia ISO 9001.\n- **Duración típica:** de 6 a 12 semanas.\n- **Inversión:** entre **COP 6.000.000 y COP 20.000.000**. No incluye IVA ni el costo del ente certificador.\n\nFuente: [Sistema de gestión de calidad y control estadístico de procesos](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/gestion-calidad-control-estadistico.md)\n\n**Otra opción, si después ves que hace falta:** *Capacitación en entornos inmersivos (realidad virtual)*. Sirve para entrenar a las operarias en un procedimiento estándar, sobre todo si hay rotación. Yo la dejaría para una segunda fase, una vez el diagnóstico confirme que la causa es la falta de un procedimiento estándar.\n\n**Descuento posible:** con 30 operarias podrías ser pequeña empresa (11 a 50 empleados), con un 10 % de descuento. Depende de que el total de empleados esté en ese rango y de que presentes el certificado de existencia y representación legal.\n\n**Pre-propuesta**\n- **Problema:** lote devuelto por costuras torcidas y medidas fuera de tolerancia, con defectos que varían entre turnos.\n- **Servicio:** Sistema de gestión de calidad y control estadístico de procesos.\n- **Alcance sugerido:** causas raíz, control estadístico en 1 o 2 puntos críticos y estandarización de procedimientos.\n- **Siguiente paso:** un coordinador te contacta en 2 días hábiles y hace una reunión de diagnóstico de 45 a 60 minutos. Después llega la propuesta formal. Esta pre-propuesta no es una oferta comercial.\n\n¿Quieres que la guarde para que la revise un coordinador? Si es así, dime el nombre de tu empresa y el de la persona de contacto. El correo es opcional.",
+      "toolCalls": [
+        {
+          "toolName": "search_services",
+          "input": {
+            "query": "defectos costuras medidas fuera de tolerancia variación entre turnos confecciones control de calidad",
+            "line": "quality_assurance"
+          }
+        }
+      ],
+      "toolResults": [
+        {
+          "toolName": "search_services",
+          "output": {
+            "results": [
+              {
+                "service_id": "gestion-calidad-control-estadistico",
+                "title": "Sistema de gestión de calidad y control estadístico de procesos",
+                "source": "data/catalog/servicios/gestion-calidad-control-estadistico.md",
+                "content": "# Sistema de gestión de calidad y control estadístico de procesos\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nAyudamos a la empresa a reducir defectos y a cumplir estándares de calidad: análisis de causas raíz, control estadístico de procesos (gráficos de control, capacidad de proceso), estandarización de procedimientos y preparación para certificaciones como ISO 9001.\n\n## Cuándo aplica\n\n- Hay **defectos, devoluciones o reclamos de calidad** frecuentes.\n- Un cliente grande exige **certificación** o estándares de calidad.\n- La calidad del producto **varía** entre turnos, operarios o lotes.\n\n## Entregables\n\n1. Diagnóstico de calidad y análisis de causas raíz de los defectos principales.\n2. Implementación de control estadístico en 1 o 2 puntos críticos del proceso.\n3. Procedimientos estandarizados y plan de capacitación.\n4. (Opcional) Hoja de ruta hacia la certificación ISO 9001.\n\n## Duración típica\n\nDe 6 a 12 semanas.\n\n## Inversión\n\nEntre **COP 6.000.000 y COP 20.000.000**. Los costos de la certificación (ente certificador) no están incluidos.\n\n## Ejemplos\n\n- Taller de confecciones con alto porcentaje de prendas defectuosas.\n- Fábrica de alimentos que necesita cumplir requisitos de un supermercado."
+              },
+              {
+                "service_id": "capacitacion-realidad-virtual",
+                "title": "Capacitación en entornos inmersivos (realidad virtual)",
+                "source": "data/catalog/servicios/capacitacion-realidad-virtual.md",
+                "content": "# Capacitación en entornos inmersivos (realidad virtual)\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDesarrollamos experiencias de realidad virtual para entrenar al personal en procedimientos críticos, estándares de calidad y seguridad industrial, sin detener la operación ni exponer a las personas a riesgos.\n\n## Cuándo aplica\n\n- Hay **errores repetidos** porque el personal no sigue un procedimiento estándar.\n- La capacitación práctica es **costosa o peligrosa** (maquinaria, alturas, químicos).\n- Hay alta rotación y se necesita entrenar rápido a personal nuevo.\n\n## Entregables\n\n1. Guion instruccional del procedimiento.\n2. Experiencia de realidad virtual (1 a 3 escenarios).\n3. Piloto con el personal y medición de aprendizaje antes y después.\n\n## Duración típica\n\nDe 6 a 10 semanas.\n\n## Inversión\n\nEntre **COP 6.000.000 y COP 20.000.000**.\n\n## Ejemplos\n\n- Entrenamiento en el procedimiento de corte de un taller de confecciones.\n- Simulacro de manejo seguro de montacargas en una bodega."
+              }
+            ]
+          }
+        }
+      ],
+      "costUsd": 0.0168092,
+      "latencyMs": 11219,
+      "ttftMs": 10274,
+      "retrievalMode": "tool",
+      "retrievedSources": [
+        "data/catalog/servicios/gestion-calidad-control-estadistico.md",
+        "data/catalog/servicios/capacitacion-realidad-virtual.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente el problema (defectos de calidad variables entre turnos) y recomienda el único servicio pertinente del catálogo: gestion-calidad-control-estadistico. Todos los precios (COP 6–20 millones), plazos (6–12 semanas) y detalles (descuento del 10 % para pequeña empresa, políticas de pago) están respaldados por el catálogo y las políticas. La estructura es clara, bien organizada y accesible para una MIPYME; el tono es cercano y profesional sin prometer resultados no garantizables. Menciona adecuadamente que capacitacion-realidad-virtual es una opción futura, no prioritaria."
+  },
+  "judgeCostUsd": 0.006262
+}

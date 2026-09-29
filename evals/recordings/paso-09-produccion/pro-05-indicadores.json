@@ -1,0 +1,62 @@
+{
+  "caseId": "pro-05-indicadores",
+  "label": "paso-09-produccion",
+  "recordedAt": "2026-09-29T18:16:36.734Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v3-agente",
+  "turns": [
+    {
+      "user": "Tengo una fábrica pequeña de arepas congeladas. No sé con precisión cuánto produzco, vendo y desperdicio por día; los datos están regados en varias hojas de Excel. Quiero tomar decisiones con datos.",
+      "assistant": "Gracias por contarme. Tu caso encaja bien con lo que hacemos.\n\n**Línea de trabajo:** `process_design`\n\n**Servicio recomendado (principal): Tablero de indicadores y analítica operativa**\n- Aplica porque no sabes con precisión cuánto produces, vendes y desperdicias, y tus datos están dispersos en varios Excel.\n- Definimos de 5 a 10 indicadores (KPIs) y armamos un tablero conectado a tus hojas actuales.\n- Entregables: definición de KPIs con fórmula y fuente, tablero interactivo y capacitación para mantenerlo.\n- Duración típica: de 3 a 6 semanas.\n- Inversión: entre **COP 4.000.000 y COP 14.000.000**.\n- Fuente: [Tablero de indicadores y analítica operativa](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/tablero-indicadores-analitica.md)\n\n**Servicio complementario (opcional): Producción más limpia y reducción de desperdicios**\n- Sirve para un segundo paso: cuando el tablero te muestre cuánto desperdicias, este servicio ayuda a reducirlo y a ajustar la producción a la demanda.\n- Duración típica: de 4 a 8 semanas.\n- Inversión: entre **COP 3.500.000 y COP 12.000.000**.\n- Fuente: [Producción más limpia y reducción de desperdicios](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/produccion-mas-limpia-desperdicios.md)\n\nLos rangos son por separado, no incluyen IVA y el valor final se define en la propuesta formal.\n\n**Descuento:** existen descuentos para MIPYMES según el número de empleados (microempresa hasta 10, pequeña de 11 a 50). Para aplicarlo necesito saber cuántos empleados tienes, y tendrías que presentar el certificado de existencia y representación legal.\n\n**Alcance sugerido:** empezar con el tablero de producción, ventas y desperdicio diario, a partir de tus Excel actuales.\n\n**Siguiente paso:** un coordinador revisa la pre-propuesta y te contacta en 2 días hábiles. Después hay una reunión de diagnóstico de 45 a 60 minutos. Esta pre-propuesta no es una oferta comercial.\n\n¿Quieres que la guarde? Si es así, dime el nombre de tu empresa y el de la persona de contacto. El correo es opcional.",
+      "toolCalls": [
+        {
+          "toolName": "search_services",
+          "input": {
+            "query": "datos dispersos en Excel, producción, ventas y desperdicio, decisiones con datos, indicadores",
+            "line": "process_design"
+          }
+        }
+      ],
+      "toolResults": [
+        {
+          "toolName": "search_services",
+          "output": {
+            "results": [
+              {
+                "service_id": "tablero-indicadores-analitica",
+                "title": "Tablero de indicadores y analítica operativa",
+                "source": "data/catalog/servicios/tablero-indicadores-analitica.md",
+                "content": "# Tablero de indicadores y analítica operativa\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDefinimos los indicadores clave del negocio y construimos un tablero que se actualiza con los datos que la empresa ya tiene (ventas, inventario, producción, atención), para tomar decisiones con datos y no por intuición.\n\n## Cuándo aplica\n\n- La empresa **no sabe con precisión** cuánto vende, produce o desperdicia por día.\n- Los datos existen pero están dispersos en varias hojas de cálculo o sistemas.\n- Se quiere hacer seguimiento a una mejora (por ejemplo, después de una simulación).\n\n## Entregables\n\n1. Definición de 5 a 10 KPIs con su fórmula y fuente de datos.\n2. Tablero interactivo conectado a las fuentes.\n3. Capacitación para mantenerlo.\n\n## Duración típica\n\nDe 3 a 6 semanas.\n\n## Inversión\n\nEntre **COP 4.000.000 y COP 14.000.000**.\n\n## Ejemplos\n\n- Tablero de producción y desperdicio diario de una panadería.\n- Indicadores de tiempos de despacho de un operador logístico."
+              },
+              {
+                "service_id": "produccion-mas-limpia-desperdicios",
+                "title": "Producción más limpia y reducción de desperdicios",
+                "source": "data/catalog/servicios/produccion-mas-limpia-desperdicios.md",
+                "content": "# Producción más limpia y reducción de desperdicios\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nAplicamos herramientas de manufactura esbelta (lean) y producción más limpia para reducir desperdicios de materia prima, energía y agua, y para ajustar la producción a la demanda real. Mejora la rentabilidad y la sostenibilidad del proceso.\n\n## Cuándo aplica\n\n- Hay **desperdicio de producto** (se produce más de lo que se vende, se vence o se daña).\n- Los costos de materia prima, agua o energía son altos.\n- La empresa quiere mejorar su desempeño ambiental.\n\n## Entregables\n\n1. Mapa de flujo de valor y cuantificación de desperdicios.\n2. Plan de mejora con acciones priorizadas.\n3. Ajuste de la planeación de producción a la demanda.\n4. Medición de resultados al cierre.\n\n## Duración típica\n\nDe 4 a 8 semanas.\n\n## Inversión\n\nEntre **COP 3.500.000 y COP 12.000.000**.\n\n## Ejemplos\n\n- Panadería que bota una parte de su producción al final del día.\n- Planta de hielo con consumo de energía elevado."
+              }
+            ]
+          }
+        }
+      ],
+      "costUsd": 0.0153912,
+      "latencyMs": 58641,
+      "ttftMs": 58353,
+      "retrievalMode": "tool",
+      "retrievedSources": [
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/produccion-mas-limpia-desperdicios.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente el problema (datos dispersos, falta de visibilidad operativa), recomienda el servicio exacto del catálogo con rango de precio, duración y descuentos respaldados en la política. Estructura clara, tono cercano y profesional, explicaciones concretas (5 a 10 KPIs, capacitación incluida) que facilitan comprensión en una PYME. No inventa servicios ni datos fuera del catálogo."
+  },
+  "judgeCostUsd": 0.005855
+}

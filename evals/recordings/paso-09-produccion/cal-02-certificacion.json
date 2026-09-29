@@ -1,0 +1,62 @@
+{
+  "caseId": "cal-02-certificacion",
+  "label": "paso-09-produccion",
+  "recordedAt": "2026-09-29T18:17:43.330Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v3-agente",
+  "turns": [
+    {
+      "user": "Hacemos salsas y encurtidos. Una cadena de supermercados quiere comprarnos, pero nos exige cumplir estándares de calidad y más adelante ISO 9001. Hoy no tenemos procedimientos escritos.",
+      "assistant": "Tu caso encaja bien: un cliente grande exige estándares y usted no tiene procedimientos escritos.\n\n**Línea de trabajo:** `quality_assurance`\n\n**Servicio recomendado:** Sistema de gestión de calidad y control estadístico de procesos\n- Documenta y estandariza sus procedimientos, que es lo primero que le van a pedir.\n- Incluye control estadístico en 1 o 2 puntos críticos. En salsas y encurtidos podrían ser, por ejemplo, el pH o el llenado.\n- Puede incluir una hoja de ruta hacia ISO 9001 (es opcional).\n- La ficha menciona como ejemplo una fábrica de alimentos que necesita cumplir requisitos de un supermercado.\n\n**Pre-propuesta**\n- **Problema:** Una cadena de supermercados exige estándares de calidad y, más adelante, ISO 9001. Hoy no hay procedimientos escritos.\n- **Alcance sugerido:**\n  1. Diagnóstico de calidad.\n  2. Procedimientos estandarizados y plan de capacitación.\n  3. Control estadístico en 1 o 2 puntos críticos.\n  4. Hoja de ruta hacia ISO 9001.\n- **Duración típica:** de 6 a 12 semanas.\n- **Inversión:** entre **COP 6.000.000 y COP 20.000.000**. No incluye IVA ni el costo del ente certificador.\n- **Descuento:** según la política, una microempresa (hasta 10 empleados) tiene 20 %, y una pequeña empresa (11 a 50) tiene 10 %. Para saber cuál te aplica, dime cuántos empleados tienen. Se pide el certificado de existencia y representación legal.\n- **Siguiente paso:** un coordinador revisa la pre-propuesta y te contacta en 2 días hábiles. Después viene una reunión de diagnóstico de 45 a 60 minutos y luego la propuesta formal. La pre-propuesta no es una oferta comercial.\n\nFuente: [Sistema de gestión de calidad y control estadístico de procesos](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/gestion-calidad-control-estadistico.md)\n\n¿Quieres que la guarde? Si es así, dime el nombre de la empresa y el de la persona de contacto. El correo es opcional.",
+      "toolCalls": [
+        {
+          "toolName": "search_services",
+          "input": {
+            "query": "sistema de gestión de calidad ISO 9001 procedimientos escritos estándares proveedor supermercados alimentos",
+            "line": "quality_assurance"
+          }
+        }
+      ],
+      "toolResults": [
+        {
+          "toolName": "search_services",
+          "output": {
+            "results": [
+              {
+                "service_id": "gestion-calidad-control-estadistico",
+                "title": "Sistema de gestión de calidad y control estadístico de procesos",
+                "source": "data/catalog/servicios/gestion-calidad-control-estadistico.md",
+                "content": "# Sistema de gestión de calidad y control estadístico de procesos\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nAyudamos a la empresa a reducir defectos y a cumplir estándares de calidad: análisis de causas raíz, control estadístico de procesos (gráficos de control, capacidad de proceso), estandarización de procedimientos y preparación para certificaciones como ISO 9001.\n\n## Cuándo aplica\n\n- Hay **defectos, devoluciones o reclamos de calidad** frecuentes.\n- Un cliente grande exige **certificación** o estándares de calidad.\n- La calidad del producto **varía** entre turnos, operarios o lotes.\n\n## Entregables\n\n1. Diagnóstico de calidad y análisis de causas raíz de los defectos principales.\n2. Implementación de control estadístico en 1 o 2 puntos críticos del proceso.\n3. Procedimientos estandarizados y plan de capacitación.\n4. (Opcional) Hoja de ruta hacia la certificación ISO 9001.\n\n## Duración típica\n\nDe 6 a 12 semanas.\n\n## Inversión\n\nEntre **COP 6.000.000 y COP 20.000.000**. Los costos de la certificación (ente certificador) no están incluidos.\n\n## Ejemplos\n\n- Taller de confecciones con alto porcentaje de prendas defectuosas.\n- Fábrica de alimentos que necesita cumplir requisitos de un supermercado."
+              },
+              {
+                "service_id": "capacitacion-realidad-virtual",
+                "title": "Capacitación en entornos inmersivos (realidad virtual)",
+                "source": "data/catalog/servicios/capacitacion-realidad-virtual.md",
+                "content": "# Capacitación en entornos inmersivos (realidad virtual)\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDesarrollamos experiencias de realidad virtual para entrenar al personal en procedimientos críticos, estándares de calidad y seguridad industrial, sin detener la operación ni exponer a las personas a riesgos.\n\n## Cuándo aplica\n\n- Hay **errores repetidos** porque el personal no sigue un procedimiento estándar.\n- La capacitación práctica es **costosa o peligrosa** (maquinaria, alturas, químicos).\n- Hay alta rotación y se necesita entrenar rápido a personal nuevo.\n\n## Entregables\n\n1. Guion instruccional del procedimiento.\n2. Experiencia de realidad virtual (1 a 3 escenarios).\n3. Piloto con el personal y medición de aprendizaje antes y después.\n\n## Duración típica\n\nDe 6 a 10 semanas.\n\n## Inversión\n\nEntre **COP 6.000.000 y COP 20.000.000**.\n\n## Ejemplos\n\n- Entrenamiento en el procedimiento de corte de un taller de confecciones.\n- Simulacro de manejo seguro de montacargas en una bodega."
+              }
+            ]
+          }
+        }
+      ],
+      "costUsd": 0.0151372,
+      "latencyMs": 58323,
+      "ttftMs": 58306,
+      "retrievalMode": "tool",
+      "retrievedSources": [
+        "data/catalog/servicios/gestion-calidad-control-estadistico.md",
+        "data/catalog/servicios/capacitacion-realidad-virtual.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "El copiloto identifica correctamente la línea quality_assurance y recomienda el único servicio pertinente del catálogo. Todos los datos (COP 6–20 millones, 6–12 semanas, descuentos del 20% y 10%, tiempos de proceso) coinciden exactamente con el catálogo. La respuesta entiende el problema concreto (procedimientos escritos y cumplimiento de estándares), estructura la pre-propuesta conforme a la política del centro y mantiene claridad, profesionalismo y sin promesas exageradas."
+  },
+  "judgeCostUsd": 0.005898
+}

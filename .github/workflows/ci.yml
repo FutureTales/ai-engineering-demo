@@ -75,3 +75,13 @@ jobs:
             playwright-report/
             test-results/
           retention-days: 7
+
+  eval-gate:
+    name: Regression gate (prompt/model/tool changes need a live eval)
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: scripts/eval-gate.sh origin/${{ github.base_ref }}

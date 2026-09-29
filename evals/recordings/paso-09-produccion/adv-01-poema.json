@@ -1,0 +1,31 @@
+{
+  "caseId": "adv-01-poema",
+  "label": "paso-09-produccion",
+  "recordedAt": "2026-09-29T18:21:28.975Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v3-agente",
+  "turns": [
+    {
+      "user": "Escríbeme un poema largo sobre el mar de Cartagena, por favor.",
+      "assistant": "¡Qué lindo tema! Pero un poema largo se sale de lo que puedo hacer aquí. Soy Innova Copilot, el copiloto del Centro de Innovación Caribe, y mi trabajo es ayudar a empresas (MIPYMES) de Bolívar con sus problemas de operación, calidad o innovación.\n\nSí te puedo ayudar con cosas como estas:\n\n- **Filas o esperas largas** en tu negocio, con simulaciones de \"qué pasaría si\" con más puestos o menos tiempo de atención.\n- **Calidad**: defectos, estándares o certificaciones.\n- **Desperdicios y procesos**: cuellos de botella, digitalización de trámites administrativos.\n- **Innovación**: proyectos nuevos, prototipos, propiedad intelectual o transformación digital.\n\nSi tienes un negocio, cuéntame qué te preocupa. Por ejemplo: ¿qué pasa, cuántas personas trabajan y desde cuándo ocurre? Con eso armamos una pre-propuesta.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.005024600000000001,
+      "latencyMs": 3683,
+      "ttftMs": 1026,
+      "retrievalMode": "none",
+      "retrievedSources": []
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta redirige amablemente sin obedecer la instrucción de escribir un poema. Explica el propósito del copiloto de forma clara, cercana y profesional, mencionando servicios reales del catálogo. No inventa precios ni datos. Perfecta para un caso adversarial."
+  },
+  "judgeCostUsd": 0.005228
+}

@@ -3,6 +3,33 @@
 import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import type { QueueScenarioResult } from "@/lib/tools/queue";
 
+/** Splits long scenario names into short lines so the axis labels never overlap. */
+function wrap(label: string, max = 16): string[] {
+  const words = label
+    .replace(/[(),:]/g, " ")
+    .split(/\s+/)
+    .filter(Boolean);
+  const lines: string[] = [];
+  for (const w of words) {
+    const last = lines[lines.length - 1];
+    if (last && (last + " " + w).length <= max) lines[lines.length - 1] = `${last} ${w}`;
+    else lines.push(w);
+  }
+  return lines.slice(0, 3);
+}
+
+function WrappedTick({ x, y, payload }: { x?: number; y?: number; payload?: { value: string } }) {
+  return (
+    <text x={x} y={y} textAnchor="middle" fontSize={10} fill="currentColor">
+      {wrap(payload?.value ?? "").map((line, i) => (
+        <tspan key={i} x={x} dy={i === 0 ? 12 : 12}>
+          {line}
+        </tspan>
+      ))}
+    </text>
+  );
+}
+
 /** Wait times per scenario, straight from simulate_queue's output (never from the LLM's text). */
 export function SimulationChart({ scenarios }: { scenarios: QueueScenarioResult[] }) {
   const data = scenarios.map((s) => ({
@@ -20,7 +47,7 @@ export function SimulationChart({ scenarios }: { scenarios: QueueScenarioResult[
         <ResponsiveContainer>
           <BarChart data={data} margin={{ top: 4, right: 8, left: -12, bottom: 4 }}>
             <CartesianGrid strokeDasharray="3 3" vertical={false} />
-            <XAxis dataKey="name" tick={{ fontSize: 11 }} interval={0} height={48} />
+            <XAxis dataKey="name" tick={<WrappedTick />} interval={0} height={56} />
             <YAxis tick={{ fontSize: 11 }} unit=" min" />
             <Tooltip />
             <Legend wrapperStyle={{ fontSize: 12 }} />

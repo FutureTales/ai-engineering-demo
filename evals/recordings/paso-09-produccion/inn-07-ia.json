@@ -1,0 +1,80 @@
+{
+  "caseId": "inn-07-ia",
+  "label": "paso-09-produccion",
+  "recordedAt": "2026-09-29T18:21:17.406Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v3-agente",
+  "turns": [
+    {
+      "user": "Tengo un almacén de repuestos de motos y todo el mundo dice que hay que usar IA. No sé dónde me serviría ni por dónde empezar.",
+      "assistant": "¡Qué bueno que te lo preguntes antes de lanzarte! No siempre hace falta \"usar IA\". Primero conviene ver qué te duele más en el negocio y de ahí decidir.\n\nPara orientarte, cuéntame en un solo mensaje:\n\n1. **¿Qué tan grande es tu almacén?** Por ejemplo, cuántas personas trabajan y si tienes una o varias sedes.\n2. **¿Qué es lo que más te complica hoy?** Por ejemplo, saber qué hay en inventario, filas o demoras en el mostrador, pedidos a proveedores, reclamos por repuestos equivocados o defectuosos, o llevar las ventas y cuentas.\n3. **¿Cómo llevas la información ahora?** Puede ser en cuaderno, Excel, un programa de inventario o WhatsApp.\n\nCon eso te digo por dónde empezar y qué servicio del centro te puede servir.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.005926600000000001,
+      "latencyMs": 4413,
+      "ttftMs": 1738,
+      "retrievalMode": "none",
+      "retrievedSources": []
+    },
+    {
+      "user": "Somos 10 empleados. Atendemos por WhatsApp y mostrador, llevamos el inventario en un programa contable y recibimos unos 150 mensajes al día.",
+      "assistant": "**Línea de trabajo:** `business_innovation`\n\nCon 10 empleados, 150 mensajes diarios y el inventario en un programa contable, lo más sensato es **no empezar por comprar IA**. Primero conviene ver dónde te daría más retorno. Por ejemplo, podría ser ordenar la atención por WhatsApp, consultar el inventario más rápido o anticipar qué repuestos se te agotan.\n\n**Servicio recomendado: Diagnóstico de madurez digital y de IA para MIPYMES**\n- Aplica porque quieres \"usar IA\" y no sabes dónde te serviría. Su ficha incluso menciona el caso de un almacén de repuestos que quiere automatizar la atención por WhatsApp.\n- **Entregables:** encuesta y entrevistas, informe de madurez (procesos, datos, personas, tecnología) y una hoja de ruta con 3 a 5 iniciativas priorizadas.\n- **Duración típica:** de 2 a 3 semanas.\n- **Inversión:** entre **COP 1.500.000 y COP 4.000.000**.\n  - El rango no incluye IVA.\n  - Por ser una empresa de hasta 10 empleados, podrías acceder a un **descuento del 20 %**. Necesitarías presentar el certificado de existencia y representación legal, y el valor final se define en la propuesta formal.\n- Fuente: [Diagnóstico de madurez digital y de IA para MIPYMES](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/diagnostico-madurez-digital-ia.md)\n\n**Pre-propuesta**\n- **Problema:** almacén de repuestos de motos (10 empleados) que atiende por WhatsApp y mostrador, con unos 150 mensajes al día. Lleva el inventario en un programa contable y no sabe dónde aplicar IA.\n- **Alcance sugerido:** diagnóstico de la atención por WhatsApp, el manejo del inventario y los datos disponibles, con una hoja de ruta priorizada.\n- **Siguiente paso:** un coordinador revisa la pre-propuesta y te contacta en unos 2 días hábiles. Después hay una reunión de diagnóstico de 45 a 60 minutos. Esta pre-propuesta no es una oferta comercial ni compromete al centro.\n\n¿Quieres que la guarde para que un coordinador la revise? Si es así, dime el **nombre de tu empresa** y el **nombre de la persona de contacto**. El correo es opcional.",
+      "toolCalls": [
+        {
+          "toolName": "search_services",
+          "input": {
+            "query": "MIPYME almacén repuestos motos inteligencia artificial por dónde empezar WhatsApp inventario transformación digital",
+            "line": "business_innovation"
+          }
+        }
+      ],
+      "toolResults": [
+        {
+          "toolName": "search_services",
+          "output": {
+            "results": [
+              {
+                "service_id": "diagnostico-madurez-digital-ia",
+                "title": "Diagnóstico de madurez digital y de IA para MIPYMES",
+                "source": "data/catalog/servicios/diagnostico-madurez-digital-ia.md",
+                "content": "# Diagnóstico de madurez digital y de IA para MIPYMES\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nEvaluamos qué tan preparada está la empresa para adoptar herramientas digitales e inteligencia artificial: procesos, datos, personas y tecnología. Entregamos una hoja de ruta realista con oportunidades priorizadas por impacto y esfuerzo.\n\n## Cuándo aplica\n\n- La empresa **quiere \"usar IA\"** pero no sabe dónde le serviría.\n- Es el **primer contacto** con el centro y no está claro qué servicio necesita.\n- Se quiere priorizar inversiones en tecnología.\n\n## Entregables\n\n1. Encuesta y entrevistas de diagnóstico.\n2. Informe de madurez por dimensión (procesos, datos, personas, tecnología).\n3. Hoja de ruta con 3 a 5 iniciativas priorizadas.\n\n## Duración típica\n\nDe 2 a 3 semanas.\n\n## Inversión\n\nEntre **COP 1.500.000 y COP 4.000.000**.\n\n## Ejemplos\n\n- Almacén de repuestos que quiere automatizar la atención por WhatsApp.\n- Agencia de turismo que quiere usar sus datos de reservas para planear temporadas."
+              },
+              {
+                "service_id": "formulacion-proyectos-idi",
+                "title": "Gerencia y formulación de proyectos de innovación (I+D+i)",
+                "source": "data/catalog/servicios/formulacion-proyectos-idi.md",
+                "content": "# Gerencia y formulación de proyectos de innovación (I+D+i)\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nFormulamos proyectos de investigación, desarrollo e innovación para presentarlos a convocatorias de financiadores públicos, privados o de cooperación internacional. Si el proyecto es aprobado, podemos acompañar su gerencia: plan de trabajo, seguimiento técnico y financiero, e informes.\n\n## Cuándo aplica\n\n- La empresa o cooperativa **busca financiación** para un proyecto de innovación.\n- Hay una convocatoria abierta y no tienen experiencia formulando.\n- Ganaron recursos y necesitan apoyo para ejecutar y reportar.\n\n## Entregables\n\n1. Identificación de convocatorias pertinentes.\n2. Documento técnico del proyecto: problema, objetivos, metodología, presupuesto, cronograma e indicadores.\n3. Revisión de requisitos de la convocatoria.\n4. (Opcional) Gerencia del proyecto durante la ejecución.\n\n## Duración típica\n\nDe 3 a 8 semanas para la formulación. La gerencia se cotiza aparte según la duración del proyecto.\n\n## Inversión\n\nEntre **COP 4.000.000 y COP 15.000.000** por la formulación. La aprobación del proyecto depende del financiador y no está garantizada.\n\n## Ejemplos\n\n- Cooperativa de pescadores que busca financiación para una planta de procesamiento.\n- MIPYME que quiere cofinanciar el desarrollo de un producto nuevo."
+              },
+              {
+                "service_id": "vigilancia-tecnologica-pi",
+                "title": "Vigilancia tecnológica y propiedad intelectual",
+                "source": "data/catalog/servicios/vigilancia-tecnologica-pi.md",
+                "content": "# Vigilancia tecnológica y propiedad intelectual\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nAcompañamos a la empresa a proteger lo que crea: búsqueda de antecedentes de marcas y patentes, estrategia de propiedad intelectual y preparación de la solicitud de **registro de marca ante la Superintendencia de Industria y Comercio (SIC)**. También hacemos vigilancia tecnológica: qué están haciendo los competidores y qué tecnologías emergen en el sector.\n\n## Cuándo aplica\n\n- Una empresa o startup quiere **registrar su marca** o proteger un producto.\n- Hay dudas sobre si un nombre o logo ya está registrado.\n- Se va a lanzar un producto nuevo y se quiere conocer el estado del arte.\n\n## Entregables\n\n1. Informe de búsqueda de antecedentes (marcas o patentes).\n2. Recomendación de estrategia de protección.\n3. Acompañamiento en la preparación de la solicitud ante la SIC.\n4. Informe de vigilancia tecnológica (si aplica).\n\n## Duración típica\n\nDe 2 a 4 semanas, sin contar los tiempos de trámite de la SIC.\n\n## Inversión\n\nEntre **COP 1.800.000 y COP 6.000.000**. **Las tasas oficiales de la SIC no están incluidas** y las paga directamente la empresa. Este servicio no reemplaza la asesoría legal de un abogado.\n\n## Ejemplos\n\n- Startup de moda sostenible que quiere registrar su marca antes de exportar.\n- Empresa que quiere saber si su proceso de producción es patentable."
+              }
+            ]
+          }
+        }
+      ],
+      "costUsd": 0.019649200000000002,
+      "latencyMs": 58792,
+      "ttftMs": 58612,
+      "retrievalMode": "tool",
+      "retrievedSources": [
+        "data/catalog/servicios/diagnostico-madurez-digital-ia.md",
+        "data/catalog/servicios/formulacion-proyectos-idi.md",
+        "data/catalog/servicios/vigilancia-tecnologica-pi.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente la línea business_innovation y recomienda el servicio diagnostico-madurez-digital-ia con todos los datos respaldados por el catálogo (COP 1.500.000–4.000.000, 2–3 semanas, descuento del 20% para microempresas). Atiende el problema concreto, evita promesas de resultados, es clara y bien estructurada, con tono cercano y profesional."
+  },
+  "judgeCostUsd": 0.006135
+}

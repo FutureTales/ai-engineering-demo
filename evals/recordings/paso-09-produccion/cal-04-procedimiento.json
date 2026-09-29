@@ -1,0 +1,68 @@
+{
+  "caseId": "cal-04-procedimiento",
+  "label": "paso-09-produccion",
+  "recordedAt": "2026-09-29T18:17:53.859Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v3-agente",
+  "turns": [
+    {
+      "user": "En mi fábrica de muebles los operarios nuevos no siguen el procedimiento estándar de corte y se dañan muchas láminas. Capacitar en la máquina real es costoso. ¿Hay otra forma de entrenarlos?",
+      "assistant": "Sí, hay otra forma: entrenarlos en realidad virtual (RV), sin gastar láminas ni detener la máquina.\n\n**Línea de trabajo:** `quality_assurance`\n\n**Servicio recomendado: Capacitación en entornos inmersivos (realidad virtual)**\n- Aplica porque los errores se repiten por no seguir el procedimiento estándar, la práctica en la máquina real es costosa y los operarios nuevos necesitan entrenarse rápido.\n- **Entregables:**\n  1. Guion instruccional del procedimiento de corte.\n  2. Experiencia de RV con 1 a 3 escenarios.\n  3. Piloto con el personal y medición del aprendizaje antes y después.\n- **Duración típica:** de 6 a 10 semanas.\n- **Inversión:** entre COP 6.000.000 y COP 20.000.000. El rango no incluye IVA ni costos de terceros.\n- Fuente: [Capacitación en entornos inmersivos (realidad virtual)](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/capacitacion-realidad-virtual.md)\n\n**Descuentos:** hay descuentos para MIPYMES según el número de empleados. Con hasta 10 empleados es del 20 %, y de 11 a 50 empleados es del 10 %. Para aplicarlo, dime cuántos empleados tiene tu fábrica. También tendrías que presentar el certificado de existencia y representación legal.\n\n**Alcance sugerido:** modelar el procedimiento estándar de corte, crear el escenario de RV y hacer un piloto con los operarios nuevos. Así se mide cuánto mejora el seguimiento del procedimiento.\n\n**Siguiente paso:** un coordinador revisa la pre-propuesta y te contacta en 2 días hábiles. Después viene una reunión de diagnóstico. Esta pre-propuesta no es una oferta comercial.\n\n¿Quieres que la guarde? Si es así, dime el nombre de tu empresa y el de la persona de contacto. El correo es opcional.",
+      "toolCalls": [
+        {
+          "toolName": "search_services",
+          "input": {
+            "query": "capacitación operarios procedimiento estándar de corte desperdicio láminas entrenamiento sin máquina real"
+          }
+        }
+      ],
+      "toolResults": [
+        {
+          "toolName": "search_services",
+          "output": {
+            "results": [
+              {
+                "service_id": "capacitacion-realidad-virtual",
+                "title": "Capacitación en entornos inmersivos (realidad virtual)",
+                "source": "data/catalog/servicios/capacitacion-realidad-virtual.md",
+                "content": "# Capacitación en entornos inmersivos (realidad virtual)\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDesarrollamos experiencias de realidad virtual para entrenar al personal en procedimientos críticos, estándares de calidad y seguridad industrial, sin detener la operación ni exponer a las personas a riesgos.\n\n## Cuándo aplica\n\n- Hay **errores repetidos** porque el personal no sigue un procedimiento estándar.\n- La capacitación práctica es **costosa o peligrosa** (maquinaria, alturas, químicos).\n- Hay alta rotación y se necesita entrenar rápido a personal nuevo.\n\n## Entregables\n\n1. Guion instruccional del procedimiento.\n2. Experiencia de realidad virtual (1 a 3 escenarios).\n3. Piloto con el personal y medición de aprendizaje antes y después.\n\n## Duración típica\n\nDe 6 a 10 semanas.\n\n## Inversión\n\nEntre **COP 6.000.000 y COP 20.000.000**.\n\n## Ejemplos\n\n- Entrenamiento en el procedimiento de corte de un taller de confecciones.\n- Simulacro de manejo seguro de montacargas en una bodega."
+              },
+              {
+                "service_id": "produccion-mas-limpia-desperdicios",
+                "title": "Producción más limpia y reducción de desperdicios",
+                "source": "data/catalog/servicios/produccion-mas-limpia-desperdicios.md",
+                "content": "# Producción más limpia y reducción de desperdicios\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nAplicamos herramientas de manufactura esbelta (lean) y producción más limpia para reducir desperdicios de materia prima, energía y agua, y para ajustar la producción a la demanda real. Mejora la rentabilidad y la sostenibilidad del proceso.\n\n## Cuándo aplica\n\n- Hay **desperdicio de producto** (se produce más de lo que se vende, se vence o se daña).\n- Los costos de materia prima, agua o energía son altos.\n- La empresa quiere mejorar su desempeño ambiental.\n\n## Entregables\n\n1. Mapa de flujo de valor y cuantificación de desperdicios.\n2. Plan de mejora con acciones priorizadas.\n3. Ajuste de la planeación de producción a la demanda.\n4. Medición de resultados al cierre.\n\n## Duración típica\n\nDe 4 a 8 semanas.\n\n## Inversión\n\nEntre **COP 3.500.000 y COP 12.000.000**.\n\n## Ejemplos\n\n- Panadería que bota una parte de su producción al final del día.\n- Planta de hielo con consumo de energía elevado."
+              },
+              {
+                "service_id": "simulacion-operaciones",
+                "title": "Simulación de operaciones y análisis \"what if\"",
+                "source": "data/catalog/servicios/simulacion-operaciones.md",
+                "content": "# Simulación de operaciones y análisis \"what if\"\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nConstruimos un modelo de simulación de eventos discretos de la operación de la empresa (manufactura, logística o servicios) para encontrar cuellos de botella y comparar escenarios antes de invertir. Usamos software especializado de simulación y teoría de colas para estimar tiempos de espera, utilización de recursos y capacidad.\n\n## Cuándo aplica\n\n- Hay **filas o tiempos de espera** de clientes, pedidos o vehículos (recepción de un hotel, caja de un almacén, muelle de despacho).\n- La empresa duda entre **contratar personal, comprar equipos o cambiar el proceso** y quiere saber qué conviene.\n- La demanda varía por temporada u horario y la capacidad no alcanza en los picos.\n- Se necesita definir **KPIs operativos** (tiempo de ciclo, utilización, nivel de servicio).\n\n## Entregables\n\n1. Levantamiento del proceso actual y de los datos (llegadas, tiempos de servicio, recursos).\n2. Modelo de simulación validado con la operación real.\n3. Comparación de 3 a 5 escenarios \"what if\" (más recursos, cambios de turno, digitalización de pasos).\n4. Tablero con los KPIs definidos y recomendaciones priorizadas.\n5. Taller de transferencia con el equipo de la empresa.\n\n## Duración típica\n\nDe 4 a 8 semanas, según la complejidad del proceso y la disponibilidad de datos.\n\n## Inversión\n\nEntre **COP 8.000.000 y COP 25.000.000**. Aplican los descuentos para MIPYMES de la política de tarifas.\n\n## Ejemplos\n\n- Hotel con filas en el check-in durante la temporada alta: se comparan 2, 3 y 4 recepcionistas y un check-in digital previo.\n- Operador logístico con camiones esperando en el muelle de despacho.\n- Clínica con tiempos de espera largos en admisiones."
+              }
+            ]
+          }
+        }
+      ],
+      "costUsd": 0.0152332,
+      "latencyMs": 7587,
+      "ttftMs": 7551,
+      "retrievalMode": "tool",
+      "retrievedSources": [
+        "data/catalog/servicios/capacitacion-realidad-virtual.md",
+        "data/catalog/servicios/produccion-mas-limpia-desperdicios.md",
+        "data/catalog/servicios/simulacion-operaciones.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente el problema (errores por no seguir procedimiento, costo de entrenamiento en máquina real) y recomienda el servicio exacto del catálogo (capacitacion-realidad-virtual) con todos sus datos verificados: línea quality_assurance, duración 6–10 semanas, rango COP 6.000.000–20.000.000, entregables coherentes y políticas de descuento correctas. Estructura clara, tono cercano y profesional, sin promesas no respaldadas."
+  },
+  "judgeCostUsd": 0.005791
+}

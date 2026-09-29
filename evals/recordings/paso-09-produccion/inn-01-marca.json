@@ -1,0 +1,69 @@
+{
+  "caseId": "inn-01-marca",
+  "label": "paso-09-produccion",
+  "recordedAt": "2026-09-29T18:18:54.927Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v3-agente",
+  "turns": [
+    {
+      "user": "Somos una startup que hace bolsos con fibras recicladas. Queremos exportar y alguien nos dijo que primero deberíamos proteger la marca. No sabemos si el nombre ya está registrado.",
+      "assistant": "Tu caso encaja bien con nuestro servicio de propiedad intelectual.\n\n**Línea de trabajo:** `business_innovation`\n\n**Servicio recomendado: Vigilancia tecnológica y propiedad intelectual**\n- Hacemos la búsqueda de antecedentes. Con ella sabrás si tu nombre o logo ya está registrado.\n- Definimos una estrategia de protección.\n- Te acompañamos en la solicitud de registro de marca ante la SIC.\n- La ficha incluye un ejemplo parecido al tuyo: una startup de moda sostenible que quiere registrar su marca antes de exportar.\n\n**Pre-propuesta**\n- **Problema:** Startup de bolsos con fibras recicladas que quiere exportar. Necesita saber si su nombre está disponible y proteger la marca.\n- **Alcance sugerido:** Informe de búsqueda de antecedentes, recomendación de estrategia de protección y acompañamiento en la solicitud ante la SIC.\n- **Duración típica:** De 2 a 4 semanas, sin contar los tiempos de trámite de la SIC.\n- **Inversión:** Entre **COP 1.800.000 y COP 6.000.000**. No incluye IVA ni las tasas oficiales de la SIC, que paga directamente la empresa.\n- **Descuento:** Puede aplicar según el tamaño de la empresa. Dime cuántos empleados tienen y lo revisamos. Para acceder, hay que presentar el certificado de existencia y representación legal.\n- **Siguiente paso:** Un coordinador revisa la pre-propuesta y te contacta en 2 días hábiles. Después viene una reunión de diagnóstico.\n\nEste servicio no reemplaza la asesoría de un abogado. La pre-propuesta tampoco es una oferta comercial. El centro no garantiza que la SIC apruebe el registro.\n\nFuente: [Vigilancia tecnológica y propiedad intelectual](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/vigilancia-tecnologica-pi.md)\n\n¿Quieres que guarde la pre-propuesta? Si es así, dime el nombre de la empresa y el de la persona de contacto. Si quieres, agrega también un correo.",
+      "toolCalls": [
+        {
+          "toolName": "search_services",
+          "input": {
+            "query": "proteger marca registro propiedad intelectual exportar vigilancia",
+            "line": "business_innovation"
+          }
+        }
+      ],
+      "toolResults": [
+        {
+          "toolName": "search_services",
+          "output": {
+            "results": [
+              {
+                "service_id": "vigilancia-tecnologica-pi",
+                "title": "Vigilancia tecnológica y propiedad intelectual",
+                "source": "data/catalog/servicios/vigilancia-tecnologica-pi.md",
+                "content": "# Vigilancia tecnológica y propiedad intelectual\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nAcompañamos a la empresa a proteger lo que crea: búsqueda de antecedentes de marcas y patentes, estrategia de propiedad intelectual y preparación de la solicitud de **registro de marca ante la Superintendencia de Industria y Comercio (SIC)**. También hacemos vigilancia tecnológica: qué están haciendo los competidores y qué tecnologías emergen en el sector.\n\n## Cuándo aplica\n\n- Una empresa o startup quiere **registrar su marca** o proteger un producto.\n- Hay dudas sobre si un nombre o logo ya está registrado.\n- Se va a lanzar un producto nuevo y se quiere conocer el estado del arte.\n\n## Entregables\n\n1. Informe de búsqueda de antecedentes (marcas o patentes).\n2. Recomendación de estrategia de protección.\n3. Acompañamiento en la preparación de la solicitud ante la SIC.\n4. Informe de vigilancia tecnológica (si aplica).\n\n## Duración típica\n\nDe 2 a 4 semanas, sin contar los tiempos de trámite de la SIC.\n\n## Inversión\n\nEntre **COP 1.800.000 y COP 6.000.000**. **Las tasas oficiales de la SIC no están incluidas** y las paga directamente la empresa. Este servicio no reemplaza la asesoría legal de un abogado.\n\n## Ejemplos\n\n- Startup de moda sostenible que quiere registrar su marca antes de exportar.\n- Empresa que quiere saber si su proceso de producción es patentable."
+              },
+              {
+                "service_id": "prototipado-3d",
+                "title": "Prototipado 3D y fabricación rápida",
+                "source": "data/catalog/servicios/prototipado-3d.md",
+                "content": "# Prototipado 3D y fabricación rápida\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDiseñamos y fabricamos prototipos físicos de productos, piezas o empaques con modelado CAD, impresión 3D (FDM y resina) y corte láser, para validar forma, función y aceptación de clientes antes de producir en serie.\n\n## Cuándo aplica\n\n- La empresa tiene una **idea de producto nuevo** o quiere rediseñar uno existente.\n- Necesita **mostrar un prototipo** a clientes, inversionistas o financiadores.\n- Quiere reemplazar una pieza importada o descontinuada.\n\n## Entregables\n\n1. Modelo CAD del producto o pieza.\n2. Hasta 3 iteraciones de prototipo físico.\n3. Informe de pruebas funcionales y recomendaciones para producción.\n\n## Duración típica\n\nDe 2 a 6 semanas.\n\n## Inversión\n\nEntre **COP 2.500.000 y COP 12.000.000**, según tamaño, material y número de iteraciones.\n\n## Ejemplos\n\n- Empaque nuevo para una línea de dulces típicos.\n- Prototipo de un dispositivo para una startup de agrotecnología."
+              },
+              {
+                "service_id": "formulacion-proyectos-idi",
+                "title": "Gerencia y formulación de proyectos de innovación (I+D+i)",
+                "source": "data/catalog/servicios/formulacion-proyectos-idi.md",
+                "content": "# Gerencia y formulación de proyectos de innovación (I+D+i)\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nFormulamos proyectos de investigación, desarrollo e innovación para presentarlos a convocatorias de financiadores públicos, privados o de cooperación internacional. Si el proyecto es aprobado, podemos acompañar su gerencia: plan de trabajo, seguimiento técnico y financiero, e informes.\n\n## Cuándo aplica\n\n- La empresa o cooperativa **busca financiación** para un proyecto de innovación.\n- Hay una convocatoria abierta y no tienen experiencia formulando.\n- Ganaron recursos y necesitan apoyo para ejecutar y reportar.\n\n## Entregables\n\n1. Identificación de convocatorias pertinentes.\n2. Documento técnico del proyecto: problema, objetivos, metodología, presupuesto, cronograma e indicadores.\n3. Revisión de requisitos de la convocatoria.\n4. (Opcional) Gerencia del proyecto durante la ejecución.\n\n## Duración típica\n\nDe 3 a 8 semanas para la formulación. La gerencia se cotiza aparte según la duración del proyecto.\n\n## Inversión\n\nEntre **COP 4.000.000 y COP 15.000.000** por la formulación. La aprobación del proyecto depende del financiador y no está garantizada.\n\n## Ejemplos\n\n- Cooperativa de pescadores que busca financiación para una planta de procesamiento.\n- MIPYME que quiere cofinanciar el desarrollo de un producto nuevo."
+              }
+            ]
+          }
+        }
+      ],
+      "costUsd": 0.0159692,
+      "latencyMs": 57545,
+      "ttftMs": 57518,
+      "retrievalMode": "tool",
+      "retrievedSources": [
+        "data/catalog/servicios/vigilancia-tecnologica-pi.md",
+        "data/catalog/servicios/prototipado-3d.md",
+        "data/catalog/servicios/formulacion-proyectos-idi.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende perfectamente el problema concreto (protección de marca para exportación), recomienda el servicio correcto del catálogo (vigilancia-tecnologica-pi) con todos los datos verificados: línea business_innovation, rango COP 1.800.000–6.000.000, plazo 2 a 4 semanas. Explica claramente qué incluye el servicio, aplicabilidad de descuentos según política, limitaciones legales y próximos pasos. Tono profesional, cercano y sin promesas excesivas. La estructura es legible y bien organizada."
+  },
+  "judgeCostUsd": 0.005901
+}

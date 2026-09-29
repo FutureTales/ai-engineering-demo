@@ -1,0 +1,219 @@
+{
+  "caseId": "sim-03-clinica",
+  "label": "paso-09-produccion",
+  "recordedAt": "2026-09-29T18:13:39.926Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v3-agente",
+  "turns": [
+    {
+      "user": "Tengo una clínica odontológica en Manga. En admisiones los pacientes esperan mucho entre las 7 y las 10 de la mañana. Hay 2 personas en admisiones, llegan unos 20 pacientes por hora y registrar a cada uno toma unos 5 minutos. ¿Contrato a otra persona?",
+      "assistant": "Tengo datos suficientes para simular tu caso. Voy a buscar el servicio que aplica y a comparar escenarios.**Línea de trabajo:** `process_design`\n\nCon tus datos (20 pacientes por hora, 5 minutos por registro, pico de 7 a 10 a. m.) simulé cuatro escenarios. Uso las cifras de la simulación del pico de 3 horas:\n\n- **Actual, 2 personas:** espera media 7,2 min, p90 19,6 min, utilización 83 %.\n- **3 personas:** espera media 1 min, p90 3,6 min, utilización 56 %.\n- **2 personas y registro previo digital (3 min por paciente):** espera media 1 min, p90 3,5 min, utilización 50 %.\n- **3 personas y registro previo digital (3 min):** espera media 0,1 min, p90 0 min, utilización 33 %.\n\n**Conclusión:** con 2 personas ya estás cerca del límite. Casi todo el tiempo van a estar ocupadas, y por eso se arman las filas. El p90 de 19,6 min significa que 1 de cada 10 pacientes espera casi 20 minutos o más.\n\nContratar a una tercera persona resuelve la espera. Pero si logras bajar el registro de 5 a 3 minutos, por ejemplo con datos y formularios llenados antes de la cita, consigues casi el mismo resultado sin contratar. El 3 minutos es un supuesto mío, así que habría que validarlo con tu operación real.\n\n**Servicio recomendado:** Simulación de operaciones y análisis \"what if\". Aplica porque dudas entre contratar personal o cambiar el proceso, y la ficha menciona clínicas con esperas en admisiones.\n- Entregables: modelo validado con tu operación, comparación de 3 a 5 escenarios, tablero de KPIs y taller con tu equipo.\n- Duración típica: 4 a 8 semanas.\n- Inversión: entre **COP 8.000.000 y COP 25.000.000**, sin IVA. Aplican los descuentos para MIPYMES de la política de tarifas.\n- Fuente: [Simulación de operaciones y análisis \"what if\"](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/simulacion-operaciones.md)\n\n**Complemento posible:** Modelado y digitalización de procesos administrativos, si decides digitalizar el registro previo.\n- Duración típica: 4 a 10 semanas.\n- Inversión: entre **COP 5.000.000 y COP 18.000.000**. Las licencias de software no están incluidas.\n- Fuente: [Modelado y digitalización de procesos administrativos](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/digitalizacion-procesos-administrativos.md)\n\nPara saber si te corresponde descuento necesitaría saber cuántos empleados tiene la clínica. Ese dato lo confirma el certificado de existencia y representación legal.\n\n**Pre-propuesta**\n- **Problema:** esperas largas en admisiones de 7 a 10 a. m. con 2 personas.\n- **Alcance sugerido:** levantar datos reales, validar el modelo y comparar escenarios (3.ª persona, registro previo digital, ambos).\n- **Siguiente paso:** un coordinador te contacta en 2 días hábiles y hace una reunión de diagnóstico de 45 a 60 minutos. Esta pre-propuesta no es una oferta comercial.\n\n¿Quieres que la guarde? Si es así, dime el nombre de la clínica, tu nombre como contacto y, si quieres, un correo.",
+      "toolCalls": [
+        {
+          "toolName": "search_services",
+          "input": {
+            "query": "filas esperas admisiones clínica capacidad pacientes recepción",
+            "line": "process_design"
+          }
+        },
+        {
+          "toolName": "simulate_queue",
+          "input": {
+            "scenarios": [
+              {
+                "scenario_label": "Actual: 2 personas",
+                "arrival_rate_per_hour": 20,
+                "service_time_min": 5,
+                "servers": 2,
+                "hours": 3
+              },
+              {
+                "scenario_label": "3 personas",
+                "arrival_rate_per_hour": 20,
+                "service_time_min": 5,
+                "servers": 3,
+                "hours": 3
+              },
+              {
+                "scenario_label": "2 personas + registro previo digital (3 min)",
+                "arrival_rate_per_hour": 20,
+                "service_time_min": 3,
+                "servers": 2,
+                "hours": 3
+              },
+              {
+                "scenario_label": "3 personas + registro previo digital (3 min)",
+                "arrival_rate_per_hour": 20,
+                "service_time_min": 3,
+                "servers": 3,
+                "hours": 3
+              }
+            ]
+          }
+        }
+      ],
+      "toolResults": [
+        {
+          "toolName": "simulate_queue",
+          "output": {
+            "scenarios": [
+              {
+                "scenario_label": "Actual: 2 personas",
+                "servers": 2,
+                "arrival_rate_per_hour": 20,
+                "service_time_min": 5,
+                "utilization": 0.833,
+                "stable": true,
+                "verdict": "Estable, con filas moderadas en los momentos de más llegadas.",
+                "analytic": {
+                  "prob_wait": 0.758,
+                  "avg_wait_min": 11.4,
+                  "p90_wait_min": 30.4,
+                  "avg_queue_len": 3.79,
+                  "avg_time_in_system_min": 16.4
+                },
+                "simulation": {
+                  "hours": 3,
+                  "replications": 200,
+                  "seed": 42,
+                  "avg_wait_min": 7.2,
+                  "p90_wait_min": 19.6,
+                  "avg_queue_len": 2.2,
+                  "typical_max_queue_len": 7,
+                  "bad_day_max_queue_len": 14,
+                  "customers_per_replication": 59.5
+                }
+              },
+              {
+                "scenario_label": "3 personas",
+                "servers": 3,
+                "arrival_rate_per_hour": 20,
+                "service_time_min": 5,
+                "utilization": 0.556,
+                "stable": true,
+                "verdict": "Estable y con holgura: la espera es baja.",
+                "analytic": {
+                  "prob_wait": 0.3,
+                  "avg_wait_min": 1.1,
+                  "p90_wait_min": 4.1,
+                  "avg_queue_len": 0.37,
+                  "avg_time_in_system_min": 6.1
+                },
+                "simulation": {
+                  "hours": 3,
+                  "replications": 200,
+                  "seed": 42,
+                  "avg_wait_min": 1,
+                  "p90_wait_min": 3.6,
+                  "avg_queue_len": 0.32,
+                  "typical_max_queue_len": 4,
+                  "bad_day_max_queue_len": 6,
+                  "customers_per_replication": 59.5
+                }
+              },
+              {
+                "scenario_label": "2 personas + registro previo digital (3 min)",
+                "servers": 2,
+                "arrival_rate_per_hour": 20,
+                "service_time_min": 3,
+                "utilization": 0.5,
+                "stable": true,
+                "verdict": "Estable y con holgura: la espera es baja.",
+                "analytic": {
+                  "prob_wait": 0.333,
+                  "avg_wait_min": 1,
+                  "p90_wait_min": 3.6,
+                  "avg_queue_len": 0.33,
+                  "avg_time_in_system_min": 4
+                },
+                "simulation": {
+                  "hours": 3,
+                  "replications": 200,
+                  "seed": 42,
+                  "avg_wait_min": 1,
+                  "p90_wait_min": 3.5,
+                  "avg_queue_len": 0.31,
+                  "typical_max_queue_len": 4,
+                  "bad_day_max_queue_len": 6,
+                  "customers_per_replication": 59.5
+                }
+              },
+              {
+                "scenario_label": "3 personas + registro previo digital (3 min)",
+                "servers": 3,
+                "arrival_rate_per_hour": 20,
+                "service_time_min": 3,
+                "utilization": 0.333,
+                "stable": true,
+                "verdict": "Estable y con holgura: la espera es baja.",
+                "analytic": {
+                  "prob_wait": 0.091,
+                  "avg_wait_min": 0.1,
+                  "p90_wait_min": 0,
+                  "avg_queue_len": 0.05,
+                  "avg_time_in_system_min": 3.1
+                },
+                "simulation": {
+                  "hours": 3,
+                  "replications": 200,
+                  "seed": 42,
+                  "avg_wait_min": 0.1,
+                  "p90_wait_min": 0,
+                  "avg_queue_len": 0.04,
+                  "typical_max_queue_len": 2,
+                  "bad_day_max_queue_len": 3,
+                  "customers_per_replication": 59.5
+                }
+              }
+            ]
+          }
+        },
+        {
+          "toolName": "search_services",
+          "output": {
+            "results": [
+              {
+                "service_id": "simulacion-operaciones",
+                "title": "Simulación de operaciones y análisis \"what if\"",
+                "source": "data/catalog/servicios/simulacion-operaciones.md",
+                "content": "# Simulación de operaciones y análisis \"what if\"\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nConstruimos un modelo de simulación de eventos discretos de la operación de la empresa (manufactura, logística o servicios) para encontrar cuellos de botella y comparar escenarios antes de invertir. Usamos software especializado de simulación y teoría de colas para estimar tiempos de espera, utilización de recursos y capacidad.\n\n## Cuándo aplica\n\n- Hay **filas o tiempos de espera** de clientes, pedidos o vehículos (recepción de un hotel, caja de un almacén, muelle de despacho).\n- La empresa duda entre **contratar personal, comprar equipos o cambiar el proceso** y quiere saber qué conviene.\n- La demanda varía por temporada u horario y la capacidad no alcanza en los picos.\n- Se necesita definir **KPIs operativos** (tiempo de ciclo, utilización, nivel de servicio).\n\n## Entregables\n\n1. Levantamiento del proceso actual y de los datos (llegadas, tiempos de servicio, recursos).\n2. Modelo de simulación validado con la operación real.\n3. Comparación de 3 a 5 escenarios \"what if\" (más recursos, cambios de turno, digitalización de pasos).\n4. Tablero con los KPIs definidos y recomendaciones priorizadas.\n5. Taller de transferencia con el equipo de la empresa.\n\n## Duración típica\n\nDe 4 a 8 semanas, según la complejidad del proceso y la disponibilidad de datos.\n\n## Inversión\n\nEntre **COP 8.000.000 y COP 25.000.000**. Aplican los descuentos para MIPYMES de la política de tarifas.\n\n## Ejemplos\n\n- Hotel con filas en el check-in durante la temporada alta: se comparan 2, 3 y 4 recepcionistas y un check-in digital previo.\n- Operador logístico con camiones esperando en el muelle de despacho.\n- Clínica con tiempos de espera largos en admisiones."
+              },
+              {
+                "service_id": "tablero-indicadores-analitica",
+                "title": "Tablero de indicadores y analítica operativa",
+                "source": "data/catalog/servicios/tablero-indicadores-analitica.md",
+                "content": "# Tablero de indicadores y analítica operativa\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDefinimos los indicadores clave del negocio y construimos un tablero que se actualiza con los datos que la empresa ya tiene (ventas, inventario, producción, atención), para tomar decisiones con datos y no por intuición.\n\n## Cuándo aplica\n\n- La empresa **no sabe con precisión** cuánto vende, produce o desperdicia por día.\n- Los datos existen pero están dispersos en varias hojas de cálculo o sistemas.\n- Se quiere hacer seguimiento a una mejora (por ejemplo, después de una simulación).\n\n## Entregables\n\n1. Definición de 5 a 10 KPIs con su fórmula y fuente de datos.\n2. Tablero interactivo conectado a las fuentes.\n3. Capacitación para mantenerlo.\n\n## Duración típica\n\nDe 3 a 6 semanas.\n\n## Inversión\n\nEntre **COP 4.000.000 y COP 14.000.000**.\n\n## Ejemplos\n\n- Tablero de producción y desperdicio diario de una panadería.\n- Indicadores de tiempos de despacho de un operador logístico."
+              },
+              {
+                "service_id": "digitalizacion-procesos-administrativos",
+                "title": "Modelado y digitalización de procesos administrativos",
+                "source": "data/catalog/servicios/digitalizacion-procesos-administrativos.md",
+                "content": "# Modelado y digitalización de procesos administrativos\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDocumentamos los procesos administrativos de la empresa (compras, facturación, inventario, atención al cliente) con notación BPMN, eliminamos pasos que no agregan valor y definimos cómo digitalizarlos con herramientas accesibles para una MIPYME.\n\n## Cuándo aplica\n\n- Los procesos dependen de **papel, hojas de cálculo sueltas o WhatsApp**.\n- Hay **reprocesos, pérdidas de información o demoras** en trámites internos.\n- La empresa quiere adoptar un software (ERP, CRM, facturación electrónica) y no sabe por dónde empezar.\n\n## Entregables\n\n1. Mapa de procesos actual (AS-IS) y propuesto (TO-BE) en BPMN.\n2. Recomendación de herramientas digitales y plan de implementación.\n3. Acompañamiento en la puesta en marcha de 1 o 2 procesos prioritarios.\n\n## Duración típica\n\nDe 4 a 10 semanas.\n\n## Inversión\n\nEntre **COP 5.000.000 y COP 18.000.000**. Las licencias de software no están incluidas.\n\n## Ejemplos\n\n- Digitalización de pedidos e inventario de una panadería con tres sedes.\n- Estandarización del proceso de despacho de un operador logístico."
+              }
+            ]
+          }
+        }
+      ],
+      "costUsd": 0.0283272,
+      "latencyMs": 13386,
+      "ttftMs": 2311,
+      "retrievalMode": "tool",
+      "retrievedSources": [
+        "data/catalog/servicios/simulacion-operaciones.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/digitalizacion-procesos-administrativos.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta entiende perfectamente el problema (cuellos de botella en admisiones) y recomienda directamente el servicio que aplica: 'Simulación de operaciones y análisis what if'. Realiza un análisis basado en datos concretos del usuario (20 pacientes/hora, 5 minutos por registro, pico 7-10 a.m.), simula escenarios creíbles y respaldados, cita correctamente los precios (COP 8–25 millones) y plazos (4 a 8 semanas) del catálogo, menciona descuentos solo si se confirma el tamaño de empresa, y estructura la respuesta de forma clara: simulación → conclusión → servicio → entregables → pre-propuesta. El tono es cercano, profesional, sin sobrepromesas, y aclara qué es un supuesto que debe validarse."
+  },
+  "judgeCostUsd": 0.006723
+}

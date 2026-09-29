@@ -1,0 +1,75 @@
+{
+  "exportedAt": "2026-09-29T18:14:13.452Z",
+  "note": "Tráfico real (is_synthetic=false, mode=live): pruebas de desarrollo + producción. El drift usa tráfico simulado.",
+  "turns": 15,
+  "conversations": 10,
+  "totalCostUsd": 0.16277799999999998,
+  "costPerConversationUsd": 0.016277800000000002,
+  "latencyP50Ms": 6194,
+  "latencyP95Ms": 13190,
+  "ttftP50Ms": 1377,
+  "ttftP95Ms": 5576,
+  "errorRate": 0.13333333333333333,
+  "toolUseRate": 0.13333333333333333,
+  "toolCounts": {
+    "create_request": 1,
+    "search_services": 1,
+    "simulate_queue": 1
+  },
+  "byModel": {
+    "claude-sonnet-5-5": 15
+  },
+  "evals": [
+    {
+      "version": "paso-03 (INVÁLIDA: dataset v1 sin seguimiento)",
+      "createdAt": "2026-09-29T16:42:56.688499+00:00",
+      "casePassRate": 0.167,
+      "noInventedPrices": 0.833,
+      "costUsd": 0.3408
+    },
+    {
+      "version": "paso-03-primer-llm",
+      "createdAt": "2026-09-29T16:46:23.806828+00:00",
+      "casePassRate": 0.167,
+      "noInventedPrices": 0.367,
+      "costUsd": 0.5325
+    },
+    {
+      "version": "paso-05-rag-fts",
+      "createdAt": "2026-09-29T17:05:29.23839+00:00",
+      "casePassRate": 0.767,
+      "noInventedPrices": 0.967,
+      "costUsd": 0.6972
+    },
+    {
+      "version": "paso-05-rag-hybrid",
+      "createdAt": "2026-09-29T17:29:53.793825+00:00",
+      "casePassRate": 0.8,
+      "noInventedPrices": 1,
+      "costUsd": 0.7259
+    },
+    {
+      "version": "paso-06-agente",
+      "createdAt": "2026-09-29T17:49:28.559571+00:00",
+      "casePassRate": 0.967,
+      "noInventedPrices": 1,
+      "costUsd": 0.7228
+    }
+  ],
+  "drift": {
+    "baseline": {
+      "quality_assurance": 0.36666666666666664,
+      "business_innovation": 0.35,
+      "process_design": 0.2833333333333333
+    },
+    "current": {
+      "quality_assurance": 0.07142857142857142,
+      "business_innovation": 0.6428571428571429,
+      "process_design": 0.2857142857142857
+    },
+    "baselineN": 60,
+    "currentN": 70,
+    "tvd": 0.29523809523809524,
+    "alert": true
+  }
+}

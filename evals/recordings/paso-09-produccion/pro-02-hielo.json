@@ -1,0 +1,68 @@
+{
+  "caseId": "pro-02-hielo",
+  "label": "paso-09-produccion",
+  "recordedAt": "2026-09-29T18:14:38.134Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v3-agente",
+  "turns": [
+    {
+      "user": "Tenemos una planta de hielo en Mamonal y la factura de energía se nos disparó. Sospechamos que desperdiciamos agua y energía en el proceso, pero no sabemos dónde.",
+      "assistant": "Gracias por contarnos. Tu caso encaja bien con lo que hacemos.\n\n**Línea de trabajo:** `process_design`\n\n**Servicio recomendado**\n- **Producción más limpia y reducción de desperdicios.** La ficha menciona el caso de una planta de hielo con alto consumo de energía. Busca reducir el desperdicio de energía y agua.\n  - Entregables: mapa de flujo de valor con cuantificación de desperdicios, plan de mejora priorizado, ajuste de la producción a la demanda y medición de resultados al cierre.\n  - Duración típica: de 4 a 8 semanas.\n  - Inversión: entre **COP 3.500.000 y COP 12.000.000**. Ese rango no incluye IVA ni costos de terceros.\n  - Fuente: [Producción más limpia y reducción de desperdicios](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/produccion-mas-limpia-desperdicios.md)\n\n**Servicio complementario (opcional)**\n- **Tablero de indicadores y analítica operativa.** Sirve si hoy no tienen medido con precisión cuánta energía y agua gastan por día o por tonelada de hielo. También permite dar seguimiento a las mejoras.\n  - Duración típica: de 3 a 6 semanas.\n  - Inversión: entre **COP 4.000.000 y COP 14.000.000**.\n  - Fuente: [Tablero de indicadores y analítica operativa](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/tablero-indicadores-analitica.md)\n\n**Alcance sugerido:** empezar por mapear el proceso completo, desde el agua de entrada hasta el hielo despachado. Ahí se cuantifica dónde se pierden energía y agua, y se prioriza un plan de acción.\n\n**Descuento:** según el número de empleados puede aplicar un descuento de entre 10 % y 20 %. Para calcularlo necesito saber cuántos empleados tiene la planta. Se acredita con el certificado de existencia y representación legal.\n\n**Siguiente paso:** un coordinador revisa la pre-propuesta y te contacta en 2 días hábiles. Después viene una reunión de diagnóstico y luego la propuesta formal. Esta pre-propuesta no es una oferta comercial.\n\n¿Quieres que la guarde? Si es así, dime el nombre de la empresa y el de la persona de contacto. El correo es opcional. También cuéntame cuántos empleados tienen.",
+      "toolCalls": [
+        {
+          "toolName": "search_services",
+          "input": {
+            "query": "planta de hielo desperdicio de energía y agua, consumo, factura de energía"
+          }
+        }
+      ],
+      "toolResults": [
+        {
+          "toolName": "search_services",
+          "output": {
+            "results": [
+              {
+                "service_id": "produccion-mas-limpia-desperdicios",
+                "title": "Producción más limpia y reducción de desperdicios",
+                "source": "data/catalog/servicios/produccion-mas-limpia-desperdicios.md",
+                "content": "# Producción más limpia y reducción de desperdicios\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nAplicamos herramientas de manufactura esbelta (lean) y producción más limpia para reducir desperdicios de materia prima, energía y agua, y para ajustar la producción a la demanda real. Mejora la rentabilidad y la sostenibilidad del proceso.\n\n## Cuándo aplica\n\n- Hay **desperdicio de producto** (se produce más de lo que se vende, se vence o se daña).\n- Los costos de materia prima, agua o energía son altos.\n- La empresa quiere mejorar su desempeño ambiental.\n\n## Entregables\n\n1. Mapa de flujo de valor y cuantificación de desperdicios.\n2. Plan de mejora con acciones priorizadas.\n3. Ajuste de la planeación de producción a la demanda.\n4. Medición de resultados al cierre.\n\n## Duración típica\n\nDe 4 a 8 semanas.\n\n## Inversión\n\nEntre **COP 3.500.000 y COP 12.000.000**.\n\n## Ejemplos\n\n- Panadería que bota una parte de su producción al final del día.\n- Planta de hielo con consumo de energía elevado."
+              },
+              {
+                "service_id": "tablero-indicadores-analitica",
+                "title": "Tablero de indicadores y analítica operativa",
+                "source": "data/catalog/servicios/tablero-indicadores-analitica.md",
+                "content": "# Tablero de indicadores y analítica operativa\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDefinimos los indicadores clave del negocio y construimos un tablero que se actualiza con los datos que la empresa ya tiene (ventas, inventario, producción, atención), para tomar decisiones con datos y no por intuición.\n\n## Cuándo aplica\n\n- La empresa **no sabe con precisión** cuánto vende, produce o desperdicia por día.\n- Los datos existen pero están dispersos en varias hojas de cálculo o sistemas.\n- Se quiere hacer seguimiento a una mejora (por ejemplo, después de una simulación).\n\n## Entregables\n\n1. Definición de 5 a 10 KPIs con su fórmula y fuente de datos.\n2. Tablero interactivo conectado a las fuentes.\n3. Capacitación para mantenerlo.\n\n## Duración típica\n\nDe 3 a 6 semanas.\n\n## Inversión\n\nEntre **COP 4.000.000 y COP 14.000.000**.\n\n## Ejemplos\n\n- Tablero de producción y desperdicio diario de una panadería.\n- Indicadores de tiempos de despacho de un operador logístico."
+              },
+              {
+                "service_id": "digitalizacion-procesos-administrativos",
+                "title": "Modelado y digitalización de procesos administrativos",
+                "source": "data/catalog/servicios/digitalizacion-procesos-administrativos.md",
+                "content": "# Modelado y digitalización de procesos administrativos\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDocumentamos los procesos administrativos de la empresa (compras, facturación, inventario, atención al cliente) con notación BPMN, eliminamos pasos que no agregan valor y definimos cómo digitalizarlos con herramientas accesibles para una MIPYME.\n\n## Cuándo aplica\n\n- Los procesos dependen de **papel, hojas de cálculo sueltas o WhatsApp**.\n- Hay **reprocesos, pérdidas de información o demoras** en trámites internos.\n- La empresa quiere adoptar un software (ERP, CRM, facturación electrónica) y no sabe por dónde empezar.\n\n## Entregables\n\n1. Mapa de procesos actual (AS-IS) y propuesto (TO-BE) en BPMN.\n2. Recomendación de herramientas digitales y plan de implementación.\n3. Acompañamiento en la puesta en marcha de 1 o 2 procesos prioritarios.\n\n## Duración típica\n\nDe 4 a 10 semanas.\n\n## Inversión\n\nEntre **COP 5.000.000 y COP 18.000.000**. Las licencias de software no están incluidas.\n\n## Ejemplos\n\n- Digitalización de pedidos e inventario de una panadería con tres sedes.\n- Estandarización del proceso de despacho de un operador logístico."
+              }
+            ]
+          }
+        }
+      ],
+      "costUsd": 0.0162472,
+      "latencyMs": 7774,
+      "ttftMs": 7437,
+      "retrievalMode": "tool",
+      "retrievedSources": [
+        "data/catalog/servicios/produccion-mas-limpia-desperdicios.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/digitalizacion-procesos-administrativos.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente la línea y los servicios del catálogo (producción más limpia y tablero de indicadores), cita precios y plazos exactos, explica el alcance de manera concreta para el problema descrito, y gestiona adecuadamente el descuento aclarando que se calcula según empleados. El tono es cercano y profesional sin prometer garantías. Estructura clara y sin información inventada."
+  },
+  "judgeCostUsd": 0.005788
+}
