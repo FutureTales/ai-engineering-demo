@@ -101,7 +101,7 @@ sequenceDiagram
 
 ## 4. Compensaciones (trade-offs) aterrizadas al proyecto
 
-Estas son las mismas compensaciones del slide de la charla. Ninguna decisión es "la mejor" en abstracto: cada una gana algo y paga algo.
+Estas son las compensaciones que el mapa de habilidades destaca en el pilar 2. Ninguna decisión es "la mejor" en abstracto: cada una gana algo y paga algo.
 
 | Atributo | Qué significa aquí | Qué decidimos | Qué pagamos |
 |---|---|---|---|

@@ -7,6 +7,12 @@
 
 Antes de pedirle código al agente, configurar **cómo** va a trabajar: qué sabe del proyecto, qué puede hacer solo, qué nunca puede hacer y quién revisa su trabajo. Es como darle la inducción a un nuevo integrante del equipo.
 
+## La idea clave
+
+Configurar el entorno es darle la inducción al agente: qué es el proyecto, qué puede hacer solo y qué nunca.
+
+La distinción que más vale entender es entre **pedir** y **garantizar**. Una regla escrita en `CLAUDE.md` ("nunca escribas secretos") es una petición: el modelo puede olvidarla. Un hook o un permiso los aplica el harness **siempre**, piense lo que piense el modelo. Prueba el hook anti-secretos con la clave falsa de la sección "Cómo verlo" y verás el `BLOCKED`. Ese tipo de control es lo que permite darle más autonomía a un agente sin perder el control.
+
 ## Qué construimos
 
 | Archivo | Qué es |
@@ -76,20 +82,13 @@ gitleaks git --redact -v
 
 Si tienes Claude Code: abre `claude` en la carpeta y escribe `/` para ver las skills del proyecto (`/eval`, `/nuevo-paso`, `/revisar`), o `/agents` para ver el subagente.
 
-## Qué mostrar en la charla (guion de 2–3 min)
+## Para pensar
 
-1. Abrir `CLAUDE.md`: "esto es la inducción del agente". Señalar la regla **"Nunca inventes métricas"**.
-2. Abrir `settings.json`: mostrar `deny` (no puede leer las claves, no puede forzar un push).
-3. **Demo en vivo (30 s):** correr el comando del hook con una clave falsa y ver `BLOCKED`. Frase clave: *"Una regla en CLAUDE.md es una petición; un hook es una garantía."*
-4. Mostrar el diagrama del harness en `docs/03-agentes-de-codigo.md`: contexto + herramientas + subagentes.
-
-## Para discutir con el público
-
-1. ¿Qué acciones le dejarían hacer a un agente sin preguntar en su proyecto? ¿Cuáles nunca?
+1. ¿Qué acciones le dejarías hacer a un agente sin preguntar en tu proyecto, y cuáles nunca?
 2. Si el agente escribe el código y también los tests, ¿quién revisa los tests?
-3. ¿Qué otra regla de su organización convertirían en un hook?
+3. ¿Qué regla de tu equipo convertirías en un hook?
 
-## Reprodúcelo tú (ejercicio)
+## Pruébalo tú
 
 En un repo propio:
 1. Crea un `CLAUDE.md` de 20 líneas: qué es el proyecto, cómo se corre, 3 reglas.

@@ -5,7 +5,15 @@
 
 ## Objetivo
 
-Cerrar el producto del lado del centro (el panel para el coordinador) y **revisarlo todo** antes de ponerlo frente al público: pruebas automáticas, CI completo y una revisión independiente de seguridad hecha por un subagente.
+Cerrar el producto del lado del centro (el panel para el coordinador) y **revisarlo todo** antes de abrirlo a usuarios reales: pruebas automáticas, CI completo y una revisión independiente de seguridad hecha por un subagente.
+
+## La idea clave
+
+El que escribe no debería ser el único que revisa, ni siquiera cuando el que escribe es un agente.
+
+Los guardrails de este proyecto pasaban todas las pruebas hechas desde la interfaz. Un revisor con contexto limpio pensó como atacante: fabricó el historial de la conversación, en lugar de usar la UI, y encontró tres formas de disparar la factura. Todas venían del mismo supuesto implícito, que el cliente envía lo que mostró la pantalla.
+
+Lee [revision-agentica.md](../revision-agentica.md) de arriba abajo. Cada hallazgo trae el escenario de falla, la corrección y cómo se verificó, y también los riesgos que se **aceptaron** con su motivo por escrito.
 
 ## Qué construimos
 
@@ -76,19 +84,13 @@ pnpm tsx scripts/e2e-panel-login.mts http://localhost:3000   # login real sin en
 
 En producción: https://innova-copilot.vercel.app/panel (solo personal autorizado).
 
-## Qué mostrar en la charla (guion de 2–3 min)
-
-1. El panel con la pre-propuesta del hotel que se guardó en la demo en vivo.
-2. La tabla de la revisión agéntica: *"Yo escribí los guardrails y los probé. El revisor encontró tres formas de disparar la factura en 7 minutos."*
-3. Frase clave: *"El agente que escribe no debería ser el único que revisa. Ni siquiera cuando el que escribe es un agente."*
-
-## Para discutir con el público
+## Para pensar
 
 1. ¿Por qué el revisor encontró lo que el autor no vio, si es el mismo modelo?
-2. De los riesgos aceptados, ¿cuál aceptarían ustedes y cuál no?
-3. ¿Qué parte de esta revisión debería ser humana siempre?
+2. De los riesgos que se aceptaron, ¿cuál aceptarías tú y cuál no?
+3. ¿Qué parte de una revisión de seguridad dejarías siempre en manos de una persona?
 
-## Reprodúcelo tú (ejercicio)
+## Pruébalo tú
 
 1. En Claude Code, escribe `/revisar` sobre un cambio tuyo (usa el subagente `code-reviewer`).
 2. Para cada hallazgo, escribe primero una prueba que falle y luego corrígelo.

@@ -1,8 +1,8 @@
 # Glosario
 
-Los primeros 10 términos son los del slide "Glosario de conceptos clave" de la charla. Los demás aparecieron al construir el proyecto; al lado de cada uno está dónde se ve.
+Los primeros 10 términos son los que el mapa de habilidades considera clave. Los demás aparecieron al construir el proyecto; al lado de cada uno está dónde se ve.
 
-## Del slide de la charla
+## Términos clave del mapa
 
 | Término | Qué es | Dónde se ve en el proyecto |
 |---|---|---|

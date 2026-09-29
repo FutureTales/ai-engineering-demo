@@ -54,7 +54,7 @@ flowchart LR
 |---|---|---|
 | **Conducir el ciclo de construcción** | 00, 04 | Prototipo vs. MVP vs. sistema empresarial; ciclo construir → medir → analizar → decidir: [decisión](00-dar-forma/decision-construir.md), [análisis de errores](analisis-de-errores.md) |
 | **Tomar decisiones de producto** | 00, 05, 07 | Spec, métricas, decisiones con datos (híbrido vs. FTS, clasificador): [spec](00-dar-forma/spec-mvp.md), [métricas](00-dar-forma/metricas.md), [ADR 0005](adr/0005-clasificador.md) |
-| **Comunicar y liderar** | 10 | Memo para la dirección, guion de la charla, slides: [memo](memo-stakeholders.md), [guion](guion-charla.md), [`presentacion/`](../presentacion/) |
+| **Comunicar y liderar** | 10 | Memo para la dirección, slides y notas del presentador: [memo](memo-stakeholders.md), [guion](guion-charla.md), [`presentacion/`](../presentacion/) |
 | **Propiedad con alta agencia** | 10 | Retrospectiva honesta, roadmap, errores documentados sin esconderlos: [retrospectiva](retrospectiva.md), [roadmap v2](roadmap-v2.md) |
 
 ## Base común

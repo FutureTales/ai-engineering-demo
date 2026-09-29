@@ -7,6 +7,14 @@
 
 No todo problema necesita un LLM. Para una tarea acotada, clasificar una solicitud en 3 líneas, comparamos un modelo **clásico** (TF-IDF + regresión logística) con un **LLM** (Claude Haiku 4.5), midiendo calidad, costo y latencia en el **mismo** conjunto de prueba. Y decidimos con esos números.
 
+## La idea clave
+
+Saber cuándo **no** usar un LLM también es AI Engineering.
+
+En una tarea acotada, clasificar una solicitud en tres líneas, una técnica estadística de hace décadas queda a dos casos del mejor LLM, es gratis y responde en menos de un milisegundo. La curva de aprendizaje agrega otra lección: el modelo clásico no necesita ser más complejo, necesita **más datos reales**. La validación sigue subiendo con cada ejemplo nuevo.
+
+Ejecuta el notebook y mira la tabla de errores de la sección 5. Ver **en qué** se equivoca cada modelo enseña más que la accuracy.
+
 ## Qué construimos
 
 | Pieza | Dónde |
@@ -89,19 +97,13 @@ set -a; source .env.local; set +a
 .venv/bin/jupyter nbconvert --to notebook --execute --inplace ml/clasificador.ipynb
 ```
 
-## Qué mostrar en la charla (guion de 2–3 min)
-
-1. La tabla: *"una técnica estadística de hace décadas contra un LLM de 2025"*. El clásico queda a 2 casos del mejor LLM, es gratis y responde en menos de un milisegundo.
-2. La curva de aprendizaje: *"sigue subiendo. No necesita un modelo más grande; necesita más datos reales."*
-3. La decisión: cada herramienta donde rinde. *"Saber cuándo **no** usar un LLM también es AI Engineering."*
-
-## Para discutir con el público
+## Para pensar
 
 1. ¿Qué cambiaría si el centro recibiera 100.000 solicitudes al mes?
 2. ¿Qué riesgo hay en entrenar un clasificador con textos que escribió otro LLM?
-3. ¿Cómo conseguirían datos reales etiquetados sin mucho esfuerzo? (Pista: el panel del paso 08.)
+3. ¿Cómo conseguirías datos reales etiquetados sin mucho esfuerzo? (Pista: el panel del paso 08.)
 
-## Reprodúcelo tú (ejercicio)
+## Pruébalo tú
 
 1. Agrega 20 solicitudes reales (o escritas por ti) a `ml/data/requests_labeled.csv`.
 2. Vuelve a ejecutar el notebook. ¿Cambió la curva de aprendizaje? ¿Y el orden de los modelos?

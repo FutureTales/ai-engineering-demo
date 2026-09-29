@@ -13,6 +13,12 @@ Que el copiloto **actúe**: que busque en el catálogo cuando lo necesite, que *
 
 *Ilustración generada con IA (Gemini). [Cómo se hizo](../ilustraciones-con-ia.md).*
 
+## La idea clave
+
+El LLM decide **cuándo** simular y **qué escenarios** comparar; las cifras las calcula un programa de 244 líneas con 17 tests. Esa separación entre decidir y calcular es lo que hace confiable al agente, y es la frase que resume todo el proyecto: *el LLM no calcula, decide quién calcula*.
+
+La otra idea clave es el **permiso**. Guardar la pre-propuesta exige que la persona pulse "Sí, guardar", y ese control vive en el código (`toolApproval`, con aprobaciones firmadas), no en una instrucción del prompt. Prueba el caso del hotel en `/copilot`, o en modo mock sin claves, y pide guardarlo: el botón aparece **antes** de que la herramienta se ejecute.
+
 ## Qué construimos
 
 | Pieza | Dónde |
@@ -141,21 +147,13 @@ pnpm tsx scripts/experiments/hotel-scenarios.ts   # la tabla del hotel
 
 En producción: https://innova-copilot.vercel.app/copilot
 
-## Qué mostrar en la charla (guion de 2–3 min)
-
-1. **En vivo:** el caso del hotel. Señalar las tarjetas "Buscando en el catálogo…" y "Simulando 4 escenarios…", y el gráfico.
-2. Frase clave: *"El modelo decidió **cuándo** simular y **qué escenarios**. Las cifras las calculó un programa de 244 líneas con 17 tests."*
-3. Pedir que lo guarde: aparece el botón **"Sí, guardar"**. *"Las acciones con consecuencias necesitan permiso humano, y ese permiso no depende del prompt."*
-4. Mostrar el gráfico de evals: 10 % → 80 % → 96,7 %. Y el caso que falla: *"no falló el modelo, falló nuestra eval, y lo decimos."*
-5. **Plan B:** si falla la red, `AI_MODE=mock` y la misma demo funciona.
-
-## Para discutir con el público
+## Para pensar
 
 1. ¿Qué otras acciones de este copiloto deberían requerir aprobación humana?
-2. La simulación supone llegadas aleatorias (Poisson). ¿Qué pasaría con un bus de turistas que llega de golpe?
-3. Si 200 personas escanean el QR a la vez, ¿qué protección se activa primero?
+2. La simulación supone llegadas aleatorias (Poisson). ¿Qué pasaría si un bus de turistas llega de golpe?
+3. Si 200 personas usan la app a la vez desde la misma red, ¿qué protección se activaría primero?
 
-## Reprodúcelo tú (ejercicio)
+## Pruébalo tú
 
 1. Agrega un escenario "3 recepcionistas solo de 2 a 5 p. m. **y** check-in digital" y compara con `scripts/experiments/hotel-scenarios.ts`.
 2. Escribe un test en `tests/unit/queue.test.ts` que verifique que con 1 servidor la simulación larga converge a la fórmula M/M/1.

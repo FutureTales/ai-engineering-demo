@@ -1,6 +1,6 @@
 # Roadmap v2: de demo a piloto
 
-Lo que haríamos después de la charla, ordenado por **valor para el centro** y respaldado por lo que aprendimos (evals, revisión agéntica, telemetría).
+Lo que haríamos después de esta demo, ordenado por **valor para el centro** y respaldado por lo que aprendimos (evals, revisión agéntica, telemetría).
 
 ## Antes de un piloto con MIPYMES reales (imprescindible)
 

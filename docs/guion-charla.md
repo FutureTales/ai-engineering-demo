@@ -1,4 +1,6 @@
-# Guion de la charla: "AI Engineering Skills Map" + caso práctico
+# Notas del presentador: "AI Engineering Skills Map" + caso práctico
+
+> Este documento es el libreto de quien presenta el proyecto en una charla. Si vienes a aprender, empieza por el [README](../README.md) y los [pasos](pasos/).
 
 **Duración:** ~60 minutos (25 de mapa conceptual + 30 de caso práctico + 5 de preguntas).
 **Deck:** [`presentacion/AI_Engineering_Skills_Caso_Practico.pptx`](../presentacion/AI_Engineering_Skills_Caso_Practico.pptx) (31 slides; el caso práctico va del 17 al 30).

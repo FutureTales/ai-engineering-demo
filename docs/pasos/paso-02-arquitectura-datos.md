@@ -7,6 +7,14 @@
 
 Tener el "esqueleto" completo **en producción** antes de escribir la primera línea de IA: app web desplegada, base de datos con su esquema y permisos, datos de ejemplo y decisiones de arquitectura escritas. Desplegar temprano hace que cada paso siguiente se pueda probar en la URL real.
 
+## La idea clave
+
+Aquí todavía no hay IA, y es a propósito. Desplegar el esqueleto primero hace que cada paso siguiente se pruebe en la URL real, con sus problemas reales (en este caso, un dominio que ya estaba ocupado y una URL protegida por login).
+
+Lo más valioso para aprender es el **RLS**. La clave pública de Supabase viaja al navegador, así que la seguridad no puede depender de que el frontend "se porte bien". Corre el `curl` de la sección "Cómo verlo" con tu propia clave `anon` y mira la respuesta `permission denied`: quien decide es la base de datos, no la página.
+
+Y lee un ADR corto, por ejemplo el [0002](../adr/0002-supabase-pgvector.md). Escribir el **porqué** de una decisión le ahorra mucho tiempo a quien llegue después, incluido tú en seis meses.
+
 ## Qué construimos
 
 | Pieza | Dónde |
@@ -98,20 +106,13 @@ curl -s "$NEXT_PUBLIC_SUPABASE_URL/rest/v1/requests?select=*" \
 
 Para crear tu propia base de datos, sigue [`docs/setup.md`](../setup.md).
 
-## Qué mostrar en la charla (guion de 2–3 min)
-
-1. Abrir https://innova-copilot.vercel.app: "esto ya está en producción y todavía no tiene IA".
-2. Mostrar el diagrama de componentes de [`arquitectura.md`](../arquitectura.md) y la tabla de **compensaciones**: cada atributo (latencia, costo, simplicidad…) aterrizado al proyecto.
-3. **Demo en vivo (30 s):** el `curl` con la clave pública y la respuesta `permission denied`. Frase clave: *"La seguridad vive en la base de datos, no en la buena voluntad del frontend."*
-4. Mostrar un ADR corto (0002) como ejemplo de "escribir el porqué".
-
-## Para discutir con el público
+## Para pensar
 
 1. ¿Por qué desplegar a producción antes de tener la funcionalidad principal?
 2. ¿Qué pasaría si la clave `service_role` terminara en el código del navegador?
 3. ¿En qué momento sí valdría la pena una base de datos vectorial dedicada?
 
-## Reprodúcelo tú (ejercicio)
+## Pruébalo tú
 
 1. Crea un proyecto gratuito en Supabase y aplica la migración inicial con `supabase db push`.
 2. Corre el `curl` de arriba con tu clave `anon` y confirma que falla.

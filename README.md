@@ -49,7 +49,7 @@ flowchart LR
 | 07 | `paso-07-ml-clasico` | TF-IDF frente a Claude Haiku en el mismo test | 1 · 4 | [📄](docs/pasos/paso-07-ml-clasico.md) |
 | 08 | `paso-08-producto-completo` | Panel con login, CI completo, **revisión agéntica** | 2 · 3 | [📄](docs/pasos/paso-08-producto-completo.md) |
 | 09 | `paso-09-produccion` | Salud del asistente, drift, control de regresión, runbook | 1 · 2 | [📄](docs/pasos/paso-09-produccion.md) |
-| 10 | `paso-10-cierre` | Memo, retrospectiva, roadmap, slides y guion | 4 | [📄](docs/pasos/paso-10-cierre.md) |
+| 10 | `paso-10-cierre` | Memo, retrospectiva, roadmap y slides | 4 | [📄](docs/pasos/paso-10-cierre.md) |
 
 Para ver el proyecto **exactamente** como estaba en un paso:
 
@@ -105,7 +105,7 @@ pnpm eval --mock   # reproduce la última corrida de evals
 | [`evals/`](evals/) | Dataset, rúbrica, runner, resultados y grabaciones |
 | [`ml/`](ml/) | Notebook de ML clásico (con salidas) y dataset sintético |
 | [`docs/`](docs/) | Pasos, bitácoras, ADRs, arquitectura, runbook, glosario |
-| [`presentacion/`](presentacion/) | Slides de la charla (el caso práctico va en los slides 17–30) |
+| [`presentacion/`](presentacion/) | Slides de la presentación (el caso práctico va en los slides 17–30) |
 | [`.claude/`](.claude/), [`CLAUDE.md`](CLAUDE.md) | Configuración del agente de código: permisos, hooks, skills, subagente |
 
 ## Honestidad y limitaciones

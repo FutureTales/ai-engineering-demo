@@ -7,6 +7,14 @@
 
 Dejar de decir "se ve bien" y **medir**. Construir un conjunto de pruebas (evals) que diga, con números, qué tan seguido el copiloto clasifica bien, recomienda servicios reales, no inventa precios y resiste abusos. Luego correr la **línea base** (la versión del paso 03) y analizar sus errores.
 
+## La idea clave
+
+Sin evals, cada cambio es una opinión; con evals, es un experimento.
+
+Lo más instructivo de este paso no es el número de la línea base, sino **cómo se llegó a un número confiable**. El primer juez se dejó engañar por un precio inventado. El primer dataset castigaba al copiloto por hacer preguntas aclaratorias, algo que la spec pide. Los dos errores aparecieron solo al leer los fallos **uno por uno** antes de creer el resultado. Una eval es software: tiene bugs y se depura.
+
+Corre `pnpm eval --mock` (es gratis) y abre una grabación en [`evals/recordings/`](../../evals/recordings/). Decide tú si el veredicto es justo. Ese ejercicio de revisar a mano es la parte "humano en el ciclo" que ningún juez automático reemplaza.
+
 ## Qué construimos
 
 | Pieza | Dónde | Para qué |
@@ -104,21 +112,13 @@ pnpm test
 
 Con Claude Code: `/eval` corre las evals y resume los resultados usando solo números de los archivos.
 
-## Qué mostrar en la charla (guion de 2–3 min) ← paso estrella
+## Para pensar
 
-1. Mostrar un caso del dataset (el hotel) y leer qué esperamos: línea, servicio, simulación.
-2. Correr `pnpm eval --mock` en vivo (tarda segundos). Señalar **16,7 %** y **36,7 %** sin precios inventados.
-3. Mostrar en el análisis de errores: *"el rango COP 6–12 millones apareció 8 veces"*. El modelo tiene un precio "favorito" que no existe.
-4. Contar la historia del juez: *"el primer juez también se equivocó con seguridad. Lo descubrimos leyendo los fallos a mano."*
-5. Frase clave: *"Sin evals, cualquier cambio es una opinión. Con evals, es un experimento."* Y anticipar: "¿qué pasa cuando le damos el catálogo?" → paso 05.
-
-## Para discutir con el público
-
-1. ¿Qué es más grave para el centro: un precio inventado o un servicio con nombre inventado? ¿Debería pesar igual en la métrica?
+1. ¿Qué es más grave para el centro: un precio inventado o un servicio con nombre inventado? ¿Deberían pesar igual en la métrica?
 2. Si el juez es otro LLM, ¿quién evalúa al juez?
-3. ¿Qué caso agregarían al dataset pensando en cómo se usará la URL del QR hoy?
+3. ¿Qué caso agregarías al dataset pensando en personas reales que llegan a la app por un código QR?
 
-## Reprodúcelo tú (ejercicio)
+## Pruébalo tú
 
 1. Agrega un caso a `evals/dataset.jsonl` (por ejemplo, una droguería con filas en la caja).
 2. Corre `pnpm eval --only <tu-id> --no-db`.

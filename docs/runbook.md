@@ -1,6 +1,6 @@
 # Runbook — Innova Copilot en producción
 
-Qué hacer cuando algo sale mal. Escrito para la persona de guardia **durante la charla** y para quien opere la demo después.
+Qué hacer cuando algo sale mal. Escrito para quien opere la app, incluida una demo en vivo.
 
 | Dato | Valor |
 |---|---|
@@ -24,7 +24,7 @@ AI_MODE=mock ANTHROPIC_API_KEY= pnpm dev
 # abrir http://localhost:3000/copilot → "Hotel con filas en el check-in"
 ```
 
-**En producción** (si la caída dura más que la charla):
+**En producción** (si la caída dura más que unos minutos):
 
 ```bash
 printf 'mock' | vercel env add AI_MODE production --force --yes

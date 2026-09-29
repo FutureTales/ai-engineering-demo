@@ -7,6 +7,14 @@
 
 Decidir **qué** vamos a construir, **para quién** y **cómo sabremos si funciona**, antes de escribir una sola línea de código. Con un agente de código, escribir código es barato. Lo caro es construir lo equivocado.
 
+## La idea clave
+
+Antes de pedirle código a nadie, sea persona o agente, conviene poder responder tres preguntas: qué problema resolvemos, para quién y cómo sabremos si funciona.
+
+El corazón de este paso es la tabla **"Por qué no solo IA"** de [problema.md](../00-dar-forma/problema.md). El LLM es bueno entendiendo un problema contado con palabras de la calle y redactando una propuesta. Pero los precios tienen que salir del catálogo, los cálculos de una herramienta, y la decisión final es de una persona. Casi todo lo que viene después (RAG, herramientas, aprobación humana) es la consecuencia de esa tabla.
+
+Fíjate también en [metricas.md](../00-dar-forma/metricas.md): los objetivos se fijan **antes** de construir. Así, cada paso posterior tiene contra qué compararse.
+
 ## Qué construimos
 
 Solo documentos, en [`docs/00-dar-forma/`](../00-dar-forma/):
@@ -57,20 +65,13 @@ ls docs/00-dar-forma/
 
 En este paso no hay código ni app: el repositorio solo tiene documentos. Puedes leerlos directamente en GitHub.
 
-## Qué mostrar en la charla (guion de 2–3 min)
+## Para pensar
 
-1. Abrir [problema.md](../00-dar-forma/problema.md) y mostrar la tabla **"Por qué no solo IA"**. Frase clave: *"El LLM no calcula; decide cuándo llamar a una herramienta que sí calcula."*
-2. Mostrar la tabla **"De las entrevistas a los requisitos"** en [usuarios.md](../00-dar-forma/usuarios.md): cada miedo del coordinador se volvió un requisito medible.
-3. Mostrar que [metricas.md](../00-dar-forma/metricas.md) define **objetivos antes de construir** y que la regla es no inventar resultados.
-4. Cerrar: *"Este paso lo hice con el agente de código, pero la aprobación fue humana. El agente propone; la persona decide qué se construye."*
+1. Si le pidieras al LLM que calcule directamente el tiempo de espera del hotel, ¿cómo te darías cuenta de que se equivocó?
+2. De las decisiones de este paso, ¿cuál sería más difícil de revertir más adelante?
+3. Las entrevistas son simuladas. ¿Qué supuesto te preocuparía más si tuvieras que validarlo con MIPYMES reales?
 
-## Para discutir con el público
-
-1. ¿Qué pasaría si le pidiéramos al LLM que calcule directamente el tiempo de espera del hotel? ¿Cómo lo detectaríamos?
-2. ¿Qué decisión de este paso es más difícil de revertir más adelante?
-3. Las entrevistas son simuladas. ¿Qué podría estar mal en nuestras suposiciones y cómo lo validaríamos con MIPYMES reales?
-
-## Reprodúcelo tú (ejercicio)
+## Pruébalo tú
 
 Elige un problema de una organización que conozcas (tu universidad, un negocio familiar) y escribe, **sin código**:
 

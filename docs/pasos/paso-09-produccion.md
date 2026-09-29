@@ -7,6 +7,12 @@
 
 Que el sistema se pueda **operar**: ver su costo, su latencia y sus errores con datos reales; detectar cuando cambia el tipo de solicitudes (*drift*); impedir que un cambio de prompt llegue a producción sin medirse; y tener un manual para cuando algo falle.
 
+## La idea clave
+
+Lo que no se mide en producción, no existe. La página de salud muestra costo, latencia y errores con datos reales, y dice explícitamente cuándo la muestra es pequeña, en lugar de presentar pocos datos como si fueran muchos.
+
+La pieza más reutilizable de este paso es el **control de regresión**: impide que un cambio de prompt, modelo o herramientas llegue a producción sin una eval en vivo. Lo primero que atrapó fue un cambio del propio agente. Prueba `scripts/eval-gate.sh` sobre dos tags (ver "Cómo verlo") y compara las salidas.
+
 ## Qué construimos
 
 | Pieza | Dónde |
@@ -49,7 +55,7 @@ Instantánea del 2026-09-29 ([`datos-salud.json`](../../presentacion/datos-salud
 | Tasa de errores | 13,3 % (2 de 15): los 2 errores son del bug del paso 03 (mensajes `system` en v7), ya corregido |
 | Uso de herramientas | 13,3 % de las respuestas: casi toda la telemetría es anterior al agente del paso 06 |
 
-> La muestra es **pequeña** y está dominada por pruebas del desarrollo. En la charla la telemetría crecerá con el uso real; la página se actualiza sola.
+> La muestra es **pequeña** y está dominada por pruebas del desarrollo. Con uso real la telemetría crece sola, y la página se actualiza con cada respuesta.
 
 ## Drift (tráfico simulado)
 
@@ -111,20 +117,13 @@ scripts/eval-gate.sh paso-05-rag              # → OK: el paso 06 trae su eval
 pnpm tsx scripts/demo-produccion.mts          # el caso del hotel en producción (~US$ 0,05)
 ```
 
-## Qué mostrar en la charla (guion de 2–3 min)
+## Para pensar
 
-1. `/panel/salud`: costo por conversación y p95 reales. *"Muestra pequeña, y lo decimos."*
-2. El gráfico de drift: *"si mañana llegan 3 veces más solicitudes de marcas, el panel lo dice antes que nosotros."*
-3. El control de regresión: *"lo probé sobre mi propio historial y me atrapó: había cambiado herramientas sin medir."*
-4. El runbook: *"si la API se cae durante la charla, esta es la sección 1."*
+1. ¿Qué métrica de salud mirarías primero si fueras responsable de este servicio?
+2. El drift se detecta en la mezcla de solicitudes. ¿Cómo detectarías que el **modelo** empeoró aunque la mezcla no cambie?
+3. ¿Qué harías con un 13 % de errores si fueran reales y no de un bug ya corregido?
 
-## Para discutir con el público
-
-1. ¿Qué métrica de salud mirarían primero si fueran el director del centro?
-2. El drift se detecta en la mezcla de solicitudes. ¿Cómo detectarían que el **modelo** empeoró aunque la mezcla no cambie?
-3. ¿Qué harían con 13 % de errores si fueran reales y no de un bug ya corregido?
-
-## Reprodúcelo tú (ejercicio)
+## Pruébalo tú
 
 1. Cambia la mezcla de la semana "drift" en `scripts/simulate-traffic.ts` para que el drift sea en calidad. Vuelve a generar y mira el TVD.
 2. Crea una rama, cambia una línea de `lib/ai/prompts.ts` y abre un PR: el job `eval-gate` debe fallar. Corre `pnpm eval --label mi-cambio`, sube el resultado y verifica que pase.

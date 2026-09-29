@@ -7,6 +7,14 @@
 
 Poner un modelo de lenguaje a conversar con la MIPYME, con **un solo prompt de sistema**, sin herramientas ni datos del catálogo. Queremos entender los fundamentos (tokens, contexto, costo, latencia, caché) y **ver a propósito dónde falla** un LLM cuando no tiene datos.
 
+## La idea clave
+
+Un modelo de lenguaje no miente a propósito: completa el patrón más probable. Si no tiene los datos del catálogo, lo más probable es un precio que **suena** razonable.
+
+La respuesta del hotel lo muestra bien. Es convincente, hace correctamente la cuenta de ocupación (90 %) y aun así propone "COP 6 a 12 millones", cuando la ficha real dice 8 a 25. Y no lo hace siempre: en el caso de la marca se negó a inventar cifras. Por eso probar a mano tres casos no alcanza para saber **con qué frecuencia** falla. Esa pregunta la responde el paso 04.
+
+Mientras tanto, abre **"Bajo el capó"** en `/copilot`. Ver los tokens, el caché y el costo de cada respuesta hace concretos conceptos que suelen quedarse en teoría.
+
 ## Qué construimos
 
 | Pieza | Dónde |
@@ -125,20 +133,13 @@ pnpm tsx scripts/experiments/cache-and-latency.ts 3
 
 En producción: https://innova-copilot.vercel.app/copilot
 
-## Qué mostrar en la charla (guion de 2–3 min)
+## Para pensar
 
-1. Abrir `/copilot`, pulsar el ejemplo del hotel y abrir **"Bajo el capó"**: "esto cuesta una fracción de centavo de dólar y tarda unos segundos; aquí vemos los tokens y el caché".
-2. Leer la respuesta y preguntar al público: *"¿Este precio es real?"* Mostrar la ficha del catálogo: COP 8 a 25 millones. El modelo dijo 6 a 12.
-3. Frase clave: *"El modelo no miente a propósito: completa el patrón más probable. Sin datos, lo más probable es inventar algo plausible."*
-4. Mostrar la tabla de los 3 casos: a veces inventa y a veces no. *"¿Cómo sabemos con qué frecuencia? Midiendo."* → paso 04.
+1. Si el modelo acertó el cálculo de ocupación del hotel, ¿por qué no confiarle la simulación completa?
+2. Para el centro, ¿qué es peor: que el copiloto se niegue a dar un precio o que dé uno inventado?
+3. El caché ahorró el 79 % del costo de la entrada, pero solo ~18 % del total. ¿Qué otra palanca bajaría el costo?
 
-## Para discutir con el público
-
-1. Si el modelo acertó el cálculo de ocupación del hotel, ¿por qué no confiar en él para la simulación completa?
-2. ¿Qué es peor para el centro: que el copiloto se niegue a dar un precio o que dé uno inventado?
-3. El caché ahorró 79 % de la entrada pero solo ~18 % del total. ¿Qué otra palanca bajaría el costo?
-
-## Reprodúcelo tú (ejercicio)
+## Pruébalo tú
 
 1. Cambia el prompt en `lib/ai/prompts.ts` para prohibir explícitamente dar precios. Sube `PROMPT_VERSION`.
 2. Repite el caso del hotel 5 veces con `scripts/probe-chat.ts`. ¿Cuántas veces inventa un precio ahora?
@@ -149,4 +150,4 @@ En producción: https://innova-copilot.vercel.app/copilot
 - **El AI SDK v7 cambió la API** respecto de lo que el agente conocía: los mensajes `system` ya no van en `messages` sino en `instructions`. El error lo dijo claramente: *"System messages are not allowed in the prompt or messages fields. Use the instructions option instead."* Leer la documentación **de la versión instalada** (viene en `node_modules/ai/docs/`) resolvió el problema.
 - `temperature` desapareció en Sonnet 5.5: el control es `effort`.
 - La latencia varía bastante entre llamadas: el primer token tardó entre 0,7 s y 5,6 s en nuestras pruebas. Hace falta telemetría con p50/p95, no una sola medición (paso 09).
-- Riesgo detectado: Haiku 4.5 se retira "no antes del 15 de octubre de 2026" según la documentación. Sirve para la charla, pero un sistema real tendría que planear la migración.
+- Riesgo detectado: Haiku 4.5 se retira "no antes del 15 de octubre de 2026" según la documentación. No afecta a la demo hoy, pero un sistema real tendría que planear la migración.

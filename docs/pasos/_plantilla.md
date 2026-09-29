@@ -5,6 +5,10 @@
 
 ## Objetivo
 
+## La idea clave
+
+<Un párrafo o dos, en prosa: qué vale la pena entender de este paso y dónde mirarlo.>
+
 ## Qué construimos
 
 ## Decisiones y compensaciones (trade-offs)
@@ -23,14 +27,12 @@ git checkout paso-XX-nombre
 # comandos exactos y la salida esperada
 ```
 
-## Qué mostrar en la charla (guion de 2–3 min)
-
-## Para discutir con el público
+## Para pensar
 
 1.
 2.
 3.
 
-## Reprodúcelo tú (ejercicio)
+## Pruébalo tú
 
 ## Qué aprendimos / qué cambiaría

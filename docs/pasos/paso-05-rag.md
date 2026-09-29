@@ -7,6 +7,14 @@
 
 Dejar de inventar. El análisis de errores del paso 04 mostró que el modelo clasificaba bien, pero inventaba servicios (70 % de los casos) y precios (63 %). La hipótesis: si el modelo **recupera** las fichas reales del catálogo y se le exige **citarlas**, esos errores desaparecen. Lo medimos.
 
+## La idea clave
+
+El salto de calidad más grande del proyecto no vino de cambiar el modelo, sino de cambiar **lo que sabe**: de 37 % a 100 % de respuestas sin precios inventados.
+
+Vale la pena mirar con calma dos cosas. La primera es la decisión de qué va en el prompt y qué va en la recuperación: las políticas cortas, siempre en el prompt; las fichas con precios, por búsqueda. La segunda es la prueba de paráfrasis. Ante "botamos comida todos los días", la búsqueda por palabras no encuentra la ficha de desperdicios y la búsqueda vectorial sí. Ahí se entiende por qué existen los embeddings.
+
+Fíjate también en lo que **no** mejoró: la simulación en los casos de filas sigue en 0 %. Los datos no calculan; para eso hace falta una herramienta.
+
 ## Qué construimos
 
 | Pieza | Dónde |
@@ -127,20 +135,13 @@ RAG_MODE=fts pnpm dev
 
 En `/copilot`, abre "Bajo el capó": aparece el modo de recuperación (`hybrid` o `fts`) y las fichas recuperadas.
 
-## Qué mostrar en la charla (guion de 2–3 min)
+## Para pensar
 
-1. Repetir el caso del hotel. Ahora dice **COP 8.000.000 – 25.000.000**, igual que la ficha, con un enlace a la fuente.
-2. Mostrar el gráfico de evals: **37 % → 100 %** sin precios inventados. Frase clave: *"No cambiamos el modelo. Cambiamos lo que el modelo sabe."*
-3. Mostrar la prueba de paráfrasis: "botamos comida todos los días" → FTS no encuentra la ficha de desperdicios; la búsqueda vectorial sí.
-4. Señalar la barra que **no subió**: 0 % de simulaciones en los casos de filas. *"El RAG le dio datos, pero todavía no calcula. Para eso necesita una herramienta."* → paso 06.
+1. Si el catálogo tuviera 5.000 servicios, ¿qué cambiarías de este diseño?
+2. ¿Cuándo preferirías la búsqueda por texto aunque la vectorial sea mejor?
+3. El copiloto supuso que el hotel tiene "hasta 10 empleados" para aplicar un descuento. ¿Cómo lo detectarías con una eval?
 
-## Para discutir con el público
-
-1. Si el catálogo tuviera 5.000 servicios, ¿qué cambiaría en este diseño?
-2. ¿Cuándo preferirían FTS aunque la búsqueda vectorial sea mejor?
-3. El copiloto supuso que el hotel tiene "hasta 10 empleados" para aplicar un descuento. ¿Cómo lo detectaríamos con una eval?
-
-## Reprodúcelo tú (ejercicio)
+## Pruébalo tú
 
 1. Agrega una ficha nueva en `data/catalog/servicios/` (por ejemplo, "Logística de última milla") y corre `pnpm ingest`. Solo se procesa la ficha nueva (checksum).
 2. Escribe 3 paráfrasis de un problema que esa ficha resuelve y agrégalas a `retrieval-paraphrase.ts`.

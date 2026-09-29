@@ -248,7 +248,7 @@ def s_timeline(prs, n):
         lx += 4.4
     text(s, 1.25, 8.6, 17.5, 1.0, [
         [("git checkout paso-05-rag", {"font": MONO, "color": BLUE}),
-         ("  → el proyecto exactamente como estaba en ese punto, funcionando. Cada paso tiene su doc, su bitácora del agente y su \"reprodúcelo tú\".", {})],
+         ("  → el proyecto exactamente como estaba en ese punto, funcionando. Cada paso tiene su doc, su bitácora del agente y un ejercicio para probarlo tú.", {})],
     ], size=20, color=GRAY)
     footer(s, n)
 

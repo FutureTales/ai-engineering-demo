@@ -1,6 +1,6 @@
 # Cómo reproducir el proyecto desde cero
 
-Guía para estudiantes y docentes. Hay dos caminos:
+Guía para quien quiera reproducir el proyecto en su propia máquina y con sus propias cuentas. Hay dos caminos:
 
 - **Rápido (5 min, sin claves):** correr la app en modo mock. Disponible desde el paso 06.
 - **Completo (~1 h):** crear tus propias cuentas y desplegar tu copia.
