@@ -31,7 +31,9 @@ NAVY, BLUE, BRIGHT = "1A2850", "0283BA", "01A2E9"
 GRAY, GRAY2, MUTED = "4A5266", "6B7488", "B8E4F9"
 LINE, LINE2, LIGHT, BG_LIGHT, SKY = "E6EAF0", "C9D0DC", "7DCEF4", "FAFCFE", "E6F6FD"
 SANS, MONO = "Arial", "Courier New"
-PILLAR_COLOR = {1: BRIGHT, 2: BLUE, 3: NAVY, 4: LIGHT}
+# One clearly distinct hue per pillar (blue shades alone were hard to tell apart).
+# Pillar 1 keeps the deck's brand blue; all four take white text.
+PILLAR_COLOR = {1: BLUE, 2: "1E9E62", 3: "E0680B", 4: "7A4FD0"}
 
 
 def rgb(h):
@@ -236,7 +238,7 @@ def s_timeline(prs, n):
         p.alignment = PP_ALIGN.CENTER
         r = p.runs[0]
         r.font.name, r.font.size = SANS, Pt(24)
-        r.font.color.rgb = rgb("FFFFFF" if pillars[0] != 4 else NAVY)
+        r.font.color.rgb = rgb("FFFFFF")
         tf.vertical_anchor = MSO_ANCHOR.MIDDLE
         if len(pillars) > 1:
             rect(s, cx + d - 0.3, y - 0.05, 0.34, 0.34, fill=PILLAR_COLOR[pillars[1]], line="FFFFFF", lw=1.5, shape=MSO_SHAPE.OVAL)
