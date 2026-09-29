@@ -9,7 +9,8 @@
 ## Antes de empezar (checklist, 30 minutos antes)
 
 - [ ] Abrir en pestañas: https://innova-copilot.vercel.app/copilot · https://innova-copilot.vercel.app/panel (con sesión iniciada) · el repo en GitHub · una terminal en la carpeta del repo.
-- [ ] Probar el chat una vez con el caso del hotel (cuesta ~US$ 0,05). Si falla, ver **plan B**.
+- [ ] La app pública **no tiene clave del modelo** (cada quien usa la suya). Crear una clave **dedicada para la charla**, con límite de gasto, en console.anthropic.com. En `/copilot` → "Usar mi clave" → pegarla. Probar el caso del hotel una vez (~US$ 0,05). Borrar esa clave después de la charla.
+- [ ] Sin pegar la clave, la app está en **modo demo**: sirve como plan B inmediato.
 - [ ] Terminal lista con el plan B ya compilado: `AI_MODE=mock ANTHROPIC_API_KEY= pnpm dev` en otra pestaña (no lo inicies todavía si vas a usar producción).
 - [ ] Límite de gasto mensual configurado en console.anthropic.com.
 - [ ] Zoom del navegador al 125 % para que se lea desde el fondo.
@@ -64,6 +65,7 @@ Preguntas que probablemente harán y dónde está la respuesta:
 | Pregunta | Respuesta corta | Dónde |
 |---|---|---|
 | ¿Cuánto costó construirlo? | ~US$ 4,6 de API usada por la app (evals, pruebas, scripts), **más** el agente de código, que se mide aparte (`/cost` en Claude Code) | [README](../README.md) |
+| ¿Tengo que pagar para probarla? | No: sin clave funciona en modo demo. Con tu clave de Anthropic, pagas solo tu uso (unos centavos) | [README](../README.md#usa-tus-propias-claves) |
 | ¿Cuánto cuesta cada conversación? | ~US$ 0,016 por conversación en la telemetría real (muestra pequeña) | `/panel/salud`, [`datos-salud.json`](../presentacion/datos-salud.json) |
 | ¿Y si el modelo se equivoca? | Por eso las evals, la aprobación humana y que el precio lo ponga el código | [paso 04](pasos/paso-04-evals.md), [paso 06](pasos/paso-06-agente.md) |
 | ¿Puedo usarlo para mi proyecto? | Sí, licencia MIT; empieza por [`docs/setup.md`](setup.md) | — |

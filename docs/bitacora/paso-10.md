@@ -44,3 +44,16 @@ Una última revisión independiente del trabajo completo encontró:
 3. **El costo estaba mal rotulado.** Los US$ 4,6 son el uso de API **de la app** durante el desarrollo. No incluyen la sesión del agente de código que construyó el proyecto; ahora README, memo y guion lo dicen.
 4. **Los slides de los pasos no mostraban su tag de git** (lo pide la spec). Agregado en el pie de los slides 20–28; deck re-renderizado y revisado.
 5. Chequeos agregados: enlaces relativos, RLS con la clave pública después de los cambios del paso 08, y ausencia de marcas reales en la app ([evidencia](../evidencia/paso-10/verificacion-final.md)).
+
+## Cambio posterior: "trae tu propia clave"
+
+**Lo que pidió el humano:**
+> "Otra cosa, la idea es que cada quien utilice sus APIs, yo no voy a subencionar APIs para que prueben la aplicacion. Como podemos manejar esto?"
+
+Propuse tres opciones (clave propia en la app, copia propia, o ambas). El humano eligió **ambas** y hacer su propia demo en vivo pegando su clave en la interfaz.
+
+**Lo que hice:** [ADR 0006](../adr/0006-trae-tu-propia-clave.md). Resolución de credenciales por solicitud con tests (6), panel para pegar la clave (solo `sessionStorage`), clave en un encabezado por solicitud, errores del proveedor registrados sin datos de la solicitud, y **quité `ANTHROPIC_API_KEY` y `VOYAGE_API_KEY` de Vercel**.
+
+**Verificado en un servidor sin clave propia:** sin clave → `mode: mock`; clave mal formada → 400; clave del usuario → `mode: live`, `keySource: user`, costo en su cuenta; la clave no aparece en los logs. E2E: 6 pruebas (incluida la del aviso de modo demo).
+
+**Lo que salió mal:** las reglas de hooks de React rechazaron leer un `ref` durante el render y hacer `setState` en un efecto. Lo resolví con un pequeño store externo (`useSyncExternalStore`), que además evita diferencias entre el HTML del servidor y el del navegador.

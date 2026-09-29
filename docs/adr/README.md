@@ -9,5 +9,6 @@ Un ADR es un documento corto que registra **una** decisión: el contexto, lo que
 | [0003](0003-recuperacion-hibrida.md) | Recuperación híbrida (vector + texto completo) | 02 |
 | [0004](0004-ai-sdk.md) | Vercel AI SDK frente al SDK directo de Anthropic | 02 |
 | [0005](0005-clasificador.md) | Clasificador: LLM en el agente, ML clásico para triage masivo | 07 |
+| [0006](0006-trae-tu-propia-clave.md) | "Trae tu propia clave": la app pública no paga el uso de nadie | después del 10 |
 
 Formato: Contexto · Decisión · Alternativas consideradas · Consecuencias · Estado.

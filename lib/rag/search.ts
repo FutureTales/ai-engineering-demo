@@ -49,6 +49,8 @@ export async function retrieve(
     maxDocuments = 3,
     kinds = ["service"] as ("service" | "policy")[],
     embedRetries = 0,
+    voyageKey = undefined as string | undefined,
+    serverKeyAllowed = true,
   } = {},
 ): Promise<RetrievalResult> {
   const start = Date.now();
@@ -57,12 +59,14 @@ export async function retrieve(
   let queryEmbedding: number[] | null = null;
 
   if (mode === "hybrid") {
-    if (!embeddingsAvailable()) {
+    // In "bring your own key" mode only the user's Voyage key may be used.
+    const key = voyageKey ?? (serverKeyAllowed ? process.env.VOYAGE_API_KEY : undefined);
+    if (!embeddingsAvailable(key ?? "")) {
       modeUsed = "fts";
-      fallbackReason = "sin VOYAGE_API_KEY";
+      fallbackReason = "sin clave de Voyage";
     } else {
       try {
-        [queryEmbedding] = await embed([query], "query", { retryOn429: embedRetries });
+        [queryEmbedding] = await embed([query], "query", { retryOn429: embedRetries, apiKey: key });
       } catch (err) {
         modeUsed = "fts";
         fallbackReason = err instanceof Error ? err.message.slice(0, 80) : "error de embeddings";

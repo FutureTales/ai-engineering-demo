@@ -12,6 +12,10 @@ Qué hacer cuando algo sale mal. Escrito para quien opere la app, incluida una d
 
 ---
 
+## 0. Quién paga cada respuesta
+
+La producción **no tiene clave del modelo** ([ADR 0006](adr/0006-trae-tu-propia-clave.md)). Sin clave, la app responde en **modo demo** (costo cero). Con la clave de cada persona, el costo va a su cuenta. Para una demo en vivo, quien presenta pega **su propia** clave en `/copilot`, como cualquier usuario.
+
 ## 1. La API del modelo falla o está lenta (demo en vivo)
 
 **Síntomas:** el chat muestra "El copiloto tuvo un problema al responder"; en `/panel/salud` sube la tasa de errores; en los logs aparece `[chat] stream error`.
@@ -45,7 +49,9 @@ En modo mock el copiloto **solo reproduce el caso del hotel**, y la pre-propuest
 
 **Causa conocida:** la cuenta de Voyage **no tiene método de pago** y está limitada a 3 solicitudes por minuto. **Solución definitiva:** agregar un método de pago en https://dashboard.voyageai.com (los 200M tokens gratis siguen aplicando).
 
-## 3. Se dispara el costo
+## 3. Se dispara el costo (copias con clave del servidor)
+
+> En la app pública esto ya no aplica: no hay clave del servidor. Aplica si despliegas tu propia copia con `ANTHROPIC_API_KEY`.
 
 **Síntomas:** en `/panel/salud` sube el costo del día; en console.anthropic.com → Usage.
 

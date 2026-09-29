@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Chat } from "@/components/chat/chat";
+import { serverHasOwnKey } from "@/lib/ai/credentials";
 
 export const metadata: Metadata = { title: "Copiloto — Innova Copilot" };
+export const dynamic = "force-dynamic";
 
 export default function CopilotPage() {
   return (
@@ -18,7 +20,7 @@ export default function CopilotPage() {
           Inicio
         </Link>
       </header>
-      <Chat />
+      <Chat serverHasKey={serverHasOwnKey()} />
     </main>
   );
 }

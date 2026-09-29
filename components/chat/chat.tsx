@@ -8,6 +8,7 @@ import remarkGfm from "remark-gfm";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import type { CopilotUIMessage } from "@/lib/ai/metadata";
+import { ApiKeyPanel, keyStore } from "./api-key-panel";
 import { ToolPart } from "./tool-part";
 import { UnderTheHood } from "./under-the-hood";
 
@@ -35,12 +36,25 @@ function safeError(raw: string): string {
   }
 }
 
-export function Chat() {
+// Bring your own key: the current keys are read from the tab's store at send time
+// and travel as headers on each request (never in the message body or history).
+const transport = new DefaultChatTransport<CopilotUIMessage>({
+  api: "/api/chat",
+  headers: (): Record<string, string> => {
+    const { anthropic, voyage } = keyStore.get();
+    const h: Record<string, string> = {};
+    if (anthropic) h["x-anthropic-key"] = anthropic;
+    if (voyage) h["x-voyage-key"] = voyage;
+    return h;
+  },
+});
+
+export function Chat({ serverHasKey }: { serverHasKey: boolean }) {
   const [chatId] = useState(() => crypto.randomUUID());
   const [input, setInput] = useState("");
   const { messages, sendMessage, status, error, stop, addToolApprovalResponse } = useChat<CopilotUIMessage>({
     id: chatId,
-    transport: new DefaultChatTransport({ api: "/api/chat" }),
+    transport,
     // After the user approves or denies saving, continue the agent automatically.
     sendAutomaticallyWhen: lastAssistantMessageIsCompleteWithApprovalResponses,
   });
@@ -60,6 +74,7 @@ export function Chat() {
 
   return (
     <div className="flex flex-col gap-4">
+      <ApiKeyPanel serverHasKey={serverHasKey} />
       {messages.length === 0 && (
         <div className="rounded-lg border p-4">
           <p className="text-muted-foreground text-sm">

@@ -36,3 +36,14 @@ test("basic accessibility: labeled input, lang and landmarks", async ({ page }) 
   await expect(page.getByRole("main")).toBeVisible();
   await expect(page.getByRole("contentinfo")).toBeVisible();
 });
+
+test("without a key the app says it is in demo mode and offers to use your own key", async ({ page }) => {
+  await page.goto("/copilot");
+  await expect(page.getByText("Modo demo:")).toBeVisible();
+  await page.getByRole("button", { name: "Usar mi clave" }).click();
+  await expect(page.getByLabel(/Clave de Anthropic/)).toBeVisible();
+  await expect(page.getByText(/se guarda/)).toBeVisible();
+  // A malformed key cannot be saved.
+  await page.getByLabel(/Clave de Anthropic/).fill("hola");
+  await expect(page.getByRole("button", { name: "Usar esta clave" })).toBeDisabled();
+});

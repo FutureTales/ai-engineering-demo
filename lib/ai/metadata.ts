@@ -6,6 +6,8 @@ export interface TurnMetadata {
   model?: string;
   promptVersion?: string;
   mode?: "live" | "mock";
+  /** Who paid for this answer: the user's own key, the server's key, or nobody (demo mode). */
+  keySource?: "user" | "server" | "none";
   toolsUsed?: string[];
   usage?: UsageBreakdown;
   costUsd?: number;

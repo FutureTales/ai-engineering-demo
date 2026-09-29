@@ -10,6 +10,8 @@
 
 > ⚠️ **Demo educativa.** No es un servicio oficial de ninguna institución. El "Centro de Innovación Caribe", sus servicios, sus precios y todas las MIPYMES son **ficticios**. No escribas datos personales sensibles en el chat.
 
+> 🔑 **Usa tus propias claves.** La app pública no paga el uso de nadie: sin clave funciona en **modo demo** (el caso del hotel, grabado, gratis). Para conversar con el modelo real sobre tu propio caso, pega **tu** clave de Anthropic en `/copilot` ([cómo funciona y qué pasa con tu clave](#usa-tus-propias-claves)).
+
 Una MIPYME cuenta su problema ("tengo filas de 40 minutos en el check-in de mi hotel"). El copiloto lo encuadra en una línea de trabajo, **busca en el catálogo** y recomienda servicios con su fuente, **simula escenarios "what if"** con una herramienta que sí calcula, y, con el permiso del usuario, deja una **pre-propuesta** para que un coordinador la revise en un panel.
 
 ![Chat del hotel con la simulación](docs/img/demo/02-simulacion.png)
@@ -94,6 +96,22 @@ pnpm eval --mock   # reproduce la última corrida de evals
 ```
 
 **Versión completa** (tus propias claves, tu base de datos y tu despliegue): [`docs/setup.md`](docs/setup.md).
+
+## Usa tus propias claves
+
+Este proyecto **no subsidia** el uso de APIs. Hay tres formas de probarlo:
+
+| Forma | Necesitas | Costo para ti |
+|---|---|---|
+| **Modo demo** en https://innova-copilot.vercel.app | Nada | Cero: respuestas grabadas del caso del hotel, con las herramientas reales |
+| **Tu clave en la app pública** | Una clave de Anthropic ([console.anthropic.com](https://console.anthropic.com/settings/keys)); la de Voyage es opcional | Lo que consuma tu conversación, en tu cuenta (unos centavos de dólar; lo ves en "Bajo el capó") |
+| **Tu propia copia** | Cuentas de Vercel, Supabase y Anthropic | Tus planes y tu uso; control total |
+
+**Qué pasa con tu clave en la app pública:** se guarda solo en esa pestaña del navegador y se borra al cerrarla; viaja por HTTPS en cada mensaje; el servidor la usa para responder y **no la guarda ni la registra**. El código está aquí para verificarlo ([`lib/ai/credentials.ts`](lib/ai/credentials.ts), [ADR 0006](docs/adr/0006-trae-tu-propia-clave.md)). Recomendación: crea una clave nueva solo para probar, con límite de gasto, y bórrala después.
+
+**Tu propia copia:** [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FFutureTales%2Fai-engineering-demo&project-name=mi-innova-copilot)
+
+Recién desplegada, tu copia funciona en modo demo sin configurar nada. Para el modelo real, la base de datos y el panel, sigue [`docs/setup.md`](docs/setup.md).
 
 ## Qué hay en el repo
 

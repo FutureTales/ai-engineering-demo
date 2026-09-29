@@ -5,7 +5,7 @@
  * paso-06: an agent loop. The model decides when to call search_services,
  * simulate_queue and create_request (the last one needs the user's approval).
  */
-import { anthropic } from "@ai-sdk/anthropic";
+import { anthropic, createAnthropic } from "@ai-sdk/anthropic";
 import { isStepCount, streamText, type ModelMessage } from "ai";
 import { createTools } from "@/lib/tools";
 import { createMockModel, MOCK_MODEL_ID } from "./mock-model";
@@ -33,11 +33,31 @@ export function buildCopilotRequest(
     conversationId,
     mode = aiMode(),
     embedRetries = 0,
-  }: { conversationId: string; mode?: AiMode; embedRetries?: number },
+    anthropicKey,
+    voyageKey,
+    keySource = "server",
+  }: {
+    conversationId: string;
+    mode?: AiMode;
+    embedRetries?: number;
+    /** A user's own key (bring-your-own-key); otherwise the server's ANTHROPIC_API_KEY is used. */
+    anthropicKey?: string;
+    voyageKey?: string;
+    keySource?: "user" | "server" | "none";
+  },
 ) {
-  const tools = createTools({ conversationId, offline: mode === "mock", embedRetries });
+  const tools = createTools({
+    conversationId,
+    offline: mode === "mock",
+    embedRetries,
+    voyageKey,
+    serverKeysAllowed: keySource !== "user",
+  });
+  const liveModel = anthropicKey
+    ? createAnthropic({ apiKey: anthropicKey })(COPILOT_MODEL)
+    : anthropic(COPILOT_MODEL);
   return {
-    model: mode === "mock" ? createMockModel() : anthropic(COPILOT_MODEL),
+    model: mode === "mock" ? createMockModel() : liveModel,
     maxOutputTokens: 4000,
     instructions: {
       role: "system" as const,

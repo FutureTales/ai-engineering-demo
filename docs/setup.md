@@ -3,6 +3,7 @@
 Guía para quien quiera reproducir el proyecto en su propia máquina y con sus propias cuentas. Hay dos caminos:
 
 - **Rápido (5 min, sin claves):** correr la app en modo mock. Disponible desde el paso 06.
+- **Intermedio (sin instalar nada):** usar la app pública con **tu** clave de Anthropic (ver ["Usa tus propias claves"](../README.md#usa-tus-propias-claves)).
 - **Completo (~1 h):** crear tus propias cuentas y desplegar tu copia.
 
 ## Requisitos

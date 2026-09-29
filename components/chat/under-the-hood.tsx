@@ -21,7 +21,10 @@ export function UnderTheHood({ meta }: { meta: TurnMetadata }) {
         </div>
         <div>
           <dt>Modo</dt>
-          <dd className="text-foreground font-mono">{meta.mode ?? "—"}</dd>
+          <dd className="text-foreground font-mono">
+            {meta.mode ?? "—"}
+            {meta.keySource === "user" ? " · tu clave" : meta.mode === "mock" ? " · demo" : ""}
+          </dd>
         </div>
         <div>
           <dt>Tokens de entrada</dt>

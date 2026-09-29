@@ -59,6 +59,10 @@ export interface ToolContext {
   conversationId: string;
   offline: boolean;
   embedRetries?: number;
+  /** User's own Voyage key (bring-your-own-key). */
+  voyageKey?: string;
+  /** False when a user brings their own key: never fall back to the server's Voyage key. */
+  serverKeysAllowed?: boolean;
 }
 
 export function createTools(ctx: ToolContext) {
@@ -73,8 +77,14 @@ export function createTools(ctx: ToolContext) {
       execute: async ({ query, line }) => {
         const documents = ctx.offline
           ? searchOffline(query, { lineFilter: line ?? null })
-          : (await retrieve(query, { lineFilter: line ?? null, embedRetries: ctx.embedRetries ?? 0 }))
-              .documents;
+          : (
+              await retrieve(query, {
+                lineFilter: line ?? null,
+                embedRetries: ctx.embedRetries ?? 0,
+                voyageKey: ctx.voyageKey,
+                serverKeyAllowed: ctx.serverKeysAllowed ?? true,
+              })
+            ).documents;
         return {
           results: documents.map((d) => ({
             service_id: d.serviceId,

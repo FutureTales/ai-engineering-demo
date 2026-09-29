@@ -5,8 +5,9 @@
 export const EMBEDDING_MODEL = "voyage-3.5-lite";
 export const EMBEDDING_DIMS = 1024;
 
-export function embeddingsAvailable(): boolean {
-  return Boolean(process.env.VOYAGE_API_KEY);
+/** With an explicit key (a user's own), or the server's VOYAGE_API_KEY (scripts, local dev). */
+export function embeddingsAvailable(apiKey?: string): boolean {
+  return Boolean(apiKey ?? process.env.VOYAGE_API_KEY);
 }
 
 export class EmbeddingRateLimitError extends Error {}
@@ -18,9 +19,9 @@ export class EmbeddingRateLimitError extends Error {}
 export async function embed(
   texts: string[],
   inputType: "document" | "query",
-  { retryOn429 = 0, waitMs = 25_000 } = {},
+  { retryOn429 = 0, waitMs = 25_000, apiKey }: { retryOn429?: number; waitMs?: number; apiKey?: string } = {},
 ): Promise<number[][]> {
-  const key = process.env.VOYAGE_API_KEY;
+  const key = apiKey ?? process.env.VOYAGE_API_KEY;
   if (!key) throw new Error("VOYAGE_API_KEY is not set");
   for (let attempt = 0; ; attempt++) {
     const res = await fetch("https://api.voyageai.com/v1/embeddings", {

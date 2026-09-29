@@ -1,7 +1,8 @@
 import { convertToModelMessages, createUIMessageStreamResponse, streamText, toUIMessageStream } from "ai";
 import { after } from "next/server";
 import { z } from "zod";
-import { aiMode, buildCopilotRequest, copilotModelId, COPILOT_MODEL, PROMPT_VERSION } from "@/lib/ai/copilot";
+import { buildCopilotRequest, copilotModelId, COPILOT_MODEL, PROMPT_VERSION } from "@/lib/ai/copilot";
+import { InvalidKeyError, resolveCredentials, type Credentials } from "@/lib/ai/credentials";
 import type { CopilotUIMessage, TurnMetadata } from "@/lib/ai/metadata";
 import { estimateCostUsd, toUsageBreakdown } from "@/lib/ai/models";
 import { validateChatMessages } from "@/lib/guardrails/input";
@@ -31,7 +32,15 @@ export async function POST(req: Request) {
   const invalid = validateChatMessages(messages);
   if (invalid) return Response.json({ error: invalid.error }, { status: invalid.status });
 
-  const mode = aiMode();
+  // Bring your own key: the user's key (header) -> live; no key and no server key -> demo mode.
+  let creds: Credentials;
+  try {
+    creds = resolveCredentials(req.headers);
+  } catch (err) {
+    const which = err instanceof InvalidKeyError && err.message === "voyage" ? "de Voyage" : "de Anthropic";
+    return Response.json({ error: `La clave ${which} no tiene un formato válido.` }, { status: 400 });
+  }
+  const mode = creds.mode;
   if (mode === "live") {
     try {
       // "New conversation" is decided by the server (first time this id is seen),
@@ -76,7 +85,13 @@ export async function POST(req: Request) {
   });
 
   const result = streamText({
-    ...buildCopilotRequest(await convertToModelMessages(messages), { conversationId, mode }),
+    ...buildCopilotRequest(await convertToModelMessages(messages), {
+      conversationId,
+      mode,
+      anthropicKey: creds.anthropicKey,
+      voyageKey: creds.voyageKey,
+      keySource: creds.source,
+    }),
     onStepFinish: ({ toolCalls }) => toolCalls.forEach((t) => toolsUsed.add(t.toolName)),
     onFinish: ({ totalUsage }) => {
       const usage = toUsageBreakdown(totalUsage);
@@ -91,7 +106,8 @@ export async function POST(req: Request) {
         ...baseRecord(),
         usage: { inputTokens: 0, cacheReadTokens: 0, cacheWriteTokens: 0, outputTokens: 0 },
         costUsd: 0,
-        error: String(error),
+        // Only the error type and HTTP status: never the raw provider error (it may echo request data).
+        error: `${(error as Error)?.name ?? "Error"}${(error as { statusCode?: number })?.statusCode ? ` ${(error as { statusCode?: number }).statusCode}` : ""}`,
       });
     },
   });
@@ -101,7 +117,8 @@ export async function POST(req: Request) {
       stream: result.stream,
       originalMessages: messages,
       messageMetadata: ({ part }): TurnMetadata | undefined => {
-        if (part.type === "start") return { model, promptVersion: PROMPT_VERSION, mode };
+        if (part.type === "start")
+          return { model, promptVersion: PROMPT_VERSION, mode, keySource: creds.source };
         if (part.type === "text-delta" && firstTokenAt === null) firstTokenAt = Date.now();
         if (part.type === "finish") {
           const usage = toUsageBreakdown(part.totalUsage);
@@ -116,7 +133,18 @@ export async function POST(req: Request) {
         return undefined;
       },
       onError: (error) => {
-        console.error("[chat] stream error", error);
+        // Never log the error object itself: provider errors may carry request details.
+        const status = (error as { statusCode?: number })?.statusCode;
+        console.error("[chat] stream error", { name: (error as Error)?.name, status });
+        if (creds.source === "user" && (status === 401 || status === 403)) {
+          return "Tu clave de Anthropic no es válida o no tiene permisos. Revísala en console.anthropic.com.";
+        }
+        if (creds.source === "user" && status === 402) {
+          return "Tu cuenta de Anthropic no tiene saldo disponible.";
+        }
+        if (creds.source === "user" && status === 429) {
+          return "Tu cuenta de Anthropic alcanzó su límite de uso. Espera un momento o revisa tus límites.";
+        }
         return "El copiloto tuvo un problema al responder. Intenta de nuevo en un momento.";
       },
     }),
