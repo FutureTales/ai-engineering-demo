@@ -67,3 +67,9 @@ Diagramas y trade-offs: `docs/arquitectura.md`. Decisiones: `docs/adr/`.
 ## Puntos de control humanos
 
 Detente y pregunta en: (a) logins y prerrequisitos, (b) aprobación de la spec, (c) antes del primer push público (mostrar resultado de gitleaks). Los logins interactivos (`supabase login`, `vercel login`) los hace la persona en su terminal.
+
+## Reglas de Next.js para agentes
+
+Next.js 16 genera `AGENTS.md` con instrucciones para agentes de código (leer la documentación incluida en `node_modules/next/dist/docs/` antes de escribir código). Lo importamos aquí:
+
+@AGENTS.md

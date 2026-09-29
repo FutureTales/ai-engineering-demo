@@ -27,5 +27,20 @@ jobs:
       - name: Scan git history
         run: gitleaks git --redact --verbose --exit-code 1
 
-  # Lint, typecheck, unit tests and mock evals are added in the next steps
-  # (paso-02 adds the Node.js job once package.json exists).
+  quality:
+    name: Lint, typecheck, tests, build
+    runs-on: ubuntu-latest
+    env:
+      AI_MODE: mock # CI never calls paid APIs
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4 # version comes from package.json "packageManager"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm test
+      - run: pnpm build

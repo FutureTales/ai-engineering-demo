@@ -1,0 +1,77 @@
+{
+  "_notice": "Empresas y personas FICTICIAS para la demo educativa y las evals. Cualquier parecido con empresas reales es coincidencia.",
+  "companies": [
+    {
+      "id": "hotel-brisas-getsemani",
+      "company": "Hotel Brisas de Getsemaní",
+      "sector": "Hotelería",
+      "contact_name": "Marcela Pérez",
+      "problem": "Hotel boutique de 24 habitaciones en Getsemaní, Cartagena. En temporada alta (diciembre–enero) se forman filas de hasta 40 minutos en el check-in entre las 2 y las 5 p. m. Tienen 2 recepcionistas. Llegan unos 18 huéspedes por hora en el pico y cada check-in toma unos 6 minutos. Los huéspedes se quejan en las reseñas.",
+      "line": "process_design",
+      "recommended_services": ["simulacion-operaciones"],
+      "scope": "Simulación del check-in en temporada alta: comparar 2, 3 y 4 recepcionistas y check-in digital previo.",
+      "investment_range_cop": "COP 8.000.000 – 25.000.000",
+      "status": "in_review"
+    },
+    {
+      "id": "panaderia-el-trigal",
+      "company": "Panadería El Trigal",
+      "sector": "Alimentos",
+      "contact_name": "Jorge Díaz",
+      "problem": "Panadería con tres sedes en Turbaco. Al final del día botamos una parte grande del pan porque producimos siempre la misma cantidad, sin importar el día de la semana.",
+      "line": "process_design",
+      "recommended_services": ["produccion-mas-limpia-desperdicios", "tablero-indicadores-analitica"],
+      "scope": "Cuantificar el desperdicio por sede y día, y ajustar la producción a la demanda.",
+      "investment_range_cop": "COP 3.500.000 – 12.000.000",
+      "status": "new"
+    },
+    {
+      "id": "confecciones-mompox",
+      "company": "Confecciones Mompox",
+      "sector": "Textil y confección",
+      "contact_name": "Luz Marina Ortega",
+      "problem": "Taller de confecciones de 30 operarias. Un cliente grande nos devolvió un lote porque muchas prendas tenían costuras torcidas y medidas fuera de tolerancia. Los defectos cambian mucho entre turnos.",
+      "line": "quality_assurance",
+      "recommended_services": ["gestion-calidad-control-estadistico"],
+      "scope": "Análisis de causas raíz y control estadístico en el proceso de costura.",
+      "investment_range_cop": "COP 6.000.000 – 20.000.000",
+      "status": "proposal_sent"
+    },
+    {
+      "id": "logistica-bahia",
+      "company": "Logística Bahía",
+      "sector": "Logística portuaria",
+      "contact_name": "Ricardo Villalba",
+      "problem": "Operador logístico cerca del Puerto de Cartagena. Los camiones esperan hasta 3 horas para cargar en el muelle de despacho en las mañanas. Tenemos 3 muelles y cada carga toma unos 50 minutos.",
+      "line": "process_design",
+      "recommended_services": ["simulacion-operaciones"],
+      "scope": "Simulación del muelle de despacho y escenarios de citas escalonadas y un cuarto muelle.",
+      "investment_range_cop": "COP 8.000.000 – 25.000.000",
+      "status": "new"
+    },
+    {
+      "id": "manglar-labs",
+      "company": "Manglar Labs",
+      "sector": "Startup de moda sostenible",
+      "contact_name": "Valentina Rojas",
+      "problem": "Somos una startup que hace bolsos con fibras recicladas. Queremos exportar y alguien nos dijo que primero deberíamos proteger la marca. No sabemos si el nombre ya está registrado.",
+      "line": "business_innovation",
+      "recommended_services": ["vigilancia-tecnologica-pi"],
+      "scope": "Búsqueda de antecedentes de la marca y preparación de la solicitud ante la SIC.",
+      "investment_range_cop": "COP 1.800.000 – 6.000.000",
+      "status": "closed"
+    },
+    {
+      "id": "coopesca-bocachica",
+      "company": "Cooperativa de Pescadores de Bocachica",
+      "sector": "Pesca artesanal",
+      "contact_name": "Efraín Julio",
+      "problem": "Somos una cooperativa de 45 pescadores. Queremos montar un centro de acopio con cadena de frío y buscar financiación para un proyecto de innovación, pero nunca hemos presentado un proyecto a una convocatoria.",
+      "line": "business_innovation",
+      "recommended_services": ["formulacion-proyectos-idi"],
+      "scope": "Identificar convocatorias y formular el proyecto del centro de acopio con cadena de frío.",
+      "investment_range_cop": "COP 4.000.000 – 15.000.000",
+      "status": "in_review"
+    }
+  ]
+}
