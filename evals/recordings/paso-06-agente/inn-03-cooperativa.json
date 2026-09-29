@@ -1,0 +1,62 @@
+{
+  "caseId": "inn-03-cooperativa",
+  "label": "paso-06-agente",
+  "recordedAt": "2026-09-29T17:46:49.301Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v3-agente",
+  "turns": [
+    {
+      "user": "Somos una cooperativa de 45 pescadores en Bocachica. Queremos montar un centro de acopio con cadena de frío y buscar financiación, pero nunca hemos presentado un proyecto a una convocatoria.",
+      "assistant": "Gracias por contarnos. Tu caso encaja bien con lo que hacemos.\n\n**Línea de trabajo:** `business_innovation`\n\n**Servicio recomendado:** Gerencia y formulación de proyectos de innovación (I+D+i)\n\nAplica porque buscan financiación, tienen una idea concreta (el centro de acopio con cadena de frío) y no tienen experiencia con convocatorias. La ficha menciona incluso el caso de una cooperativa de pescadores que busca financiación para una planta de procesamiento.\n\n**Qué incluye:**\n- Identificación de convocatorias pertinentes.\n- Documento técnico del proyecto: problema, objetivos, metodología, presupuesto, cronograma e indicadores.\n- Revisión de requisitos de la convocatoria.\n- Opcional: gerencia del proyecto si lo aprueban.\n\n**Duración:** de 3 a 8 semanas para la formulación. La gerencia se cotiza aparte.\n\n**Inversión:** entre **COP 4.000.000 y COP 15.000.000** por la formulación. No incluye IVA. La aprobación depende del financiador y no está garantizada.\n\n**Descuento:** por ser cooperativa, la política del centro contempla un 15 % sobre el valor del servicio. Debes presentar el certificado de existencia y representación legal. Los descuentos no se acumulan.\n\nFuente: [Gerencia y formulación de proyectos de innovación (I+D+i)](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/formulacion-proyectos-idi.md)\n\n**Pre-propuesta**\n- **Problema:** cooperativa de 45 pescadores en Bocachica que quiere montar un centro de acopio con cadena de frío y no tiene experiencia formulando proyectos.\n- **Alcance sugerido:** identificar convocatorias, redactar el documento técnico con presupuesto e indicadores, y revisar los requisitos.\n- **Siguiente paso:** un coordinador te contacta en 2 días hábiles. Después hay una reunión de diagnóstico de 45 a 60 minutos para validar el alcance. Esta pre-propuesta no es una oferta comercial ni compromete al centro.\n\n¿Quieres que la guarde para que un coordinador la revise? Si es así, dime el **nombre de la cooperativa** y el **nombre de la persona de contacto**. Si quieres, puedes darme también un correo.",
+      "toolCalls": [
+        {
+          "toolName": "search_services",
+          "input": {
+            "query": "formulación de proyecto para convocatoria de financiación, centro de acopio cadena de frío cooperativa",
+            "line": "business_innovation"
+          }
+        }
+      ],
+      "toolResults": [
+        {
+          "toolName": "search_services",
+          "output": {
+            "results": [
+              {
+                "service_id": "formulacion-proyectos-idi",
+                "title": "Gerencia y formulación de proyectos de innovación (I+D+i)",
+                "source": "data/catalog/servicios/formulacion-proyectos-idi.md",
+                "content": "# Gerencia y formulación de proyectos de innovación (I+D+i)\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nFormulamos proyectos de investigación, desarrollo e innovación para presentarlos a convocatorias de financiadores públicos, privados o de cooperación internacional. Si el proyecto es aprobado, podemos acompañar su gerencia: plan de trabajo, seguimiento técnico y financiero, e informes.\n\n## Cuándo aplica\n\n- La empresa o cooperativa **busca financiación** para un proyecto de innovación.\n- Hay una convocatoria abierta y no tienen experiencia formulando.\n- Ganaron recursos y necesitan apoyo para ejecutar y reportar.\n\n## Entregables\n\n1. Identificación de convocatorias pertinentes.\n2. Documento técnico del proyecto: problema, objetivos, metodología, presupuesto, cronograma e indicadores.\n3. Revisión de requisitos de la convocatoria.\n4. (Opcional) Gerencia del proyecto durante la ejecución.\n\n## Duración típica\n\nDe 3 a 8 semanas para la formulación. La gerencia se cotiza aparte según la duración del proyecto.\n\n## Inversión\n\nEntre **COP 4.000.000 y COP 15.000.000** por la formulación. La aprobación del proyecto depende del financiador y no está garantizada.\n\n## Ejemplos\n\n- Cooperativa de pescadores que busca financiación para una planta de procesamiento.\n- MIPYME que quiere cofinanciar el desarrollo de un producto nuevo."
+              },
+              {
+                "service_id": "prototipado-3d",
+                "title": "Prototipado 3D y fabricación rápida",
+                "source": "data/catalog/servicios/prototipado-3d.md",
+                "content": "# Prototipado 3D y fabricación rápida\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDiseñamos y fabricamos prototipos físicos de productos, piezas o empaques con modelado CAD, impresión 3D (FDM y resina) y corte láser, para validar forma, función y aceptación de clientes antes de producir en serie.\n\n## Cuándo aplica\n\n- La empresa tiene una **idea de producto nuevo** o quiere rediseñar uno existente.\n- Necesita **mostrar un prototipo** a clientes, inversionistas o financiadores.\n- Quiere reemplazar una pieza importada o descontinuada.\n\n## Entregables\n\n1. Modelo CAD del producto o pieza.\n2. Hasta 3 iteraciones de prototipo físico.\n3. Informe de pruebas funcionales y recomendaciones para producción.\n\n## Duración típica\n\nDe 2 a 6 semanas.\n\n## Inversión\n\nEntre **COP 2.500.000 y COP 12.000.000**, según tamaño, material y número de iteraciones.\n\n## Ejemplos\n\n- Empaque nuevo para una línea de dulces típicos.\n- Prototipo de un dispositivo para una startup de agrotecnología."
+              }
+            ]
+          }
+        }
+      ],
+      "costUsd": 0.0152776,
+      "latencyMs": 58624,
+      "ttftMs": 58484,
+      "retrievalMode": "tool",
+      "retrievedSources": [
+        "data/catalog/servicios/formulacion-proyectos-idi.md",
+        "data/catalog/servicios/prototipado-3d.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende perfectamente el problema de la cooperativa de pescadores. Recomienda el único servicio que corresponde (formulacion-proyectos-idi) con todos los datos correctos: rango de COP 4.000.000–15.000.000, duración 3–8 semanas, descuento del 15% para cooperativas respaldado por la política, y ciclo de atención completo. La estructura es clara, breve y bien organizada para lectura en celular. El tono es cercano y profesional sin prometer garantías que no puede dar (aprobación del financiador)."
+  },
+  "judgeCostUsd": 0.005953
+}

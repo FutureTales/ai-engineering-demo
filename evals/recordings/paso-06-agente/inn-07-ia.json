@@ -1,0 +1,79 @@
+{
+  "caseId": "inn-07-ia",
+  "label": "paso-06-agente",
+  "recordedAt": "2026-09-29T17:48:08.593Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v3-agente",
+  "turns": [
+    {
+      "user": "Tengo un almacén de repuestos de motos y todo el mundo dice que hay que usar IA. No sé dónde me serviría ni por dónde empezar.",
+      "assistant": "¡Qué bueno que preguntes antes de lanzarte! No siempre hay que empezar por la IA. Primero conviene ver dónde te duele más el negocio.\n\nPara orientarte bien, cuéntame tres cosas:\n\n1. **¿Qué tan grande es tu almacén?** Dime cuántas personas trabajan ahí y si tienes una o varias sedes.\n2. **¿Cuál es hoy tu mayor dolor?** Por ejemplo:\n   - No sabes qué tienes en inventario o se te agotan repuestos.\n   - Hay filas o demoras en el mostrador.\n   - Llevas las cuentas y los pedidos a mano.\n   - No sabes qué se vende más.\n3. **¿Cómo llevas hoy el control?** Puede ser cuaderno, Excel, un programa de facturación u otra cosa.\n\nCon eso te digo por dónde empezar y qué servicio del centro te serviría. Por ahora no te recomiendo nada, porque todavía no conozco tu caso.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0054468,
+      "latencyMs": 4244,
+      "ttftMs": 1732,
+      "retrievalMode": "none",
+      "retrievedSources": []
+    },
+    {
+      "user": "Somos 10 empleados. Atendemos por WhatsApp y mostrador, llevamos el inventario en un programa contable y recibimos unos 150 mensajes al día.",
+      "assistant": "Gracias, con eso ya puedo orientarte.\n\n**Línea de trabajo:** `business_innovation`\n\n**Mi lectura:** con 150 mensajes diarios por WhatsApp, el mostrador y un programa contable, sí hay oportunidades. Todavía no sabemos cuál da más retorno: responder cotizaciones y consultas de stock automáticamente, ordenar los pedidos o tener mejor información de ventas. Por eso conviene empezar por un diagnóstico y no comprar una herramienta de IA a ciegas.\n\n**Servicio recomendado**\n\n**Diagnóstico de madurez digital y de IA para MIPYMES**\n- Aplica cuando \"quiere usar IA pero no sabe dónde le serviría\". Su ficha cita como ejemplo un almacén de repuestos que quiere automatizar la atención por WhatsApp.\n- Entregables:\n  - Encuesta y entrevistas.\n  - Informe de madurez por procesos, datos, personas y tecnología.\n  - Hoja de ruta con 3 a 5 iniciativas priorizadas.\n- Duración: de 2 a 3 semanas.\n- Inversión: entre **COP 1.500.000 y COP 4.000.000**, sin IVA.\n- Fuente: [Diagnóstico de madurez digital y de IA para MIPYMES](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/diagnostico-madurez-digital-ia.md)\n\n**Descuento:** con 10 empleados, tu empresa entraría en la categoría de microempresa, que tiene un 20 % de descuento. Para aplicarlo debes presentar el certificado de existencia y representación legal.\n\n**Después del diagnóstico**, según lo que salga en la hoja de ruta, podrías necesitar el servicio de digitalización de procesos administrativos o el de tablero de indicadores. Por ahora no hace falta decidirlo.\n\n**Pre-propuesta**\n- **Problema:** quieres usar IA en un almacén de repuestos de motos, pero no sabes dónde aplicarla. Recibes unos 150 mensajes de WhatsApp al día, atiendes también en mostrador y llevas el inventario en un programa contable.\n- **Alcance sugerido:** diagnóstico de madurez digital y de IA, con foco en atención por WhatsApp e inventario.\n- **Siguiente paso:** un coordinador te contacta en 2 días hábiles y hace una reunión de diagnóstico de 45 a 60 minutos. La pre-propuesta no es una oferta comercial ni compromete al centro.\n\n¿Quieres que la guarde para que la revise un coordinador? Si sí, dime el **nombre de tu empresa** y el **nombre de la persona de contacto**. Si quieres que te contacten por correo, dame también el correo, aunque es opcional.",
+      "toolCalls": [
+        {
+          "toolName": "search_services",
+          "input": {
+            "query": "MIPYME almacén repuestos por dónde empezar con IA transformación digital WhatsApp inventario"
+          }
+        }
+      ],
+      "toolResults": [
+        {
+          "toolName": "search_services",
+          "output": {
+            "results": [
+              {
+                "service_id": "diagnostico-madurez-digital-ia",
+                "title": "Diagnóstico de madurez digital y de IA para MIPYMES",
+                "source": "data/catalog/servicios/diagnostico-madurez-digital-ia.md",
+                "content": "# Diagnóstico de madurez digital y de IA para MIPYMES\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nEvaluamos qué tan preparada está la empresa para adoptar herramientas digitales e inteligencia artificial: procesos, datos, personas y tecnología. Entregamos una hoja de ruta realista con oportunidades priorizadas por impacto y esfuerzo.\n\n## Cuándo aplica\n\n- La empresa **quiere \"usar IA\"** pero no sabe dónde le serviría.\n- Es el **primer contacto** con el centro y no está claro qué servicio necesita.\n- Se quiere priorizar inversiones en tecnología.\n\n## Entregables\n\n1. Encuesta y entrevistas de diagnóstico.\n2. Informe de madurez por dimensión (procesos, datos, personas, tecnología).\n3. Hoja de ruta con 3 a 5 iniciativas priorizadas.\n\n## Duración típica\n\nDe 2 a 3 semanas.\n\n## Inversión\n\nEntre **COP 1.500.000 y COP 4.000.000**.\n\n## Ejemplos\n\n- Almacén de repuestos que quiere automatizar la atención por WhatsApp.\n- Agencia de turismo que quiere usar sus datos de reservas para planear temporadas."
+              },
+              {
+                "service_id": "digitalizacion-procesos-administrativos",
+                "title": "Modelado y digitalización de procesos administrativos",
+                "source": "data/catalog/servicios/digitalizacion-procesos-administrativos.md",
+                "content": "# Modelado y digitalización de procesos administrativos\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDocumentamos los procesos administrativos de la empresa (compras, facturación, inventario, atención al cliente) con notación BPMN, eliminamos pasos que no agregan valor y definimos cómo digitalizarlos con herramientas accesibles para una MIPYME.\n\n## Cuándo aplica\n\n- Los procesos dependen de **papel, hojas de cálculo sueltas o WhatsApp**.\n- Hay **reprocesos, pérdidas de información o demoras** en trámites internos.\n- La empresa quiere adoptar un software (ERP, CRM, facturación electrónica) y no sabe por dónde empezar.\n\n## Entregables\n\n1. Mapa de procesos actual (AS-IS) y propuesto (TO-BE) en BPMN.\n2. Recomendación de herramientas digitales y plan de implementación.\n3. Acompañamiento en la puesta en marcha de 1 o 2 procesos prioritarios.\n\n## Duración típica\n\nDe 4 a 10 semanas.\n\n## Inversión\n\nEntre **COP 5.000.000 y COP 18.000.000**. Las licencias de software no están incluidas.\n\n## Ejemplos\n\n- Digitalización de pedidos e inventario de una panadería con tres sedes.\n- Estandarización del proceso de despacho de un operador logístico."
+              },
+              {
+                "service_id": "tablero-indicadores-analitica",
+                "title": "Tablero de indicadores y analítica operativa",
+                "source": "data/catalog/servicios/tablero-indicadores-analitica.md",
+                "content": "# Tablero de indicadores y analítica operativa\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDefinimos los indicadores clave del negocio y construimos un tablero que se actualiza con los datos que la empresa ya tiene (ventas, inventario, producción, atención), para tomar decisiones con datos y no por intuición.\n\n## Cuándo aplica\n\n- La empresa **no sabe con precisión** cuánto vende, produce o desperdicia por día.\n- Los datos existen pero están dispersos en varias hojas de cálculo o sistemas.\n- Se quiere hacer seguimiento a una mejora (por ejemplo, después de una simulación).\n\n## Entregables\n\n1. Definición de 5 a 10 KPIs con su fórmula y fuente de datos.\n2. Tablero interactivo conectado a las fuentes.\n3. Capacitación para mantenerlo.\n\n## Duración típica\n\nDe 3 a 6 semanas.\n\n## Inversión\n\nEntre **COP 4.000.000 y COP 14.000.000**.\n\n## Ejemplos\n\n- Tablero de producción y desperdicio diario de una panadería.\n- Indicadores de tiempos de despacho de un operador logístico."
+              }
+            ]
+          }
+        }
+      ],
+      "costUsd": 0.0198576,
+      "latencyMs": 59811,
+      "ttftMs": 58909,
+      "retrievalMode": "tool",
+      "retrievedSources": [
+        "data/catalog/servicios/diagnostico-madurez-digital-ia.md",
+        "data/catalog/servicios/digitalizacion-procesos-administrativos.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende de lleno el problema: una MIPYME que quiere usar IA pero no sabe dónde. Recomienda el servicio exacto del catálogo (diagnóstico-madurez-digital-ia) con precios (COP 1.500.000–4.000.000), plazo (2–3 semanas) y descuento (20 % por microempresa) completamente respaldados. Estructura clara, tono cercano y profesional, sin prometer resultados no garantizables. Sigue el proceso del centro fielmente."
+  },
+  "judgeCostUsd": 0.006351
+}

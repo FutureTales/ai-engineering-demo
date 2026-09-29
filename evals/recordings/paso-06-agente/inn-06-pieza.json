@@ -1,0 +1,68 @@
+{
+  "caseId": "inn-06-pieza",
+  "label": "paso-06-agente",
+  "recordedAt": "2026-09-29T17:48:12.893Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v3-agente",
+  "turns": [
+    {
+      "user": "Una máquina de nuestra planta usa una pieza plástica importada que ya no fabrican. ¿Nos pueden ayudar a diseñarla y hacer un prototipo para probarla?",
+      "assistant": "Sí, podemos ayudarte. Tu caso encaja con nuestro servicio de prototipado.\n\n**Línea de trabajo:** `business_innovation`\n\n**Servicio recomendado: Prototipado 3D y fabricación rápida**\n- La ficha menciona expresamente el caso de reemplazar una pieza importada o descontinuada.\n- Se modela la pieza en CAD y se fabrica con impresión 3D (FDM y resina) o corte láser.\n- **Entregables:** modelo CAD, hasta 3 iteraciones de prototipo físico e informe de pruebas funcionales con recomendaciones para producción.\n- **Duración típica:** de 2 a 6 semanas.\n- **Inversión:** entre **COP 2.500.000 y COP 12.000.000**, según tamaño, material y número de iteraciones. No incluye IVA. Si eres microempresa o pequeña empresa, puede aplicar descuento con el certificado de existencia y representación legal.\n- Fuente: [Prototipado 3D y fabricación rápida](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/prototipado-3d.md)\n\n**Alcance sugerido:** levantar las medidas de la pieza original o de una muestra, modelarla en CAD, imprimir el prototipo y probarlo en la máquina.\n\n**Una advertencia:** las piezas plásticas de una máquina pueden tener exigencias de resistencia, temperatura o desgaste. Un prototipo impreso sirve para validar forma y ajuste. Puede que el material final tenga que ser distinto. El informe de pruebas lo indicaría.\n\n**Siguiente paso:** un coordinador revisa la pre-propuesta y te contacta en 2 días hábiles. Luego hay una reunión de diagnóstico de 45 a 60 minutos para validar el alcance. Esta pre-propuesta no es una oferta comercial.\n\n¿Quieres que la guarde? Si sí, dime el nombre de tu empresa y el de la persona de contacto. El correo es opcional.",
+      "toolCalls": [
+        {
+          "toolName": "search_services",
+          "input": {
+            "query": "prototipo pieza plástica descontinuada diseño fabricación rápida impresión 3D repuesto"
+          }
+        }
+      ],
+      "toolResults": [
+        {
+          "toolName": "search_services",
+          "output": {
+            "results": [
+              {
+                "service_id": "prototipado-3d",
+                "title": "Prototipado 3D y fabricación rápida",
+                "source": "data/catalog/servicios/prototipado-3d.md",
+                "content": "# Prototipado 3D y fabricación rápida\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDiseñamos y fabricamos prototipos físicos de productos, piezas o empaques con modelado CAD, impresión 3D (FDM y resina) y corte láser, para validar forma, función y aceptación de clientes antes de producir en serie.\n\n## Cuándo aplica\n\n- La empresa tiene una **idea de producto nuevo** o quiere rediseñar uno existente.\n- Necesita **mostrar un prototipo** a clientes, inversionistas o financiadores.\n- Quiere reemplazar una pieza importada o descontinuada.\n\n## Entregables\n\n1. Modelo CAD del producto o pieza.\n2. Hasta 3 iteraciones de prototipo físico.\n3. Informe de pruebas funcionales y recomendaciones para producción.\n\n## Duración típica\n\nDe 2 a 6 semanas.\n\n## Inversión\n\nEntre **COP 2.500.000 y COP 12.000.000**, según tamaño, material y número de iteraciones.\n\n## Ejemplos\n\n- Empaque nuevo para una línea de dulces típicos.\n- Prototipo de un dispositivo para una startup de agrotecnología."
+              },
+              {
+                "service_id": "capacitacion-realidad-virtual",
+                "title": "Capacitación en entornos inmersivos (realidad virtual)",
+                "source": "data/catalog/servicios/capacitacion-realidad-virtual.md",
+                "content": "# Capacitación en entornos inmersivos (realidad virtual)\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDesarrollamos experiencias de realidad virtual para entrenar al personal en procedimientos críticos, estándares de calidad y seguridad industrial, sin detener la operación ni exponer a las personas a riesgos.\n\n## Cuándo aplica\n\n- Hay **errores repetidos** porque el personal no sigue un procedimiento estándar.\n- La capacitación práctica es **costosa o peligrosa** (maquinaria, alturas, químicos).\n- Hay alta rotación y se necesita entrenar rápido a personal nuevo.\n\n## Entregables\n\n1. Guion instruccional del procedimiento.\n2. Experiencia de realidad virtual (1 a 3 escenarios).\n3. Piloto con el personal y medición de aprendizaje antes y después.\n\n## Duración típica\n\nDe 6 a 10 semanas.\n\n## Inversión\n\nEntre **COP 6.000.000 y COP 20.000.000**.\n\n## Ejemplos\n\n- Entrenamiento en el procedimiento de corte de un taller de confecciones.\n- Simulacro de manejo seguro de montacargas en una bodega."
+              },
+              {
+                "service_id": "formulacion-proyectos-idi",
+                "title": "Gerencia y formulación de proyectos de innovación (I+D+i)",
+                "source": "data/catalog/servicios/formulacion-proyectos-idi.md",
+                "content": "# Gerencia y formulación de proyectos de innovación (I+D+i)\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nFormulamos proyectos de investigación, desarrollo e innovación para presentarlos a convocatorias de financiadores públicos, privados o de cooperación internacional. Si el proyecto es aprobado, podemos acompañar su gerencia: plan de trabajo, seguimiento técnico y financiero, e informes.\n\n## Cuándo aplica\n\n- La empresa o cooperativa **busca financiación** para un proyecto de innovación.\n- Hay una convocatoria abierta y no tienen experiencia formulando.\n- Ganaron recursos y necesitan apoyo para ejecutar y reportar.\n\n## Entregables\n\n1. Identificación de convocatorias pertinentes.\n2. Documento técnico del proyecto: problema, objetivos, metodología, presupuesto, cronograma e indicadores.\n3. Revisión de requisitos de la convocatoria.\n4. (Opcional) Gerencia del proyecto durante la ejecución.\n\n## Duración típica\n\nDe 3 a 8 semanas para la formulación. La gerencia se cotiza aparte según la duración del proyecto.\n\n## Inversión\n\nEntre **COP 4.000.000 y COP 15.000.000** por la formulación. La aprobación del proyecto depende del financiador y no está garantizada.\n\n## Ejemplos\n\n- Cooperativa de pescadores que busca financiación para una planta de procesamiento.\n- MIPYME que quiere cofinanciar el desarrollo de un producto nuevo."
+              }
+            ]
+          }
+        }
+      ],
+      "costUsd": 0.0146956,
+      "latencyMs": 58382,
+      "ttftMs": 58373,
+      "retrievalMode": "tool",
+      "retrievedSources": [
+        "data/catalog/servicios/prototipado-3d.md",
+        "data/catalog/servicios/capacitacion-realidad-virtual.md",
+        "data/catalog/servicios/formulacion-proyectos-idi.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende exactamente el problema de la empresa (reemplazar una pieza importada descontinuada), recomienda el servicio correcto (prototipado-3d) con todos los datos del catálogo (rango COP 2.500.000–12.000.000, 2–6 semanas, entregables específicos). Incluye una advertencia técnica apropiada sobre materiales finales, explica el proceso de atención (2 días, diagnóstico 45–60 min) y respeta el protocolo de consentimiento para guardar datos. Lenguaje claro, profesional y sin promesas excesivas."
+  },
+  "judgeCostUsd": 0.005911
+}

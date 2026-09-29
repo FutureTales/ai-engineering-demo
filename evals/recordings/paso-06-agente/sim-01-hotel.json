@@ -1,0 +1,212 @@
+{
+  "caseId": "sim-01-hotel",
+  "label": "paso-06-agente",
+  "recordedAt": "2026-09-29T17:39:57.903Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v3-agente",
+  "turns": [
+    {
+      "user": "Tengo un hotel boutique de 24 habitaciones en Getsemaní, el Hotel Brisas de Getsemaní. En temporada alta (diciembre y enero) se forman filas de hasta 40 minutos en el check-in entre las 2 y las 5 de la tarde. Tenemos 2 recepcionistas. Llegan unos 18 huéspedes por hora en el pico y cada check-in toma unos 6 minutos. Los huéspedes se quejan en las reseñas. ¿Qué me recomiendan?",
+      "assistant": "Ya tengo los datos clave, así que busco los servicios y corro la simulación al mismo tiempo.Hola. Con 2 recepcionistas, 18 llegadas por hora y 6 minutos por check-in, tu recepción trabaja casi al tope. Por eso se forman las filas.\n\n**Línea de trabajo:** `process_design`\n\n## Simulación del pico (3 horas)\nHay dos cifras para el escenario actual. El modelo teórico da una espera media de 25,6 min y p90 de 64,3 min. La simulación del pico de 3 horas da 11,2 min y 30,2 min. Las filas de hasta 40 minutos que ves están dentro de ese rango.\n\n- **Actual, 2 recepcionistas:** espera media 11,2 min, p90 30,2 min, utilización 90 %.\n- **3 recepcionistas:** espera media 1,8 min, p90 6,3 min, utilización 60 %.\n- **Pre-check-in digital (3 min) con 2 recepcionistas:** espera media 0,8 min, p90 2,9 min, utilización 45 %.\n- **Pre-check-in digital (3 min) con 3 recepcionistas:** espera media 0,1 min, p90 0 min, utilización 30 %.\n\n**Conclusión:** con un 90 % de utilización, cualquier variación en las llegadas produce filas largas. Agregar una tercera persona en el pico resuelve casi todo. Digitalizar parte del check-in, por ejemplo con datos y registro antes de llegar, lo resuelve sin contratar. El escenario de 3 minutos es una hipótesis. Habría que validar si tu proceso realmente puede bajar de 6 a 3 minutos.\n\n## Servicio recomendado\n**Simulación de operaciones y análisis \"what if\"**\n- Aplica porque tu caso es el ejemplo de la ficha: un hotel con filas en el check-in en temporada alta.\n- Entregables: levantamiento del proceso, modelo validado con tu operación real, comparación de 3 a 5 escenarios, tablero de KPIs y taller con tu equipo.\n- Duración típica: 4 a 8 semanas.\n- Inversión: **COP 8.000.000 a COP 25.000.000**. No incluye IVA. Aplican los descuentos para MIPYMES de la política de tarifas.\n- Fuente: [Simulación de operaciones y análisis \"what if\"](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/simulacion-operaciones.md)\n\n**Opcional, para dar seguimiento después:** Tablero de indicadores y analítica operativa.\n- Inversión: **COP 4.000.000 a COP 14.000.000**.\n- Fuente: [Tablero de indicadores y analítica operativa](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/tablero-indicadores-analitica.md)\n\n## Pre-propuesta\n- **Problema:** filas de hasta 40 minutos en el check-in de 2 a 5 p. m. en diciembre y enero, con 2 recepcionistas, y quejas en las reseñas.\n- **Alcance sugerido:** modelar el check-in y comparar 2, 3 y 4 recepcionistas y un pre-check-in digital.\n- **Siguiente paso:** un coordinador te contacta en 2 días hábiles. Después viene una reunión de diagnóstico de 45 a 60 minutos.\n- Esta pre-propuesta no es una oferta comercial.\n\n**Descuento:** depende del número de empleados. Si me dices cuántos son, te indico qué descuento podría aplicar. Se acredita con el certificado de existencia y representación legal.\n\n¿Quieres que la guarde para que la revise un coordinador? Si es así, dime el nombre de la empresa (Hotel Brisas de Getsemaní), tu nombre como contacto y, si quieres, un correo electrónico.",
+      "toolCalls": [
+        {
+          "toolName": "search_services",
+          "input": {
+            "query": "filas check-in hotel espera capacidad recepción simulación",
+            "line": "process_design"
+          }
+        },
+        {
+          "toolName": "simulate_queue",
+          "input": {
+            "scenarios": [
+              {
+                "scenario_label": "Actual: 2 recepcionistas",
+                "arrival_rate_per_hour": 18,
+                "service_time_min": 6,
+                "servers": 2,
+                "hours": 3
+              },
+              {
+                "scenario_label": "3 recepcionistas",
+                "arrival_rate_per_hour": 18,
+                "service_time_min": 6,
+                "servers": 3,
+                "hours": 3
+              },
+              {
+                "scenario_label": "Pre-check-in digital (3 min), 2 recepcionistas",
+                "arrival_rate_per_hour": 18,
+                "service_time_min": 3,
+                "servers": 2,
+                "hours": 3
+              },
+              {
+                "scenario_label": "Pre-check-in digital (3 min), 3 recepcionistas",
+                "arrival_rate_per_hour": 18,
+                "service_time_min": 3,
+                "servers": 3,
+                "hours": 3
+              }
+            ]
+          }
+        }
+      ],
+      "toolResults": [
+        {
+          "toolName": "simulate_queue",
+          "output": {
+            "scenarios": [
+              {
+                "scenario_label": "Actual: 2 recepcionistas",
+                "servers": 2,
+                "arrival_rate_per_hour": 18,
+                "service_time_min": 6,
+                "utilization": 0.9,
+                "stable": true,
+                "verdict": "Estable pero al límite: con esta utilización, cualquier variación produce filas largas.",
+                "analytic": {
+                  "prob_wait": 0.853,
+                  "avg_wait_min": 25.6,
+                  "p90_wait_min": 64.3,
+                  "avg_queue_len": 7.67,
+                  "avg_time_in_system_min": 31.6
+                },
+                "simulation": {
+                  "hours": 3,
+                  "replications": 200,
+                  "seed": 42,
+                  "avg_wait_min": 11.2,
+                  "p90_wait_min": 30.2,
+                  "avg_queue_len": 2.99,
+                  "typical_max_queue_len": 8,
+                  "bad_day_max_queue_len": 15,
+                  "customers_per_replication": 54.1
+                }
+              },
+              {
+                "scenario_label": "3 recepcionistas",
+                "servers": 3,
+                "arrival_rate_per_hour": 18,
+                "service_time_min": 6,
+                "utilization": 0.6,
+                "stable": true,
+                "verdict": "Estable y con holgura: la espera es baja.",
+                "analytic": {
+                  "prob_wait": 0.355,
+                  "avg_wait_min": 1.8,
+                  "p90_wait_min": 6.3,
+                  "avg_queue_len": 0.53,
+                  "avg_time_in_system_min": 7.8
+                },
+                "simulation": {
+                  "hours": 3,
+                  "replications": 200,
+                  "seed": 42,
+                  "avg_wait_min": 1.8,
+                  "p90_wait_min": 6.3,
+                  "avg_queue_len": 0.51,
+                  "typical_max_queue_len": 4,
+                  "bad_day_max_queue_len": 7,
+                  "customers_per_replication": 54.1
+                }
+              },
+              {
+                "scenario_label": "Pre-check-in digital (3 min), 2 recepcionistas",
+                "servers": 2,
+                "arrival_rate_per_hour": 18,
+                "service_time_min": 3,
+                "utilization": 0.45,
+                "stable": true,
+                "verdict": "Estable y con holgura: la espera es baja.",
+                "analytic": {
+                  "prob_wait": 0.279,
+                  "avg_wait_min": 0.8,
+                  "p90_wait_min": 2.8,
+                  "avg_queue_len": 0.23,
+                  "avg_time_in_system_min": 3.8
+                },
+                "simulation": {
+                  "hours": 3,
+                  "replications": 200,
+                  "seed": 42,
+                  "avg_wait_min": 0.8,
+                  "p90_wait_min": 2.9,
+                  "avg_queue_len": 0.24,
+                  "typical_max_queue_len": 3,
+                  "bad_day_max_queue_len": 5,
+                  "customers_per_replication": 54.1
+                }
+              },
+              {
+                "scenario_label": "Pre-check-in digital (3 min), 3 recepcionistas",
+                "servers": 3,
+                "arrival_rate_per_hour": 18,
+                "service_time_min": 3,
+                "utilization": 0.3,
+                "stable": true,
+                "verdict": "Estable y con holgura: la espera es baja.",
+                "analytic": {
+                  "prob_wait": 0.07,
+                  "avg_wait_min": 0.1,
+                  "p90_wait_min": 0,
+                  "avg_queue_len": 0.03,
+                  "avg_time_in_system_min": 3.1
+                },
+                "simulation": {
+                  "hours": 3,
+                  "replications": 200,
+                  "seed": 42,
+                  "avg_wait_min": 0.1,
+                  "p90_wait_min": 0,
+                  "avg_queue_len": 0.03,
+                  "typical_max_queue_len": 1,
+                  "bad_day_max_queue_len": 3,
+                  "customers_per_replication": 54.1
+                }
+              }
+            ]
+          }
+        },
+        {
+          "toolName": "search_services",
+          "output": {
+            "results": [
+              {
+                "service_id": "simulacion-operaciones",
+                "title": "Simulación de operaciones y análisis \"what if\"",
+                "source": "data/catalog/servicios/simulacion-operaciones.md",
+                "content": "# Simulación de operaciones y análisis \"what if\"\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nConstruimos un modelo de simulación de eventos discretos de la operación de la empresa (manufactura, logística o servicios) para encontrar cuellos de botella y comparar escenarios antes de invertir. Usamos software especializado de simulación y teoría de colas para estimar tiempos de espera, utilización de recursos y capacidad.\n\n## Cuándo aplica\n\n- Hay **filas o tiempos de espera** de clientes, pedidos o vehículos (recepción de un hotel, caja de un almacén, muelle de despacho).\n- La empresa duda entre **contratar personal, comprar equipos o cambiar el proceso** y quiere saber qué conviene.\n- La demanda varía por temporada u horario y la capacidad no alcanza en los picos.\n- Se necesita definir **KPIs operativos** (tiempo de ciclo, utilización, nivel de servicio).\n\n## Entregables\n\n1. Levantamiento del proceso actual y de los datos (llegadas, tiempos de servicio, recursos).\n2. Modelo de simulación validado con la operación real.\n3. Comparación de 3 a 5 escenarios \"what if\" (más recursos, cambios de turno, digitalización de pasos).\n4. Tablero con los KPIs definidos y recomendaciones priorizadas.\n5. Taller de transferencia con el equipo de la empresa.\n\n## Duración típica\n\nDe 4 a 8 semanas, según la complejidad del proceso y la disponibilidad de datos.\n\n## Inversión\n\nEntre **COP 8.000.000 y COP 25.000.000**. Aplican los descuentos para MIPYMES de la política de tarifas.\n\n## Ejemplos\n\n- Hotel con filas en el check-in durante la temporada alta: se comparan 2, 3 y 4 recepcionistas y un check-in digital previo.\n- Operador logístico con camiones esperando en el muelle de despacho.\n- Clínica con tiempos de espera largos en admisiones."
+              },
+              {
+                "service_id": "tablero-indicadores-analitica",
+                "title": "Tablero de indicadores y analítica operativa",
+                "source": "data/catalog/servicios/tablero-indicadores-analitica.md",
+                "content": "# Tablero de indicadores y analítica operativa\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDefinimos los indicadores clave del negocio y construimos un tablero que se actualiza con los datos que la empresa ya tiene (ventas, inventario, producción, atención), para tomar decisiones con datos y no por intuición.\n\n## Cuándo aplica\n\n- La empresa **no sabe con precisión** cuánto vende, produce o desperdicia por día.\n- Los datos existen pero están dispersos en varias hojas de cálculo o sistemas.\n- Se quiere hacer seguimiento a una mejora (por ejemplo, después de una simulación).\n\n## Entregables\n\n1. Definición de 5 a 10 KPIs con su fórmula y fuente de datos.\n2. Tablero interactivo conectado a las fuentes.\n3. Capacitación para mantenerlo.\n\n## Duración típica\n\nDe 3 a 6 semanas.\n\n## Inversión\n\nEntre **COP 4.000.000 y COP 14.000.000**.\n\n## Ejemplos\n\n- Tablero de producción y desperdicio diario de una panadería.\n- Indicadores de tiempos de despacho de un operador logístico."
+              }
+            ]
+          }
+        }
+      ],
+      "costUsd": 0.0405268,
+      "latencyMs": 13071,
+      "ttftMs": 1227,
+      "retrievalMode": "tool",
+      "retrievedSources": [
+        "data/catalog/servicios/simulacion-operaciones.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 4,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente el problema (filas en check-in) y recomienda exactamente el servicio esperado (Simulación de operaciones) con precios y plazos del catálogo. Realiza una simulación coherente con los datos del usuario, compara escenarios plausibles y explica por qué aplica. El tono es profesional y cercano. La claridad es buena pero la simulación inline, aunque rigurosa, es densa para una MIPYME en celular; esto la puntúa 4 en lugar de 5 en claridad."
+  },
+  "judgeCostUsd": 0.006476
+}

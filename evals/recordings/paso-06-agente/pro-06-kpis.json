@@ -1,0 +1,69 @@
+{
+  "caseId": "pro-06-kpis",
+  "label": "paso-06-agente",
+  "recordedAt": "2026-09-29T17:43:32.474Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v3-agente",
+  "turns": [
+    {
+      "user": "Ya mejoramos el proceso de despacho en nuestra bodega y ahora queremos medir si funcionó: tiempos de despacho, pedidos a tiempo y errores. ¿Qué nos sirve?",
+      "assistant": "Lo que más les sirve es el **Tablero de indicadores y analítica operativa**.\n\n**Línea de trabajo:** `process_design`\n\n**Por qué aplica**\n- La ficha dice que sirve para hacer seguimiento a una mejora ya implementada.\n- Uno de sus ejemplos son los indicadores de tiempos de despacho de un operador logístico.\n- Los tres puntos que quieren medir son tiempos de despacho, pedidos a tiempo y errores. Se pueden definir como KPIs, cada uno con su fórmula y su fuente de datos.\n\n**Qué recibirían** (según la ficha)\n- De 5 a 10 KPIs con su fórmula y fuente de datos.\n- Un tablero interactivo conectado a los datos que ya tienen.\n- Capacitación para que ustedes lo mantengan.\n\n**Duración:** de 3 a 6 semanas.\n**Inversión:** entre **COP 4.000.000 y COP 14.000.000**. No incluye IVA. Puede aplicar un descuento para MIPYMES según el número de empleados, que se valida con el certificado de existencia y representación legal.\n\nFuente: [Tablero de indicadores y analítica operativa](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/tablero-indicadores-analitica.md)\n\n**Una alternativa por si la necesitan:** si además quieren probar qué pasaría con más gente o más muelles en los picos de despacho, el servicio **Simulación de operaciones y análisis \"what if\"** lo permite. Cuesta entre COP 8.000.000 y COP 25.000.000. Para medir si la mejora funcionó, el tablero es suficiente.\n\nPara armar la pre-propuesta me ayudaría saber tres cosas:\n1. ¿Cuántos empleados tiene la empresa?\n2. ¿Dónde registran hoy los despachos, por ejemplo en Excel, en un sistema o en papel?\n3. ¿Tienen datos de antes de la mejora para comparar?\n\nCon eso te preparo el resumen. Si quieres guardarla, necesitaré el nombre de la empresa y de la persona de contacto.",
+      "toolCalls": [
+        {
+          "toolName": "search_services",
+          "input": {
+            "query": "medir resultados mejora proceso despacho bodega indicadores tiempos pedidos a tiempo errores",
+            "line": "process_design"
+          }
+        }
+      ],
+      "toolResults": [
+        {
+          "toolName": "search_services",
+          "output": {
+            "results": [
+              {
+                "service_id": "tablero-indicadores-analitica",
+                "title": "Tablero de indicadores y analítica operativa",
+                "source": "data/catalog/servicios/tablero-indicadores-analitica.md",
+                "content": "# Tablero de indicadores y analítica operativa\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDefinimos los indicadores clave del negocio y construimos un tablero que se actualiza con los datos que la empresa ya tiene (ventas, inventario, producción, atención), para tomar decisiones con datos y no por intuición.\n\n## Cuándo aplica\n\n- La empresa **no sabe con precisión** cuánto vende, produce o desperdicia por día.\n- Los datos existen pero están dispersos en varias hojas de cálculo o sistemas.\n- Se quiere hacer seguimiento a una mejora (por ejemplo, después de una simulación).\n\n## Entregables\n\n1. Definición de 5 a 10 KPIs con su fórmula y fuente de datos.\n2. Tablero interactivo conectado a las fuentes.\n3. Capacitación para mantenerlo.\n\n## Duración típica\n\nDe 3 a 6 semanas.\n\n## Inversión\n\nEntre **COP 4.000.000 y COP 14.000.000**.\n\n## Ejemplos\n\n- Tablero de producción y desperdicio diario de una panadería.\n- Indicadores de tiempos de despacho de un operador logístico."
+              },
+              {
+                "service_id": "simulacion-operaciones",
+                "title": "Simulación de operaciones y análisis \"what if\"",
+                "source": "data/catalog/servicios/simulacion-operaciones.md",
+                "content": "# Simulación de operaciones y análisis \"what if\"\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nConstruimos un modelo de simulación de eventos discretos de la operación de la empresa (manufactura, logística o servicios) para encontrar cuellos de botella y comparar escenarios antes de invertir. Usamos software especializado de simulación y teoría de colas para estimar tiempos de espera, utilización de recursos y capacidad.\n\n## Cuándo aplica\n\n- Hay **filas o tiempos de espera** de clientes, pedidos o vehículos (recepción de un hotel, caja de un almacén, muelle de despacho).\n- La empresa duda entre **contratar personal, comprar equipos o cambiar el proceso** y quiere saber qué conviene.\n- La demanda varía por temporada u horario y la capacidad no alcanza en los picos.\n- Se necesita definir **KPIs operativos** (tiempo de ciclo, utilización, nivel de servicio).\n\n## Entregables\n\n1. Levantamiento del proceso actual y de los datos (llegadas, tiempos de servicio, recursos).\n2. Modelo de simulación validado con la operación real.\n3. Comparación de 3 a 5 escenarios \"what if\" (más recursos, cambios de turno, digitalización de pasos).\n4. Tablero con los KPIs definidos y recomendaciones priorizadas.\n5. Taller de transferencia con el equipo de la empresa.\n\n## Duración típica\n\nDe 4 a 8 semanas, según la complejidad del proceso y la disponibilidad de datos.\n\n## Inversión\n\nEntre **COP 8.000.000 y COP 25.000.000**. Aplican los descuentos para MIPYMES de la política de tarifas.\n\n## Ejemplos\n\n- Hotel con filas en el check-in durante la temporada alta: se comparan 2, 3 y 4 recepcionistas y un check-in digital previo.\n- Operador logístico con camiones esperando en el muelle de despacho.\n- Clínica con tiempos de espera largos en admisiones."
+              },
+              {
+                "service_id": "produccion-mas-limpia-desperdicios",
+                "title": "Producción más limpia y reducción de desperdicios",
+                "source": "data/catalog/servicios/produccion-mas-limpia-desperdicios.md",
+                "content": "# Producción más limpia y reducción de desperdicios\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nAplicamos herramientas de manufactura esbelta (lean) y producción más limpia para reducir desperdicios de materia prima, energía y agua, y para ajustar la producción a la demanda real. Mejora la rentabilidad y la sostenibilidad del proceso.\n\n## Cuándo aplica\n\n- Hay **desperdicio de producto** (se produce más de lo que se vende, se vence o se daña).\n- Los costos de materia prima, agua o energía son altos.\n- La empresa quiere mejorar su desempeño ambiental.\n\n## Entregables\n\n1. Mapa de flujo de valor y cuantificación de desperdicios.\n2. Plan de mejora con acciones priorizadas.\n3. Ajuste de la planeación de producción a la demanda.\n4. Medición de resultados al cierre.\n\n## Duración típica\n\nDe 4 a 8 semanas.\n\n## Inversión\n\nEntre **COP 3.500.000 y COP 12.000.000**.\n\n## Ejemplos\n\n- Panadería que bota una parte de su producción al final del día.\n- Planta de hielo con consumo de energía elevado."
+              }
+            ]
+          }
+        }
+      ],
+      "costUsd": 0.015679600000000002,
+      "latencyMs": 58048,
+      "ttftMs": 58033,
+      "retrievalMode": "tool",
+      "retrievedSources": [
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/simulacion-operaciones.md",
+        "data/catalog/servicios/produccion-mas-limpia-desperdicios.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente el servicio (tablero-indicadores-analitica) de la línea process_design. Todos los precios (COP 4.000.000–14.000.000), plazos (3–6 semanas) y entregas coinciden exactamente con el catálogo. Menciona acertadamente la alternativa de simulación con sus rangos correctos. El tono es cercano y profesional; las preguntas finales son pertinentes para afinar la propuesta sin prometer resultados inventados."
+  },
+  "judgeCostUsd": 0.005758
+}

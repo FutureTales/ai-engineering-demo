@@ -1,0 +1,69 @@
+{
+  "caseId": "inn-02-patente",
+  "label": "paso-06-agente",
+  "recordedAt": "2026-09-29T17:45:57.860Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v3-agente",
+  "turns": [
+    {
+      "user": "Desarrollamos un proceso nuevo para secar pescado con energía solar. ¿Es patentable? ¿Qué está haciendo la competencia en otros países?",
+      "assistant": "Tu caso encaja con nuestro servicio de vigilancia tecnológica y propiedad intelectual.\n\n**Línea de trabajo:** `business_innovation`\n\n**¿Es patentable?** No puedo decírtelo desde aquí. Depende de una búsqueda de antecedentes. En general se mira si el proceso es nuevo, si tiene nivel inventivo y si tiene aplicación industrial. Si ya hay documentos públicos parecidos, o si tú mismo lo divulgaste, puede afectar la novedad. Además, el centro no garantiza que la SIC apruebe un registro.\n\n**¿Qué hace la competencia en otros países?** Tampoco tengo datos reales sobre eso. Lo que sí hace el servicio es un informe de vigilancia tecnológica sobre qué hacen los competidores y qué tecnologías emergen en el sector.\n\n**Servicio recomendado: Vigilancia tecnológica y propiedad intelectual**\n- Incluye:\n  - Informe de búsqueda de antecedentes de patentes.\n  - Recomendación de estrategia de protección.\n  - Acompañamiento en la preparación de la solicitud ante la SIC.\n  - Informe de vigilancia tecnológica.\n- Duración: de 2 a 4 semanas, sin contar los trámites de la SIC.\n- Inversión: **COP 1.800.000 a COP 6.000.000**. No incluye las tasas oficiales de la SIC, que paga la empresa. Tampoco reemplaza la asesoría de un abogado.\n- Fuente: [Vigilancia tecnológica y propiedad intelectual](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/vigilancia-tecnologica-pi.md)\n\n**Pre-propuesta**\n- **Problema:** proceso nuevo de secado de pescado con energía solar. No se sabe si es patentable ni qué hace la competencia internacional.\n- **Alcance sugerido:** búsqueda de antecedentes, vigilancia del sector y estrategia de protección.\n- **Descuento:** según la política, depende del tamaño de la empresa. Es del 20 % para microempresas, del 10 % para pequeñas y del 15 % para cooperativas o asociaciones de productores. Tendrías que presentar el certificado de existencia y representación legal. ¿Cuántos empleados tiene tu empresa, o es una cooperativa?\n- **Siguiente paso:** un coordinador te contacta en 2 días hábiles y luego hay una reunión de diagnóstico. La pre-propuesta no es una oferta comercial.\n\n**Un consejo:** antes de divulgar el proceso, evita publicarlo o mostrarlo en detalle. Eso puede afectar la novedad.\n\n¿Quieres guardar la pre-propuesta? Si es así, dime el nombre de la empresa y de la persona de contacto. El correo es opcional.",
+      "toolCalls": [
+        {
+          "toolName": "search_services",
+          "input": {
+            "query": "patentabilidad propiedad intelectual vigilancia tecnológica competencia secado solar pescado",
+            "line": "business_innovation"
+          }
+        }
+      ],
+      "toolResults": [
+        {
+          "toolName": "search_services",
+          "output": {
+            "results": [
+              {
+                "service_id": "vigilancia-tecnologica-pi",
+                "title": "Vigilancia tecnológica y propiedad intelectual",
+                "source": "data/catalog/servicios/vigilancia-tecnologica-pi.md",
+                "content": "# Vigilancia tecnológica y propiedad intelectual\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nAcompañamos a la empresa a proteger lo que crea: búsqueda de antecedentes de marcas y patentes, estrategia de propiedad intelectual y preparación de la solicitud de **registro de marca ante la Superintendencia de Industria y Comercio (SIC)**. También hacemos vigilancia tecnológica: qué están haciendo los competidores y qué tecnologías emergen en el sector.\n\n## Cuándo aplica\n\n- Una empresa o startup quiere **registrar su marca** o proteger un producto.\n- Hay dudas sobre si un nombre o logo ya está registrado.\n- Se va a lanzar un producto nuevo y se quiere conocer el estado del arte.\n\n## Entregables\n\n1. Informe de búsqueda de antecedentes (marcas o patentes).\n2. Recomendación de estrategia de protección.\n3. Acompañamiento en la preparación de la solicitud ante la SIC.\n4. Informe de vigilancia tecnológica (si aplica).\n\n## Duración típica\n\nDe 2 a 4 semanas, sin contar los tiempos de trámite de la SIC.\n\n## Inversión\n\nEntre **COP 1.800.000 y COP 6.000.000**. **Las tasas oficiales de la SIC no están incluidas** y las paga directamente la empresa. Este servicio no reemplaza la asesoría legal de un abogado.\n\n## Ejemplos\n\n- Startup de moda sostenible que quiere registrar su marca antes de exportar.\n- Empresa que quiere saber si su proceso de producción es patentable."
+              },
+              {
+                "service_id": "diagnostico-madurez-digital-ia",
+                "title": "Diagnóstico de madurez digital y de IA para MIPYMES",
+                "source": "data/catalog/servicios/diagnostico-madurez-digital-ia.md",
+                "content": "# Diagnóstico de madurez digital y de IA para MIPYMES\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nEvaluamos qué tan preparada está la empresa para adoptar herramientas digitales e inteligencia artificial: procesos, datos, personas y tecnología. Entregamos una hoja de ruta realista con oportunidades priorizadas por impacto y esfuerzo.\n\n## Cuándo aplica\n\n- La empresa **quiere \"usar IA\"** pero no sabe dónde le serviría.\n- Es el **primer contacto** con el centro y no está claro qué servicio necesita.\n- Se quiere priorizar inversiones en tecnología.\n\n## Entregables\n\n1. Encuesta y entrevistas de diagnóstico.\n2. Informe de madurez por dimensión (procesos, datos, personas, tecnología).\n3. Hoja de ruta con 3 a 5 iniciativas priorizadas.\n\n## Duración típica\n\nDe 2 a 3 semanas.\n\n## Inversión\n\nEntre **COP 1.500.000 y COP 4.000.000**.\n\n## Ejemplos\n\n- Almacén de repuestos que quiere automatizar la atención por WhatsApp.\n- Agencia de turismo que quiere usar sus datos de reservas para planear temporadas."
+              },
+              {
+                "service_id": "prototipado-3d",
+                "title": "Prototipado 3D y fabricación rápida",
+                "source": "data/catalog/servicios/prototipado-3d.md",
+                "content": "# Prototipado 3D y fabricación rápida\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDiseñamos y fabricamos prototipos físicos de productos, piezas o empaques con modelado CAD, impresión 3D (FDM y resina) y corte láser, para validar forma, función y aceptación de clientes antes de producir en serie.\n\n## Cuándo aplica\n\n- La empresa tiene una **idea de producto nuevo** o quiere rediseñar uno existente.\n- Necesita **mostrar un prototipo** a clientes, inversionistas o financiadores.\n- Quiere reemplazar una pieza importada o descontinuada.\n\n## Entregables\n\n1. Modelo CAD del producto o pieza.\n2. Hasta 3 iteraciones de prototipo físico.\n3. Informe de pruebas funcionales y recomendaciones para producción.\n\n## Duración típica\n\nDe 2 a 6 semanas.\n\n## Inversión\n\nEntre **COP 2.500.000 y COP 12.000.000**, según tamaño, material y número de iteraciones.\n\n## Ejemplos\n\n- Empaque nuevo para una línea de dulces típicos.\n- Prototipo de un dispositivo para una startup de agrotecnología."
+              }
+            ]
+          }
+        }
+      ],
+      "costUsd": 0.0180216,
+      "latencyMs": 8683,
+      "ttftMs": 7914,
+      "retrievalMode": "tool",
+      "retrievedSources": [
+        "data/catalog/servicios/vigilancia-tecnologica-pi.md",
+        "data/catalog/servicios/diagnostico-madurez-digital-ia.md",
+        "data/catalog/servicios/prototipado-3d.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente el servicio del catálogo (vigilancia-tecnologica-pi), usa los precios (COP 1.800.000–6.000.000) y plazos (2 a 4 semanas) exactos, explica claramente qué no puede garantizar el centro (aprobación SIC, datos competitivos en tiempo real) y estructura bien la propuesta. El tono es cercano y profesional, sin prometer de más. Atiende de lleno el problema concreto."
+  },
+  "judgeCostUsd": 0.005944
+}

@@ -1,0 +1,69 @@
+{
+  "caseId": "pol-01-descuento",
+  "label": "paso-06-agente",
+  "recordedAt": "2026-09-29T17:49:13.366Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v3-agente",
+  "turns": [
+    {
+      "user": "Somos una microempresa de 6 empleados interesada en el servicio de prototipado 3D. ¿Tienen algún descuento para microempresas y cómo se paga?",
+      "assistant": "¡Sí hay descuento para ustedes!\n\n**Descuento:** las microempresas (hasta 10 empleados) tienen **20 %** sobre el valor del servicio. Con 6 empleados, entran en esa categoría. Ten en cuenta:\n- Los descuentos no se acumulan: se aplica el mayor que corresponda.\n- Para acceder, deben presentar el certificado de existencia y representación legal.\n\n**Forma de pago:** 50 % al inicio y 50 % contra la entrega final. Si un servicio dura más de 8 semanas, se puede acordar un pago intermedio.\n\n**Servicio: Prototipado 3D y fabricación rápida**\n**Línea de trabajo:** `business_innovation`\n- Qué es: diseño y fabricación de prototipos con modelado CAD, impresión 3D (FDM y resina) y corte láser.\n- Entregables: modelo CAD, hasta 3 iteraciones de prototipo físico e informe de pruebas funcionales con recomendaciones para producción.\n- Duración típica: de 2 a 6 semanas.\n- Inversión: entre **COP 2.500.000 y COP 12.000.000**, según tamaño, material y número de iteraciones.\n- Ese rango no incluye IVA ni costos de terceros. El valor final se define en la propuesta formal.\n\nFuente: [Prototipado 3D y fabricación rápida](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/prototipado-3d.md)\n\n**Siguiente paso:** un coordinador revisa la pre-propuesta y te contacta en unos 2 días hábiles. Esta pre-propuesta no es una oferta comercial ni compromete al centro.\n\n¿Quieres que la guarde? Si es así, dime el nombre de tu empresa y de la persona de contacto. El correo es opcional. También cuéntame brevemente qué producto o pieza quieres prototipar, para dejar mejor definido el alcance.",
+      "toolCalls": [
+        {
+          "toolName": "search_services",
+          "input": {
+            "query": "prototipado 3D fabricación rápida",
+            "line": "business_innovation"
+          }
+        }
+      ],
+      "toolResults": [
+        {
+          "toolName": "search_services",
+          "output": {
+            "results": [
+              {
+                "service_id": "prototipado-3d",
+                "title": "Prototipado 3D y fabricación rápida",
+                "source": "data/catalog/servicios/prototipado-3d.md",
+                "content": "# Prototipado 3D y fabricación rápida\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDiseñamos y fabricamos prototipos físicos de productos, piezas o empaques con modelado CAD, impresión 3D (FDM y resina) y corte láser, para validar forma, función y aceptación de clientes antes de producir en serie.\n\n## Cuándo aplica\n\n- La empresa tiene una **idea de producto nuevo** o quiere rediseñar uno existente.\n- Necesita **mostrar un prototipo** a clientes, inversionistas o financiadores.\n- Quiere reemplazar una pieza importada o descontinuada.\n\n## Entregables\n\n1. Modelo CAD del producto o pieza.\n2. Hasta 3 iteraciones de prototipo físico.\n3. Informe de pruebas funcionales y recomendaciones para producción.\n\n## Duración típica\n\nDe 2 a 6 semanas.\n\n## Inversión\n\nEntre **COP 2.500.000 y COP 12.000.000**, según tamaño, material y número de iteraciones.\n\n## Ejemplos\n\n- Empaque nuevo para una línea de dulces típicos.\n- Prototipo de un dispositivo para una startup de agrotecnología."
+              },
+              {
+                "service_id": "formulacion-proyectos-idi",
+                "title": "Gerencia y formulación de proyectos de innovación (I+D+i)",
+                "source": "data/catalog/servicios/formulacion-proyectos-idi.md",
+                "content": "# Gerencia y formulación de proyectos de innovación (I+D+i)\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nFormulamos proyectos de investigación, desarrollo e innovación para presentarlos a convocatorias de financiadores públicos, privados o de cooperación internacional. Si el proyecto es aprobado, podemos acompañar su gerencia: plan de trabajo, seguimiento técnico y financiero, e informes.\n\n## Cuándo aplica\n\n- La empresa o cooperativa **busca financiación** para un proyecto de innovación.\n- Hay una convocatoria abierta y no tienen experiencia formulando.\n- Ganaron recursos y necesitan apoyo para ejecutar y reportar.\n\n## Entregables\n\n1. Identificación de convocatorias pertinentes.\n2. Documento técnico del proyecto: problema, objetivos, metodología, presupuesto, cronograma e indicadores.\n3. Revisión de requisitos de la convocatoria.\n4. (Opcional) Gerencia del proyecto durante la ejecución.\n\n## Duración típica\n\nDe 3 a 8 semanas para la formulación. La gerencia se cotiza aparte según la duración del proyecto.\n\n## Inversión\n\nEntre **COP 4.000.000 y COP 15.000.000** por la formulación. La aprobación del proyecto depende del financiador y no está garantizada.\n\n## Ejemplos\n\n- Cooperativa de pescadores que busca financiación para una planta de procesamiento.\n- MIPYME que quiere cofinanciar el desarrollo de un producto nuevo."
+              },
+              {
+                "service_id": "vigilancia-tecnologica-pi",
+                "title": "Vigilancia tecnológica y propiedad intelectual",
+                "source": "data/catalog/servicios/vigilancia-tecnologica-pi.md",
+                "content": "# Vigilancia tecnológica y propiedad intelectual\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nAcompañamos a la empresa a proteger lo que crea: búsqueda de antecedentes de marcas y patentes, estrategia de propiedad intelectual y preparación de la solicitud de **registro de marca ante la Superintendencia de Industria y Comercio (SIC)**. También hacemos vigilancia tecnológica: qué están haciendo los competidores y qué tecnologías emergen en el sector.\n\n## Cuándo aplica\n\n- Una empresa o startup quiere **registrar su marca** o proteger un producto.\n- Hay dudas sobre si un nombre o logo ya está registrado.\n- Se va a lanzar un producto nuevo y se quiere conocer el estado del arte.\n\n## Entregables\n\n1. Informe de búsqueda de antecedentes (marcas o patentes).\n2. Recomendación de estrategia de protección.\n3. Acompañamiento en la preparación de la solicitud ante la SIC.\n4. Informe de vigilancia tecnológica (si aplica).\n\n## Duración típica\n\nDe 2 a 4 semanas, sin contar los tiempos de trámite de la SIC.\n\n## Inversión\n\nEntre **COP 1.800.000 y COP 6.000.000**. **Las tasas oficiales de la SIC no están incluidas** y las paga directamente la empresa. Este servicio no reemplaza la asesoría legal de un abogado.\n\n## Ejemplos\n\n- Startup de moda sostenible que quiere registrar su marca antes de exportar.\n- Empresa que quiere saber si su proceso de producción es patentable."
+              }
+            ]
+          }
+        }
+      ],
+      "costUsd": 0.0147096,
+      "latencyMs": 57419,
+      "ttftMs": 57401,
+      "retrievalMode": "tool",
+      "retrievedSources": [
+        "data/catalog/servicios/prototipado-3d.md",
+        "data/catalog/servicios/formulacion-proyectos-idi.md",
+        "data/catalog/servicios/vigilancia-tecnologica-pi.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende de lleno el problema: identifica que la empresa es microempresa, aplica correctamente el descuento del 20%, explica la forma de pago, detalla el servicio con información del catálogo (rango COP 2.500.000–12.000.000, duración 2–6 semanas, línea business_innovation) y no inventa datos. La estructura es clara, profesional y cercana, sin prometer más de lo que el centro puede garantizar."
+  },
+  "judgeCostUsd": 0.005646
+}

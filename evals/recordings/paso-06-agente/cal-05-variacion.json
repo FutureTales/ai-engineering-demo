@@ -1,0 +1,62 @@
+{
+  "caseId": "cal-05-variacion",
+  "label": "paso-06-agente",
+  "recordedAt": "2026-09-29T17:45:45.774Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v3-agente",
+  "turns": [
+    {
+      "user": "Producimos bloques de concreto y la resistencia varía mucho entre lotes. Algunos clientes se quejan. Queremos controlar la calidad del proceso.",
+      "assistant": "Gracias por contarnos. Tu caso encaja bien con lo que hacemos.\n\n**Línea de trabajo:** `quality_assurance`\n\n**Servicio recomendado:** Sistema de gestión de calidad y control estadístico de procesos. Aplica porque la ficha cubre justo los casos en que la calidad varía entre lotes y hay reclamos de clientes.\n\n- **Qué incluye:**\n  - Diagnóstico y análisis de causas raíz. Por ejemplo, revisar la dosificación, la calidad de los materiales, el curado y la compactación.\n  - Control estadístico (gráficos de control) en 1 o 2 puntos críticos del proceso.\n  - Procedimientos estandarizados y plan de capacitación.\n  - Opcional: hoja de ruta hacia ISO 9001.\n- **Duración típica:** de 6 a 12 semanas.\n- **Inversión:** entre **COP 6.000.000 y COP 20.000.000**. No incluye IVA ni los costos del ente certificador.\n- **Descuento:** puede haber uno según el tamaño de tu empresa. Microempresa (hasta 10 empleados): 20 %. Pequeña (11 a 50): 10 %. Mediana: sin descuento. Necesito saber cuántos empleados tienes para confirmarlo.\n\nFuente: [Sistema de gestión de calidad y control estadístico de procesos](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/gestion-calidad-control-estadistico.md)\n\n**Pre-propuesta**\n- **Problema:** la resistencia de los bloques de concreto varía mucho entre lotes y hay quejas de clientes.\n- **Alcance sugerido:** diagnóstico de causas, control estadístico en los puntos críticos de la producción y estandarización de procedimientos.\n- **Siguiente paso:** un coordinador te contacta en 2 días hábiles. Después hay una reunión de diagnóstico de 45 a 60 minutos para validar el alcance. La pre-propuesta no es una oferta comercial. El valor definitivo llega con la propuesta formal.\n\n¿Quieres que la guarde para que la revise un coordinador? Si es así, dime el **nombre de la empresa** y el de la **persona de contacto**. Si quieres, añade también un correo electrónico. Cuéntame además cuántos empleados tienen.",
+      "toolCalls": [
+        {
+          "toolName": "search_services",
+          "input": {
+            "query": "variabilidad resistencia bloques de concreto entre lotes control de calidad del proceso",
+            "line": "quality_assurance"
+          }
+        }
+      ],
+      "toolResults": [
+        {
+          "toolName": "search_services",
+          "output": {
+            "results": [
+              {
+                "service_id": "gestion-calidad-control-estadistico",
+                "title": "Sistema de gestión de calidad y control estadístico de procesos",
+                "source": "data/catalog/servicios/gestion-calidad-control-estadistico.md",
+                "content": "# Sistema de gestión de calidad y control estadístico de procesos\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nAyudamos a la empresa a reducir defectos y a cumplir estándares de calidad: análisis de causas raíz, control estadístico de procesos (gráficos de control, capacidad de proceso), estandarización de procedimientos y preparación para certificaciones como ISO 9001.\n\n## Cuándo aplica\n\n- Hay **defectos, devoluciones o reclamos de calidad** frecuentes.\n- Un cliente grande exige **certificación** o estándares de calidad.\n- La calidad del producto **varía** entre turnos, operarios o lotes.\n\n## Entregables\n\n1. Diagnóstico de calidad y análisis de causas raíz de los defectos principales.\n2. Implementación de control estadístico en 1 o 2 puntos críticos del proceso.\n3. Procedimientos estandarizados y plan de capacitación.\n4. (Opcional) Hoja de ruta hacia la certificación ISO 9001.\n\n## Duración típica\n\nDe 6 a 12 semanas.\n\n## Inversión\n\nEntre **COP 6.000.000 y COP 20.000.000**. Los costos de la certificación (ente certificador) no están incluidos.\n\n## Ejemplos\n\n- Taller de confecciones con alto porcentaje de prendas defectuosas.\n- Fábrica de alimentos que necesita cumplir requisitos de un supermercado."
+              },
+              {
+                "service_id": "capacitacion-realidad-virtual",
+                "title": "Capacitación en entornos inmersivos (realidad virtual)",
+                "source": "data/catalog/servicios/capacitacion-realidad-virtual.md",
+                "content": "# Capacitación en entornos inmersivos (realidad virtual)\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDesarrollamos experiencias de realidad virtual para entrenar al personal en procedimientos críticos, estándares de calidad y seguridad industrial, sin detener la operación ni exponer a las personas a riesgos.\n\n## Cuándo aplica\n\n- Hay **errores repetidos** porque el personal no sigue un procedimiento estándar.\n- La capacitación práctica es **costosa o peligrosa** (maquinaria, alturas, químicos).\n- Hay alta rotación y se necesita entrenar rápido a personal nuevo.\n\n## Entregables\n\n1. Guion instruccional del procedimiento.\n2. Experiencia de realidad virtual (1 a 3 escenarios).\n3. Piloto con el personal y medición de aprendizaje antes y después.\n\n## Duración típica\n\nDe 6 a 10 semanas.\n\n## Inversión\n\nEntre **COP 6.000.000 y COP 20.000.000**.\n\n## Ejemplos\n\n- Entrenamiento en el procedimiento de corte de un taller de confecciones.\n- Simulacro de manejo seguro de montacargas en una bodega."
+              }
+            ]
+          }
+        }
+      ],
+      "costUsd": 0.0148956,
+      "latencyMs": 58164,
+      "ttftMs": 58148,
+      "retrievalMode": "tool",
+      "retrievedSources": [
+        "data/catalog/servicios/gestion-calidad-control-estadistico.md",
+        "data/catalog/servicios/capacitacion-realidad-virtual.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta es excelente: atiende directamente el problema (variación de calidad en bloques de concreto), recomienda el servicio correcto del catálogo con datos exactos (COP 6–20 millones, 6–12 semanas), explica qué incluye de forma clara y concreta, respeta las políticas del centro (explica que no incluye IVA ni certificación, que hay descuentos según tamaño, que la pre-propuesta no es una oferta), y mantiene un tono cercano y profesional sin prometer resultados garantizados."
+  },
+  "judgeCostUsd": 0.005907
+}

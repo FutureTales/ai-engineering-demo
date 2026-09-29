@@ -89,3 +89,27 @@ Analizar errores también sirve para **depurar la propia eval**. En la primera c
 - **E3** → herramienta `simulate_queue` (paso 06).
 - **E6, E7** → reglas nuevas en el prompt `v3-agente` (paso 06).
 - **Hueco de la eval (E7):** agregar al juez la pregunta "¿asumió datos que el usuario no dio?". Queda anotado para una próxima versión de la rúbrica.
+
+---
+
+## Paso 06: agente con herramientas
+
+**Corrida:** [`paso-06-agente`](../evals/results/2026-09-29-paso-06-agente.json) · 29/30 casos pasan todo.
+
+| Error | Paso 05 híbrido | Paso 06 | Estado |
+|---|---|---|---|
+| E3 Sin simulación en casos de filas | 5/5 | 1/5 | ✅ en 4 de 5; el restante es E9 |
+| Números del texto ≠ herramienta | — | 0/4 | ✅ todos coinciden |
+| E6 Suma de rangos por el LLM | 0/30 (híbrido) | 0/30 | ✅ regla explícita en el prompt |
+| E7 Suponer datos no dados | visto en el hotel | en el caso revisado a mano (`sim-05`) lo dijo como condición: "Como no sé cuántos empleados tienes, no lo he calculado" | 🟡 mejorado; sigue sin detectarse automáticamente |
+
+### E9 — Defecto de la eval: el seguimiento solo se envía si no hubo clasificación
+
+En `sim-05-precio` el usuario pregunta el precio **sin dar datos de la fila**. El agente responde con la ficha, clasifica y **pide los 3 datos** que necesita para simular. Es el comportamiento correcto. Pero el runner solo envía la respuesta simulada del usuario (`followup`) cuando el copiloto **no** clasificó, así que la conversación termina sin simulación y el chequeo falla.
+
+**Decisión:** no re-calificar solo esta versión (sería ajustar la eval para mejorar un número después de verlo). Para la próxima versión del runner: enviar el `followup` cuando el copiloto **termina con una pregunta**, y volver a correr **todas** las versiones con la regla nueva.
+
+### Costo y latencia del agente
+
+- Costo por caso: US$ 0,0182, prácticamente igual que el RAG del paso 05 (US$ 0,0181). La búsqueda como herramienta reemplaza la búsqueda automática.
+- Latencia por turno p50: **16,1 s** (paso 03: 7,1 s). Un turno con herramientas son 2 o 3 llamadas al modelo en serie. Es el costo de la capacidad nueva, y se verá en la página de salud del paso 09.

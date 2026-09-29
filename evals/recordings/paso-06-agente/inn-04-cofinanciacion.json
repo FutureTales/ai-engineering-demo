@@ -1,0 +1,69 @@
+{
+  "caseId": "inn-04-cofinanciacion",
+  "label": "paso-06-agente",
+  "recordedAt": "2026-09-29T17:46:58.857Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v3-agente",
+  "turns": [
+    {
+      "user": "Tenemos una empresa de software educativo y vimos una convocatoria para cofinanciar innovación. Cierra en 5 semanas y no sabemos formular el proyecto.",
+      "assistant": "Tu caso encaja bien con lo que hacemos.\n\n**Línea de trabajo:** `business_innovation`\n\n**Servicio recomendado:** Gerencia y formulación de proyectos de innovación (I+D+i)\n- Aplica porque buscan financiación, hay una convocatoria abierta y no tienen experiencia formulando.\n- Entregables: identificación de convocatorias pertinentes, documento técnico (problema, objetivos, metodología, presupuesto, cronograma e indicadores) y revisión de requisitos de la convocatoria. La gerencia durante la ejecución es opcional.\n- Duración típica: de 3 a 8 semanas para la formulación. Con 5 semanas de plazo es viable, pero conviene empezar pronto.\n- Inversión: entre **COP 4.000.000 y COP 15.000.000** por la formulación. No incluye IVA. La aprobación depende del financiador y no está garantizada.\n- Fuente: [Gerencia y formulación de proyectos de innovación (I+D+i)](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/formulacion-proyectos-idi.md)\n\n**Descuento:** puede haber un descuento según el tamaño de la empresa (por ejemplo, 20 % para microempresas de hasta 10 empleados y 10 % para pequeñas de 11 a 50). Para saber cuál te aplica necesito el número de empleados. Deberías presentar el certificado de existencia y representación legal.\n\n**Pre-propuesta**\n- **Problema:** empresa de software educativo que quiere presentarse a una convocatoria de cofinanciación de innovación que cierra en 5 semanas, sin experiencia en formulación.\n- **Alcance sugerido:** revisar los requisitos de la convocatoria, definir la idea de innovación, redactar el documento técnico completo y dejarlo listo antes del cierre.\n- **Siguiente paso:** un coordinador te contacta en 2 días hábiles y luego hay una reunión de diagnóstico de 45 a 60 minutos. La pre-propuesta no es una oferta comercial.\n\n¿Quieres que la guarde para revisión? Si es así, dime el nombre de la empresa, el de la persona de contacto y, si quieres, un correo. Si tienes el enlace o las bases de la convocatoria, cuéntame también qué tipo de proyecto tienen en mente.",
+      "toolCalls": [
+        {
+          "toolName": "search_services",
+          "input": {
+            "query": "formulación de proyectos de innovación convocatoria cofinanciación",
+            "line": "business_innovation"
+          }
+        }
+      ],
+      "toolResults": [
+        {
+          "toolName": "search_services",
+          "output": {
+            "results": [
+              {
+                "service_id": "formulacion-proyectos-idi",
+                "title": "Gerencia y formulación de proyectos de innovación (I+D+i)",
+                "source": "data/catalog/servicios/formulacion-proyectos-idi.md",
+                "content": "# Gerencia y formulación de proyectos de innovación (I+D+i)\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nFormulamos proyectos de investigación, desarrollo e innovación para presentarlos a convocatorias de financiadores públicos, privados o de cooperación internacional. Si el proyecto es aprobado, podemos acompañar su gerencia: plan de trabajo, seguimiento técnico y financiero, e informes.\n\n## Cuándo aplica\n\n- La empresa o cooperativa **busca financiación** para un proyecto de innovación.\n- Hay una convocatoria abierta y no tienen experiencia formulando.\n- Ganaron recursos y necesitan apoyo para ejecutar y reportar.\n\n## Entregables\n\n1. Identificación de convocatorias pertinentes.\n2. Documento técnico del proyecto: problema, objetivos, metodología, presupuesto, cronograma e indicadores.\n3. Revisión de requisitos de la convocatoria.\n4. (Opcional) Gerencia del proyecto durante la ejecución.\n\n## Duración típica\n\nDe 3 a 8 semanas para la formulación. La gerencia se cotiza aparte según la duración del proyecto.\n\n## Inversión\n\nEntre **COP 4.000.000 y COP 15.000.000** por la formulación. La aprobación del proyecto depende del financiador y no está garantizada.\n\n## Ejemplos\n\n- Cooperativa de pescadores que busca financiación para una planta de procesamiento.\n- MIPYME que quiere cofinanciar el desarrollo de un producto nuevo."
+              },
+              {
+                "service_id": "prototipado-3d",
+                "title": "Prototipado 3D y fabricación rápida",
+                "source": "data/catalog/servicios/prototipado-3d.md",
+                "content": "# Prototipado 3D y fabricación rápida\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDiseñamos y fabricamos prototipos físicos de productos, piezas o empaques con modelado CAD, impresión 3D (FDM y resina) y corte láser, para validar forma, función y aceptación de clientes antes de producir en serie.\n\n## Cuándo aplica\n\n- La empresa tiene una **idea de producto nuevo** o quiere rediseñar uno existente.\n- Necesita **mostrar un prototipo** a clientes, inversionistas o financiadores.\n- Quiere reemplazar una pieza importada o descontinuada.\n\n## Entregables\n\n1. Modelo CAD del producto o pieza.\n2. Hasta 3 iteraciones de prototipo físico.\n3. Informe de pruebas funcionales y recomendaciones para producción.\n\n## Duración típica\n\nDe 2 a 6 semanas.\n\n## Inversión\n\nEntre **COP 2.500.000 y COP 12.000.000**, según tamaño, material y número de iteraciones.\n\n## Ejemplos\n\n- Empaque nuevo para una línea de dulces típicos.\n- Prototipo de un dispositivo para una startup de agrotecnología."
+              },
+              {
+                "service_id": "vigilancia-tecnologica-pi",
+                "title": "Vigilancia tecnológica y propiedad intelectual",
+                "source": "data/catalog/servicios/vigilancia-tecnologica-pi.md",
+                "content": "# Vigilancia tecnológica y propiedad intelectual\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nAcompañamos a la empresa a proteger lo que crea: búsqueda de antecedentes de marcas y patentes, estrategia de propiedad intelectual y preparación de la solicitud de **registro de marca ante la Superintendencia de Industria y Comercio (SIC)**. También hacemos vigilancia tecnológica: qué están haciendo los competidores y qué tecnologías emergen en el sector.\n\n## Cuándo aplica\n\n- Una empresa o startup quiere **registrar su marca** o proteger un producto.\n- Hay dudas sobre si un nombre o logo ya está registrado.\n- Se va a lanzar un producto nuevo y se quiere conocer el estado del arte.\n\n## Entregables\n\n1. Informe de búsqueda de antecedentes (marcas o patentes).\n2. Recomendación de estrategia de protección.\n3. Acompañamiento en la preparación de la solicitud ante la SIC.\n4. Informe de vigilancia tecnológica (si aplica).\n\n## Duración típica\n\nDe 2 a 4 semanas, sin contar los tiempos de trámite de la SIC.\n\n## Inversión\n\nEntre **COP 1.800.000 y COP 6.000.000**. **Las tasas oficiales de la SIC no están incluidas** y las paga directamente la empresa. Este servicio no reemplaza la asesoría legal de un abogado.\n\n## Ejemplos\n\n- Startup de moda sostenible que quiere registrar su marca antes de exportar.\n- Empresa que quiere saber si su proceso de producción es patentable."
+              }
+            ]
+          }
+        }
+      ],
+      "costUsd": 0.0163296,
+      "latencyMs": 58026,
+      "ttftMs": 57934,
+      "retrievalMode": "tool",
+      "retrievedSources": [
+        "data/catalog/servicios/formulacion-proyectos-idi.md",
+        "data/catalog/servicios/prototipado-3d.md",
+        "data/catalog/servicios/vigilancia-tecnologica-pi.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente la línea (business_innovation) y el servicio (formulacion-proyectos-idi), con precios (COP 4.000.000–15.000.000) y plazos (3–8 semanas) exactamente del catálogo. Explica bien por qué aplica, detalla descuentos según políticas, y cierra con los pasos del proceso de atención sin prometer resultados garantizados. Tono cercano y profesional, clara incluso en celular."
+  },
+  "judgeCostUsd": 0.005837
+}

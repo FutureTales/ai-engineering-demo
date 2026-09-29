@@ -1,0 +1,68 @@
+{
+  "caseId": "pro-04-ferreteria",
+  "label": "paso-06-agente",
+  "recordedAt": "2026-09-29T17:42:31.241Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v3-agente",
+  "turns": [
+    {
+      "user": "Tengo una ferretería en Bocagrande y quiero implementar un software de inventario, pero hoy todo está en hojas de cálculo sueltas y cada empleado lo hace distinto. No sé por dónde empezar.",
+      "assistant": "Gracias por contarme. Tu caso encaja bien con lo que hacemos.\n\n**Línea de trabajo:** `process_design`\n\n**Por qué:** antes de comprar un software conviene definir *un solo* proceso de inventario que todos sigan. Si no, el programa solo digitaliza el desorden.\n\n**Servicio recomendado:** Modelado y digitalización de procesos administrativos\n- Documentamos cómo manejan hoy el inventario (entradas, salidas, conteos) y lo unificamos.\n- Te recomendamos qué herramienta digital usar y un plan para implementarla.\n- Te acompañamos en la puesta en marcha de 1 o 2 procesos prioritarios.\n- **Entregables:** mapa del proceso actual y propuesto, recomendación de herramientas con plan de implementación, y acompañamiento en el arranque.\n- **Duración típica:** de 4 a 10 semanas.\n- **Inversión:** entre **COP 5.000.000 y COP 18.000.000**. No incluye licencias de software.\n- Fuente: [Modelado y digitalización de procesos administrativos](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/digitalizacion-procesos-administrativos.md)\n\n**Opcional, para después:** Tablero de indicadores y analítica operativa. Sirve para ver rotación y existencias con datos, una vez el inventario esté ordenado.\n- **Inversión:** entre **COP 4.000.000 y COP 14.000.000**.\n- Fuente: [Tablero de indicadores y analítica operativa](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/tablero-indicadores-analitica.md)\n\n**Sobre descuentos:** según el tamaño de la empresa puede aplicar uno. Para saberlo, ¿cuántos empleados tienen?\n\n**Alcance sugerido:** mapear el proceso de inventario de la ferretería, estandarizarlo, elegir la herramienta y arrancar con ese proceso.\n\n**Siguiente paso:** un coordinador revisa la pre-propuesta y te contacta en 2 días hábiles. Esta pre-propuesta no es una oferta comercial. El valor final se define en la propuesta formal.\n\n¿Quieres que la guarde? Si es así, dime el nombre de tu ferretería y el de la persona de contacto. El correo es opcional.",
+      "toolCalls": [
+        {
+          "toolName": "search_services",
+          "input": {
+            "query": "inventario en hojas de cálculo sueltas, procesos distintos por empleado, software de inventario, ferretería"
+          }
+        }
+      ],
+      "toolResults": [
+        {
+          "toolName": "search_services",
+          "output": {
+            "results": [
+              {
+                "service_id": "digitalizacion-procesos-administrativos",
+                "title": "Modelado y digitalización de procesos administrativos",
+                "source": "data/catalog/servicios/digitalizacion-procesos-administrativos.md",
+                "content": "# Modelado y digitalización de procesos administrativos\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDocumentamos los procesos administrativos de la empresa (compras, facturación, inventario, atención al cliente) con notación BPMN, eliminamos pasos que no agregan valor y definimos cómo digitalizarlos con herramientas accesibles para una MIPYME.\n\n## Cuándo aplica\n\n- Los procesos dependen de **papel, hojas de cálculo sueltas o WhatsApp**.\n- Hay **reprocesos, pérdidas de información o demoras** en trámites internos.\n- La empresa quiere adoptar un software (ERP, CRM, facturación electrónica) y no sabe por dónde empezar.\n\n## Entregables\n\n1. Mapa de procesos actual (AS-IS) y propuesto (TO-BE) en BPMN.\n2. Recomendación de herramientas digitales y plan de implementación.\n3. Acompañamiento en la puesta en marcha de 1 o 2 procesos prioritarios.\n\n## Duración típica\n\nDe 4 a 10 semanas.\n\n## Inversión\n\nEntre **COP 5.000.000 y COP 18.000.000**. Las licencias de software no están incluidas.\n\n## Ejemplos\n\n- Digitalización de pedidos e inventario de una panadería con tres sedes.\n- Estandarización del proceso de despacho de un operador logístico."
+              },
+              {
+                "service_id": "tablero-indicadores-analitica",
+                "title": "Tablero de indicadores y analítica operativa",
+                "source": "data/catalog/servicios/tablero-indicadores-analitica.md",
+                "content": "# Tablero de indicadores y analítica operativa\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDefinimos los indicadores clave del negocio y construimos un tablero que se actualiza con los datos que la empresa ya tiene (ventas, inventario, producción, atención), para tomar decisiones con datos y no por intuición.\n\n## Cuándo aplica\n\n- La empresa **no sabe con precisión** cuánto vende, produce o desperdicia por día.\n- Los datos existen pero están dispersos en varias hojas de cálculo o sistemas.\n- Se quiere hacer seguimiento a una mejora (por ejemplo, después de una simulación).\n\n## Entregables\n\n1. Definición de 5 a 10 KPIs con su fórmula y fuente de datos.\n2. Tablero interactivo conectado a las fuentes.\n3. Capacitación para mantenerlo.\n\n## Duración típica\n\nDe 3 a 6 semanas.\n\n## Inversión\n\nEntre **COP 4.000.000 y COP 14.000.000**.\n\n## Ejemplos\n\n- Tablero de producción y desperdicio diario de una panadería.\n- Indicadores de tiempos de despacho de un operador logístico."
+              },
+              {
+                "service_id": "gestion-calidad-control-estadistico",
+                "title": "Sistema de gestión de calidad y control estadístico de procesos",
+                "source": "data/catalog/servicios/gestion-calidad-control-estadistico.md",
+                "content": "# Sistema de gestión de calidad y control estadístico de procesos\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nAyudamos a la empresa a reducir defectos y a cumplir estándares de calidad: análisis de causas raíz, control estadístico de procesos (gráficos de control, capacidad de proceso), estandarización de procedimientos y preparación para certificaciones como ISO 9001.\n\n## Cuándo aplica\n\n- Hay **defectos, devoluciones o reclamos de calidad** frecuentes.\n- Un cliente grande exige **certificación** o estándares de calidad.\n- La calidad del producto **varía** entre turnos, operarios o lotes.\n\n## Entregables\n\n1. Diagnóstico de calidad y análisis de causas raíz de los defectos principales.\n2. Implementación de control estadístico en 1 o 2 puntos críticos del proceso.\n3. Procedimientos estandarizados y plan de capacitación.\n4. (Opcional) Hoja de ruta hacia la certificación ISO 9001.\n\n## Duración típica\n\nDe 6 a 12 semanas.\n\n## Inversión\n\nEntre **COP 6.000.000 y COP 20.000.000**. Los costos de la certificación (ente certificador) no están incluidos.\n\n## Ejemplos\n\n- Taller de confecciones con alto porcentaje de prendas defectuosas.\n- Fábrica de alimentos que necesita cumplir requisitos de un supermercado."
+              }
+            ]
+          }
+        }
+      ],
+      "costUsd": 0.0170956,
+      "latencyMs": 8632,
+      "ttftMs": 8617,
+      "retrievalMode": "tool",
+      "retrievedSources": [
+        "data/catalog/servicios/digitalizacion-procesos-administrativos.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/gestion-calidad-control-estadistico.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende el problema concreto (desorden en inventario con hojas de cálculo) y recomienda el servicio exacto del catálogo. Todos los precios (COP 5.000.000–18.000.000 y COP 4.000.000–14.000.000), plazos (4–10 semanas) y características coinciden con el catálogo. El tono es cercano, profesional y no promete resultados garantizados. La estructura es clara y breve, con entregables bien definidos y un siguiente paso transparente sobre el proceso de atención."
+  },
+  "judgeCostUsd": 0.005947
+}

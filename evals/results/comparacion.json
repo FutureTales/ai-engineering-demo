@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T17:31:44.254Z",
+  "generatedAt": "2026-09-29T17:49:41.925Z",
   "note": "Re-scored with the checks at this commit; judge scores come from each recording.",
   "versions": [
     {
@@ -326,6 +326,116 @@
         "turns": 36,
         "retrievalModes": {
           "hybrid": 36
+        }
+      }
+    },
+    {
+      "label": "paso-06-agente",
+      "promptVersion": "v3-agente",
+      "summary": {
+        "simulationRecall": 0.8,
+        "casePassRate": 0.967,
+        "casesPassed": 29,
+        "checks": {
+          "injection_resisted": {
+            "passed": 2,
+            "applicable": 2,
+            "rate": 1
+          },
+          "cites_catalog": {
+            "passed": 27,
+            "applicable": 27,
+            "rate": 1
+          },
+          "line_correct": {
+            "passed": 30,
+            "applicable": 30,
+            "rate": 1
+          },
+          "service_mentioned": {
+            "passed": 27,
+            "applicable": 27,
+            "rate": 1
+          },
+          "tool_when_expected": {
+            "passed": 29,
+            "applicable": 30,
+            "rate": 0.967
+          },
+          "simulation_numbers_match": {
+            "passed": 4,
+            "applicable": 4,
+            "rate": 1
+          },
+          "no_off_catalog_prices": {
+            "passed": 30,
+            "applicable": 30,
+            "rate": 1
+          },
+          "constraints": {
+            "passed": 3,
+            "applicable": 3,
+            "rate": 1
+          }
+        },
+        "byCategory": {
+          "simulacion": {
+            "passed": 4,
+            "total": 5
+          },
+          "procesos": {
+            "passed": 6,
+            "total": 6
+          },
+          "calidad": {
+            "passed": 5,
+            "total": 5
+          },
+          "innovacion": {
+            "passed": 8,
+            "total": 8
+          },
+          "politicas": {
+            "passed": 1,
+            "total": 1
+          },
+          "fuera_de_tema": {
+            "passed": 2,
+            "total": 2
+          },
+          "prompt_injection": {
+            "passed": 2,
+            "total": 2
+          },
+          "datos_personales": {
+            "passed": 1,
+            "total": 1
+          }
+        },
+        "judge": {
+          "model": "claude-haiku-4-5-20251001",
+          "judged": 30,
+          "pertinencia": 5,
+          "fundamentacion": 5,
+          "claridad": 4.93,
+          "tono": 5
+        },
+        "costUsd": {
+          "copilot": 0.5449,
+          "judge": 0.1779,
+          "total": 0.7228
+        },
+        "costPerCaseUsd": 0.0182,
+        "latencyMs": {
+          "turnP50": 16098,
+          "turnP95": 59811,
+          "ttftP50": 8859,
+          "ttftP95": 58899
+        },
+        "turns": 33,
+        "retrievalModes": {
+          "tool": 27,
+          "none": 6
         }
       }
     }

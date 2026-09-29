@@ -1,0 +1,219 @@
+{
+  "caseId": "sim-02-muelle",
+  "label": "paso-06-agente",
+  "recordedAt": "2026-09-29T17:40:00.850Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v3-agente",
+  "turns": [
+    {
+      "user": "Somos un operador logístico cerca del Puerto de Cartagena. En las mañanas los camiones esperan hasta 3 horas para cargar en el muelle de despacho. Tenemos 3 muelles, llegan unos 3 camiones por hora y cada carga toma unos 50 minutos.",
+      "assistant": "Con lo que me cuentas ya tengo lo necesario. Voy a buscar los servicios y a simular el pico de la mañana.**Diagnóstico:** tienes 3 muelles, llegan 3 camiones por hora y cada carga toma 50 minutos. Eso deja los muelles ocupados el 83 % del tiempo. Con tan poca holgura, cualquier racha de llegadas forma fila.\n\n**Línea de trabajo:** `process_design`\n\n## Simulación del pico de la mañana\nLa herramienta da dos lecturas:\n- **Simulación de 3 h:** el pico arranca con los muelles vacíos.\n- **Teoría de colas:** describe un régimen sostenido, como una mañana que se mantiene cargada.\n\n**Actual: 3 muelles, 50 min** (utilización 83,3 %)\n- Simulación: espera media 10,2 min, p90 40,5 min.\n- Teoría de colas: espera media 70,2 min, p90 194,9 min.\n\n**4 muelles, 50 min** (utilización 62,5 %)\n- Simulación: espera media 2,5 min, p90 6,7 min.\n- Teoría de colas: espera media 10,7 min, p90 38,8 min.\n\n**3 muelles, 40 min** (utilización 66,7 %)\n- Simulación: espera media 5,3 min, p90 21,2 min.\n- Teoría de colas: espera media 17,8 min, p90 59,7 min.\n\n**4 muelles, 40 min** (utilización 50 %)\n- Simulación: espera media 1 min, p90 0 min.\n- Teoría de colas: espera media 3,5 min, p90 11,1 min.\n\n**Conclusión:**\n- La esperas de hasta 3 horas que ves coinciden con la lectura de teoría de colas en el escenario actual (p90 de 194,9 min). Es decir, cuando la mañana se mantiene cargada, la fila se dispara.\n- Reducir la carga de 50 a 40 minutos ayuda casi tanto como agregar un cuarto muelle. Como no requiere obra, probablemente sea más barato. Se logra con un proceso de despacho más ordenado, por ejemplo con documentos listos antes de que llegue el camión.\n- Combinar ambas medidas deja la operación con mucha holgura.\n- Estos resultados dependen de que los datos de llegadas y tiempos sean representativos. Conviene validarlos con datos reales.\n\n## Pre-propuesta\n- **Problema:** camiones que esperan hasta 3 horas en el muelle de despacho durante las mañanas.\n- **Línea de trabajo:** `process_design`\n- **Servicio principal:** Simulación de operaciones y análisis \"what if\".\n  - Modelo validado con tu operación real y comparación de 3 a 5 escenarios.\n  - Tablero de KPIs y taller de transferencia.\n  - Duración típica: de 4 a 8 semanas.\n  - Inversión: entre **COP 8.000.000 y COP 25.000.000**.\n  - Fuente: [Simulación de operaciones y análisis \"what if\"](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/simulacion-operaciones.md)\n- **Servicio complementario (opcional):** Modelado y digitalización de procesos administrativos, para estandarizar el proceso de despacho y bajar los minutos por carga.\n  - Duración típica: de 4 a 10 semanas.\n  - Inversión: entre **COP 5.000.000 y COP 18.000.000**. Las licencias de software no están incluidas.\n  - Fuente: [Modelado y digitalización de procesos administrativos](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/digitalizacion-procesos-administrativos.md)\n- **Notas sobre precios:**\n  - Los rangos no incluyen IVA.\n  - Pueden aplicar descuentos para MIPYMES según el tamaño de la empresa. Requieren el certificado de existencia y representación legal.\n  - El valor final se define en la propuesta formal.\n- **Siguiente paso:** un coordinador te contacta en 2 días hábiles y agenda una reunión de diagnóstico de 45 a 60 minutos. Esta pre-propuesta no es una oferta comercial.\n\n¿Quieres que la guarde para que la revise un coordinador? Si es así, dime el **nombre de la empresa**, el **nombre de la persona de contacto** y, si quieres, un correo electrónico.",
+      "toolCalls": [
+        {
+          "toolName": "search_services",
+          "input": {
+            "query": "camiones esperan muelle de despacho cola capacidad cuello de botella logística",
+            "line": "process_design"
+          }
+        },
+        {
+          "toolName": "simulate_queue",
+          "input": {
+            "scenarios": [
+              {
+                "scenario_label": "Actual: 3 muelles, 50 min",
+                "arrival_rate_per_hour": 3,
+                "service_time_min": 50,
+                "servers": 3,
+                "hours": 3
+              },
+              {
+                "scenario_label": "4 muelles, 50 min",
+                "arrival_rate_per_hour": 3,
+                "service_time_min": 50,
+                "servers": 4,
+                "hours": 3
+              },
+              {
+                "scenario_label": "3 muelles, 40 min",
+                "arrival_rate_per_hour": 3,
+                "service_time_min": 40,
+                "servers": 3,
+                "hours": 3
+              },
+              {
+                "scenario_label": "4 muelles, 40 min",
+                "arrival_rate_per_hour": 3,
+                "service_time_min": 40,
+                "servers": 4,
+                "hours": 3
+              }
+            ]
+          }
+        }
+      ],
+      "toolResults": [
+        {
+          "toolName": "simulate_queue",
+          "output": {
+            "scenarios": [
+              {
+                "scenario_label": "Actual: 3 muelles, 50 min",
+                "servers": 3,
+                "arrival_rate_per_hour": 3,
+                "service_time_min": 50,
+                "utilization": 0.833,
+                "stable": true,
+                "verdict": "Estable, con filas moderadas en los momentos de más llegadas.",
+                "analytic": {
+                  "prob_wait": 0.702,
+                  "avg_wait_min": 70.2,
+                  "p90_wait_min": 194.9,
+                  "avg_queue_len": 3.51,
+                  "avg_time_in_system_min": 120.2
+                },
+                "simulation": {
+                  "hours": 3,
+                  "replications": 200,
+                  "seed": 42,
+                  "avg_wait_min": 10.2,
+                  "p90_wait_min": 40.5,
+                  "avg_queue_len": 0.33,
+                  "typical_max_queue_len": 1,
+                  "bad_day_max_queue_len": 4,
+                  "customers_per_replication": 8.6
+                }
+              },
+              {
+                "scenario_label": "4 muelles, 50 min",
+                "servers": 4,
+                "arrival_rate_per_hour": 3,
+                "service_time_min": 50,
+                "utilization": 0.625,
+                "stable": true,
+                "verdict": "Estable y con holgura: la espera es baja.",
+                "analytic": {
+                  "prob_wait": 0.32,
+                  "avg_wait_min": 10.7,
+                  "p90_wait_min": 38.8,
+                  "avg_queue_len": 0.53,
+                  "avg_time_in_system_min": 60.7
+                },
+                "simulation": {
+                  "hours": 3,
+                  "replications": 200,
+                  "seed": 42,
+                  "avg_wait_min": 2.5,
+                  "p90_wait_min": 6.7,
+                  "avg_queue_len": 0.08,
+                  "typical_max_queue_len": 0,
+                  "bad_day_max_queue_len": 2,
+                  "customers_per_replication": 8.6
+                }
+              },
+              {
+                "scenario_label": "3 muelles, 40 min",
+                "servers": 3,
+                "arrival_rate_per_hour": 3,
+                "service_time_min": 40,
+                "utilization": 0.667,
+                "stable": true,
+                "verdict": "Estable y con holgura: la espera es baja.",
+                "analytic": {
+                  "prob_wait": 0.444,
+                  "avg_wait_min": 17.8,
+                  "p90_wait_min": 59.7,
+                  "avg_queue_len": 0.89,
+                  "avg_time_in_system_min": 57.8
+                },
+                "simulation": {
+                  "hours": 3,
+                  "replications": 200,
+                  "seed": 42,
+                  "avg_wait_min": 5.3,
+                  "p90_wait_min": 21.2,
+                  "avg_queue_len": 0.19,
+                  "typical_max_queue_len": 1,
+                  "bad_day_max_queue_len": 3,
+                  "customers_per_replication": 8.6
+                }
+              },
+              {
+                "scenario_label": "4 muelles, 40 min",
+                "servers": 4,
+                "arrival_rate_per_hour": 3,
+                "service_time_min": 40,
+                "utilization": 0.5,
+                "stable": true,
+                "verdict": "Estable y con holgura: la espera es baja.",
+                "analytic": {
+                  "prob_wait": 0.174,
+                  "avg_wait_min": 3.5,
+                  "p90_wait_min": 11.1,
+                  "avg_queue_len": 0.17,
+                  "avg_time_in_system_min": 43.5
+                },
+                "simulation": {
+                  "hours": 3,
+                  "replications": 200,
+                  "seed": 42,
+                  "avg_wait_min": 1,
+                  "p90_wait_min": 0,
+                  "avg_queue_len": 0.04,
+                  "typical_max_queue_len": 0,
+                  "bad_day_max_queue_len": 2,
+                  "customers_per_replication": 8.6
+                }
+              }
+            ]
+          }
+        },
+        {
+          "toolName": "search_services",
+          "output": {
+            "results": [
+              {
+                "service_id": "simulacion-operaciones",
+                "title": "Simulación de operaciones y análisis \"what if\"",
+                "source": "data/catalog/servicios/simulacion-operaciones.md",
+                "content": "# Simulación de operaciones y análisis \"what if\"\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nConstruimos un modelo de simulación de eventos discretos de la operación de la empresa (manufactura, logística o servicios) para encontrar cuellos de botella y comparar escenarios antes de invertir. Usamos software especializado de simulación y teoría de colas para estimar tiempos de espera, utilización de recursos y capacidad.\n\n## Cuándo aplica\n\n- Hay **filas o tiempos de espera** de clientes, pedidos o vehículos (recepción de un hotel, caja de un almacén, muelle de despacho).\n- La empresa duda entre **contratar personal, comprar equipos o cambiar el proceso** y quiere saber qué conviene.\n- La demanda varía por temporada u horario y la capacidad no alcanza en los picos.\n- Se necesita definir **KPIs operativos** (tiempo de ciclo, utilización, nivel de servicio).\n\n## Entregables\n\n1. Levantamiento del proceso actual y de los datos (llegadas, tiempos de servicio, recursos).\n2. Modelo de simulación validado con la operación real.\n3. Comparación de 3 a 5 escenarios \"what if\" (más recursos, cambios de turno, digitalización de pasos).\n4. Tablero con los KPIs definidos y recomendaciones priorizadas.\n5. Taller de transferencia con el equipo de la empresa.\n\n## Duración típica\n\nDe 4 a 8 semanas, según la complejidad del proceso y la disponibilidad de datos.\n\n## Inversión\n\nEntre **COP 8.000.000 y COP 25.000.000**. Aplican los descuentos para MIPYMES de la política de tarifas.\n\n## Ejemplos\n\n- Hotel con filas en el check-in durante la temporada alta: se comparan 2, 3 y 4 recepcionistas y un check-in digital previo.\n- Operador logístico con camiones esperando en el muelle de despacho.\n- Clínica con tiempos de espera largos en admisiones."
+              },
+              {
+                "service_id": "tablero-indicadores-analitica",
+                "title": "Tablero de indicadores y analítica operativa",
+                "source": "data/catalog/servicios/tablero-indicadores-analitica.md",
+                "content": "# Tablero de indicadores y analítica operativa\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDefinimos los indicadores clave del negocio y construimos un tablero que se actualiza con los datos que la empresa ya tiene (ventas, inventario, producción, atención), para tomar decisiones con datos y no por intuición.\n\n## Cuándo aplica\n\n- La empresa **no sabe con precisión** cuánto vende, produce o desperdicia por día.\n- Los datos existen pero están dispersos en varias hojas de cálculo o sistemas.\n- Se quiere hacer seguimiento a una mejora (por ejemplo, después de una simulación).\n\n## Entregables\n\n1. Definición de 5 a 10 KPIs con su fórmula y fuente de datos.\n2. Tablero interactivo conectado a las fuentes.\n3. Capacitación para mantenerlo.\n\n## Duración típica\n\nDe 3 a 6 semanas.\n\n## Inversión\n\nEntre **COP 4.000.000 y COP 14.000.000**.\n\n## Ejemplos\n\n- Tablero de producción y desperdicio diario de una panadería.\n- Indicadores de tiempos de despacho de un operador logístico."
+              },
+              {
+                "service_id": "digitalizacion-procesos-administrativos",
+                "title": "Modelado y digitalización de procesos administrativos",
+                "source": "data/catalog/servicios/digitalizacion-procesos-administrativos.md",
+                "content": "# Modelado y digitalización de procesos administrativos\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDocumentamos los procesos administrativos de la empresa (compras, facturación, inventario, atención al cliente) con notación BPMN, eliminamos pasos que no agregan valor y definimos cómo digitalizarlos con herramientas accesibles para una MIPYME.\n\n## Cuándo aplica\n\n- Los procesos dependen de **papel, hojas de cálculo sueltas o WhatsApp**.\n- Hay **reprocesos, pérdidas de información o demoras** en trámites internos.\n- La empresa quiere adoptar un software (ERP, CRM, facturación electrónica) y no sabe por dónde empezar.\n\n## Entregables\n\n1. Mapa de procesos actual (AS-IS) y propuesto (TO-BE) en BPMN.\n2. Recomendación de herramientas digitales y plan de implementación.\n3. Acompañamiento en la puesta en marcha de 1 o 2 procesos prioritarios.\n\n## Duración típica\n\nDe 4 a 10 semanas.\n\n## Inversión\n\nEntre **COP 5.000.000 y COP 18.000.000**. Las licencias de software no están incluidas.\n\n## Ejemplos\n\n- Digitalización de pedidos e inventario de una panadería con tres sedes.\n- Estandarización del proceso de despacho de un operador logístico."
+              }
+            ]
+          }
+        }
+      ],
+      "costUsd": 0.0463008,
+      "latencyMs": 16098,
+      "ttftMs": 2420,
+      "retrievalMode": "tool",
+      "retrievedSources": [
+        "data/catalog/servicios/simulacion-operaciones.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/digitalizacion-procesos-administrativos.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente la línea process_design y el servicio simulacion-operaciones. Realiza una simulación rigurosa con cálculos de utilización, espera media y percentiles p90, comparando escenarios (3 vs 4 muelles, 50 vs 40 minutos). Todos los precios y plazos coinciden exactamente con el catálogo. La comunicación es clara, estructurada y cercana, sin prometer resultados no respaldados; aclara que todo depende de datos representativos. El servicio complementario es apropiado pero bien posicionado como opcional."
+  },
+  "judgeCostUsd": 0.006586
+}

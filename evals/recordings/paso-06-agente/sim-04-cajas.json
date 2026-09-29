@@ -1,0 +1,213 @@
+{
+  "caseId": "sim-04-cajas",
+  "label": "paso-06-agente",
+  "recordedAt": "2026-09-29T17:41:11.364Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v3-agente",
+  "turns": [
+    {
+      "user": "Tenemos un minimercado en el barrio Crespo con 2 cajas. Los sábados en la tarde llegan como 50 clientes por hora a pagar y cada cobro toma unos 2 minutos y medio. Las filas son larguísimas y la gente se va. ¿Qué hacemos?",
+      "assistant": "Con lo que me cuentas ya puedo simular el caso, así que busco los servicios y corro los escenarios.**Línea de trabajo:** `process_design`\n\nTus 2 cajas no alcanzan para el pico del sábado. Llegan 50 clientes por hora y cada cobro toma 2,5 minutos. Con eso la utilización es de 104,2 %, así que llegan más clientes de los que las cajas pueden atender y la fila crece durante toda la tarde. Por eso la gente se va.\n\n**Simulación del pico (3 horas), espera media / espera p90 / utilización:**\n- **Actual, 2 cajas:** 12,6 min / 29,3 min / 104,2 %. Inestable. En un sábado normal la fila llega a unas 21 personas, y en uno malo a 35.\n- **3 cajas:** 1,2 min / 4,1 min / 69,4 %. Estable.\n- **2 cajas con cobro de 2 min:** 3,7 min / 10 min / 83,3 %. Estable, pero con filas moderadas.\n- **3 cajas con cobro de 2 min:** 0,4 min / 1,6 min / 55,6 %. Estable y con holgura.\n\n**Qué significa:**\n- Ganar solo 30 segundos por cobro ya vuelve estable la operación con 2 cajas. Aun así, 1 de cada 10 clientes espera 10 minutos o más.\n- Una tercera caja los sábados en la tarde es lo que más baja la espera.\n- Combinar la tercera caja con un cobro más ágil deja la fila casi sin espera. Un cobro más ágil puede venir de un datáfono más rápido o de pagos por QR.\n\n**Servicio recomendado:** Simulación de operaciones y análisis \"what if\". Sirve para validar estos números con tus datos reales y comparar opciones antes de invertir.\n- Duración típica: de 4 a 8 semanas.\n- Inversión: entre COP 8.000.000 y COP 25.000.000.\n- Entregables: levantamiento del proceso, modelo validado, comparación de 3 a 5 escenarios, tablero de KPIs y un taller con tu equipo.\n- Los rangos no incluyen IVA. Aplican los descuentos para MIPYMES: 20 % si tienes hasta 10 empleados y 10 % si tienes de 11 a 50. Dime cuántos empleados tienes y lo confirmamos.\n- Fuente: [Simulación de operaciones y análisis \"what if\"](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/simulacion-operaciones.md)\n\n**Pre-propuesta**\n- **Problema:** filas largas en caja los sábados en la tarde y clientes que se van.\n- **Línea:** `process_design`.\n- **Alcance sugerido:** medir llegadas y tiempos de cobro reales y validar el modelo. Después comparar escenarios con una tercera caja y con un cobro más rápido.\n- **Siguiente paso:** un coordinador te contacta en 2 días hábiles y hace una reunión de diagnóstico de 45 a 60 minutos. La pre-propuesta no es una oferta comercial.\n\n¿Quieres que la guarde para que la revise un coordinador? Si es así, dime el nombre de tu minimercado y el de la persona de contacto. El correo es opcional.",
+      "toolCalls": [
+        {
+          "toolName": "search_services",
+          "input": {
+            "query": "filas en cajas, esperas largas, capacidad, minimercado, clientes se van",
+            "line": "process_design"
+          }
+        },
+        {
+          "toolName": "simulate_queue",
+          "input": {
+            "scenarios": [
+              {
+                "scenario_label": "Actual: 2 cajas",
+                "arrival_rate_per_hour": 50,
+                "service_time_min": 2.5,
+                "servers": 2,
+                "hours": 3
+              },
+              {
+                "scenario_label": "3 cajas",
+                "arrival_rate_per_hour": 50,
+                "service_time_min": 2.5,
+                "servers": 3,
+                "hours": 3
+              },
+              {
+                "scenario_label": "2 cajas, cobro de 2 min",
+                "arrival_rate_per_hour": 50,
+                "service_time_min": 2,
+                "servers": 2,
+                "hours": 3
+              },
+              {
+                "scenario_label": "3 cajas, cobro de 2 min",
+                "arrival_rate_per_hour": 50,
+                "service_time_min": 2,
+                "servers": 3,
+                "hours": 3
+              }
+            ]
+          }
+        }
+      ],
+      "toolResults": [
+        {
+          "toolName": "simulate_queue",
+          "output": {
+            "scenarios": [
+              {
+                "scenario_label": "Actual: 2 cajas",
+                "servers": 2,
+                "arrival_rate_per_hour": 50,
+                "service_time_min": 2.5,
+                "utilization": 1.042,
+                "stable": false,
+                "verdict": "Inestable: llegan más clientes de los que se pueden atender (utilización ≥ 100 %). La fila crece sin límite mientras dure el pico.",
+                "analytic": null,
+                "simulation": {
+                  "hours": 3,
+                  "replications": 200,
+                  "seed": 42,
+                  "avg_wait_min": 12.6,
+                  "p90_wait_min": 29.3,
+                  "avg_queue_len": 9.25,
+                  "typical_max_queue_len": 21,
+                  "bad_day_max_queue_len": 35,
+                  "customers_per_replication": 149.7
+                }
+              },
+              {
+                "scenario_label": "3 cajas",
+                "servers": 3,
+                "arrival_rate_per_hour": 50,
+                "service_time_min": 2.5,
+                "utilization": 0.694,
+                "stable": true,
+                "verdict": "Estable y con holgura: la espera es baja.",
+                "analytic": {
+                  "prob_wait": 0.484,
+                  "avg_wait_min": 1.3,
+                  "p90_wait_min": 4.3,
+                  "avg_queue_len": 1.1,
+                  "avg_time_in_system_min": 3.8
+                },
+                "simulation": {
+                  "hours": 3,
+                  "replications": 200,
+                  "seed": 42,
+                  "avg_wait_min": 1.2,
+                  "p90_wait_min": 4.1,
+                  "avg_queue_len": 1,
+                  "typical_max_queue_len": 7,
+                  "bad_day_max_queue_len": 12,
+                  "customers_per_replication": 149.7
+                }
+              },
+              {
+                "scenario_label": "2 cajas, cobro de 2 min",
+                "servers": 2,
+                "arrival_rate_per_hour": 50,
+                "service_time_min": 2,
+                "utilization": 0.833,
+                "stable": true,
+                "verdict": "Estable, con filas moderadas en los momentos de más llegadas.",
+                "analytic": {
+                  "prob_wait": 0.758,
+                  "avg_wait_min": 4.5,
+                  "p90_wait_min": 12.1,
+                  "avg_queue_len": 3.79,
+                  "avg_time_in_system_min": 6.5
+                },
+                "simulation": {
+                  "hours": 3,
+                  "replications": 200,
+                  "seed": 42,
+                  "avg_wait_min": 3.7,
+                  "p90_wait_min": 10,
+                  "avg_queue_len": 2.98,
+                  "typical_max_queue_len": 11,
+                  "bad_day_max_queue_len": 18,
+                  "customers_per_replication": 149.7
+                }
+              },
+              {
+                "scenario_label": "3 cajas, cobro de 2 min",
+                "servers": 3,
+                "arrival_rate_per_hour": 50,
+                "service_time_min": 2,
+                "utilization": 0.556,
+                "stable": true,
+                "verdict": "Estable y con holgura: la espera es baja.",
+                "analytic": {
+                  "prob_wait": 0.3,
+                  "avg_wait_min": 0.4,
+                  "p90_wait_min": 1.6,
+                  "avg_queue_len": 0.37,
+                  "avg_time_in_system_min": 2.4
+                },
+                "simulation": {
+                  "hours": 3,
+                  "replications": 200,
+                  "seed": 42,
+                  "avg_wait_min": 0.4,
+                  "p90_wait_min": 1.6,
+                  "avg_queue_len": 0.35,
+                  "typical_max_queue_len": 5,
+                  "bad_day_max_queue_len": 7,
+                  "customers_per_replication": 149.7
+                }
+              }
+            ]
+          }
+        },
+        {
+          "toolName": "search_services",
+          "output": {
+            "results": [
+              {
+                "service_id": "simulacion-operaciones",
+                "title": "Simulación de operaciones y análisis \"what if\"",
+                "source": "data/catalog/servicios/simulacion-operaciones.md",
+                "content": "# Simulación de operaciones y análisis \"what if\"\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nConstruimos un modelo de simulación de eventos discretos de la operación de la empresa (manufactura, logística o servicios) para encontrar cuellos de botella y comparar escenarios antes de invertir. Usamos software especializado de simulación y teoría de colas para estimar tiempos de espera, utilización de recursos y capacidad.\n\n## Cuándo aplica\n\n- Hay **filas o tiempos de espera** de clientes, pedidos o vehículos (recepción de un hotel, caja de un almacén, muelle de despacho).\n- La empresa duda entre **contratar personal, comprar equipos o cambiar el proceso** y quiere saber qué conviene.\n- La demanda varía por temporada u horario y la capacidad no alcanza en los picos.\n- Se necesita definir **KPIs operativos** (tiempo de ciclo, utilización, nivel de servicio).\n\n## Entregables\n\n1. Levantamiento del proceso actual y de los datos (llegadas, tiempos de servicio, recursos).\n2. Modelo de simulación validado con la operación real.\n3. Comparación de 3 a 5 escenarios \"what if\" (más recursos, cambios de turno, digitalización de pasos).\n4. Tablero con los KPIs definidos y recomendaciones priorizadas.\n5. Taller de transferencia con el equipo de la empresa.\n\n## Duración típica\n\nDe 4 a 8 semanas, según la complejidad del proceso y la disponibilidad de datos.\n\n## Inversión\n\nEntre **COP 8.000.000 y COP 25.000.000**. Aplican los descuentos para MIPYMES de la política de tarifas.\n\n## Ejemplos\n\n- Hotel con filas en el check-in durante la temporada alta: se comparan 2, 3 y 4 recepcionistas y un check-in digital previo.\n- Operador logístico con camiones esperando en el muelle de despacho.\n- Clínica con tiempos de espera largos en admisiones."
+              },
+              {
+                "service_id": "digitalizacion-procesos-administrativos",
+                "title": "Modelado y digitalización de procesos administrativos",
+                "source": "data/catalog/servicios/digitalizacion-procesos-administrativos.md",
+                "content": "# Modelado y digitalización de procesos administrativos\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDocumentamos los procesos administrativos de la empresa (compras, facturación, inventario, atención al cliente) con notación BPMN, eliminamos pasos que no agregan valor y definimos cómo digitalizarlos con herramientas accesibles para una MIPYME.\n\n## Cuándo aplica\n\n- Los procesos dependen de **papel, hojas de cálculo sueltas o WhatsApp**.\n- Hay **reprocesos, pérdidas de información o demoras** en trámites internos.\n- La empresa quiere adoptar un software (ERP, CRM, facturación electrónica) y no sabe por dónde empezar.\n\n## Entregables\n\n1. Mapa de procesos actual (AS-IS) y propuesto (TO-BE) en BPMN.\n2. Recomendación de herramientas digitales y plan de implementación.\n3. Acompañamiento en la puesta en marcha de 1 o 2 procesos prioritarios.\n\n## Duración típica\n\nDe 4 a 10 semanas.\n\n## Inversión\n\nEntre **COP 5.000.000 y COP 18.000.000**. Las licencias de software no están incluidas.\n\n## Ejemplos\n\n- Digitalización de pedidos e inventario de una panadería con tres sedes.\n- Estandarización del proceso de despacho de un operador logístico."
+              },
+              {
+                "service_id": "produccion-mas-limpia-desperdicios",
+                "title": "Producción más limpia y reducción de desperdicios",
+                "source": "data/catalog/servicios/produccion-mas-limpia-desperdicios.md",
+                "content": "# Producción más limpia y reducción de desperdicios\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nAplicamos herramientas de manufactura esbelta (lean) y producción más limpia para reducir desperdicios de materia prima, energía y agua, y para ajustar la producción a la demanda real. Mejora la rentabilidad y la sostenibilidad del proceso.\n\n## Cuándo aplica\n\n- Hay **desperdicio de producto** (se produce más de lo que se vende, se vence o se daña).\n- Los costos de materia prima, agua o energía son altos.\n- La empresa quiere mejorar su desempeño ambiental.\n\n## Entregables\n\n1. Mapa de flujo de valor y cuantificación de desperdicios.\n2. Plan de mejora con acciones priorizadas.\n3. Ajuste de la planeación de producción a la demanda.\n4. Medición de resultados al cierre.\n\n## Duración típica\n\nDe 4 a 8 semanas.\n\n## Inversión\n\nEntre **COP 3.500.000 y COP 12.000.000**.\n\n## Ejemplos\n\n- Panadería que bota una parte de su producción al final del día.\n- Planta de hielo con consumo de energía elevado."
+              }
+            ]
+          }
+        }
+      ],
+      "costUsd": 0.0275076,
+      "latencyMs": 66105,
+      "ttftMs": 4319,
+      "retrievalMode": "tool",
+      "retrievedSources": [
+        "data/catalog/servicios/simulacion-operaciones.md",
+        "data/catalog/servicios/digitalizacion-procesos-administrativos.md",
+        "data/catalog/servicios/produccion-mas-limpia-desperdicios.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 4,
+    "tono": 5,
+    "justificacion": "La respuesta atiende de lleno el problema concreto (filas en caja) y recomienda exactamente el servicio adecuado (Simulación de operaciones). Todos los precios (COP 8.000.000–25.000.000), plazos (4 a 8 semanas) y detalles del servicio coinciden con el catálogo. La simulación de filas (M/M/c) está respaldada en matemática de colas; los números son coherentes y bien explicados. El tono es cercano, profesional y sin promesas excesivas. Claridad: muy buena estructura, aunque la respuesta es algo larga (podría ser más breve para celular)."
+  },
+  "judgeCostUsd": 0.006438
+}

@@ -1,0 +1,68 @@
+{
+  "caseId": "inn-08-turismo",
+  "label": "paso-06-agente",
+  "recordedAt": "2026-09-29T17:48:20.235Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v3-agente",
+  "turns": [
+    {
+      "user": "Tenemos una agencia de turismo con 6 años de datos de reservas y queremos saber cómo empezar a transformarnos digitalmente y aprovechar esos datos. Es nuestro primer contacto con el centro.",
+      "assistant": "¡Qué bueno que nos escribas! Con 6 años de reservas ya tienen una base valiosa.\n\n**Línea de trabajo:** `business_innovation`\n\n**Servicio recomendado para empezar:** Diagnóstico de madurez digital y de IA para MIPYMES\n- Aplica porque es su primer contacto con el centro y quieren usar sus datos de reservas. La ficha incluye justo el caso de una agencia de turismo que planea temporadas con esos datos.\n- **Entregables:** encuesta y entrevistas, informe de madurez (procesos, datos, personas, tecnología) y una hoja de ruta con 3 a 5 iniciativas priorizadas.\n- **Duración típica:** de 2 a 3 semanas.\n- **Inversión:** entre COP 1.500.000 y COP 4.000.000.\n- Fuente: [Diagnóstico de madurez digital y de IA para MIPYMES](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/diagnostico-madurez-digital-ia.md)\n\n**Servicio complementario (opcional, después del diagnóstico):** Tablero de indicadores y analítica operativa\n- Sirve si sus datos están dispersos en hojas de cálculo o sistemas. Convierte las reservas en indicadores para decidir con datos.\n- **Duración típica:** de 3 a 6 semanas.\n- **Inversión:** entre COP 4.000.000 y COP 14.000.000.\n- Fuente: [Tablero de indicadores y analítica operativa](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/tablero-indicadores-analitica.md)\n\n**Notas sobre precios**\n- Los rangos no incluyen IVA ni costos de terceros.\n- Hay descuentos según el tamaño de la empresa. Para decirte cuál les aplicaría, necesito saber cuántos empleados tienen.\n- El valor final se define en la propuesta formal.\n\n**Pre-propuesta**\n- **Problema:** agencia de turismo con 6 años de datos de reservas que no sabe cómo empezar su transformación digital ni cómo aprovechar esos datos.\n- **Alcance sugerido:** diagnóstico de madurez digital y de IA, con foco en los datos de reservas y en la planeación de temporadas. Termina con una hoja de ruta priorizada.\n- **Siguiente paso:** un coordinador los contacta en 2 días hábiles y agenda una reunión de diagnóstico de 45 a 60 minutos. La pre-propuesta no es una oferta comercial ni compromete al centro.\n\n¿Quieres que la guarde para que la revise un coordinador? Si es así, dime el **nombre de la empresa** y el **nombre de la persona de contacto**. El correo es opcional.",
+      "toolCalls": [
+        {
+          "toolName": "search_services",
+          "input": {
+            "query": "transformación digital agencia de turismo datos de reservas aprovechar datos IA"
+          }
+        }
+      ],
+      "toolResults": [
+        {
+          "toolName": "search_services",
+          "output": {
+            "results": [
+              {
+                "service_id": "diagnostico-madurez-digital-ia",
+                "title": "Diagnóstico de madurez digital y de IA para MIPYMES",
+                "source": "data/catalog/servicios/diagnostico-madurez-digital-ia.md",
+                "content": "# Diagnóstico de madurez digital y de IA para MIPYMES\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nEvaluamos qué tan preparada está la empresa para adoptar herramientas digitales e inteligencia artificial: procesos, datos, personas y tecnología. Entregamos una hoja de ruta realista con oportunidades priorizadas por impacto y esfuerzo.\n\n## Cuándo aplica\n\n- La empresa **quiere \"usar IA\"** pero no sabe dónde le serviría.\n- Es el **primer contacto** con el centro y no está claro qué servicio necesita.\n- Se quiere priorizar inversiones en tecnología.\n\n## Entregables\n\n1. Encuesta y entrevistas de diagnóstico.\n2. Informe de madurez por dimensión (procesos, datos, personas, tecnología).\n3. Hoja de ruta con 3 a 5 iniciativas priorizadas.\n\n## Duración típica\n\nDe 2 a 3 semanas.\n\n## Inversión\n\nEntre **COP 1.500.000 y COP 4.000.000**.\n\n## Ejemplos\n\n- Almacén de repuestos que quiere automatizar la atención por WhatsApp.\n- Agencia de turismo que quiere usar sus datos de reservas para planear temporadas."
+              },
+              {
+                "service_id": "tablero-indicadores-analitica",
+                "title": "Tablero de indicadores y analítica operativa",
+                "source": "data/catalog/servicios/tablero-indicadores-analitica.md",
+                "content": "# Tablero de indicadores y analítica operativa\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDefinimos los indicadores clave del negocio y construimos un tablero que se actualiza con los datos que la empresa ya tiene (ventas, inventario, producción, atención), para tomar decisiones con datos y no por intuición.\n\n## Cuándo aplica\n\n- La empresa **no sabe con precisión** cuánto vende, produce o desperdicia por día.\n- Los datos existen pero están dispersos en varias hojas de cálculo o sistemas.\n- Se quiere hacer seguimiento a una mejora (por ejemplo, después de una simulación).\n\n## Entregables\n\n1. Definición de 5 a 10 KPIs con su fórmula y fuente de datos.\n2. Tablero interactivo conectado a las fuentes.\n3. Capacitación para mantenerlo.\n\n## Duración típica\n\nDe 3 a 6 semanas.\n\n## Inversión\n\nEntre **COP 4.000.000 y COP 14.000.000**.\n\n## Ejemplos\n\n- Tablero de producción y desperdicio diario de una panadería.\n- Indicadores de tiempos de despacho de un operador logístico."
+              },
+              {
+                "service_id": "simulacion-operaciones",
+                "title": "Simulación de operaciones y análisis \"what if\"",
+                "source": "data/catalog/servicios/simulacion-operaciones.md",
+                "content": "# Simulación de operaciones y análisis \"what if\"\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nConstruimos un modelo de simulación de eventos discretos de la operación de la empresa (manufactura, logística o servicios) para encontrar cuellos de botella y comparar escenarios antes de invertir. Usamos software especializado de simulación y teoría de colas para estimar tiempos de espera, utilización de recursos y capacidad.\n\n## Cuándo aplica\n\n- Hay **filas o tiempos de espera** de clientes, pedidos o vehículos (recepción de un hotel, caja de un almacén, muelle de despacho).\n- La empresa duda entre **contratar personal, comprar equipos o cambiar el proceso** y quiere saber qué conviene.\n- La demanda varía por temporada u horario y la capacidad no alcanza en los picos.\n- Se necesita definir **KPIs operativos** (tiempo de ciclo, utilización, nivel de servicio).\n\n## Entregables\n\n1. Levantamiento del proceso actual y de los datos (llegadas, tiempos de servicio, recursos).\n2. Modelo de simulación validado con la operación real.\n3. Comparación de 3 a 5 escenarios \"what if\" (más recursos, cambios de turno, digitalización de pasos).\n4. Tablero con los KPIs definidos y recomendaciones priorizadas.\n5. Taller de transferencia con el equipo de la empresa.\n\n## Duración típica\n\nDe 4 a 8 semanas, según la complejidad del proceso y la disponibilidad de datos.\n\n## Inversión\n\nEntre **COP 8.000.000 y COP 25.000.000**. Aplican los descuentos para MIPYMES de la política de tarifas.\n\n## Ejemplos\n\n- Hotel con filas en el check-in durante la temporada alta: se comparan 2, 3 y 4 recepcionistas y un check-in digital previo.\n- Operador logístico con camiones esperando en el muelle de despacho.\n- Clínica con tiempos de espera largos en admisiones."
+              }
+            ]
+          }
+        }
+      ],
+      "costUsd": 0.0177176,
+      "latencyMs": 8427,
+      "ttftMs": 7840,
+      "retrievalMode": "tool",
+      "retrievedSources": [
+        "data/catalog/servicios/diagnostico-madurez-digital-ia.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/simulacion-operaciones.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende perfectamente el problema (transformación digital en turismo con base de datos de 6 años), recomienda el servicio correcto del catálogo (diagnóstico-madurez-digital-ia) con todos los datos respaldados: rango COP 1.500.000–4.000.000, plazo 2–3 semanas, entregables coherentes. Estructura clara, menciona descuentos y próximos pasos, tono cercano y profesional sin promesas excesivas."
+  },
+  "judgeCostUsd": 0.005965
+}

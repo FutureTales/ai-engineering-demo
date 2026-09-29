@@ -1,0 +1,62 @@
+{
+  "caseId": "inn-01-marca",
+  "label": "paso-06-agente",
+  "recordedAt": "2026-09-29T17:45:47.428Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v3-agente",
+  "turns": [
+    {
+      "user": "Somos una startup que hace bolsos con fibras recicladas. Queremos exportar y alguien nos dijo que primero deberíamos proteger la marca. No sabemos si el nombre ya está registrado.",
+      "assistant": "Tu caso encaja bien con un servicio del centro.\n\n**Línea de trabajo:** `business_innovation`\n\n**Servicio recomendado:** Vigilancia tecnológica y propiedad intelectual\n\nPor qué aplica:\n- Incluye la **búsqueda de antecedentes de marca**. Así sabrás si tu nombre ya está registrado antes de invertir más en él.\n- Te ayuda con una estrategia de protección y con preparar la solicitud de **registro de marca ante la SIC**.\n- La ficha tiene un ejemplo casi igual al tuyo: una startup de moda sostenible que registra su marca antes de exportar.\n\n**Entregables**\n1. Informe de búsqueda de antecedentes.\n2. Recomendación de estrategia de protección.\n3. Acompañamiento en la solicitud ante la SIC.\n4. Informe de vigilancia tecnológica, si aplica.\n\n**Duración:** de 2 a 4 semanas, sin contar los tiempos de trámite de la SIC.\n\n**Inversión:** entre COP 1.800.000 y COP 6.000.000.\n- No incluye IVA.\n- No incluye las tasas oficiales de la SIC, que paga directamente la empresa.\n- El servicio no reemplaza la asesoría de un abogado.\n- El centro no garantiza que la SIC apruebe el registro.\n- Según el tamaño de tu empresa puede aplicar un descuento, que se confirma con el certificado de existencia y representación legal. Dime cuántos empleados tienen y te digo cuál corresponde.\n\nFuente: [Vigilancia tecnológica y propiedad intelectual](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/vigilancia-tecnologica-pi.md)\n\n**Pre-propuesta**\n- **Problema:** startup de bolsos con fibras recicladas que quiere exportar. Necesita saber si su marca ya está registrada y protegerla.\n- **Alcance sugerido:** búsqueda de antecedentes del nombre, estrategia de protección y preparación de la solicitud ante la SIC.\n- **Siguiente paso:** un coordinador te contacta en 2 días hábiles. Después viene una reunión de diagnóstico de 45 a 60 minutos para validar el alcance. La pre-propuesta no es una oferta comercial ni compromete al centro.\n\n¿Quieres que la guarde para que la revise un coordinador? Si sí, dime el **nombre de la empresa**, tu **nombre como contacto** y, si quieres, un **correo**.",
+      "toolCalls": [
+        {
+          "toolName": "search_services",
+          "input": {
+            "query": "proteger marca registro propiedad intelectual exportar vigilancia tecnológica",
+            "line": "business_innovation"
+          }
+        }
+      ],
+      "toolResults": [
+        {
+          "toolName": "search_services",
+          "output": {
+            "results": [
+              {
+                "service_id": "vigilancia-tecnologica-pi",
+                "title": "Vigilancia tecnológica y propiedad intelectual",
+                "source": "data/catalog/servicios/vigilancia-tecnologica-pi.md",
+                "content": "# Vigilancia tecnológica y propiedad intelectual\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nAcompañamos a la empresa a proteger lo que crea: búsqueda de antecedentes de marcas y patentes, estrategia de propiedad intelectual y preparación de la solicitud de **registro de marca ante la Superintendencia de Industria y Comercio (SIC)**. También hacemos vigilancia tecnológica: qué están haciendo los competidores y qué tecnologías emergen en el sector.\n\n## Cuándo aplica\n\n- Una empresa o startup quiere **registrar su marca** o proteger un producto.\n- Hay dudas sobre si un nombre o logo ya está registrado.\n- Se va a lanzar un producto nuevo y se quiere conocer el estado del arte.\n\n## Entregables\n\n1. Informe de búsqueda de antecedentes (marcas o patentes).\n2. Recomendación de estrategia de protección.\n3. Acompañamiento en la preparación de la solicitud ante la SIC.\n4. Informe de vigilancia tecnológica (si aplica).\n\n## Duración típica\n\nDe 2 a 4 semanas, sin contar los tiempos de trámite de la SIC.\n\n## Inversión\n\nEntre **COP 1.800.000 y COP 6.000.000**. **Las tasas oficiales de la SIC no están incluidas** y las paga directamente la empresa. Este servicio no reemplaza la asesoría legal de un abogado.\n\n## Ejemplos\n\n- Startup de moda sostenible que quiere registrar su marca antes de exportar.\n- Empresa que quiere saber si su proceso de producción es patentable."
+              },
+              {
+                "service_id": "diagnostico-madurez-digital-ia",
+                "title": "Diagnóstico de madurez digital y de IA para MIPYMES",
+                "source": "data/catalog/servicios/diagnostico-madurez-digital-ia.md",
+                "content": "# Diagnóstico de madurez digital y de IA para MIPYMES\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nEvaluamos qué tan preparada está la empresa para adoptar herramientas digitales e inteligencia artificial: procesos, datos, personas y tecnología. Entregamos una hoja de ruta realista con oportunidades priorizadas por impacto y esfuerzo.\n\n## Cuándo aplica\n\n- La empresa **quiere \"usar IA\"** pero no sabe dónde le serviría.\n- Es el **primer contacto** con el centro y no está claro qué servicio necesita.\n- Se quiere priorizar inversiones en tecnología.\n\n## Entregables\n\n1. Encuesta y entrevistas de diagnóstico.\n2. Informe de madurez por dimensión (procesos, datos, personas, tecnología).\n3. Hoja de ruta con 3 a 5 iniciativas priorizadas.\n\n## Duración típica\n\nDe 2 a 3 semanas.\n\n## Inversión\n\nEntre **COP 1.500.000 y COP 4.000.000**.\n\n## Ejemplos\n\n- Almacén de repuestos que quiere automatizar la atención por WhatsApp.\n- Agencia de turismo que quiere usar sus datos de reservas para planear temporadas."
+              }
+            ]
+          }
+        }
+      ],
+      "costUsd": 0.0157016,
+      "latencyMs": 58367,
+      "ttftMs": 58047,
+      "retrievalMode": "tool",
+      "retrievedSources": [
+        "data/catalog/servicios/vigilancia-tecnologica-pi.md",
+        "data/catalog/servicios/diagnostico-madurez-digital-ia.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente el servicio 'Vigilancia tecnológica y propiedad intelectual' de la línea business_innovation, con precios (COP 1.800.000–6.000.000) y plazos (2 a 4 semanas) exactos del catálogo. Atiende el problema concreto (verificar registro de marca antes de exportar), incluye entregables realistas, aclara límites (no garantiza aprobación de SIC, requiere asesoría legal) y respeta políticas de descuentos y datos. Tono profesional, cercano y bien estructurado para una MIPYME."
+  },
+  "judgeCostUsd": 0.00605
+}

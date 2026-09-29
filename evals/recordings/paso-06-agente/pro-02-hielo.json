@@ -1,0 +1,68 @@
+{
+  "caseId": "pro-02-hielo",
+  "label": "paso-06-agente",
+  "recordedAt": "2026-09-29T17:42:19.348Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v3-agente",
+  "turns": [
+    {
+      "user": "Tenemos una planta de hielo en Mamonal y la factura de energía se nos disparó. Sospechamos que desperdiciamos agua y energía en el proceso, pero no sabemos dónde.",
+      "assistant": "Gracias por contarme. Con lo que describes, ya puedo orientarte.\n\n**Línea de trabajo:** `process_design`\n\n**Servicio recomendado**\n\n**1. Producción más limpia y reducción de desperdicios**\n- Encaja porque la ficha cubre desperdicio de energía y agua. Incluso menciona el caso de una planta de hielo con consumo de energía elevado.\n- Entregables:\n  - Mapa de flujo de valor con cuantificación de desperdicios. Así se ve dónde se pierde el agua y la energía.\n  - Plan de mejora con acciones priorizadas.\n  - Ajuste de la producción a la demanda real.\n  - Medición de resultados al cierre.\n- Duración típica: de 4 a 8 semanas.\n- Inversión: entre **COP 3.500.000 y COP 12.000.000**. El rango no incluye IVA ni costos de terceros.\n- Fuente: [Producción más limpia y reducción de desperdicios](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/produccion-mas-limpia-desperdicios.md)\n\n**Opcional, para hacer seguimiento**\n\n**2. Tablero de indicadores y analítica operativa**\n- Te sirve si hoy no mides con precisión cuánto produces y consumes por día. También sirve para verificar que las mejoras se mantengan.\n- Inversión: entre **COP 4.000.000 y COP 14.000.000**. Duración típica: de 3 a 6 semanas.\n- Fuente: [Tablero de indicadores y analítica operativa](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/tablero-indicadores-analitica.md)\n\n**Alcance sugerido:** empezar por el servicio 1. Consiste en mapear el proceso completo (agua, congelación, almacenamiento y despacho), cuantificar dónde se pierde recurso y priorizar acciones. El tablero se puede sumar después si lo necesitas.\n\n**Descuentos:** existen por tamaño de empresa. Para decirte cuál te corresponde necesito saber cuántos empleados tienen. Se acredita con el certificado de existencia y representación legal.\n\n**Siguiente paso:** un coordinador revisa la pre-propuesta y te contacta en unos 2 días hábiles. Después viene una reunión de diagnóstico de 45 a 60 minutos. Esta pre-propuesta no es una oferta comercial.\n\n¿Quieres que la guarde? Si es así, dime el **nombre de la empresa**, tu **nombre como contacto** y, si quieres, un correo electrónico. Si prefieres, cuéntame también cuántos empleados son.",
+      "toolCalls": [
+        {
+          "toolName": "search_services",
+          "input": {
+            "query": "planta de hielo desperdicio de energía y agua, consumo, eficiencia del proceso"
+          }
+        }
+      ],
+      "toolResults": [
+        {
+          "toolName": "search_services",
+          "output": {
+            "results": [
+              {
+                "service_id": "produccion-mas-limpia-desperdicios",
+                "title": "Producción más limpia y reducción de desperdicios",
+                "source": "data/catalog/servicios/produccion-mas-limpia-desperdicios.md",
+                "content": "# Producción más limpia y reducción de desperdicios\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nAplicamos herramientas de manufactura esbelta (lean) y producción más limpia para reducir desperdicios de materia prima, energía y agua, y para ajustar la producción a la demanda real. Mejora la rentabilidad y la sostenibilidad del proceso.\n\n## Cuándo aplica\n\n- Hay **desperdicio de producto** (se produce más de lo que se vende, se vence o se daña).\n- Los costos de materia prima, agua o energía son altos.\n- La empresa quiere mejorar su desempeño ambiental.\n\n## Entregables\n\n1. Mapa de flujo de valor y cuantificación de desperdicios.\n2. Plan de mejora con acciones priorizadas.\n3. Ajuste de la planeación de producción a la demanda.\n4. Medición de resultados al cierre.\n\n## Duración típica\n\nDe 4 a 8 semanas.\n\n## Inversión\n\nEntre **COP 3.500.000 y COP 12.000.000**.\n\n## Ejemplos\n\n- Panadería que bota una parte de su producción al final del día.\n- Planta de hielo con consumo de energía elevado."
+              },
+              {
+                "service_id": "tablero-indicadores-analitica",
+                "title": "Tablero de indicadores y analítica operativa",
+                "source": "data/catalog/servicios/tablero-indicadores-analitica.md",
+                "content": "# Tablero de indicadores y analítica operativa\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nDefinimos los indicadores clave del negocio y construimos un tablero que se actualiza con los datos que la empresa ya tiene (ventas, inventario, producción, atención), para tomar decisiones con datos y no por intuición.\n\n## Cuándo aplica\n\n- La empresa **no sabe con precisión** cuánto vende, produce o desperdicia por día.\n- Los datos existen pero están dispersos en varias hojas de cálculo o sistemas.\n- Se quiere hacer seguimiento a una mejora (por ejemplo, después de una simulación).\n\n## Entregables\n\n1. Definición de 5 a 10 KPIs con su fórmula y fuente de datos.\n2. Tablero interactivo conectado a las fuentes.\n3. Capacitación para mantenerlo.\n\n## Duración típica\n\nDe 3 a 6 semanas.\n\n## Inversión\n\nEntre **COP 4.000.000 y COP 14.000.000**.\n\n## Ejemplos\n\n- Tablero de producción y desperdicio diario de una panadería.\n- Indicadores de tiempos de despacho de un operador logístico."
+              },
+              {
+                "service_id": "formulacion-proyectos-idi",
+                "title": "Gerencia y formulación de proyectos de innovación (I+D+i)",
+                "source": "data/catalog/servicios/formulacion-proyectos-idi.md",
+                "content": "# Gerencia y formulación de proyectos de innovación (I+D+i)\n\n> Ficha ficticia del catálogo del Centro de Innovación Caribe (demo educativa).\n\n## Descripción\n\nFormulamos proyectos de investigación, desarrollo e innovación para presentarlos a convocatorias de financiadores públicos, privados o de cooperación internacional. Si el proyecto es aprobado, podemos acompañar su gerencia: plan de trabajo, seguimiento técnico y financiero, e informes.\n\n## Cuándo aplica\n\n- La empresa o cooperativa **busca financiación** para un proyecto de innovación.\n- Hay una convocatoria abierta y no tienen experiencia formulando.\n- Ganaron recursos y necesitan apoyo para ejecutar y reportar.\n\n## Entregables\n\n1. Identificación de convocatorias pertinentes.\n2. Documento técnico del proyecto: problema, objetivos, metodología, presupuesto, cronograma e indicadores.\n3. Revisión de requisitos de la convocatoria.\n4. (Opcional) Gerencia del proyecto durante la ejecución.\n\n## Duración típica\n\nDe 3 a 8 semanas para la formulación. La gerencia se cotiza aparte según la duración del proyecto.\n\n## Inversión\n\nEntre **COP 4.000.000 y COP 15.000.000** por la formulación. La aprobación del proyecto depende del financiador y no está garantizada.\n\n## Ejemplos\n\n- Cooperativa de pescadores que busca financiación para una planta de procesamiento.\n- MIPYME que quiere cofinanciar el desarrollo de un producto nuevo."
+              }
+            ]
+          }
+        }
+      ],
+      "costUsd": 0.0169476,
+      "latencyMs": 59585,
+      "ttftMs": 58899,
+      "retrievalMode": "tool",
+      "retrievedSources": [
+        "data/catalog/servicios/produccion-mas-limpia-desperdicios.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/formulacion-proyectos-idi.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "Respuesta excelente: identifica correctamente la línea process_design y recomienda el único servicio relevante del catálogo (producción-mas-limpia-desperdicios). Todos los precios (COP 3.500.000–12.000.000), plazos (4–8 semanas) y detalles de descuentos coinciden exactamente con el catálogo. Estructura clara, cercana y profesional; evita inventar y remite correctamente a los siguientes pasos del proceso de atención."
+  },
+  "judgeCostUsd": 0.005957
+}
