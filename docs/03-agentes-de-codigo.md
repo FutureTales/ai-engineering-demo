@@ -28,6 +28,10 @@ flowchart TB
     HAR -->|resultado + preguntas| H
 ```
 
+![El harness envuelve al LLM](img/ilustraciones/harness-agente.jpg)
+
+*Ilustración generada con IA (Gemini); el diagrama de arriba es el preciso. [Cómo se hizo](ilustraciones-con-ia.md).*
+
 1. **Contexto:** qué sabe el modelo en cada momento (instrucciones del proyecto, archivos que leyó, resultados de comandos).
 2. **Herramientas:** acciones que puede pedir (leer, editar, correr comandos). El harness las ejecuta, no el modelo.
 3. **Subagentes:** otras instancias del modelo con un contexto limpio y una tarea acotada, que devuelven solo su conclusión.

@@ -9,6 +9,10 @@ Que el copiloto **actúe**: que busque en el catálogo cuando lo necesite, que *
 
 > **El LLM no calcula: decide cuándo llamar a una herramienta que sí calcula.**
 
+![El LLM decide, la herramienta calcula](../img/ilustraciones/llm-no-calcula.jpg)
+
+*Ilustración generada con IA (Gemini). [Cómo se hizo](../ilustraciones-con-ia.md).*
+
 ## Qué construimos
 
 | Pieza | Dónde |

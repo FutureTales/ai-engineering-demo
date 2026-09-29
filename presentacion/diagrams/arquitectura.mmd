@@ -1,0 +1,12 @@
+flowchart LR
+    U([MIPYME<br/>celular / web]) --> UI["/copilot<br/>Next.js en Vercel"]
+    S([Coordinador]) --> PANEL["/panel<br/>login + RLS"]
+    UI --> API[API /api/chat<br/>guardrails · rate limit]
+    API --> AG{{Agente<br/>Claude Sonnet 5.5}}
+    AG -->|search_services| RAG[RAG híbrido<br/>Voyage + FTS · RRF]
+    AG -->|simulate_queue| SIM[Simulación<br/>Erlang C + eventos discretos]
+    AG -->|create_request<br/>con aprobación| DB
+    RAG --> DB[(Supabase<br/>Postgres + pgvector)]
+    API -->|telemetría| DB
+    PANEL --> DB
+    EV[Evals<br/>30 casos + juez] -.mide.-> AG

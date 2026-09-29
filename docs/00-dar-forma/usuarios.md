@@ -2,6 +2,10 @@
 
 > **Aviso:** las personas y las entrevistas de este documento son **simuladas**. Se escribieron para enseñar la técnica, no provienen de entrevistas reales. En un proyecto real, este paso se hace con usuarios de verdad antes de escribir código.
 
+![Marcela y Andrés, personas ficticias](../img/ilustraciones/personas.jpg)
+
+*Ilustración generada con IA (Gemini). Personajes ficticios. [Cómo se hizo](../ilustraciones-con-ia.md).*
+
 ## Persona 1: Marcela, dueña de MIPYME
 
 | | |

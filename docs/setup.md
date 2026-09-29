@@ -57,11 +57,14 @@ Copia a `.env.local`:
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY=` la clave `anon`
 - `SUPABASE_SERVICE_ROLE_KEY=` la clave `service_role` (**secreta**)
 - `STAFF_EMAILS=` tu correo (para entrar a `/panel`)
+- `TOOL_APPROVAL_SECRET=` y `RATE_LIMIT_SALT=`: secretos aleatorios (`openssl rand -hex 32`) para firmar las aprobaciones y anonimizar las IP
 
 Carga los datos ficticios:
 
 ```bash
 pnpm seed      # → Seeded remote: 10 services, 6 demo requests, 1 staff emails
+pnpm ingest    # → 13 documents · 71 chunks (catálogo para la búsqueda)
+pnpm tsx scripts/create-staff-users.mts   # cuentas del personal (el registro público está desactivado)
 ```
 
 ### 4. Correr localmente
