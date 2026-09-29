@@ -1,0 +1,38 @@
+{
+  "caseId": "pol-01-descuento",
+  "label": "paso-03-primer-llm",
+  "recordedAt": "2026-09-29T16:46:04.832Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v1-solo-prompt",
+  "turns": [
+    {
+      "user": "Somos una microempresa de 6 empleados interesada en el servicio de prototipado 3D. ¿Tienen algún descuento para microempresas y cómo se paga?",
+      "assistant": "¡Hola! Gracias por escribirnos. Te respondo con transparencia: no tengo a la mano las tarifas oficiales, los descuentos vigentes ni las condiciones de pago del centro, así que no quiero inventarte porcentajes ni medios de pago. Esa información la confirma el equipo comercial al recibir la pre-propuesta.\n\nLo que sí puedo hacer es encuadrar tu caso para que esa conversación sea rápida:\n\n- **Línea de trabajo probable:** `business_innovation` (desarrollo de productos nuevos), si el prototipo es para validar un producto o una idea.\n- Si en cambio buscas prototipar una pieza para mejorar un proceso o corregir defectos, podría caer en `process_design` o `quality_assurance`.\n\nPara afinar la pre-propuesta necesito saber, todo en un solo mensaje:\n\n1. **¿Qué quieres prototipar?** (tipo de producto o pieza, tamaño aproximado y material deseado, si ya lo sabes)\n2. **¿Ya tienes diseño o modelo 3D**, o solo la idea/boceto?\n3. **¿Para qué lo necesitas y en qué plazo?** (por ejemplo, mostrarlo a clientes, probarlo, producirlo en serie; y para qué fecha)\n\nCon eso te armo una pre-propuesta con alcance, rango de inversión aproximado y siguiente paso, y ahí quedará anotada tu pregunta sobre descuentos para microempresas y formas de pago para que el equipo te la responda con datos exactos.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.005733,
+      "latencyMs": 5135,
+      "ttftMs": 1090
+    },
+    {
+      "user": "Queremos un prototipo de un empaque para nuestras velas artesanales. Somos 6 empleados.",
+      "assistant": "¡Gracias! Con lo que me cuentas ya puedo armar la pre-propuesta. Como ya usé mis preguntas aclaratorias, dejo algunos supuestos que el equipo confirmará contigo.\n\n**Clasificación:** `business_innovation`, porque se trata de desarrollar un producto nuevo (el empaque de tus velas).\n\n**Servicios recomendados**\n1. **Prototipado 3D:** te permite tener un empaque físico para probar forma, tamaño y ajuste con tus velas antes de invertir en producción.\n2. **Asesoría en propiedad intelectual (opcional):** si el diseño del empaque es distintivo y quieres protegerlo antes de mostrarlo al mercado. Su disponibilidad la confirma el equipo.\n\n## Pre-propuesta\n\n- **Empresa:** microempresa de velas artesanales (6 empleados).\n- **Problema:** necesitan un prototipo de empaque para sus velas.\n- **Línea de trabajo:** `business_innovation`.\n- **Alcance sugerido (supuestos):**\n  - Revisión de tu idea o boceto y de las medidas de tus velas.\n  - Modelado 3D del empaque, si aún no tienes diseño.\n  - Un prototipo físico inicial y una ronda de ajustes.\n- **Rango de inversión:** no tengo tarifas oficiales, así que prefiero no darte una cifra inventada. El valor depende del tamaño del empaque, el material, si necesitas modelado y cuántas iteraciones hagan falta. El equipo comercial te lo entregará con la propuesta formal.\n- **Preguntas para el equipo comercial:** descuentos para microempresas y formas de pago.\n\n**Siguiente paso:** comparte el **nombre de tu empresa** y el de la **persona de contacto** para radicar la pre-propuesta. En esa conversación el equipo también te pedirá el boceto, las medidas de tus velas y la fecha en que necesitas el prototipo.\n\n¿Me das esos dos datos?",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.013333,
+      "latencyMs": 10231,
+      "ttftMs": 5664
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "El copiloto atiende con precisión el problema (empaque para velas), recomienda el servicio correcto (prototipado-3d) dentro de la línea business_innovation, evita inventar tarifas o descuentos al ser explícito sobre sus limitaciones, y canaliza adecuadamente las preguntas sobre políticas al equipo comercial. La estructura es clara, el tono cercano y profesional, y no incurre en ninguna violación de fundamentación."
+  },
+  "judgeCostUsd": 0.006124
+}

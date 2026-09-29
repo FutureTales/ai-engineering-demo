@@ -11,7 +11,8 @@
     "test": "vitest run",
     "format": "prettier --write .",
     "seed": "tsx scripts/seed.ts",
-    "check:mermaid": "scripts/check-mermaid.sh"
+    "check:mermaid": "scripts/check-mermaid.sh",
+    "eval": "tsx evals/run.ts"
   },
   "dependencies": {
     "@ai-sdk/anthropic": "^4.0.68",

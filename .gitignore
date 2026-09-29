@@ -38,3 +38,6 @@ coverage/
 
 # claude code personal settings (project settings.json IS versioned)
 .claude/settings.local.json
+
+# eval mock runs are reproducible from recordings; only live results are versioned
+evals/results/*-mock.json

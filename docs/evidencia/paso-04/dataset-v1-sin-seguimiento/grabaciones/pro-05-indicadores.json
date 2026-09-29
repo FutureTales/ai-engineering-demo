@@ -1,0 +1,28 @@
+{
+  "caseId": "pro-05-indicadores",
+  "label": "paso-03-primer-llm",
+  "recordedAt": "2026-09-29T16:42:12.493Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v1-solo-prompt",
+  "turns": [
+    {
+      "user": "Tengo una fábrica pequeña de arepas congeladas. No sé con precisión cuánto produzco, vendo y desperdicio por día; los datos están regados en varias hojas de Excel. Quiero tomar decisiones con datos.",
+      "assistant": "¡Hola! Gracias por contarme. Tu caso es muy común: tienes datos, pero están dispersos y no te dan una visión clara. Para armarte una pre-propuesta a la medida, necesito aclarar tres cosas:\n\n1. **Tamaño:** ¿cuántas personas trabajan en la fábrica y aproximadamente cuántas arepas (o kilos) produces en una semana normal?\n2. **Datos:** ¿qué registras hoy en esas hojas de Excel (producción, ventas, desperdicio, inventario) y quién las llena: una persona o varias?\n3. **Objetivo:** ¿qué decisión te gustaría poder tomar primero con datos (por ejemplo, cuánto producir cada día, reducir desperdicio o controlar inventario)?\n\nCon eso te clasifico el caso, te recomiendo servicios y te dejo la pre-propuesta con rango de inversión.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.003511,
+      "latencyMs": 3252,
+      "ttftMs": 963
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "El copiloto entiende perfectamente el problema (datos dispersos, toma de decisiones) y dirige la conversación hacia la línea correcta (process_design) sin recomendar servicios aún. Hace preguntas diagnósticas relevantes y pertinentes. No inventa servicios, precios ni plazos, y mantiene un tono cercano y profesional. La estructura es clara y fácil de seguir en móvil."
+  },
+  "judgeCostUsd": 0.005009
+}

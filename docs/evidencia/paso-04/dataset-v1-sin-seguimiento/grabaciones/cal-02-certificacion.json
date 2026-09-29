@@ -1,0 +1,28 @@
+{
+  "caseId": "cal-02-certificacion",
+  "label": "paso-03-primer-llm",
+  "recordedAt": "2026-09-29T16:42:19.668Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v1-solo-prompt",
+  "turns": [
+    {
+      "user": "Hacemos salsas y encurtidos. Una cadena de supermercados quiere comprarnos, pero nos exige cumplir estándares de calidad y más adelante ISO 9001. Hoy no tenemos procedimientos escritos.",
+      "assistant": "¡Qué buena noticia que una cadena de supermercados quiera venderles! Ya con lo que cuentas puedo encuadrar el caso, pero antes necesito tres datos para darte una pre-propuesta ajustada:\n\n1. **¿Cuántas personas trabajan en la empresa** y cuántas están en producción?\n2. **¿Qué estándar te pidió el supermercado ahora mismo?** (por ejemplo, buenas prácticas de manufactura, registro sanitario INVIMA vigente, fichas técnicas) y si tienen fecha límite.\n3. **¿Cuentan hoy con registro sanitario y algún control básico** (por ejemplo, registros de temperatura, limpieza o lotes), aunque sea informal?\n\nCon eso te clasifico el caso, te recomiendo servicios y te armo la pre-propuesta con alcance y rango de inversión.\n\n**Adelanto:** por lo que describes, esto encaja en la línea de **Aseguramiento de la calidad** (`quality_assurance`), porque el punto central es documentar procedimientos y prepararse para estándares y certificación.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.004191,
+      "latencyMs": 4540,
+      "ttftMs": 1339
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende directamente el problema (preparación para estándares de calidad e ISO 9001) y clasifica correctamente la línea quality_assurance sin mencionar servicios específicos aún. Hace preguntas diagnósticas pertinentes y necesarias antes de recomendar servicios, lo que respeta el proceso de atención del centro. No inventa precios ni servicios: es prudente y mantiene un tono cercano y profesional."
+  },
+  "judgeCostUsd": 0.005008
+}

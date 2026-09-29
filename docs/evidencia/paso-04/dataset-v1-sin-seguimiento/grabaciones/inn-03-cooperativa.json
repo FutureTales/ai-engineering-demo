@@ -1,0 +1,28 @@
+{
+  "caseId": "inn-03-cooperativa",
+  "label": "paso-03-primer-llm",
+  "recordedAt": "2026-09-29T16:42:34.135Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v1-solo-prompt",
+  "turns": [
+    {
+      "user": "Somos una cooperativa de 45 pescadores en Bocachica. Queremos montar un centro de acopio con cadena de frío y buscar financiación, pero nunca hemos presentado un proyecto a una convocatoria.",
+      "assistant": "¡Qué buen proyecto! Un centro de acopio con cadena de frío puede ayudarles a mejorar la calidad del pescado, reducir pérdidas y negociar mejores precios.\n\nCon lo que me cuentas ya puedo encuadrar el caso, pero necesito precisar tres cosas para armar bien la pre-propuesta:\n\n1. **¿En qué punto está la idea?** Por ejemplo: ¿ya tienen lote o local, cotizaciones de equipos, o estudio de cuánto pescado manejarían? ¿O apenas es una idea?\n2. **¿Están formalizados como cooperativa?** (registro en Cámara de Comercio y RUT al día). No necesito números de documento, solo un sí o un no.\n3. **¿Tienen en mente alguna convocatoria o fuente de recursos**, o quieren que los ayudemos a identificar opciones? ¿Y podrían aportar una contrapartida (dinero, terreno, trabajo)?\n\nCon tus respuestas te cierro la clasificación, los servicios recomendados y el rango de inversión.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.004091,
+      "latencyMs": 4450,
+      "ttftMs": 1290
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "El copiloto identifica correctamente la línea (business_innovation) y el servicio clave (formulación de proyectos de I+D+i) sin nombrarlo aún, lo que es apropiado en esta etapa de diagnóstico. Hace preguntas pertinentes y estructuradas que permiten afinar el alcance. No menciona precios ni plazos prematuramente, respeta la política de pre-propuesta (no compromete), y el tono es cercano, profesional y adaptado al contexto de una cooperativa de pescadores. Evita jerga innecesaria."
+  },
+  "judgeCostUsd": 0.005235
+}

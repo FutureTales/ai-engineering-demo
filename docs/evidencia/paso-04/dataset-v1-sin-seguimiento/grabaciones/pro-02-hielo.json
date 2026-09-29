@@ -1,0 +1,28 @@
+{
+  "caseId": "pro-02-hielo",
+  "label": "paso-03-primer-llm",
+  "recordedAt": "2026-09-29T16:42:06.584Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v1-solo-prompt",
+  "turns": [
+    {
+      "user": "Tenemos una planta de hielo en Mamonal y la factura de energía se nos disparó. Sospechamos que desperdiciamos agua y energía en el proceso, pero no sabemos dónde.",
+      "assistant": "Gracias por contarme. Suena a un caso de **eficiencia en el uso de agua y energía**, y con unos datos más puedo darte una pre-propuesta ajustada. Te hago tres preguntas:\n\n1. **Tamaño:** ¿cuántas personas trabajan en la planta y cuántas toneladas (o bloques/bolsas) de hielo producen al día, más o menos?\n2. **Qué cambió:** ¿desde cuándo se disparó la factura y de cuánto fue el aumento (por ejemplo, de $8 a $12 millones al mes)? ¿Hubo cambios recientes, como equipos nuevos, más turnos o más producción?\n3. **Medición:** ¿tienen medidores por área o equipo (compresores, cuartos fríos, bombas), o solo el medidor general de energía y agua?\n\nCon eso te clasifico el caso, te recomiendo los servicios del centro y te armo la pre-propuesta con alcance y rango de inversión.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.003705,
+      "latencyMs": 3840,
+      "ttftMs": 1114
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "El copiloto identifica correctamente el problema (eficiencia energética y de agua) sin recomendar servicios todavía, solo recopila información diagnóstica pertinente. Hace preguntas bien estructuradas (tamaño, contexto del cambio, infraestructura de medición) que son necesarias antes de sugerir un servicio. No inventa precios ni plazos. El tono es cercano, profesional y respetuoso. Respuesta clara, breve y sin promesas infundadas."
+  },
+  "judgeCostUsd": 0.005141
+}

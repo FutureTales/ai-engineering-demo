@@ -1,0 +1,28 @@
+{
+  "caseId": "pro-06-kpis",
+  "label": "paso-03-primer-llm",
+  "recordedAt": "2026-09-29T16:42:16.872Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v1-solo-prompt",
+  "turns": [
+    {
+      "user": "Ya mejoramos el proceso de despacho en nuestra bodega y ahora queremos medir si funcionó: tiempos de despacho, pedidos a tiempo y errores. ¿Qué nos sirve?",
+      "assistant": "¡Qué bueno que ya hicieron la mejora! Medir el resultado es lo que permite saber si valió la pena y sostenerla en el tiempo.\n\nAntes de recomendarte servicios concretos, necesito entender mejor tu caso. ¿Me cuentas?\n\n1. **Tamaño y operación:** ¿cuántas personas trabajan en la bodega y más o menos cuántos pedidos despachan por día o semana?\n2. **Punto de partida:** ¿tienen datos de cómo estaban antes de la mejora (por ejemplo, tiempo promedio de despacho o % de errores), aunque sean aproximados?\n3. **Cómo registran hoy:** ¿llevan los datos en papel, Excel o algún sistema?\n\nCon eso te clasifico el caso, te recomiendo servicios y te armo la pre-propuesta.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.003275,
+      "latencyMs": 3467,
+      "ttftMs": 946
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "El copiloto entiende el problema (necesidad de medir resultados de una mejora en despacho) y responde con pertinencia sin recomendar servicios prematuramente. Obtiene información clave para clasificar el caso correctamente antes de proponer soluciones. No inventa servicios ni precios, es claro y bien estructurado en celular, y mantiene un tono cercano, profesional y sin promesas exageradas. Cumple el proceso de diagnóstico del centro."
+  },
+  "judgeCostUsd": 0.005044
+}

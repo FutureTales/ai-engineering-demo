@@ -1,0 +1,26 @@
+{
+  "caseId": "sim-01-hotel",
+  "label": "smoke-test",
+  "recordedAt": "2026-09-29T16:39:40.524Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v1-solo-prompt",
+  "turns": [
+    {
+      "user": "Tengo un hotel boutique de 24 habitaciones en Getsemaní, el Hotel Brisas de Getsemaní. En temporada alta (diciembre y enero) se forman filas de hasta 40 minutos en el check-in entre las 2 y las 5 de la tarde. Tenemos 2 recepcionistas. Llegan unos 18 huéspedes por hora en el pico y cada check-in toma unos 6 minutos. Los huéspedes se quejan en las reseñas. ¿Qué me recomiendan?",
+      "assistant": "¡Gracias por los datos, con eso alcanza para un diagnóstico inicial!\n\n## Lo que está pasando\n- Llegan **18 huéspedes/hora** y cada check-in toma **6 min**: son **108 minutos de trabajo por hora**.\n- Tus 2 recepcionistas dan **120 minutos de capacidad por hora**, o sea que trabajan al **~90 %** sin margen.\n- Con ese nivel de uso, cualquier pico o interrupción (una llamada, una pregunta larga) hace que la fila crezca rápido y tarde en bajar.\n\nNo es que falte \"un poco de esfuerzo\": el proceso está al límite de su capacidad.\n\n## Clasificación\n**Línea de trabajo: `process_design`** (Diseño, mejora y sostenibilidad de procesos), porque el problema es una fila causada por un cuello de botella en el check-in.\n\n## Servicios recomendados\n1. **Diagnóstico y rediseño del proceso de check-in.** Medimos los tiempos reales, separamos qué pasos se pueden hacer antes o en paralelo y ajustamos turnos para el pico. Meta: bajar de 6 a ~4 min por huésped, lo que dejaría el uso en ~60 %.\n2. **Digitalización del pre-check-in.** El huésped llena sus datos y confirma su reserva por WhatsApp o un formulario antes de llegar, así en recepción solo se verifica y se entrega la llave. Esto ataca directamente los minutos más largos del proceso.\n\n## Pre-propuesta\n- **Empresa:** Hotel Brisas de Getsemaní (24 habitaciones)\n- **Problema:** filas de hasta 40 min en check-in (2–5 p. m.) en temporada alta, con quejas en reseñas.\n- **Línea de trabajo:** `process_design`\n- **Servicios:** rediseño del proceso de check-in + pre-check-in digital.\n- **Alcance sugerido:**\n  - Observación y medición del check-in (1–2 jornadas).\n  - Rediseño del flujo y refuerzo de turnos en el pico.\n  - Implementación y prueba del pre-check-in digital.\n  - Indicadores para medir la mejora (tiempo de espera y reseñas).\n- **Inversión aproximada (referencial):** entre **COP 6 y 12 millones**, según la herramienta digital que elijas. Se confirma en la propuesta formal.\n- **Tiempo estimado:** 4 a 6 semanas. Conviene empezar antes de la próxima temporada alta.\n\n## Siguiente paso\nDime el **nombre de la persona de contacto** del hotel y el mejor horario para una visita corta de diagnóstico, y dejo lista la solicitud para el equipo del centro.\n\n*Recuerda que esto es una demo educativa: el centro, los servicios y los precios son ficticios.*",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0174715,
+      "latencyMs": 12798,
+      "ttftMs": 5636
+    }
+  ],
+  "judge": {
+    "pertinencia": 5,
+    "fundamentacion": 4,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende el problema concreto (filas largas en check-in) y diagnostica bien la causa (capacidad al 90%). Recomienda servicios alineados con la línea process_design esperada. Fundamentación: usa datos del catálogo (rangos de inversión, tiempos) pero sugiere 'rediseño del proceso' y 'pre-check-in digital' sin citar explícitamente a 'simulacion-operaciones', que hubiera sido más directo (es el servicio del catálogo que mejor encaja para un 'análisis what if' de filas y capacidad). Claridad excelente: legible, bien estructurada, concreta. Tono profesional, cercano y sin promesas exageradas."
+  },
+  "judgeCostUsd": 0.005199
+}

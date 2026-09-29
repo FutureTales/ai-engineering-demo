@@ -1,0 +1,31 @@
+{
+  "caseId": "sim-01-hotel",
+  "label": "paso-03-primer-llm",
+  "recordedAt": "2026-09-29T16:44:37.284Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v1-solo-prompt",
+  "turns": [
+    {
+      "user": "Tengo un hotel boutique de 24 habitaciones en Getsemaní, el Hotel Brisas de Getsemaní. En temporada alta (diciembre y enero) se forman filas de hasta 40 minutos en el check-in entre las 2 y las 5 de la tarde. Tenemos 2 recepcionistas. Llegan unos 18 huéspedes por hora en el pico y cada check-in toma unos 6 minutos. Los huéspedes se quejan en las reseñas. ¿Qué me recomiendan?",
+      "assistant": "¡Gracias por los detalles, con eso ya puedo orientarte sin más preguntas!\n\n## Diagnóstico\nCon tus números, el cuello de botella se ve claro:\n\n- Llegan **18 huéspedes/hora** y cada check-in toma **6 minutos**.\n- Cada recepcionista atiende unos **10 por hora**, así que las 2 juntas atienden unos **20 por hora**.\n- Están casi al límite (**~90% de ocupación**). En ese punto, cualquier retraso (una consulta larga, una llamada, un pago con problemas) hace crecer la fila muy rápido.\n\nPor eso la fila llega a 40 minutos aunque en el papel \"alcance\" la capacidad.\n\n## Línea de trabajo\n**`process_design`**: Diseño, mejora y sostenibilidad de procesos. Se trata de filas, capacidad y cuellos de botella.\n\n## Servicios recomendados\n1. **Diagnóstico y rediseño del proceso de check-in.** Medimos el proceso paso a paso y detectamos qué se puede quitar, mover o hacer en paralelo. Lo más probable es que podamos bajar de 6 a 3-4 minutos.\n2. **Digitalización del pre-check-in.** Los huéspedes llenan datos y documentos antes de llegar (por WhatsApp o un formulario web), y en recepción solo se confirma y se entrega la llave. Es lo que más impacto suele tener en filas.\n\n## Pre-propuesta\n\n- **Empresa:** Hotel Brisas de Getsemaní\n- **Problema:** Filas de hasta 40 min en el check-in (2-5 p. m.) en temporada alta, con quejas en reseñas.\n- **Línea de trabajo:** `process_design`\n- **Servicios:** Rediseño del proceso de check-in + pre-check-in digital.\n- **Alcance sugerido:**\n  - Observación y medición de tiempos en recepción (1-2 días).\n  - Mapa del proceso actual y propuesta del nuevo.\n  - Formulario de pre-check-in y guion de mensajes a huéspedes.\n  - Capacitación al equipo de recepción.\n  - Seguimiento de resultados en las primeras semanas.\n- **Duración estimada:** 4 a 6 semanas. Conviene arrancar pronto para tenerlo listo antes de diciembre.\n- **Inversión aproximada:** entre **COP 6 y 12 millones**, según el nivel de digitalización que elijas. *(Es un rango de referencia de esta demo, no una cotización.)*\n- **Meta razonable:** reducir la espera a menos de 10 minutos en el pico.\n\n## Siguiente paso\nPara que un asesor del centro te contacte y agende la visita de medición, solo necesito el **nombre de la persona de contacto**. ¿Me lo compartes?",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.010381,
+      "latencyMs": 8527,
+      "ttftMs": 1474
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [
+      "COP 6 y 12 millones"
+    ],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 2,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende el problema con precisión y recomienda un servicio que existe (simulacion-operaciones está en la línea process_design). Sin embargo, cita un rango de inversión 'COP 6 a 12 millones' que no coincide con el catálogo (COP 8.000.000–25.000.000 para simulacion-operaciones). Además, afirma resultados específicos ('bajar de 6 a 3-4 minutos', 'reducir la espera a menos de 10 minutos') sin una simulación que los respalde, lo que reduce la fundamentación a 2. El tono, claridad y pertinencia son excelentes."
+  },
+  "judgeCostUsd": 0.006356
+}

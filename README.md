@@ -12,5 +12,6 @@ Este repositorio se construye paso a paso. Cada paso es un tag de git (`git chec
 | 01 | `paso-01-entorno-agente` | 3 Agentes de código | [paso-01-entorno-agente.md](docs/pasos/paso-01-entorno-agente.md) |
 | 02 | `paso-02-arquitectura-datos` | 2 Fundamentos de software | [paso-02-arquitectura-datos.md](docs/pasos/paso-02-arquitectura-datos.md) |
 | 03 | `paso-03-primer-llm` | 1 Construir apps de IA | [paso-03-primer-llm.md](docs/pasos/paso-03-primer-llm.md) |
+| 04 | `paso-04-evals` | 1 Construir apps de IA | [paso-04-evals.md](docs/pasos/paso-04-evals.md) |
 
 *La portada completa (app en vivo, QR, diagrama de pilares y cómo correrlo) se escribe en los pasos siguientes.*

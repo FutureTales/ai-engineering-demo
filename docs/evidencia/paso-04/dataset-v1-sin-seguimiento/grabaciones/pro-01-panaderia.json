@@ -1,0 +1,43 @@
+{
+  "caseId": "pro-01-panaderia",
+  "label": "paso-03-primer-llm",
+  "recordedAt": "2026-09-29T16:42:14.944Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v1-solo-prompt",
+  "turns": [
+    {
+      "user": "Tengo una panadería con tres sedes en Turbaco y al final del día botamos mucho pan porque producimos siempre la misma cantidad.",
+      "assistant": "Gracias por contarme. Ya entiendo el problema: producen una cantidad fija todos los días y les sobra pan al cierre. Para armarte una buena propuesta necesito saber tres cosas:\n\n1. **¿Cuánto pan sobra aproximadamente?** Por ejemplo, un porcentaje de lo producido o unidades por sede al día.\n2. **¿Llevan algún registro de ventas y sobrantes?** Puede ser cuaderno, Excel o un sistema de caja (POS), y si es por sede o por tipo de pan.\n3. **¿Producen en un solo lugar y reparten a las sedes, o cada sede hornea por su cuenta?**\n\nCon eso te digo en qué línea del centro encaja tu caso y te dejo una pre-propuesta con alcance y rango de inversión.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.003097,
+      "latencyMs": 3408,
+      "ttftMs": 876
+    },
+    {
+      "user": "Somos 14 empleados. Producimos unos 2.000 panes al día entre las tres sedes y botamos más o menos el 15 %. Los lunes y martes es cuando más sobra. No llevamos registro de ventas por día.",
+      "assistant": "Con eso ya tengo lo necesario. Tus 2.000 panes diarios con 15 % de sobrante son unos **300 panes botados al día**, cerca de 9.000 al mes. Que sobre más los lunes y martes indica que la producción no se ajusta a la demanda de cada día.\n\n## Línea de trabajo\n**Diseño, mejora y sostenibilidad de procesos** (`process_design`), porque el problema es de desperdicio y de planeación de la producción.\n\n## Servicios recomendados\n1. **Diagnóstico de desperdicio y demanda.** Durante unas semanas se registran ventas y sobrantes por sede, día y tipo de pan. Hoy no tienen ese dato, y sin él cualquier ajuste sería a ciegas.\n2. **Plan de producción según demanda.** Con esos datos se define cuánto producir cada día de la semana en cada sede. Se pueden incluir hornadas escalonadas y ideas para el sobrante de lunes y martes, como promociones de cierre o aprovechamiento del pan.\n\n## Pre-propuesta\n- **Problema:** panadería con 3 sedes en Turbaco y 14 empleados. Producen cantidades fijas y botan cerca del 15 % (unos 300 panes al día), sobre todo lunes y martes.\n- **Línea:** diseño, mejora y sostenibilidad de procesos.\n- **Servicios:** diagnóstico de desperdicio y demanda, y plan de producción según demanda.\n- **Alcance sugerido:**\n  - Formato simple de registro diario por sede (papel o Excel).\n  - 3 a 4 semanas de toma de datos.\n  - Análisis por día y tipo de pan.\n  - Plan de producción semanal y capacitación al equipo.\n  - Seguimiento de resultados con una meta inicial de reducir el sobrante a la mitad.\n- **Inversión aproximada:** entre **COP 5 y 9 millones**, en unas 8 semanas. Es un estimado de la demo y se ajusta tras hablar con ustedes.\n- **Supuesto:** no sé si producen en un solo lugar o cada sede hornea por su cuenta. Eso se confirma en la primera reunión y puede cambiar un poco el plan.\n\n## Siguiente paso\nPara que el equipo del centro te contacte, dime el **nombre de la panadería** y el **nombre de la persona de contacto**.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.014677,
+      "latencyMs": 11500,
+      "ttftMs": 5668
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [
+      "Diagnóstico de desperdicio y demanda",
+      "Plan de producción según demanda"
+    ],
+    "precios_o_plazos_no_respaldados": [
+      "COP 5 y 9 millones",
+      "8 semanas"
+    ],
+    "pertinencia": 5,
+    "fundamentacion": 2,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende el problema concreto con pertinencia excelente e identifica correctamente la línea process_design. Sin embargo, inventa dos servicios que no están en el catálogo ('Diagnóstico de desperdicio y demanda' y 'Plan de producción según demanda') y propone un rango de precio (COP 5–9 millones) y plazo (8 semanas) que no coinciden con ningún servicio del catálogo. Los servicios reales aplicables son 'produccion-mas-limpia-desperdicios' (COP 3,5–12 millones; 4–8 semanas) y 'tablero-indicadores-analitica' (COP 4–14 millones; 3–6 semanas), que no se mencionan. Por la regla dura, fundamentacion ≤ 2."
+  },
+  "judgeCostUsd": 0.00638
+}

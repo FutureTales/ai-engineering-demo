@@ -1,0 +1,28 @@
+{
+  "caseId": "pro-03-facturacion",
+  "label": "paso-03-primer-llm",
+  "recordedAt": "2026-09-29T16:42:10.410Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v1-solo-prompt",
+  "turns": [
+    {
+      "user": "En mi distribuidora de productos de aseo todo se maneja por WhatsApp y un cuaderno: pedidos, facturas e inventario. Se nos pierden pedidos y facturamos tarde. Somos 8 personas.",
+      "assistant": "Gracias por contarme, el problema se entiende bien: cuando los pedidos, las facturas y el inventario viven en chats y un cuaderno, es fácil que algo se pierda y que facturar se retrase.\n\nPara armarte una pre-propuesta ajustada, respóndeme estas 3 preguntas:\n\n1. **¿Cuántos pedidos manejan al día o a la semana**, más o menos, y por cuántos canales llegan (solo WhatsApp o también llamadas, visitas de vendedores)?\n2. **¿Cómo facturan hoy?** ¿Usan algún programa de facturación electrónica o contable, o lo hacen a mano o en Excel?\n3. **¿Cuánto les afecta?** Por ejemplo, cuántos pedidos se pierden al mes o cuántos días se demora una factura.\n\nCon eso te digo en qué línea de trabajo encaja tu caso, qué servicios te recomiendo y un rango de inversión.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.007905,
+      "latencyMs": 7588,
+      "ttftMs": 4929
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "El copiloto identifica correctamente el problema de falta de digitalización en procesos administrativos (pedidos, facturas, inventario). Responde de forma cercana y profesional, sin prometer nada aún. Formul preguntas diagnósticas relevantes y pertinentes para calibrar la solución, sin inventar servicios ni precios. La estructura es clara y adaptada al celular. Tono natural y respetuoso."
+  },
+  "judgeCostUsd": 0.005006
+}

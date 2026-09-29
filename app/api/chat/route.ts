@@ -1,10 +1,9 @@
-import { anthropic } from "@ai-sdk/anthropic";
 import { convertToModelMessages, createUIMessageStreamResponse, streamText, toUIMessageStream } from "ai";
 import { after } from "next/server";
 import { z } from "zod";
 import type { CopilotUIMessage, TurnMetadata } from "@/lib/ai/metadata";
-import { estimateCostUsd, MODELS, toUsageBreakdown } from "@/lib/ai/models";
-import { PROMPT_VERSION, SYSTEM_PROMPT } from "@/lib/ai/prompts";
+import { COPILOT_MODEL, copilotStreamOptions, PROMPT_VERSION } from "@/lib/ai/copilot";
+import { estimateCostUsd, toUsageBreakdown } from "@/lib/ai/models";
 import { logInteraction, type InteractionRecord } from "@/lib/telemetry/log-interaction";
 
 export const maxDuration = 60;
@@ -39,7 +38,7 @@ export async function POST(req: Request) {
     );
   }
 
-  const model = MODELS.agent;
+  const model = COPILOT_MODEL;
   const startedAt = Date.now();
   let firstTokenAt: number | null = null;
 
@@ -49,16 +48,8 @@ export async function POST(req: Request) {
   after(async () => logInteraction(await telemetry));
 
   const result = streamText({
-    model: anthropic(model),
-    maxOutputTokens: 4000,
-    instructions: {
-      role: "system",
-      content: SYSTEM_PROMPT,
-      // Prompt caching: the system prompt is identical on every request.
-      providerOptions: { anthropic: { cacheControl: { type: "ephemeral" } } },
-    },
+    ...copilotStreamOptions(),
     messages: await convertToModelMessages(messages),
-    providerOptions: { anthropic: { effort: "low" } },
     onFinish: ({ totalUsage }) => {
       const usage = toUsageBreakdown(totalUsage);
       const latencyMs = Date.now() - startedAt;

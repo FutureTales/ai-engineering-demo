@@ -1,0 +1,28 @@
+{
+  "caseId": "cal-01-confecciones",
+  "label": "paso-03-primer-llm",
+  "recordedAt": "2026-09-29T16:42:18.425Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v1-solo-prompt",
+  "turns": [
+    {
+      "user": "Tengo un taller de confecciones con 30 operarias. Un cliente grande nos devolvió un lote porque muchas prendas tenían costuras torcidas y medidas fuera de tolerancia. Los defectos cambian mucho entre turnos.",
+      "assistant": "Gracias por contarme, y siento lo del lote devuelto. Con lo que describes ya puedo encuadrar el caso.\n\n**Clasificación:** `quality_assurance` (Aseguramiento de la calidad). Los defectos de costura y medidas, y sobre todo que varíen entre turnos, suelen indicar que no hay un estándar y un control de calidad único que todas sigan.\n\nPara afinar la propuesta, necesito tres datos (respóndelos juntos si puedes):\n\n1. **¿Cuántos turnos** manejan y cuántas operarias hay en cada uno?\n2. **¿Qué control de calidad hacen hoy?** (por ejemplo, revisión al final, en la línea, con fichas técnicas o patrones de medidas, o ninguno formal)\n3. **¿Qué tan grande fue el lote devuelto** y qué pidió el cliente para seguir comprándote (plazo, informe de corrección, certificación)?\n\nCon eso te armo la pre-propuesta con servicios, alcance y rango de inversión.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.003939,
+      "latencyMs": 4106,
+      "ttftMs": 1022
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente la línea quality_assurance y el problema (falta de estándar y control de calidad). No menciona servicios específicos aún, así que no hay inventos. Las preguntas de diagnóstico son pertinentes, claras y profesionales, demostrando comprensión del caso sin prometer más de lo que puede. El tono es cercano y empático sin ser exagerado."
+  },
+  "judgeCostUsd": 0.005014
+}

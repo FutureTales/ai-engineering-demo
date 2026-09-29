@@ -1,0 +1,29 @@
+{
+  "caseId": "cal-04-procedimiento",
+  "label": "paso-03-primer-llm",
+  "recordedAt": "2026-09-29T16:45:16.143Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v1-solo-prompt",
+  "turns": [
+    {
+      "user": "En mi fábrica de muebles los operarios nuevos no siguen el procedimiento estándar de corte y se dañan muchas láminas. Capacitar en la máquina real es costoso. ¿Hay otra forma de entrenarlos?",
+      "assistant": "¡Sí, hay alternativas para entrenar sin gastar láminas en la máquina real. Por lo que cuentas, tu caso parece encajar en **Aseguramiento de la calidad** (`quality_assurance`), porque se trata de defectos y de que se siga un procedimiento estándar.\n\nPara afinar la propuesta necesito tres datos:\n\n1. **Tamaño:** ¿cuántos operarios tienes en corte y cuántos entran nuevos al año, aproximadamente?\n2. **Magnitud del daño:** ¿qué porcentaje de láminas se pierde, o cuántas al mes? Un estimado sirve.\n3. **Procedimiento actual:** ¿el procedimiento de corte está escrito (manual, instructivo, fotos) o se transmite de forma verbal entre compañeros?\n\nCon eso te recomiendo uno o dos servicios del centro y te armo la pre-propuesta con alcance y rango de inversión.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.006281,
+      "latencyMs": 5731,
+      "ttftMs": 3343
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente la línea quality_assurance y sugiere implícitamente capacitacion-realidad-virtual sin nombrarlo aún (estrategia apropiada). Evita inventar precios o servicios inexistentes. Hace preguntas diagnósticas precisas y pertinentes para validar el alcance antes de recomendar. Tono cercano, profesional, sin promesas aventuradas. Estructura clara y legible para el contexto MIPYME."
+  },
+  "judgeCostUsd": 0.005408
+}

@@ -1,0 +1,28 @@
+{
+  "caseId": "inn-01-marca",
+  "label": "paso-03-primer-llm",
+  "recordedAt": "2026-09-29T16:42:29.586Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v1-solo-prompt",
+  "turns": [
+    {
+      "user": "Somos una startup que hace bolsos con fibras recicladas. Queremos exportar y alguien nos dijo que primero deberíamos proteger la marca. No sabemos si el nombre ya está registrado.",
+      "assistant": "¡Qué buen proyecto! Proteger la marca antes de exportar es un paso muy sensato.\n\nCon lo que me cuentas ya puedo encuadrar tu caso, pero necesito tres datos para afinar la propuesta:\n\n1. **¿A qué países quieren exportar primero?** (la protección de marca es territorial, así que esto cambia el alcance).\n2. **¿Ya venden con ese nombre o logo?** ¿Desde hace cuánto y en qué canales?\n3. **¿Cuántas personas son en el equipo y tienen la empresa formalizada?** (por ejemplo, registrada en Cámara de Comercio).\n\n**Lo que ya te puedo adelantar:**\n\n- **Línea de trabajo:** `business_innovation` (Innovación y desarrollo empresarial), porque se trata de propiedad intelectual y preparación para crecer en mercados nuevos.\n- **Sobre tu duda del nombre:** lo primero es hacer una **búsqueda de antecedentes marcarios**. Sirve para saber si ya existe un nombre igual o parecido en tu categoría (bolsos, accesorios) antes de invertir en empaques, etiquetas o publicidad.\n\nCuando me respondas, te armo la pre-propuesta con servicios recomendados, alcance y rango de inversión.\n\n*Nota: esto es orientación general y no reemplaza una asesoría legal definitiva.*",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.005199,
+      "latencyMs": 6898,
+      "ttftMs": 3009
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende el problema concreto (protección de marca antes de exportar) e identifica correctamente la línea business_innovation. Menciona vigilancia tecnológica y propiedad intelectual de forma implícita (búsqueda de antecedentes marcarios) sin asignar precios ni plazos prematuros. Solicita información clave (países, uso actual, tamaño del equipo) para refinar la propuesta. El tono es cercano, profesional y evita prometer resultados específicos; además, aclara que no reemplaza asesoría legal."
+  },
+  "judgeCostUsd": 0.005304
+}

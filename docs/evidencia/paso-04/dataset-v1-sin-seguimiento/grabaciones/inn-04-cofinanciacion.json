@@ -1,0 +1,28 @@
+{
+  "caseId": "inn-04-cofinanciacion",
+  "label": "paso-03-primer-llm",
+  "recordedAt": "2026-09-29T16:42:34.715Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v1-solo-prompt",
+  "turns": [
+    {
+      "user": "Tenemos una empresa de software educativo y vimos una convocatoria para cofinanciar innovación. Cierra en 5 semanas y no sabemos formular el proyecto.",
+      "assistant": "¡Qué bueno que se animen! Cinco semanas alcanzan si arrancamos ordenados. Para armar bien la pre-propuesta necesito aclarar tres cosas:\n\n1. **¿Qué tan grande es la empresa?** (número aproximado de personas y si ya tienen ventas constantes).\n2. **¿Qué idea de innovación quieren financiar?** Aunque sea en borrador: ¿un producto nuevo, mejorar uno existente, incorporar IA, etc.?\n3. **¿Qué sabes de la convocatoria?** Quién la abre, monto máximo, porcentaje de contrapartida que deben aportar y si exige requisitos como aliados o un formato específico.\n\nCon eso te clasifico el caso y te propongo servicios y alcance.\n\nPor adelantado, esto parece encajar en **Innovación y desarrollo empresarial** (`business_innovation`), porque se trata de financiación de proyectos, pero lo confirmo cuando me cuentes más.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.003749,
+      "latencyMs": 4439,
+      "ttftMs": 1076
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende el problema concreto (formulación de proyecto con plazo ajustado) y anticipa correctamente la línea business_innovation sin afirmar servicios específicos prematuramente. No inventa precios ni plazos, solo solicita información necesaria para hacer una pre-propuesta fundada. El tono es cercano, profesional y sin promesas exageradas."
+  },
+  "judgeCostUsd": 0.004943
+}

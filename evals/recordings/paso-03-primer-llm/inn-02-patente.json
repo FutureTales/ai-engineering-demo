@@ -1,0 +1,29 @@
+{
+  "caseId": "inn-02-patente",
+  "label": "paso-03-primer-llm",
+  "recordedAt": "2026-09-29T16:45:26.181Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v1-solo-prompt",
+  "turns": [
+    {
+      "user": "Desarrollamos un proceso nuevo para secar pescado con energía solar. ¿Es patentable? ¿Qué está haciendo la competencia en otros países?",
+      "assistant": "¡Qué buen proyecto! Secar pescado con energía solar tiene mucho potencial en el Caribe. Te respondo con lo que puedo y con lo que no.\n\n**¿Es patentable?**\nNo puedo darte un concepto legal definitivo, pero en general una patente de invención exige tres cosas:\n- **Novedad:** que nadie lo haya hecho público antes en el mundo (incluyendo tú mismo: si ya lo mostraste en ferias, redes o artículos, avísanos).\n- **Nivel inventivo:** que no sea una mejora obvia para alguien del sector.\n- **Aplicación industrial:** que se pueda producir o usar en la industria.\n\nEl secado solar de pescado ya es una técnica conocida. Por eso, lo que podría ser patentable es **algo específico de tu proceso**: un diseño del secador, una secuencia de pasos, control de temperatura o humedad, un pretratamiento, etc. Eso solo se sabe con una búsqueda de antecedentes.\n\n**¿Qué hace la competencia en otros países?**\nNo tengo acceso a bases de datos en tiempo real, así que no quiero inventarte casos. Lo que sí hace nuestro servicio de **vigilancia tecnológica** es revisar bases de patentes y literatura científica para ver qué existe, quién patenta y dónde hay espacios libres.\n\n**Cómo podemos ayudarte (línea: `business_innovation`)**\n1. **Búsqueda de antecedentes y vigilancia tecnológica:** te dice si tu proceso es novedoso y cómo está el panorama internacional.\n2. **Estrategia de propiedad intelectual:** define qué proteger (patente, secreto empresarial, otra figura) y cómo.\n\nPara armarte una pre-propuesta ajustada, cuéntame por favor:\n1. ¿Cómo se llama tu empresa y cuál es su tamaño (personas, ventas aproximadas)?\n2. ¿Qué tiene de diferente tu proceso frente a un secador solar tradicional?\n3. ¿Ya lo has divulgado públicamente (ferias, redes, publicaciones) o solicitado algún registro?",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.007781,
+      "latencyMs": 6918,
+      "ttftMs": 1434
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende perfectamente el problema concreto del usuario (patentabilidad y vigilancia competitiva), recomienda el servicio correcto del catálogo (vigilancia-tecnologica-pi) sin inventar otros, respeta límites claros (aclara que no da asesoría legal definitiva ni inventa datos), y solicita información necesaria para una pre-propuesta. Usa un tono cercano y profesional, sin prometer resultados garantizados."
+  },
+  "judgeCostUsd": 0.005687
+}

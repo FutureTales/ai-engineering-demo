@@ -1,0 +1,29 @@
+{
+  "caseId": "cal-02-certificacion",
+  "label": "paso-03-primer-llm",
+  "recordedAt": "2026-09-29T16:45:09.414Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v1-solo-prompt",
+  "turns": [
+    {
+      "user": "Hacemos salsas y encurtidos. Una cadena de supermercados quiere comprarnos, pero nos exige cumplir estándares de calidad y más adelante ISO 9001. Hoy no tenemos procedimientos escritos.",
+      "assistant": "¡Qué buena noticia que una cadena quiera comprarles! Ya se ve el caso con bastante claridad: la línea es **aseguramiento de la calidad** (`quality_assurance`), porque el reto es documentar procedimientos y cumplir estándares.\n\nPara armarles una pre-propuesta ajustada, necesito 3 datos:\n\n1. **¿Cuántas personas trabajan en la empresa** y cuántas participan directamente en la producción?\n2. **¿Tienen hoy registro sanitario INVIMA o permisos sanitarios al día?** (solo sí/no y cuáles).\n3. **¿La cadena les dio una lista o un plazo concreto** de requisitos (por ejemplo, fecha límite para la primera compra o auditoría de proveedores)?\n\nCon eso les recomiendo los servicios del centro y les paso el resumen con alcance, rango de inversión y siguiente paso.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.003501,
+      "latencyMs": 4047,
+      "ttftMs": 1033
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "El copiloto identifica correctamente la línea esperada (quality_assurance) y señala el servicio pertinente sin nombrarlo prematuro ni inventar precios. Recopila información diagnóstica clave (número de empleados, estado sanitario, plazos del cliente) antes de hacer una pre-propuesta, lo que es procedimiento correcto. Tono cercano, profesional y sin promesas excesivas."
+  },
+  "judgeCostUsd": 0.005277
+}

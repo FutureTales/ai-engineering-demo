@@ -1,0 +1,28 @@
+{
+  "caseId": "inn-02-patente",
+  "label": "paso-03-primer-llm",
+  "recordedAt": "2026-09-29T16:42:34.958Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v1-solo-prompt",
+  "turns": [
+    {
+      "user": "Desarrollamos un proceso nuevo para secar pescado con energía solar. ¿Es patentable? ¿Qué está haciendo la competencia en otros países?",
+      "assistant": "¡Qué buen proyecto! Esto encaja en **Innovación y desarrollo empresarial** (`business_innovation`), porque se trata de propiedad intelectual y de vigilancia de lo que hacen otros.\n\n**¿Es patentable?** No puedo darte un veredicto definitivo (eso requiere un análisis formal y asesoría legal), pero en general una patente de invención exige tres cosas:\n- **Novedad:** que no exista algo igual en ningún lugar del mundo, ni publicado ni vendido antes.\n- **Nivel inventivo:** que no sea una mejora obvia para alguien del oficio.\n- **Aplicación industrial:** que se pueda producir o usar en la industria.\n\nOjo: secar pescado con energía solar es una práctica muy antigua. Lo que podría protegerse es algo **específico y nuevo** en tu proceso: un diseño de secador, una secuencia de pasos, control de temperatura o humedad, un sistema de almacenamiento de calor, etc. Si tu solución es más una forma de operar que un aparato o método técnico, quizá convenga otra protección (secreto empresarial o modelo de utilidad).\n\n**Importante:** si ya lo mostraste, vendiste o publicaste, cuéntamelo, porque puede afectar la novedad. Y si no, evita divulgarlo antes de tener una búsqueda hecha.\n\n**¿Y la competencia en otros países?** No tengo acceso a bases de datos en tiempo real, así que no quiero inventarte datos. Lo correcto es hacer una **búsqueda en bases de patentes y literatura técnica**, que es justo lo que puede hacer el centro.\n\n**Servicios que te recomiendo:**\n1. **Búsqueda de anterioridades y vigilancia tecnológica:** revisa patentes y publicaciones en otros países y muestra qué existe y cuál es tu espacio libre.\n2. **Evaluación de patentabilidad y estrategia de protección:** define qué proteger y con qué figura (patente, modelo de utilidad o secreto).\n\nPara armarte una pre-propuesta ajustada, tres preguntas:\n1. ¿Qué tamaño tiene tu empresa y cuántas personas trabajan en ella?\n2. ¿Qué tiene de diferente tu proceso frente al secado solar tradicional?\n3. ¿Ya lo has divulgado, vendido o mostrado públicamente? ¿Desde cuándo?",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.008761,
+      "latencyMs": 7438,
+      "ttftMs": 1063
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende directamente el problema (patentabilidad y vigilancia competitiva), explica conceptos de propiedad intelectual de forma accesible sin prometer un veredicto legal, menciona solo el servicio del catálogo ('vigilancia-tecnologica-pi') sin inventar precios ni plazos, y cierra con preguntas diagnósticas pertinentes. El tono es cercano y profesional, sin exagerar."
+  },
+  "judgeCostUsd": 0.005365
+}

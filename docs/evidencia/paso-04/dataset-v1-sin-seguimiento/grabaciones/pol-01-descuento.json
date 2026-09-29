@@ -1,0 +1,28 @@
+{
+  "caseId": "pol-01-descuento",
+  "label": "paso-03-primer-llm",
+  "recordedAt": "2026-09-29T16:42:48.533Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v1-solo-prompt",
+  "turns": [
+    {
+      "user": "Somos una microempresa de 6 empleados interesada en el servicio de prototipado 3D. ¿Tienen algún descuento para microempresas y cómo se paga?",
+      "assistant": "¡Hola! Gracias por escribirnos. Te soy franco con lo que sé y lo que no:\n\n**Descuentos y forma de pago**\nNo tengo a la mano una tarifa oficial de descuentos para microempresas ni las condiciones de pago del centro, y prefiero no inventarte cifras o porcentajes. Lo que sí puedo hacer es incluir en tu pre-propuesta la solicitud de que el equipo del centro te confirme:\n- Si hay tarifa preferencial para microempresas\n- Formas de pago (por ejemplo, anticipo y saldo, o pago por etapas)\n- Si hay opciones de cofinanciación o convocatorias que apliquen\n\n**Sobre el prototipado 3D**\nNormalmente encaja en la línea de **innovación y desarrollo empresarial** (`business_innovation`), porque se trata de llevar un producto nuevo a una versión física para probarlo. Para recomendarte bien el servicio y el alcance, cuéntame un poco más:\n\n1. **¿A qué se dedica tu empresa y qué producto o pieza quieres prototipar?** (una idea nueva, la mejora de un producto existente, un repuesto…)\n2. **¿En qué etapa estás?** (solo la idea, un diseño o dibujo, o ya tienes un modelo digital)\n3. **¿Cuántas piezas o versiones necesitas** y para cuándo, aproximadamente?\n\nCon eso te armo una pre-propuesta con alcance, rango de inversión aproximado y siguiente paso.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.005603,
+      "latencyMs": 6175,
+      "ttftMs": 2313
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "El copiloto atiende correctamente la solicitud sobre descuentos y formas de pago, admitiendo honestamente que no tiene la información de políticas en su contexto y comprometiéndose a incluir las preguntas en la pre-propuesta. Menciona el servicio correcto (prototipado 3D) en la línea business_innovation sin inventar precios ni plazos. Las preguntas de diagnóstico son pertinentes y el tono es cercano y profesional."
+  },
+  "judgeCostUsd": 0.005235
+}

@@ -1,0 +1,28 @@
+{
+  "caseId": "pro-04-ferreteria",
+  "label": "paso-03-primer-llm",
+  "recordedAt": "2026-09-29T16:42:11.464Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v1-solo-prompt",
+  "turns": [
+    {
+      "user": "Tengo una ferretería en Bocagrande y quiero implementar un software de inventario, pero hoy todo está en hojas de cálculo sueltas y cada empleado lo hace distinto. No sé por dónde empezar.",
+      "assistant": "¡Hola! Qué bueno que quieras ordenar el inventario; es un paso que le cambia la vida a una ferretería. Antes de recomendarte algo, necesito entender mejor tu caso. Te hago 3 preguntas:\n\n1. **¿Cuántas personas trabajan contigo y cuántos productos (referencias) manejas aproximadamente?** (por ejemplo: 4 empleados y unas 1.500 referencias)\n2. **¿Qué es lo que más te duele hoy?** Por ejemplo: no saber qué hay en bodega, quedarte sin productos, tener mercancía parada, diferencias entre lo que dice el Excel y lo que hay en físico.\n3. **¿Ya tienes un software en mente o presupuesto definido?** ¿Y vendes solo en el local o también por WhatsApp, redes u otros canales?\n\nCon eso te clasifico el caso y te armo una pre-propuesta concreta.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.003591,
+      "latencyMs": 3780,
+      "ttftMs": 765
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "El copiloto entiende perfectamente el problema (desorden en inventario, falta de procesos estandarizados) y evita saltar a recomendaciones sin diagnóstico. Realiza preguntas pertinentes que preparan el terreno para diagnosticar si la línea process_design es adecuada. No menciona servicios inexistentes ni precios inventados; mantiene un tono cercano y profesional sin prometer soluciones prematuras. La respuesta es clara, breve y bien estructurada para un celular."
+  },
+  "judgeCostUsd": 0.005136
+}

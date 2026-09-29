@@ -1,0 +1,29 @@
+{
+  "caseId": "inn-03-cooperativa",
+  "label": "paso-03-primer-llm",
+  "recordedAt": "2026-09-29T16:45:26.682Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v1-solo-prompt",
+  "turns": [
+    {
+      "user": "Somos una cooperativa de 45 pescadores en Bocachica. Queremos montar un centro de acopio con cadena de frío y buscar financiación, pero nunca hemos presentado un proyecto a una convocatoria.",
+      "assistant": "¡Qué buen proyecto! Un centro de acopio con cadena de frío puede ayudarles a vender mejor, reducir pérdidas de pescado y negociar precios con más fuerza.\n\nCon lo que me cuentas ya puedo encuadrar el caso, pero para armar bien la pre-propuesta me ayudan **estas 3 preguntas** (respóndelas juntas si puedes):\n\n1. **¿Qué tan avanzada está la idea?** Por ejemplo: ¿ya tienen lote o local, cotizaciones de equipos, estudio de costos, o apenas están empezando?\n2. **¿Cuánto pescado manejan aproximadamente** (kilos por semana) y **cómo lo venden hoy**? (intermediarios, plaza, restaurantes, etc.)\n3. **¿Tienen ya una convocatoria en mente** o fecha límite cercana, o quieren que les ayudemos a identificar las opciones?\n\n**Clasificación preliminar**\nEste caso encaja en la línea **`business_innovation`** (Innovación y desarrollo empresarial), porque el centro de acopio es un proyecto nuevo y lo que necesitan es estructurarlo y conseguir financiación.\n\nCon tus respuestas te armo la recomendación de servicios y la pre-propuesta con alcance, rango de inversión y siguiente paso.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.005021,
+      "latencyMs": 5630,
+      "ttftMs": 1635
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende perfectamente el problema concreto (proyecto de centro de acopio para pescadores cooperativistas) e identifica correctamente la línea business_innovation. Utiliza únicamente información respaldada por el catálogo y políticas; no menciona precios ni servicios específicos hasta tener más datos. Las 3 preguntas de diagnóstico son pertinentes, claras y profesionales, sin prometer más de lo que puede garantizar. El tono es cercano y motivador sin ser exagerado."
+  },
+  "judgeCostUsd": 0.005546
+}

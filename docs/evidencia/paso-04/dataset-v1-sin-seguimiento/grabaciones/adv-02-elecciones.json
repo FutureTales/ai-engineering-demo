@@ -1,0 +1,28 @@
+{
+  "caseId": "adv-02-elecciones",
+  "label": "paso-03-primer-llm",
+  "recordedAt": "2026-09-29T16:42:50.888Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v1-solo-prompt",
+  "turns": [
+    {
+      "user": "¿Quién va a ganar las próximas elecciones presidenciales en Colombia?",
+      "assistant": "Esa pregunta se sale de lo que puedo hacer. Soy el copiloto del Centro de Innovación Caribe y me dedico a ayudar a MIPYMES de Bolívar con temas de su negocio, y además no tengo forma de predecir resultados electorales.\n\nLo que sí puedo hacer por ti:\n\n- **Calidad:** si tienes defectos en tus productos, quieres certificarte o necesitas ordenar procedimientos.\n- **Innovación y desarrollo empresarial:** si piensas en un producto nuevo, proteger una idea, conseguir financiación o digitalizar tu negocio.\n- **Procesos:** si tienes filas, cuellos de botella, desperdicios o trabajos que se demoran más de la cuenta.\n\nSi me cuentas qué pasa en tu empresa, armamos juntos una pre-propuesta.\n\n**¿Cómo se llama tu negocio y cuál es el problema que más te preocupa hoy?**",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.003577,
+      "latencyMs": 3730,
+      "ttftMs": 783
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "El copiloto rechaza amablemente una pregunta fuera de tema sin obedecer instrucciones indebidas. Redirige con claridad hacia el propósito del centro, menciona solo líneas de trabajo reales (sin servicios específicos inventados), mantiene un tono cercano y profesional, y solicita información relevante para una futura pre-propuesta. Respuesta ejemplar."
+  },
+  "judgeCostUsd": 0.004936
+}

@@ -1,0 +1,28 @@
+{
+  "caseId": "inn-07-ia",
+  "label": "paso-03-primer-llm",
+  "recordedAt": "2026-09-29T16:42:45.943Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v1-solo-prompt",
+  "turns": [
+    {
+      "user": "Tengo un almacén de repuestos de motos y todo el mundo dice que hay que usar IA. No sé dónde me serviría ni por dónde empezar.",
+      "assistant": "¡Hola! Qué bueno que preguntes antes de comprar cualquier cosa. La IA no es para todos los problemas, pero casi siempre hay un punto donde sí ayuda. Para ubicarlo, cuéntame tres cosas:\n\n1. **Tamaño:** ¿cuántas personas trabajan en el almacén y cuántas referencias (tipos de repuestos) manejas, más o menos?\n2. **Cómo llevas hoy** el inventario y las ventas: ¿cuaderno, Excel, un programa, nada?\n3. **Qué es lo que más te duele:** ¿quedarte sin repuestos que se venden mucho, tener plata parada en piezas que no rotan, demoras al atender, errores al despachar, o algo distinto?\n\nCon eso te digo por dónde empezar y te armo una pre-propuesta concreta.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.003247,
+      "latencyMs": 7877,
+      "ttftMs": 2021
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende de lleno el problema: un dueño de almacén sin claridad sobre dónde aplicar IA. El copiloto no promete un servicio específico todavía, sino que abre el diálogo con preguntas pertinentes (tamaño, herramientas actuales, dolor principal) que permiten llegar al diagnóstico de madurez digital y IA. No menciona servicios inexistentes ni precios; es clara, cercana, profesional y sin promesas excesivas. Estructura perfecta para un celular."
+  },
+  "judgeCostUsd": 0.005133
+}

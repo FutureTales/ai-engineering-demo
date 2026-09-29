@@ -1,0 +1,28 @@
+{
+  "caseId": "cal-03-montacargas",
+  "label": "paso-03-primer-llm",
+  "recordedAt": "2026-09-29T16:42:25.795Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v1-solo-prompt",
+  "turns": [
+    {
+      "user": "En nuestra bodega hemos tenido varios accidentes leves con montacargas. Rota mucho el personal y entrenar en la bodega real es peligroso y para la operación. ¿Cómo capacitamos mejor?",
+      "assistant": "Gracias por contarlo. Capacitar sin frenar la operación ni exponer a nadie es un problema muy común en bodegas con alta rotación, y tiene solución.\n\nPara orientarte bien, necesito tres datos:\n\n1. **Tamaño:** ¿cuántas personas trabajan en la bodega, cuántas operan montacargas y cada cuánto entra gente nueva?\n2. **Los accidentes:** ¿qué pasó exactamente? Por ejemplo, choques con estanterías, golpes a personas, volcamientos, o problemas al cargar o descargar. ¿Cuántos ha habido en el último año, aproximadamente?\n3. **Capacitación actual:** ¿cómo entrenan hoy a un operador nuevo (tiempo, quién lo enseña, si hay procedimiento escrito o alguna certificación)?\n\nCon eso te digo en qué línea de trabajo del centro encaja tu caso, qué servicios te convienen y te armo una pre-propuesta con alcance, rango de inversión y siguiente paso.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.007199,
+      "latencyMs": 6994,
+      "ttftMs": 4400
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "El copiloto identifica correctamente el problema (capacitación de operadores de montacargas sin frenar operaciones ni exponer riesgos) y reconoce que encaja en quality_assurance. No menciona servicios aún, sino que solicita información diagnóstica previa de manera estructurada y profesional, evitando comprometerse con precios o alcances antes de validar la situación real. El tono es cercano, sin inventar soluciones ni datos fuera del catálogo. La claridad es excelente: tres preguntas concretas, bien organizadas, pensadas en el contexto MIPYME."
+  },
+  "judgeCostUsd": 0.005259
+}

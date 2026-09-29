@@ -1,0 +1,29 @@
+{
+  "caseId": "pro-06-kpis",
+  "label": "paso-03-primer-llm",
+  "recordedAt": "2026-09-29T16:45:07.077Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v1-solo-prompt",
+  "turns": [
+    {
+      "user": "Ya mejoramos el proceso de despacho en nuestra bodega y ahora queremos medir si funcionó: tiempos de despacho, pedidos a tiempo y errores. ¿Qué nos sirve?",
+      "assistant": "¡Qué bueno que ya midan el resultado! Muchas empresas mejoran y nunca comprueban si funcionó.\n\n**Indicadores que te sirven** (para tus tres preguntas):\n- **Tiempo de despacho:** minutos u horas desde que entra el pedido hasta que sale de la bodega. Mira el promedio y también los casos más lentos.\n- **Pedidos a tiempo:** % de pedidos entregados en la fecha o el plazo prometido.\n- **Errores:** % de pedidos con error (producto equivocado, faltantes, cantidades mal, daños). Anota también el tipo de error.\n\n**Lo más importante:** comparar contra una **línea base**, es decir, cómo estaban esas cifras antes de la mejora. Sin ese \"antes\", no puedes saber cuánto ganaste. Compara periodos parecidos, por ejemplo mismo mes o semanas con volumen similar.\n\n**Línea de trabajo:** esto encaja en **`process_design`** (diseño, mejora y sostenibilidad de procesos), porque se trata de verificar y mantener la mejora en un proceso operativo.\n\nPara afinar la recomendación y armarte la pre-propuesta, cuéntame:\n1. ¿Cuántos pedidos despachan aproximadamente al día o a la semana, y cuántas personas trabajan en la bodega?\n2. ¿Tienen datos de antes de la mejora (aunque sea en Excel o cuadernos)?\n3. ¿Cómo registran hoy los pedidos y despachos: papel, Excel o algún sistema?\n\nCon eso te propongo los servicios, el alcance y un rango de inversión.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.009855,
+      "latencyMs": 8825,
+      "ttftMs": 4564
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 4,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende directamente el problema (medir si la mejora en despacho funcionó) y sugiere indicadores precisos y relevantes. Menciona correctamente la línea `process_design` sin nombrar aún servicios específicos, lo que es prudente dado que falta información. No inventa precios ni plazos. La única debilidad menor es que no cita explícitamente el servicio `tablero-indicadores-analitica` del catálogo, aunque su pregunta de seguimiento encamina hacia él; sin embargo, es estratégicamente correcto esperar a que el usuario aporte más datos antes de cerrar la recomendación de servicio. Tono cercano y profesional, estructura clara y legible."
+  },
+  "judgeCostUsd": 0.005863
+}

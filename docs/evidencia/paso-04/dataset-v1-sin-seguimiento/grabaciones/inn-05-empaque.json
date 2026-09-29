@@ -1,0 +1,28 @@
+{
+  "caseId": "inn-05-empaque",
+  "label": "paso-03-primer-llm",
+  "recordedAt": "2026-09-29T16:42:39.479Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v1-solo-prompt",
+  "turns": [
+    {
+      "user": "Hacemos dulces típicos cartageneros y queremos un empaque nuevo para venderlos en el aeropuerto. Necesitamos ver un prototipo físico antes de mandar a producir.",
+      "assistant": "¡Qué buena idea! Los dulces típicos son un souvenir perfecto para el aeropuerto. Para entender bien el caso y armarte una pre-propuesta, cuéntame en un solo mensaje:\n\n1. **¿Qué tamaño tiene tu empresa?** (cuántas personas trabajan y cuántas unidades produces al mes, aproximadamente).\n2. **¿Qué buscas con el empaque nuevo?** Por ejemplo: que resista viajes en avión, que dure más el producto, que se vea más atractivo o cumplir requisitos del aeropuerto (o varias).\n3. **¿Ya tienes un diseño o idea del empaque, o partes de cero?** Y si tienes una fecha límite para empezar a vender, cuéntamela.\n\nCon eso te digo en qué línea de trabajo encaja tu caso y qué servicios del centro te convienen.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.003403,
+      "latencyMs": 7111,
+      "ttftMs": 4580
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "El copiloto entiende el problema concreto (prototipo de empaque para dulces en aeropuerto) y hace preguntas diagnósticas pertinentes para armar una pre-propuesta adecuada. No nombra servicios específicos prematuramente ni inventa precios; solo solicita información necesaria. El tono es cercano y profesional, la estructura es clara y móvil-friendly. Cumple perfectamente con el procedimiento esperado en una primera respuesta."
+  },
+  "judgeCostUsd": 0.005028
+}

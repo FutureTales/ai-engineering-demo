@@ -1,0 +1,28 @@
+{
+  "caseId": "inn-06-pieza",
+  "label": "paso-03-primer-llm",
+  "recordedAt": "2026-09-29T16:42:44.680Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v1-solo-prompt",
+  "turns": [
+    {
+      "user": "Una máquina de nuestra planta usa una pieza plástica importada que ya no fabrican. ¿Nos pueden ayudar a diseñarla y hacer un prototipo para probarla?",
+      "assistant": "¡Claro, es un caso que podemos trabajar! Por lo que cuentas, encaja de forma preliminar en **Innovación y desarrollo empresarial** (`business_innovation`), porque se trata de desarrollar y validar un producto nuevo: una pieza de reemplazo.\n\nPara darte una pre-propuesta ajustada, cuéntame tres cosas:\n\n1. **Tu empresa:** ¿a qué se dedica, cuántas personas trabajan en ella y qué produce esa máquina?\n2. **La pieza:** ¿qué función cumple, qué tamaño aproximado tiene, en qué condiciones trabaja (calor, esfuerzo, químicos) y tienes la pieza original o un plano, aunque esté rota o desgastada?\n3. **La necesidad:** ¿cuántas piezas necesitas (unas pocas o series repetidas) y qué tan urgente es, o sea, cuánto te afecta tener la máquina parada?\n\nCon eso te recomiendo el servicio más adecuado y te armo el alcance y el rango de inversión.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.006369,
+      "latencyMs": 7049,
+      "ttftMs": 4460
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "El copiloto entiende perfectamente el problema (necesidad de diseño y prototipado de una pieza) e identifica correctamente la línea business_innovation. No promete un servicio específico hasta conocer más detalles, lo cual es prudente. No inventa ni servicios, ni precios, ni plazos; solo pide información para hacer una pre-propuesta bien fundamentada. Tono cercano, profesional y adaptado a una MIPYME."
+  },
+  "judgeCostUsd": 0.00507
+}

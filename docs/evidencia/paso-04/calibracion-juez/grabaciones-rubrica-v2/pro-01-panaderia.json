@@ -1,0 +1,40 @@
+{
+  "caseId": "pro-01-panaderia",
+  "label": "calibracion-juez-v2",
+  "recordedAt": "2026-09-29T16:40:36.013Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v1-solo-prompt",
+  "turns": [
+    {
+      "user": "Tengo una panadería con tres sedes en Turbaco y al final del día botamos mucho pan porque producimos siempre la misma cantidad.",
+      "assistant": "¡Hola! Gracias por contarme. Botar pan todos los días es plata que se va a la basura, y suele tener solución. Para armarte una propuesta ajustada, necesito saber tres cosas:\n\n1. **¿Cuántas personas trabajan** en total (producción y ventas) y cuántos tipos de pan producen aproximadamente?\n2. **¿Cuánto pan sobra** en un día normal por sede (en unidades, kilos o en pesos) y si varía entre días de semana y fines de semana?\n3. **¿Cómo deciden hoy cuánto producir?** Por ejemplo: la misma receta de siempre, la intuición del panadero, o llevan algún registro de ventas (cuaderno, Excel, sistema de caja).\n\nCon eso te clasifico el caso y te recomiendo el servicio más adecuado del centro.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.003197,
+      "latencyMs": 3722,
+      "ttftMs": 930
+    },
+    {
+      "user": "Somos 14 empleados. Producimos unos 2.000 panes al día entre las tres sedes y botamos más o menos el 15 %. Los lunes y martes es cuando más sobra. No llevamos registro de ventas por día.",
+      "assistant": "Gracias, con eso ya tengo lo necesario.\n\n**Lo que entiendo**\n- Panadería con 3 sedes en Turbaco y 14 empleados.\n- Producen ~2.000 panes/día y botan ~15 % (unos **300 panes diarios**).\n- Sobra más los lunes y martes.\n- No llevan registro de ventas por día, así que hoy producen \"a ciegas\".\n\n**Línea de trabajo: `process_design`** (Diseño, mejora y sostenibilidad de procesos). El problema central es de planificación de la producción y desperdicio, no de calidad del producto ni de un producto nuevo.\n\n**Servicios recomendados**\n1. **Diagnóstico y rediseño del proceso de producción.** Medimos cuánto se vende de cada pan, por sede y por día, y ajustamos las cantidades (por ejemplo, producir menos los lunes y martes, y hornear en tandas durante el día en vez de todo al inicio).\n2. **Digitalización básica de procesos.** Una hoja de registro simple (en celular o Excel) para anotar producción, ventas y sobrantes por sede. Sin esto no se puede mejorar de forma sostenida.\n\n## Pre-propuesta\n\n- **Problema:** desperdicio de ~15 % de la producción diaria por producir siempre la misma cantidad y no registrar ventas.\n- **Línea de trabajo:** `process_design`.\n- **Servicios:** rediseño del proceso de producción + registro digital básico de ventas y sobrantes.\n- **Alcance sugerido (6 a 8 semanas):**\n  - Semanas 1-2: levantamiento de datos en las 3 sedes y montaje del registro diario.\n  - Semanas 3-5: análisis de patrones por día, sede y tipo de pan.\n  - Semanas 6-8: nuevo plan de producción, capacitación al equipo y seguimiento de resultados.\n- **Meta orientativa:** reducir el desperdicio a la mitad (de ~15 % a ~7-8 %), es decir, unos 150 panes menos botados al día. Es una meta de referencia; el resultado real depende de los datos que levantemos.\n- **Inversión aproximada:** entre **$4 y $7 millones COP**, según el número de sedes y el nivel de acompañamiento. *(Rango de la demo, no es una cotización.)*\n- **Siguiente paso:** una visita corta de diagnóstico a una de las sedes para confirmar el alcance y ajustar el valor.\n\nSi te parece bien, dime **el nombre de la panadería** y **el nombre de la persona de contacto** y dejo la pre-propuesta lista para que el centro te escriba.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.010257,
+      "latencyMs": 7736,
+      "ttftMs": 701
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [
+      "rediseño del proceso de producción",
+      "registro digital básico de ventas y sobrantes"
+    ],
+    "precios_o_plazos_no_respaldados": [],
+    "pertinencia": 5,
+    "fundamentacion": 3,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta entiende perfectamente el problema de desperdicio y lo vincula con la línea correcta (process_design). Sin embargo, los servicios recomendados ('rediseño del proceso' y 'registro digital básico') no corresponden a servicios específicos del catálogo. Los más cercanos serían 'produccion-mas-limpia-desperdicios' y 'tablero-indicadores-analitica', que sí existen. El rango de inversión ($4–7 millones) no coincide con ninguno de esos dos servicios (COP 3.5–12 millones y COP 4–14 millones respectivamente). La claridad y el tono son excelentes, pero la fundamentación se ve afectada porque la respuesta crea servicios intermedios que no están en el catálogo."
+  },
+  "judgeCostUsd": 0.006299
+}

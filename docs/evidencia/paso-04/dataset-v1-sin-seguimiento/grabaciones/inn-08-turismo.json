@@ -1,0 +1,28 @@
+{
+  "caseId": "inn-08-turismo",
+  "label": "paso-03-primer-llm",
+  "recordedAt": "2026-09-29T16:42:40.797Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v1-solo-prompt",
+  "turns": [
+    {
+      "user": "Tenemos una agencia de turismo con 6 años de datos de reservas y queremos saber cómo empezar a transformarnos digitalmente y aprovechar esos datos. Es nuestro primer contacto con el centro.",
+      "assistant": "¡Hola! Qué bueno que quieran aprovechar 6 años de reservas: es un activo valioso. Para armar una propuesta ajustada, cuéntame en un solo mensaje:\n\n1. **¿Cuántas personas trabajan en la agencia** y cuántas reservas manejan aproximadamente al año?\n2. **¿Dónde están hoy esos datos?** (Excel, un sistema de reservas, cuadernos, correos, etc.) y si están más o menos ordenados.\n3. **¿Qué quieren lograr primero?** Por ejemplo: vender más, predecir temporadas altas, conocer mejor a sus clientes, agilizar la atención o reducir trabajo manual.\n\nCon eso te digo en qué línea encaja su caso, qué servicios del centro les sirven y te dejo una pre-propuesta con rango de inversión.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.003299,
+      "latencyMs": 3289,
+      "ttftMs": 1063
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende perfectamente el problema de la agencia de turismo. El copiloto no promete servicios específicos aún, sino que solicita información diagnóstica clara y estructurada para generar una pre-propuesta fundamentada. No menciona precios ni servicios inexistentes, mantiene un tono cercano y profesional, y la estructura (3 preguntas concretas) es legible y útil para una MIPYME."
+  },
+  "judgeCostUsd": 0.004999
+}
