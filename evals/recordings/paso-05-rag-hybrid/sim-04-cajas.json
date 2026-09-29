@@ -1,0 +1,35 @@
+{
+  "caseId": "sim-04-cajas",
+  "label": "paso-05-rag-hybrid",
+  "recordedAt": "2026-09-29T17:17:35.565Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Tenemos un minimercado en el barrio Crespo con 2 cajas. Los sábados en la tarde llegan como 50 clientes por hora a pagar y cada cobro toma unos 2 minutos y medio. Las filas son larguísimas y la gente se va. ¿Qué hacemos?",
+      "assistant": "Con lo que cuentas ya se ve el problema, y tiene una lógica sencilla.\n\n**Qué está pasando**\n- Cada cobro toma 2,5 minutos, así que una caja atiende 24 clientes por hora.\n- Con 2 cajas atienden 48 clientes por hora, y los sábados en la tarde llegan unos 50.\n- Llegan más clientes de los que las cajas pueden atender, así que la fila crece durante toda la tarde y no se desocupa. Por eso la gente se va.\n\nUna tercera caja o cobros más rápidos probablemente ayudarían. Pero antes de invertir conviene comparar opciones con datos, porque las llegadas no son parejas durante la hora.\n\n**Línea de trabajo:** `process_design`\n\n**Servicios recomendados**\n1. **Simulación de operaciones y análisis \"what if\"**: modelamos tu operación de cajas y comparamos escenarios (una tercera caja, cambio de turnos, cobro más ágil, autopago o pago digital) antes de gastar. Fuente: [Simulación de operaciones y análisis \"what if\"](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/simulacion-operaciones.md)\n2. **Tablero de indicadores y analítica operativa** (opcional, después): para medir el tiempo de espera y las ventas por hora, y ver si la mejora funciona. Fuente: [Tablero de indicadores y analítica operativa](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/tablero-indicadores-analitica.md)\n\n## Pre-propuesta\n\n- **Problema:** minimercado en Crespo con 2 cajas. Los sábados en la tarde llegan unos 50 clientes por hora y cada cobro toma unos 2,5 minutos. La capacidad no alcanza, las filas son largas y se pierden clientes.\n- **Línea de trabajo:** `process_design`\n- **Servicios:** Simulación de operaciones y análisis \"what if\" (principal) y, si quieres seguimiento, Tablero de indicadores y analítica operativa.\n- **Alcance sugerido:**\n  - Levantar los datos de llegadas y tiempos de cobro.\n  - Construir y validar el modelo.\n  - Comparar de 3 a 5 escenarios.\n  - Entregar un tablero con indicadores y recomendaciones priorizadas.\n  - Hacer un taller con tu equipo.\n- **Duración típica:** de 4 a 8 semanas.\n- **Inversión:**\n  - Simulación: **COP 8.000.000 a COP 25.000.000**.\n  - Tablero (opcional): **COP 4.000.000 a COP 14.000.000**.\n  - Los rangos no incluyen IVA. Si tienes hasta 10 empleados aplica un descuento del 20 %, y si son entre 11 y 50, del 10 %. Para acceder al descuento debes presentar el certificado de existencia y representación legal.\n- **Siguiente paso:** un coordinador revisa la pre-propuesta y te contacta en unos 2 días hábiles para una reunión de diagnóstico de 45 a 60 minutos. Luego llega la propuesta formal con el valor definitivo. Esta pre-propuesta no es una oferta ni compromete al centro.\n\nSi quieres que la guardemos, dime el nombre del minimercado, tu nombre y, si lo autorizas, un correo. No compartas documentos de identidad ni datos bancarios.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0218864,
+      "latencyMs": 13242,
+      "ttftMs": 5721,
+      "retrievalMode": "hybrid",
+      "retrievedSources": [
+        "data/catalog/servicios/simulacion-operaciones.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/produccion-mas-limpia-desperdicios.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende de lleno el problema del minimercado (capacidad de cajas insuficiente) y recomienda exactamente el servicio esperado (Simulación de operaciones). Valida la lógica del problema con cálculos simples y respaldados: 2,5 minutos por cobro = 24 clientes/hora/caja, 2 cajas = 48 clientes/hora versus 50 llegadas/hora. Todos los precios (COP 8–25 millones para simulación, COP 4–14 millones para tablero opcional) y plazos (4 a 8 semanas) coinciden exactamente con el catálogo. La respuesta es clara, bien estructurada, respetuosa y sin promesas excesivas; además, maneja correctamente las políticas de confidencialidad y descuentos para MIPYMES."
+  },
+  "judgeCostUsd": 0.006646
+}

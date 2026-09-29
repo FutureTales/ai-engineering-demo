@@ -12,6 +12,11 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Python virtualenv (ships JS for Jupyter) and generated artifacts
+    ".venv/**",
+    "evals/recordings/**",
+    "playwright-report/**",
+    "test-results/**",
   ]),
 ]);
 

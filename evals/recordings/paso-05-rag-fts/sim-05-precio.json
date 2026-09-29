@@ -1,0 +1,35 @@
+{
+  "caseId": "sim-05-precio",
+  "label": "paso-05-rag-fts",
+  "recordedAt": "2026-09-29T17:04:08.747Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "¿Cuánto cuesta el servicio de simulación de operaciones y cuánto se demora? Tenemos filas en la recepción de un hostal.",
+      "assistant": "¡Claro! Con las filas en la recepción de tu hostal, la simulación de operaciones encaja muy bien.\n\n**Línea de trabajo:** `process_design`\n\n**Servicio recomendado:** Simulación de operaciones y análisis \"what if\"\n\n**Por qué aplica:** construimos un modelo de tu recepción (llegadas, tiempos de atención, personal) y comparamos escenarios antes de invertir. Por ejemplo, más recepcionistas, cambios de turno o un check-in digital previo. Así decides con datos si contratar o cambiar el proceso.\n\n**Costo y duración (según la ficha):**\n- **Inversión:** entre COP 8.000.000 y COP 25.000.000.\n- **Duración típica:** de 4 a 8 semanas, según la complejidad y la disponibilidad de datos.\n- Los rangos no incluyen IVA ni costos de terceros (por ejemplo, licencias de software).\n- Aplican descuentos para MIPYMES: 20 % si eres microempresa (hasta 10 empleados), 10 % si es pequeña (11 a 50). Para acceder, se pide el certificado de existencia y representación legal.\n\n**Qué recibirías:**\n- Levantamiento del proceso actual y de los datos.\n- Modelo de simulación validado con tu operación real.\n- Comparación de 3 a 5 escenarios.\n- Tablero de KPIs y recomendaciones priorizadas.\n- Taller con tu equipo.\n\nFuente: [Simulación de operaciones y análisis \"what if\"](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/simulacion-operaciones.md)\n\nPara afinar el rango y armarte una pre-propuesta, ¿me cuentas cuántos empleados tiene el hostal, en qué horarios o temporadas se forman las filas y si llevas algún registro de llegadas o tiempos de atención?\n\nTen en cuenta que esto es una estimación de referencia: el valor definitivo se fija en la propuesta formal tras una reunión de diagnóstico.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0117664,
+      "latencyMs": 5698,
+      "ttftMs": 1269,
+      "retrievalMode": "fts",
+      "retrievedSources": [
+        "data/catalog/servicios/simulacion-operaciones.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/diagnostico-madurez-digital-ia.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta es excelente: recomienda el servicio correcto (simulación de operaciones), cita los precios exactos del catálogo (COP 8–25 millones, 4–8 semanas), explica por qué aplica al problema concreto (filas en recepción), incluye los descuentos y políticas reales, y cierra con preguntas diagnósticas sin prometer resultados. Todo está respaldado, es claro y cercano."
+  },
+  "judgeCostUsd": 0.005707
+}

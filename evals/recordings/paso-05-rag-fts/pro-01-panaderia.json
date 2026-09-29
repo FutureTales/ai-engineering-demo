@@ -1,0 +1,50 @@
+{
+  "caseId": "pro-01-panaderia",
+  "label": "paso-05-rag-fts",
+  "recordedAt": "2026-09-29T17:04:18.174Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Tengo una panadería con tres sedes en Turbaco y al final del día botamos mucho pan porque producimos siempre la misma cantidad.",
+      "assistant": "¡Gracias por contarme! Botar pan al final del día es un problema común en panaderías, y suele tener solución ajustando la producción a lo que realmente se vende.\n\nPara orientarte bien, necesito saber tres cosas:\n\n1. **¿Cuántas personas trabajan en total en la panadería (las tres sedes)?** Esto define si aplica algún descuento.\n2. **¿Llevan algún registro de lo que producen, lo que venden y lo que sobra por sede y por día?** (cuaderno, Excel, sistema, o nada).\n3. **¿Más o menos qué parte de la producción se pierde?** Un estimado basta, por ejemplo \"una de cada diez unidades\" o \"unas 2 bandejas por sede\".\n\nCon eso te armo la pre-propuesta.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0083704,
+      "latencyMs": 4590,
+      "ttftMs": 2392,
+      "retrievalMode": "fts",
+      "retrievedSources": [
+        "data/catalog/servicios/produccion-mas-limpia-desperdicios.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/digitalizacion-procesos-administrativos.md"
+      ]
+    },
+    {
+      "user": "Somos 14 empleados. Producimos unos 2.000 panes al día entre las tres sedes y botamos más o menos el 15 %. Los lunes y martes es cuando más sobra. No llevamos registro de ventas por día.",
+      "assistant": "Con lo que me cuentas ya tengo lo necesario. Estás produciendo lo mismo todos los días, y como la demanda cambia (lunes y martes se vende menos), ahí se concentra el desperdicio. Además, sin registro diario de ventas es difícil saber cuánto producir en cada sede.\n\n**Línea de trabajo:** `process_design`\n\n## Servicios recomendados\n\n**1. Producción más limpia y reducción de desperdicios**\nEs el servicio central: cuantifica el desperdicio, prioriza acciones y ajusta la planeación de producción a la demanda real. Aplica directamente a tu caso (se produce más de lo que se vende).\nFuente: [Producción más limpia y reducción de desperdicios](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/produccion-mas-limpia-desperdicios.md)\n\n**2. Tablero de indicadores y analítica operativa**\nComo hoy no llevan registro de ventas por día, este servicio ayuda a definir qué medir (producción, ventas y sobrantes por sede) y a darle seguimiento. Sirve para sostener la mejora en el tiempo.\nFuente: [Tablero de indicadores y analítica operativa](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/tablero-indicadores-analitica.md)\n\n## Pre-propuesta\n\n- **Problema:** panadería con 3 sedes en Turbaco (14 empleados) que produce unos 2.000 panes diarios con cantidad fija y desecha cerca del 15 %, sobre todo lunes y martes. No hay registro diario de ventas.\n- **Línea de trabajo:** `process_design`\n- **Servicios recomendados:** Producción más limpia y reducción de desperdicios (principal) y Tablero de indicadores y analítica operativa (complementario).\n- **Alcance sugerido:**\n  - Mapa de flujo de valor y cuantificación del desperdicio por sede.\n  - Plan de mejora y ajuste de la producción según el día de la semana.\n  - Definición de indicadores básicos y un tablero para registrar y seguir producción, ventas y sobrantes.\n  - Medición de resultados al cierre.\n- **Rango de inversión (sin IVA ni costos de terceros):**\n  - Producción más limpia: entre **COP 3.500.000 y COP 12.000.000** (4 a 8 semanas).\n  - Tablero de indicadores: entre **COP 4.000.000 y COP 14.000.000** (3 a 6 semanas).\n- **Descuento:** con 14 empleados, tu empresa entraría en la categoría de pequeña empresa (11 a 50 empleados), con un **10 %** de descuento sobre el valor del servicio. Para aplicarlo debes presentar el certificado de existencia y representación legal. El valor final se define en la propuesta formal.\n- **Forma de pago:** 50 % al inicio y 50 % contra la entrega final.\n- **Resultados:** no puedo prometer una cifra de reducción del desperdicio; eso se estima después del diagnóstico con datos reales.\n\n## Siguiente paso\n\nEsta pre-propuesta no es una oferta comercial ni compromete al centro. Un coordinador la revisaría y te contactaría en unos **2 días hábiles** para una reunión de diagnóstico de 45 a 60 minutos.\n\nSi quieres que se guarde y te contacten, necesito tu **autorización expresa**, el **nombre de tu empresa**, tu **nombre** y, si quieres, un **correo electrónico**. Tus datos se usan solo para responder tu solicitud, conforme a la Ley 1581 de 2012.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0178704,
+      "latencyMs": 9313,
+      "ttftMs": 941,
+      "retrievalMode": "fts",
+      "retrievedSources": [
+        "data/catalog/servicios/produccion-mas-limpia-desperdicios.md",
+        "data/catalog/servicios/vigilancia-tecnologica-pi.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende el problema concreto con los dos servicios correctos del catálogo, rangos de precio exactos y plazos respaldados. Explica claramente por qué cada servicio aplica, respeta la política de descuentos (10% para pequeña empresa con 14 empleados), y solicita autorización antes de guardar datos, cumpliendo la normativa de confidencialidad. El tono es cercano, profesional y evita prometer resultados numéricos sin simulación. Estructura legible y sin relleno innecesario."
+  },
+  "judgeCostUsd": 0.006539
+}

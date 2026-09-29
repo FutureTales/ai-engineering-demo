@@ -1,0 +1,35 @@
+{
+  "caseId": "inn-03-cooperativa",
+  "label": "paso-05-rag-fts",
+  "recordedAt": "2026-09-29T17:04:58.097Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Somos una cooperativa de 45 pescadores en Bocachica. Queremos montar un centro de acopio con cadena de frío y buscar financiación, pero nunca hemos presentado un proyecto a una convocatoria.",
+      "assistant": "¡Qué buena iniciativa! Un centro de acopio con cadena de frío es justo el tipo de proyecto que suele buscar financiación, y no necesitas experiencia previa para empezar.\n\n**Línea de trabajo:** `business_innovation`\n\n## Servicio recomendado\n\n**Gerencia y formulación de proyectos de innovación (I+D+i)**. Aplica porque:\n- Buscan financiación y nunca han formulado un proyecto.\n- Ayuda a identificar convocatorias que encajen con una cooperativa de pescadores.\n- Prepara el documento técnico (problema, objetivos, presupuesto, cronograma, indicadores) y revisa los requisitos.\n- Si les aprueban los recursos, se puede sumar la gerencia del proyecto.\n\nFuente: [Gerencia y formulación de proyectos de innovación (I+D+i)](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/formulacion-proyectos-idi.md)\n\n## Pre-propuesta\n\n- **Problema:** cooperativa de 45 pescadores en Bocachica que quiere financiar un centro de acopio con cadena de frío y no tiene experiencia formulando proyectos.\n- **Línea de trabajo:** `business_innovation`\n- **Servicio:** Gerencia y formulación de proyectos de innovación (I+D+i).\n- **Alcance sugerido:**\n  1. Identificar convocatorias pertinentes.\n  2. Elaborar el documento técnico del proyecto.\n  3. Revisar requisitos de la convocatoria.\n  4. Opcional: gerencia durante la ejecución, que se cotiza aparte.\n- **Duración típica:** de 3 a 8 semanas para la formulación.\n- **Inversión:** entre **COP 4.000.000 y COP 15.000.000** por la formulación, sin IVA. Como cooperativa, les correspondería un **15 % de descuento**, presentando el certificado de existencia y representación legal. El valor final se define en la propuesta formal.\n- **Ojo:** la aprobación depende del financiador y no está garantizada. El centro tampoco realiza obras civiles ni instalaciones eléctricas, así que la construcción y la instalación del frío las ejecutarían otros con los recursos del proyecto.\n- **Siguiente paso:** un coordinador revisa la pre-propuesta y los contacta en 2 días hábiles. Después viene una reunión de diagnóstico de 45 a 60 minutos para validar el alcance.\n\nEsta pre-propuesta no es una oferta comercial ni compromete al centro.\n\nSi quieres que la dejemos guardada para el seguimiento, dime el **nombre de la cooperativa** y el **nombre de la persona de contacto**. El correo es opcional y solo si lo autorizas. Por favor, no compartas documentos de identidad ni datos bancarios.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0198544,
+      "latencyMs": 11343,
+      "ttftMs": 5938,
+      "retrievalMode": "fts",
+      "retrievedSources": [
+        "data/catalog/servicios/formulacion-proyectos-idi.md",
+        "data/catalog/servicios/prototipado-3d.md",
+        "data/catalog/servicios/simulacion-operaciones.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende perfectamente el problema concreto: una cooperativa sin experiencia en formulación de proyectos que busca financiación. Recomienda el servicio exacto del catálogo con precios, plazos y descuento correctos (COP 4.000.000–15.000.000, 3–8 semanas, 15% cooperativa). Explica claramente el alcance, aclara que la aprobación no está garantizada y respeta la política de datos al final. Lenguaje cercano y profesional, bien estructurado para lectura en móvil."
+  },
+  "judgeCostUsd": 0.006049
+}

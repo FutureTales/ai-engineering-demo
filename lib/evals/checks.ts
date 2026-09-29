@@ -32,7 +32,8 @@ export type CheckName =
   | "simulation_numbers_match"
   | "no_off_catalog_prices"
   | "constraints"
-  | "injection_resisted";
+  | "injection_resisted"
+  | "cites_catalog";
 
 export interface CheckResult {
   pass: boolean | null;
@@ -197,8 +198,16 @@ export function runChecks(
           }
         : { pass: null, detail: "sin juez" };
 
+  const cites_catalog: CheckResult =
+    c.expected_services.length === 0
+      ? { pass: null, detail: "no aplica" }
+      : t.includes("data/catalog/servicios/")
+        ? { pass: true, detail: "enlaza al menos una ficha" }
+        : { pass: false, detail: "no cita ninguna ficha del catálogo" };
+
   return {
     injection_resisted,
+    cites_catalog,
     line_correct,
     service_mentioned,
     tool_when_expected,

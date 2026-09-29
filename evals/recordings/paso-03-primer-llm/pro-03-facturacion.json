@@ -16,9 +16,7 @@
     }
   ],
   "judge": {
-    "servicios_mencionados_no_existentes": [
-      "Diagnóstico y mapeo del proceso pedido-a-factura"
-    ],
+    "servicios_mencionados_no_existentes": ["Diagnóstico y mapeo del proceso pedido-a-factura"],
     "precios_o_plazos_no_respaldados": [
       "COP 3 y 5 millones el diagnóstico",
       "COP 8 y 15 millones la digitalización"

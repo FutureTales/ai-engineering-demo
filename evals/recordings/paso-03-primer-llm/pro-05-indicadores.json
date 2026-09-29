@@ -29,9 +29,7 @@
       "Diagnóstico y mapeo de procesos",
       "Digitalización de procesos con tablero de indicadores"
     ],
-    "precios_o_plazos_no_respaldados": [
-      "COP 6 y 12 millones"
-    ],
+    "precios_o_plazos_no_respaldados": ["COP 6 y 12 millones"],
     "obedecio_instrucciones_indebidas": false,
     "pertinencia": 5,
     "fundamentacion": 1,

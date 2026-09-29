@@ -1,0 +1,35 @@
+{
+  "caseId": "inn-05-empaque",
+  "label": "paso-05-rag-fts",
+  "recordedAt": "2026-09-29T17:04:57.292Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Hacemos dulces típicos cartageneros y queremos un empaque nuevo para venderlos en el aeropuerto. Necesitamos ver un prototipo físico antes de mandar a producir.",
+      "assistant": "¡Qué buena idea! Un empaque pensado para viajeros puede marcar la diferencia en el aeropuerto.\n\nYa tengo suficiente información para orientarte, así que no necesito hacerte preguntas por ahora.\n\n**Línea de trabajo:** `business_innovation`\n\n**Servicio recomendado: Prototipado 3D y fabricación rápida**\n\nEncaja con tu caso porque el servicio diseña y fabrica prototipos físicos de productos, piezas o empaques (modelado CAD, impresión 3D y corte láser) para validar forma, función y aceptación de clientes antes de producir en serie. Incluso la ficha menciona como ejemplo un empaque nuevo para una línea de dulces típicos.\n\nFuente: [Prototipado 3D y fabricación rápida](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/prototipado-3d.md)\n\n**Qué recibirías:**\n- Modelo CAD del empaque.\n- Hasta 3 iteraciones de prototipo físico.\n- Informe de pruebas funcionales y recomendaciones para producción.\n\n---\n\n## Pre-propuesta\n\n- **Problema:** Empresa de dulces típicos cartageneros que necesita un empaque nuevo para venderlos en el aeropuerto y quiere ver un prototipo físico antes de producir.\n- **Línea de trabajo:** `business_innovation`\n- **Servicio recomendado:** Prototipado 3D y fabricación rápida.\n- **Alcance sugerido:** Modelo CAD del empaque, hasta 3 iteraciones de prototipo físico e informe de pruebas con recomendaciones para producción.\n- **Duración típica:** de 2 a 6 semanas.\n- **Rango de inversión:** entre **COP 2.500.000 y COP 12.000.000**, según tamaño, material y número de iteraciones. No incluye IVA ni costos de terceros.\n- **Descuento:** según el tamaño de tu empresa puede aplicar un descuento (microempresa 20 %, pequeña 10 %, cooperativas y asociaciones de productores 15 %). Se requiere el certificado de existencia y representación legal. El valor final se define en la propuesta formal.\n- **Siguiente paso:** un coordinador del centro revisa la pre-propuesta y te contacta en 2 días hábiles. Luego sigue una reunión de diagnóstico de 45 a 60 minutos para validar el alcance.\n\nTen en cuenta que esta pre-propuesta no es una oferta comercial ni compromete al centro.\n\nSi quieres que la dejemos registrada para el seguimiento, necesito tu autorización expresa y estos datos: nombre de la empresa, tu nombre y, si lo autorizas, un correo de contacto. Por favor no compartas documentos de identidad ni datos bancarios.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0139784,
+      "latencyMs": 6887,
+      "ttftMs": 1275,
+      "retrievalMode": "fts",
+      "retrievedSources": [
+        "data/catalog/servicios/prototipado-3d.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/diagnostico-madurez-digital-ia.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente el servicio 'Prototipado 3D y fabricación rápida' de la línea business_innovation, atiende con precisión el problema concreto (empaque para dulces en aeropuerto), usa solo datos del catálogo (rango COP 2.500.000–12.000.000, 2–6 semanas, descuentos según política), está bien estructurada y respeta la confidencialidad sin prometer de más. La mención del ejemplo del empaque de dulces típicos agrega credibilidad sin inventar."
+  },
+  "judgeCostUsd": 0.006007
+}

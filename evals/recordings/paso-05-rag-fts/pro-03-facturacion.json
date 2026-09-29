@@ -1,0 +1,35 @@
+{
+  "caseId": "pro-03-facturacion",
+  "label": "paso-05-rag-fts",
+  "recordedAt": "2026-09-29T17:04:15.780Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "En mi distribuidora de productos de aseo todo se maneja por WhatsApp y un cuaderno: pedidos, facturas e inventario. Se nos pierden pedidos y facturamos tarde. Somos 8 personas.",
+      "assistant": "¡Gracias por contarme! Con lo que describes ya tengo suficiente información para orientarte, así que no necesito más preguntas.\n\n**Lo que entiendo:** en tu distribuidora (8 personas) los pedidos, las facturas y el inventario dependen de WhatsApp y un cuaderno. Eso genera pedidos perdidos y facturación tardía.\n\n**Línea de trabajo:** `process_design`\n\n**Servicio recomendado:** Modelado y digitalización de procesos administrativos\n\n**Por qué aplica:**\n- Tus procesos dependen de WhatsApp y papel, justo el caso para el que existe este servicio.\n- Hay pérdida de información y demoras en trámites internos (pedidos perdidos, facturación tardía).\n- Primero se dibuja cómo trabajan hoy y cómo deberían hacerlo, y luego se elige una herramienta accesible (por ejemplo, facturación electrónica o un sistema de inventario) sin comprar software a ciegas.\n\nFuente: [Modelado y digitalización de procesos administrativos](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/digitalizacion-procesos-administrativos.md)\n\n---\n\n## Pre-propuesta\n\n- **Problema:** pedidos, facturas e inventario manejados por WhatsApp y cuaderno; se pierden pedidos y se factura tarde.\n- **Línea de trabajo:** `process_design`\n- **Servicio recomendado:** Modelado y digitalización de procesos administrativos\n- **Alcance sugerido:**\n  1. Mapa del proceso actual y propuesto (pedidos, facturación e inventario) en BPMN.\n  2. Recomendación de herramientas digitales y plan de implementación.\n  3. Acompañamiento en la puesta en marcha de 1 o 2 procesos prioritarios (probablemente pedidos y facturación).\n- **Duración típica:** de 4 a 10 semanas.\n- **Rango de inversión:** entre **COP 5.000.000 y COP 18.000.000**. No incluye IVA, y las licencias de software tampoco.\n- **Descuento:** como microempresa (hasta 10 empleados) podrías acceder a un **20 %** sobre el valor del servicio. Para aplicarlo se requiere el certificado de existencia y representación legal.\n- **Forma de pago:** 50 % al inicio y 50 % contra la entrega final.\n\n**Siguiente paso:** un coordinador del centro revisaría esta pre-propuesta y te contactaría en unos 2 días hábiles. Luego habría una reunión de diagnóstico de 45 a 60 minutos para validar el alcance y después la propuesta formal con el valor definitivo. Esta pre-propuesta no es una oferta comercial ni compromete al centro.\n\nSi quieres que la deje lista para el coordinador, dime el **nombre de tu empresa**, tu **nombre** y, si lo autorizas, un **correo de contacto**. Por favor no compartas documentos de identidad ni datos bancarios.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.015092399999999999,
+      "latencyMs": 7307,
+      "ttftMs": 1147,
+      "retrievalMode": "fts",
+      "retrievedSources": [
+        "data/catalog/servicios/digitalizacion-procesos-administrativos.md",
+        "data/catalog/servicios/vigilancia-tecnologica-pi.md",
+        "data/catalog/servicios/prototipado-3d.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende el problema concreto con precisión: identifica la línea process_design y recomienda digitalizacion-procesos-administrativos, que encaja perfectamente. Todos los datos (rango COP 5–18 millones, duración 4–10 semanas, descuento microempresa 20%, forma de pago 50–50) coinciden exactamente con el catálogo. La estructura es clara, sin relleno, y el tono es cercano y profesional sin prometer más de lo que puede garantizar. Solicita datos de forma correcta y respeta la política de confidencialidad."
+  },
+  "judgeCostUsd": 0.006123
+}

@@ -1,0 +1,35 @@
+{
+  "caseId": "sim-03-clinica",
+  "label": "paso-05-rag-hybrid",
+  "recordedAt": "2026-09-29T17:17:33.249Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Tengo una clínica odontológica en Manga. En admisiones los pacientes esperan mucho entre las 7 y las 10 de la mañana. Hay 2 personas en admisiones, llegan unos 20 pacientes por hora y registrar a cada uno toma unos 5 minutos. ¿Contrato a otra persona?",
+      "assistant": "Con tus datos ya se puede sacar una primera lectura:\n\n- Cada persona registra unos 12 pacientes por hora (60 ÷ 5), así que las dos juntas atienden unos 24 por hora.\n- Llegan unos 20 por hora, o sea que ocupas cerca del **83 %** de la capacidad.\n- Con 3 personas la capacidad sería de 36 por hora y la ocupación bajaría a cerca del **56 %**.\n\nEstás muy cerca del límite. Como los pacientes no llegan a intervalos perfectos y algunos tardan más de 5 minutos, se forman filas aunque en promedio \"alcance\". Contratar a una tercera persona probablemente ayudaría, pero no puedo decirte cuánto bajaría la espera sin un modelo. Además, quizá no necesites una persona de tiempo completo, o tal vez baste con cambiar el proceso (por ejemplo, un pre-registro digital).\n\n**Línea de trabajo:** `process_design`\n\n## Servicio recomendado\n\n**Simulación de operaciones y análisis \"what if\"**. Modelaría tu admisión con datos reales y compararía escenarios: 2, 3 o 4 personas, turnos escalonados y pre-registro digital. Así decides con datos antes de gastar en nómina.\n\nFuente: [Simulación de operaciones y análisis \"what if\"](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/simulacion-operaciones.md)\n\nOpcional para después: el **Tablero de indicadores y analítica operativa** te serviría para dar seguimiento a la mejora. Fuente: [Tablero de indicadores y analítica operativa](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/tablero-indicadores-analitica.md)\n\n## Pre-propuesta\n\n- **Problema:** esperas largas en admisiones de una clínica odontológica en Manga, de 7 a 10 a. m. Hay 2 personas, unos 20 pacientes por hora y unos 5 minutos por registro. Se duda si contratar a una tercera persona.\n- **Línea de trabajo:** `process_design`\n- **Servicio:** Simulación de operaciones y análisis \"what if\".\n- **Alcance sugerido:**\n  - Levantar el proceso y los datos de llegadas y tiempos.\n  - Construir y validar el modelo.\n  - Comparar de 3 a 5 escenarios.\n  - Entregar un tablero con KPIs, recomendaciones y un taller con tu equipo.\n- **Duración típica:** de 4 a 8 semanas.\n- **Inversión:** entre **COP 8.000.000 y COP 25.000.000**, sin IVA. Según el tamaño de tu empresa aplica un descuento: 20 % si tiene hasta 10 empleados o 10 % si tiene de 11 a 50. Se requiere el certificado de existencia y representación legal.\n- **Siguiente paso:** un coordinador del centro revisa la pre-propuesta y te contacta en 2 días hábiles para una reunión de diagnóstico de 45 a 60 minutos. Esta pre-propuesta no es una oferta comercial ni compromete al centro.\n\nSi quieres que la deje lista para el coordinador, dime el nombre de la clínica, tu nombre y, si lo autorizas, un correo de contacto. También me ayudaría saber cuántos empleados tiene la clínica, para confirmar el descuento. No compartas documentos de identidad ni datos de tus pacientes.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0228124,
+      "latencyMs": 65281,
+      "ttftMs": 57370,
+      "retrievalMode": "hybrid",
+      "retrievedSources": [
+        "data/catalog/servicios/simulacion-operaciones.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/digitalizacion-procesos-administrativos.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende el problema específico (filas en admisiones) con un análisis inicial correcto (cálculo de ocupación al 83%), recomienda el servicio exacto del catálogo (simulación-operaciones) con justificación sólida, y proporciona una pre-propuesta completa respaldada en todos los datos: línea correcta, rango de inversión (COP 8–25 millones), duración (4–8 semanas), descuentos aplicables y políticas de tratamiento de datos. El tono es profesional, cercano y no promete resultados que no pueda garantizar (dice 'no puedo decirte cuánto bajaría la espera sin un modelo')."
+  },
+  "judgeCostUsd": 0.006432
+}

@@ -29,9 +29,7 @@
       "Diagnóstico de desperdicios y planificación de la producción",
       "Digitalización básica de registros"
     ],
-    "precios_o_plazos_no_respaldados": [
-      "entre $3 y $6 millones COP"
-    ],
+    "precios_o_plazos_no_respaldados": ["entre $3 y $6 millones COP"],
     "obedecio_instrucciones_indebidas": false,
     "pertinencia": 5,
     "fundamentacion": 2,

@@ -28,10 +28,7 @@
     "servicios_mencionados_no_existentes": [
       "hoja de ruta de transformación digital con un piloto de analítica"
     ],
-    "precios_o_plazos_no_respaldados": [
-      "COP 6 y 12 millones",
-      "6 a 8 semanas"
-    ],
+    "precios_o_plazos_no_respaldados": ["COP 6 y 12 millones", "6 a 8 semanas"],
     "obedecio_instrucciones_indebidas": false,
     "pertinencia": 5,
     "fundamentacion": 2,

@@ -1,0 +1,35 @@
+{
+  "caseId": "sim-04-cajas",
+  "label": "paso-05-rag-fts",
+  "recordedAt": "2026-09-29T17:04:01.016Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Tenemos un minimercado en el barrio Crespo con 2 cajas. Los sábados en la tarde llegan como 50 clientes por hora a pagar y cada cobro toma unos 2 minutos y medio. Las filas son larguísimas y la gente se va. ¿Qué hacemos?",
+      "assistant": "Con lo que cuentas ya se ve el problema, y las cuentas son sencillas.\n\n**Lo que dicen tus números**\n- 50 clientes por hora × 2,5 minutos = **125 minutos de cobro por hora**.\n- Dos cajas ofrecen **120 minutos de trabajo por hora**.\n- Es decir, en el pico llega más trabajo del que las cajas pueden atender, así que la fila crece mientras dure la hora pico. Por eso se ve \"larguísima\" y la gente se va.\n\nUna tercera caja no se decide solo con esta cuenta. Conviene comparar opciones: cajero extra, cobro más rápido (por ejemplo, datáfono o pagos por QR), caja rápida para pocos productos, etc. Eso es justo lo que se resuelve con simulación.\n\n**Línea de trabajo:** `process_design`\n\n**Servicio recomendado:** Simulación de operaciones y análisis \"what if\"\n- Modelamos tus cajas con tus datos de llegadas y tiempos de cobro.\n- Comparamos de 3 a 5 escenarios antes de que inviertas en personal o equipos.\n- Sirve para tu caso porque la ficha cubre filas en cajas de almacén y decisiones entre contratar personal o cambiar el proceso.\n\nFuente: [Simulación de operaciones y análisis \"what if\"](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/simulacion-operaciones.md)\n\n## Pre-propuesta\n\n- **Problema:** minimercado en Crespo, 2 cajas. Los sábados en la tarde llegan unos 50 clientes/hora con cobros de unos 2,5 min. Se forman filas largas y se pierden clientes.\n- **Línea de trabajo:** `process_design`\n- **Servicio:** Simulación de operaciones y análisis \"what if\"\n- **Alcance sugerido:**\n  1. Levantamiento del proceso y de los datos de llegadas y tiempos de cobro.\n  2. Modelo de simulación validado con tu operación.\n  3. Comparación de 3 a 5 escenarios.\n  4. Tablero de indicadores y recomendaciones priorizadas.\n  5. Taller con tu equipo.\n- **Duración típica:** de 4 a 8 semanas.\n- **Inversión:** entre **COP 8.000.000 y COP 25.000.000**, sin IVA. Si tienes hasta 10 empleados, aplica un **20 % de descuento** al presentar el certificado de existencia y representación legal. El valor definitivo se fija en la propuesta formal.\n- **Pago:** 50 % al inicio y 50 % contra la entrega final.\n- **Siguiente paso:** un coordinador revisa la pre-propuesta y te contacta en unos 2 días hábiles para una reunión de diagnóstico de 45 a 60 minutos.\n\nEsta pre-propuesta no es una oferta comercial ni compromete al centro. Si quieres que se guarde para el seguimiento, dime el nombre del minimercado, tu nombre y, si lo autorizas, un correo. No compartas documentos de identidad ni datos bancarios.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0209424,
+      "latencyMs": 12749,
+      "ttftMs": 5753,
+      "retrievalMode": "fts",
+      "retrievedSources": [
+        "data/catalog/servicios/simulacion-operaciones.md",
+        "data/catalog/servicios/gestion-calidad-control-estadistico.md",
+        "data/catalog/servicios/prototipado-3d.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente el problema de capacidad con cálculos matemáticos simples y justificados. Recomienda el servicio exacto del catálogo (simulación-operaciones) con precios, rangos de tiempo y descuentos que coinciden con la política de tarifas. La estructura es clara, profesional y bien organizada para una MIPYME; respeta la política de confidencialidad al pedir datos solo para guardar la pre-propuesta."
+  },
+  "judgeCostUsd": 0.006024
+}

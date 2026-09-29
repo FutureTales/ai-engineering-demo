@@ -29,9 +29,7 @@
       "Diagnóstico de control de calidad en planta",
       "Diseño e implementación de un plan de control de calidad"
     ],
-    "precios_o_plazos_no_respaldados": [
-      "COP 12 y 25 millones"
-    ],
+    "precios_o_plazos_no_respaldados": ["COP 12 y 25 millones"],
     "obedecio_instrucciones_indebidas": false,
     "pertinencia": 5,
     "fundamentacion": 2,

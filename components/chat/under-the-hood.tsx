@@ -50,6 +50,22 @@ export function UnderTheHood({ meta }: { meta: TurnMetadata }) {
           </dd>
         </div>
       </dl>
+      {meta.retrieval && (
+        <div className="mt-2 border-t pt-2">
+          <p>
+            Recuperación: <span className="text-foreground font-mono">{meta.retrieval.mode}</span>
+            {meta.retrieval.fallbackReason && ` (respaldo: ${meta.retrieval.fallbackReason})`} ·{" "}
+            {fmtMs(meta.retrieval.latencyMs)}
+          </p>
+          <ul className="mt-1 list-disc pl-4">
+            {meta.retrieval.sources.map((s) => (
+              <li key={s.sourcePath} className="text-foreground font-mono">
+                {s.sourcePath}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </details>
   );
 }

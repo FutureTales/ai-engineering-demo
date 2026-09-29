@@ -1,0 +1,35 @@
+{
+  "caseId": "sim-01-hotel",
+  "label": "paso-05-rag-hybrid",
+  "recordedAt": "2026-09-29T17:16:24.467Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Tengo un hotel boutique de 24 habitaciones en Getsemaní, el Hotel Brisas de Getsemaní. En temporada alta (diciembre y enero) se forman filas de hasta 40 minutos en el check-in entre las 2 y las 5 de la tarde. Tenemos 2 recepcionistas. Llegan unos 18 huéspedes por hora en el pico y cada check-in toma unos 6 minutos. Los huéspedes se quejan en las reseñas. ¿Qué me recomiendan?",
+      "assistant": "¡Gracias por los detalles! Con lo que cuentas tengo información suficiente, así que no necesito más preguntas.\n\n**Lo que entiendo:** hotel boutique de 24 habitaciones, 2 recepcionistas, y en el pico (2 a 5 p. m., diciembre y enero) llegan unos 18 huéspedes por hora con check-ins de unos 6 minutos. Eso genera filas de hasta 40 minutos y reseñas negativas.\n\n**Lógica del problema (sin cifras nuevas):** cada recepcionista atiende a 10 huéspedes por hora (60 ÷ 6). Con 2 recepcionistas, la capacidad es de unos 20 por hora, frente a 18 que llegan. Es decir, en el pico casi no hay margen. Cuando la capacidad es tan cercana a la demanda, cualquier retraso o llegada en grupo hace crecer la fila rápido. Por eso conviene modelarlo antes de decidir si contratar, cambiar turnos o digitalizar pasos.\n\n**Línea de trabajo:** `process_design`\n\n## Servicio recomendado\n\n**1. Simulación de operaciones y análisis \"what if\"**\nEs el ajuste más directo: la ficha menciona justamente filas en la recepción de un hotel en temporada alta. Permite comparar, por ejemplo, 2, 3 o 4 recepcionistas y un check-in digital previo, y ver qué conviene antes de invertir.\n\nFuente: [Simulación de operaciones y análisis \"what if\"](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/simulacion-operaciones.md)\n\n**Opcional, después:** **Tablero de indicadores y analítica operativa**, para hacer seguimiento a los tiempos de espera una vez implementada la mejora.\n\nFuente: [Tablero de indicadores y analítica operativa](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/tablero-indicadores-analitica.md)\n\n## Pre-propuesta\n\n- **Empresa:** Hotel Brisas de Getsemaní (Cartagena)\n- **Problema:** filas de hasta 40 minutos en el check-in en temporada alta (2 a 5 p. m.), con quejas en reseñas.\n- **Línea de trabajo:** `process_design`\n- **Servicio recomendado:** Simulación de operaciones y análisis \"what if\"\n- **Alcance sugerido:**\n  - Levantamiento del proceso actual y de los datos (llegadas, tiempos de servicio, recursos).\n  - Modelo de simulación validado con tu operación.\n  - Comparación de 3 a 5 escenarios (más recepcionistas, cambios de turno, check-in digital previo).\n  - Tablero con KPIs y recomendaciones priorizadas.\n  - Taller de transferencia con tu equipo.\n- **Duración típica:** de 4 a 8 semanas.\n- **Rango de inversión:** entre **COP 8.000.000 y COP 25.000.000**, sin IVA ni costos de terceros. El valor exacto se define en la propuesta formal.\n- **Descuento:** si tu hotel tiene hasta 10 empleados aplicaría 20 %, y si tiene de 11 a 50, 10 %. Se necesita el certificado de existencia y representación legal.\n- **Pago:** 50 % al inicio y 50 % contra la entrega final.\n\n**Siguiente paso:** un coordinador del centro revisa la pre-propuesta y te contacta en unos 2 días hábiles para agendar una reunión de diagnóstico de 45 a 60 minutos. Recuerda que esta pre-propuesta no es una oferta comercial ni compromete al centro.\n\nSi quieres que la guardemos, necesito tu autorización expresa, el nombre de la persona de contacto y, si lo deseas, un correo. Por favor no compartas documentos de identidad ni datos bancarios.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.027013,
+      "latencyMs": 11084,
+      "ttftMs": 2080,
+      "retrievalMode": "hybrid",
+      "retrievedSources": [
+        "data/catalog/servicios/simulacion-operaciones.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/gestion-calidad-control-estadistico.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente el problema (congestión en check-in) y recomienda precisamente el servicio del catálogo que aplica: Simulación de operaciones y análisis what if. El copiloto explica la lógica matemática del cuello de botella sin inventar datos ni afirmar resultados que no tenga, respeta todos los rangos de precio, duración y descuentos del catálogo, y cierra con transparencia sobre los pasos siguientes y la autorización de datos. Estructura clara, tono profesional y cercano, sin prometer de más."
+  },
+  "judgeCostUsd": 0.006437
+}

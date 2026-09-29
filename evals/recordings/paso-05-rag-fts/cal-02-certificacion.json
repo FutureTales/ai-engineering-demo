@@ -1,0 +1,35 @@
+{
+  "caseId": "cal-02-certificacion",
+  "label": "paso-05-rag-fts",
+  "recordedAt": "2026-09-29T17:04:33.149Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Hacemos salsas y encurtidos. Una cadena de supermercados quiere comprarnos, pero nos exige cumplir estándares de calidad y más adelante ISO 9001. Hoy no tenemos procedimientos escritos.",
+      "assistant": "¡Qué buena noticia que un supermercado quiera comprarles! Tu caso está claro: necesitan estandarizar cómo trabajan y prepararse para certificarse.\n\n**Línea de trabajo:** `quality_assurance`\n\n## Servicio recomendado\n\n**Sistema de gestión de calidad y control estadístico de procesos**. Aplica porque un cliente grande les exige estándares y certificación, y hoy no tienen procedimientos escritos, que es la base para cualquier certificación.\n\nFuente: [Sistema de gestión de calidad y control estadístico de procesos](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/gestion-calidad-control-estadistico.md)\n\n## Pre-propuesta\n\n- **Problema:** una cadena de supermercados quiere comprarles salsas y encurtidos, pero exige estándares de calidad y, más adelante, ISO 9001. No tienen procedimientos escritos.\n- **Línea de trabajo:** Aseguramiento de la calidad.\n- **Servicio:** Sistema de gestión de calidad y control estadístico de procesos.\n- **Alcance sugerido:**\n  1. Diagnóstico de calidad y causas raíz de los problemas principales.\n  2. Control estadístico en 1 o 2 puntos críticos de su proceso.\n  3. Procedimientos estandarizados y plan de capacitación.\n  4. Opcional: hoja de ruta hacia ISO 9001.\n- **Duración típica:** de 6 a 12 semanas.\n- **Inversión:** entre **COP 6.000.000 y COP 20.000.000**. No incluye IVA ni el costo del ente certificador.\n- **Descuento:** si son microempresa (hasta 10 empleados) es del 20 %, y si son pequeña (11 a 50) del 10 %. Se pide el certificado de existencia y representación legal.\n- **Siguiente paso:** un coordinador revisa la pre-propuesta y los contacta en 2 días hábiles. Luego sigue una reunión de diagnóstico de 45 a 60 minutos para validar el alcance y qué exige exactamente el supermercado.\n\nEsta pre-propuesta no es una oferta comercial ni garantiza la certificación. El valor final se define en la propuesta formal.\n\nPara aplicar el descuento correcto, ¿cuántas personas trabajan en la empresa? Y si quieres que guarde la pre-propuesta, necesito tu autorización y estos datos: nombre de la empresa, tu nombre y, si quieres, un correo.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.018780400000000003,
+      "latencyMs": 10693,
+      "ttftMs": 5523,
+      "retrievalMode": "fts",
+      "retrievedSources": [
+        "data/catalog/servicios/gestion-calidad-control-estadistico.md",
+        "data/catalog/servicios/vigilancia-tecnologica-pi.md",
+        "data/catalog/servicios/capacitacion-realidad-virtual.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente el problema (falta de procedimientos para certificación ISO 9001), recomienda el servicio exacto del catálogo (gestion-calidad-control-estadistico) con todos los datos respaldados: rango COP 6–20 millones, plazo 6–12 semanas, descuentos por tamaño de empresa según política. Es clara, estructurada, cercana y profesional sin prometer certificación. Solicita información faltante antes de guardar datos."
+  },
+  "judgeCostUsd": 0.005826
+}

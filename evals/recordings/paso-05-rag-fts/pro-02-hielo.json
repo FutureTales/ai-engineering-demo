@@ -1,0 +1,50 @@
+{
+  "caseId": "pro-02-hielo",
+  "label": "paso-05-rag-fts",
+  "recordedAt": "2026-09-29T17:04:19.421Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Tenemos una planta de hielo en Mamonal y la factura de energía se nos disparó. Sospechamos que desperdiciamos agua y energía en el proceso, pero no sabemos dónde.",
+      "assistant": "¡Hola! Gracias por contarnos. Por lo que describes, parece un caso de **producción más limpia y reducción de desperdicios**, pero antes de armar la pre-propuesta necesito aclarar tres cosas:\n\n1. **¿Cuántas personas trabajan en la planta?** Con eso sé si aplica algún descuento para MIPYMES.\n2. **¿Cuándo empezó a dispararse la factura y de cuánto fue el aumento aproximado?** Por ejemplo, si fue de un mes a otro o si viene subiendo poco a poco.\n3. **¿Ha cambiado algo en la operación?** Puede ser más producción, equipos nuevos o dañados, o cambios de turnos. También me sirve saber si ya tienen alguna medición del consumo de agua y energía.\n\nCon tus respuestas te preparo la recomendación y la pre-propuesta completa.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0088404,
+      "latencyMs": 4795,
+      "ttftMs": 2959,
+      "retrievalMode": "fts",
+      "retrievedSources": [
+        "data/catalog/servicios/produccion-mas-limpia-desperdicios.md",
+        "data/catalog/servicios/digitalizacion-procesos-administrativos.md",
+        "data/catalog/servicios/diagnostico-madurez-digital-ia.md"
+      ]
+    },
+    {
+      "user": "Somos 20 empleados y producimos unas 15 toneladas de hielo al día. No medimos el consumo por etapa; solo vemos la factura mensual, que subió cerca de un 30 % este año.",
+      "assistant": "Gracias, con eso ya tengo lo necesario.\n\n**Línea de trabajo:** `process_design`\n\n## Diagnóstico\nTienen una planta de 20 personas que produce unas 15 toneladas de hielo al día. La factura de energía subió cerca de un 30 % este año, y hoy solo ven el total mensual, sin saber cuánto consume cada etapa. Mientras no se mida por etapa, es difícil saber dónde está el desperdicio.\n\n## Servicios recomendados\n\n**1. Producción más limpia y reducción de desperdicios** (principal)\nEs el servicio que encaja con tu caso: busca reducir desperdicios de energía, agua y materia prima, y su ficha incluye como ejemplo una planta de hielo con consumo de energía elevado. Incluye mapa de flujo de valor con cuantificación de desperdicios, plan de mejora priorizado y medición de resultados al cierre.\n- Duración típica: 4 a 8 semanas.\n- Inversión: entre **COP 3.500.000 y COP 12.000.000**.\n\nFuente: [Producción más limpia y reducción de desperdicios](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/produccion-mas-limpia-desperdicios.md)\n\n**2. Tablero de indicadores y analítica operativa** (complementario, opcional)\nComo hoy no miden por etapa, un tablero les permitiría seguir el consumo y el desperdicio de forma continua y comprobar si las mejoras se mantienen.\n- Duración típica: 3 a 6 semanas.\n- Inversión: entre **COP 4.000.000 y COP 14.000.000**.\n\nFuente: [Tablero de indicadores y analítica operativa](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/tablero-indicadores-analitica.md)\n\n## Pre-propuesta\n\n- **Problema:** aumento cercano al 30 % en la factura de energía y sospecha de desperdicio de agua y energía, sin medición por etapa del proceso.\n- **Línea de trabajo:** `process_design`.\n- **Servicios recomendados:** Producción más limpia y reducción de desperdicios (principal) y, si lo desean, Tablero de indicadores y analítica operativa.\n- **Alcance sugerido:** mapear el proceso de producción de hielo, cuantificar dónde se pierde energía y agua, priorizar acciones de mejora y medir resultados al cierre. Si se suma el tablero, quedaría un seguimiento continuo de los indicadores.\n- **Rango de inversión:**\n  - Solo producción más limpia: COP 3.500.000 a 12.000.000.\n  - Con ambos servicios: la suma de los dos rangos, es decir, COP 7.500.000 a 26.000.000.\n  - Los rangos no incluyen IVA ni costos de terceros. El valor exacto se define en la propuesta formal según el alcance.\n- **Descuento:** con 20 empleados serían una pequeña empresa (11 a 50 empleados), con un **10 %** de descuento sobre el valor del servicio. Para acceder, se debe presentar el certificado de existencia y representación legal.\n- **Forma de pago:** 50 % al inicio y 50 % contra la entrega final.\n\nNo puedo asegurarte cuánto lograrían ahorrar. Eso solo se sabrá después de medir y analizar el proceso.\n\n## Siguiente paso\nEsta pre-propuesta no es una oferta comercial ni compromete al centro. Un coordinador la revisaría y te contactaría en unos 2 días hábiles para agendar una reunión de diagnóstico de 45 a 60 minutos.\n\nSi quieres que la deje lista para el coordinador, necesito el **nombre de la empresa**, tu **nombre** y, si lo autorizas, un **correo electrónico**. Por favor no compartas documentos de identidad ni datos bancarios.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.018644400000000002,
+      "latencyMs": 9653,
+      "ttftMs": 998,
+      "retrievalMode": "fts",
+      "retrievedSources": [
+        "data/catalog/servicios/produccion-mas-limpia-desperdicios.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/digitalizacion-procesos-administrativos.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente el problema (desperdicio de energía y agua en planta de hielo), recomienda el servicio exacto del catálogo (producción-mas-limpia-desperdicios) con rangos de precio y plazo exactos, agrega un complemento pertinente (tablero de indicadores), calcula correctamente el descuento (10% para pequeña empresa), respeta todas las políticas (sin garantías sobre ahorros, solicitud adecuada de datos, explicación clara del proceso) y mantiene tono profesional y cercano."
+  },
+  "judgeCostUsd": 0.006618
+}

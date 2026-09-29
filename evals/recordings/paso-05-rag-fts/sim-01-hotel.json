@@ -1,0 +1,35 @@
+{
+  "caseId": "sim-01-hotel",
+  "label": "paso-05-rag-fts",
+  "recordedAt": "2026-09-29T17:03:59.553Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Tengo un hotel boutique de 24 habitaciones en Getsemaní, el Hotel Brisas de Getsemaní. En temporada alta (diciembre y enero) se forman filas de hasta 40 minutos en el check-in entre las 2 y las 5 de la tarde. Tenemos 2 recepcionistas. Llegan unos 18 huéspedes por hora en el pico y cada check-in toma unos 6 minutos. Los huéspedes se quejan en las reseñas. ¿Qué me recomiendan?",
+      "assistant": "¡Gracias por contarnos tan claro tu caso! Con lo que me dices ya tengo suficiente información, así que no necesito hacerte más preguntas.\n\n**Lo que entiendo:** en el pico (2 a 5 p. m.) llegan unos 18 huéspedes por hora, cada check-in toma unos 6 minutos y tienes 2 recepcionistas. Eso significa que la recepción está trabajando casi al límite de su capacidad, y en ese punto cualquier variación en las llegadas genera filas largas. Por eso tus huéspedes se quejan en las reseñas.\n\n**Línea de trabajo:** `process_design`\n\n**Servicio recomendado:** Simulación de operaciones y análisis \"what if\"\n\nPor qué aplica a tu caso:\n- Tienes filas de espera en la recepción de un hotel, que es justo uno de los casos que cubre el servicio.\n- Dudas entre varias salidas (más personal en el pico, cambiar turnos, agilizar pasos con un check-in digital previo) y conviene comparar antes de invertir.\n- La demanda es de temporada, y el modelo permite probar escenarios para diciembre y enero sin arriesgar la operación.\n\nFuente: [Simulación de operaciones y análisis \"what if\"](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/simulacion-operaciones.md)\n\n**Opcional a futuro:** el *Tablero de indicadores y analítica operativa* sirve para dar seguimiento a la mejora después de la simulación. Por ahora no es necesario para arrancar.\nFuente: [Tablero de indicadores y analítica operativa](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/tablero-indicadores-analitica.md)\n\n---\n\n## Pre-propuesta\n\n- **Empresa:** Hotel Brisas de Getsemaní (hotel boutique, 24 habitaciones, Cartagena)\n- **Problema:** filas de hasta 40 minutos en el check-in entre 2 y 5 p. m. en temporada alta, con 2 recepcionistas, unas 18 llegadas por hora y check-ins de unos 6 minutos. Hay quejas en reseñas.\n- **Línea de trabajo:** `process_design`\n- **Servicio recomendado:** Simulación de operaciones y análisis \"what if\"\n- **Alcance sugerido:**\n  - Levantamiento del proceso de check-in y de los datos (llegadas, tiempos de servicio, recursos).\n  - Modelo de simulación validado con tu operación real.\n  - Comparación de 3 a 5 escenarios, por ejemplo con más recepcionistas en el pico, cambios de turno y check-in digital previo.\n  - Tablero con KPIs y recomendaciones priorizadas.\n  - Taller de transferencia con tu equipo.\n- **Duración típica:** de 4 a 8 semanas, según la disponibilidad de datos.\n- **Rango de inversión:** entre **COP 8.000.000 y COP 25.000.000**, sin IVA ni costos de terceros como licencias de software. Si tu hotel tiene hasta 10 empleados, aplica un descuento del 20 %; si tiene entre 11 y 50, del 10 % (no acumulables, y se requiere el certificado de existencia y representación legal).\n- **Pago:** 50 % al inicio y 50 % contra la entrega final.\n\n**Nota importante:** no puedo prometerte de antemano cuánto bajaría la fila. Ese resultado es justamente lo que calcularía la simulación con tus datos reales.\n\n**Siguiente paso:** un coordinador del centro revisaría esta pre-propuesta y te contactaría en unos 2 días hábiles para una reunión de diagnóstico de 45 a 60 minutos. Recuerda que la pre-propuesta no es una oferta comercial ni compromete al centro; el valor definitivo se fija en la propuesta formal.\n\nSi quieres que se guarde para seguimiento, necesito tu autorización expresa, el nombre de la persona de contacto y, si lo deseas, un correo. Por favor no compartas documentos de identidad ni datos bancarios.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0194004,
+      "latencyMs": 10677,
+      "ttftMs": 1516,
+      "retrievalMode": "fts",
+      "retrievedSources": [
+        "data/catalog/servicios/simulacion-operaciones.md",
+        "data/catalog/servicios/prototipado-3d.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente el problema de colas, recomienda el servicio exacto del catálogo (simulación-operaciones), cita los precios y plazos verificables (COP 8–25 millones, 4 a 8 semanas), evita afirmar resultados sin simulación (\"no puedo prometerte de antemano cuánto bajaría la fila\"), y respeta las políticas de confidencialidad. Estructura clara, tono profesional y cercano, sin promesas infundadas."
+  },
+  "judgeCostUsd": 0.006447
+}

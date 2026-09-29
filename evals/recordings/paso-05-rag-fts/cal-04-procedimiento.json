@@ -1,0 +1,35 @@
+{
+  "caseId": "cal-04-procedimiento",
+  "label": "paso-05-rag-fts",
+  "recordedAt": "2026-09-29T17:04:38.306Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "En mi fábrica de muebles los operarios nuevos no siguen el procedimiento estándar de corte y se dañan muchas láminas. Capacitar en la máquina real es costoso. ¿Hay otra forma de entrenarlos?",
+      "assistant": "¡Claro que sí! Lo que describes encaja bien con un servicio de nuestro catálogo.\n\n**Línea de trabajo:** `quality_assurance`\n\n**Servicio recomendado:** Capacitación en entornos inmersivos (realidad virtual)\n\n**Por qué aplica a tu caso:**\n- Tus operarios nuevos no siguen el procedimiento estándar de corte, y eso genera errores repetidos.\n- Practicar en la máquina real cuesta porque se dañan láminas.\n- En realidad virtual pueden practicar el procedimiento las veces que haga falta, sin gastar material ni detener la operación.\n\n**Qué incluye (según la ficha):**\n1. Guion instruccional del procedimiento de corte.\n2. Experiencia de realidad virtual (1 a 3 escenarios).\n3. Piloto con el personal y medición de aprendizaje antes y después.\n\n**Duración típica:** de 6 a 10 semanas.\n**Inversión:** entre **COP 6.000.000 y COP 20.000.000** (no incluye IVA ni costos de terceros como licencias de software).\n\nFuente: [Capacitación en entornos inmersivos (realidad virtual)](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/capacitacion-realidad-virtual.md)\n\nPara armar la pre-propuesta con un alcance más ajustado, cuéntame (puedes responder todo en un mensaje):\n1. ¿Cuántos empleados tiene tu fábrica? (Esto define si aplica algún descuento para MIPYMES).\n2. ¿Cuántos operarios nuevos entrenas aproximadamente al año?\n3. ¿El procedimiento de corte ya está documentado por escrito, o habría que levantarlo?\n\nCon eso te dejo la pre-propuesta completa lista para revisión de un coordinador.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.010558399999999999,
+      "latencyMs": 5755,
+      "ttftMs": 1171,
+      "retrievalMode": "fts",
+      "retrievedSources": [
+        "data/catalog/servicios/capacitacion-realidad-virtual.md",
+        "data/catalog/servicios/prototipado-3d.md",
+        "data/catalog/servicios/produccion-mas-limpia-desperdicios.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente el problema (errores de procedimiento en operarios nuevos, costo de capacitación en máquina real) y recomienda el único servicio del catálogo que aplica: Capacitación en realidad virtual. Todos los datos (duración 6-10 semanas, rango COP 6–20 millones, descripción de qué incluye) coinciden exactamente con el catálogo. El tono es cercano y profesional sin prometer resultados garantizados. Las preguntas finales son pertinentes para ajustar el alcance y verificar elegibilidad de descuentos. Estructura clara y legible."
+  },
+  "judgeCostUsd": 0.005879
+}

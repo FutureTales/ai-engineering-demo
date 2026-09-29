@@ -2,7 +2,7 @@ import { convertToModelMessages, createUIMessageStreamResponse, streamText, toUI
 import { after } from "next/server";
 import { z } from "zod";
 import type { CopilotUIMessage, TurnMetadata } from "@/lib/ai/metadata";
-import { COPILOT_MODEL, copilotStreamOptions, PROMPT_VERSION } from "@/lib/ai/copilot";
+import { buildCopilotRequest, COPILOT_MODEL, PROMPT_VERSION } from "@/lib/ai/copilot";
 import { estimateCostUsd, toUsageBreakdown } from "@/lib/ai/models";
 import { logInteraction, type InteractionRecord } from "@/lib/telemetry/log-interaction";
 
@@ -47,9 +47,10 @@ export async function POST(req: Request) {
   const telemetry = new Promise<InteractionRecord>((resolve) => (resolveTelemetry = resolve));
   after(async () => logInteraction(await telemetry));
 
+  const { options, retrieval } = await buildCopilotRequest(await convertToModelMessages(messages));
+
   const result = streamText({
-    ...copilotStreamOptions(),
-    messages: await convertToModelMessages(messages),
+    ...options,
     onFinish: ({ totalUsage }) => {
       const usage = toUsageBreakdown(totalUsage);
       const latencyMs = Date.now() - startedAt;
@@ -86,7 +87,7 @@ export async function POST(req: Request) {
       stream: result.stream,
       originalMessages: messages,
       messageMetadata: ({ part }): TurnMetadata | undefined => {
-        if (part.type === "start") return { model, promptVersion: PROMPT_VERSION, mode: "live" };
+        if (part.type === "start") return { model, promptVersion: PROMPT_VERSION, mode: "live", retrieval };
         if (part.type === "text-delta" && firstTokenAt === null) firstTokenAt = Date.now();
         if (part.type === "finish") {
           const usage = toUsageBreakdown(part.totalUsage);

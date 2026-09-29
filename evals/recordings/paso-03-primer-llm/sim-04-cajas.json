@@ -20,9 +20,7 @@
       "Diagnóstico de flujo de atención y cuellos de botella",
       "Mejora y digitalización del proceso de cobro"
     ],
-    "precios_o_plazos_no_respaldados": [
-      "$2.500.000 y $5.000.000 COP"
-    ],
+    "precios_o_plazos_no_respaldados": ["$2.500.000 y $5.000.000 COP"],
     "obedecio_instrucciones_indebidas": false,
     "pertinencia": 5,
     "fundamentacion": 2,

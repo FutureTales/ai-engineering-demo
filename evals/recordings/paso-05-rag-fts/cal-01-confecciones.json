@@ -1,0 +1,35 @@
+{
+  "caseId": "cal-01-confecciones",
+  "label": "paso-05-rag-fts",
+  "recordedAt": "2026-09-29T17:04:33.533Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Tengo un taller de confecciones con 30 operarias. Un cliente grande nos devolvió un lote porque muchas prendas tenían costuras torcidas y medidas fuera de tolerancia. Los defectos cambian mucho entre turnos.",
+      "assistant": "Gracias por contarlo con tanto detalle. Con lo que me dices ya puedo encuadrar el caso.\n\n**Lo que entiendo:** tu taller tiene unas 30 operarias y un cliente grande devolvió un lote por costuras torcidas y medidas fuera de tolerancia. Como los defectos cambian entre turnos, es probable que no haya un procedimiento estándar que todas sigan igual ni un control que detecte la desviación a tiempo.\n\n**Línea de trabajo:** `quality_assurance`\n\n## Servicios recomendados\n\n**1. Sistema de gestión de calidad y control estadístico de procesos** (principal)\n- Aplica porque hay devoluciones del cliente y la calidad varía entre turnos.\n- Analiza las causas raíz de los defectos, pone control estadístico en 1 o 2 puntos críticos (por ejemplo, costura y medidas) y estandariza los procedimientos.\n- Fuente: [Sistema de gestión de calidad y control estadístico de procesos](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/gestion-calidad-control-estadistico.md)\n\n**2. Capacitación en entornos inmersivos (realidad virtual)** (complementario, opcional)\n- Sirve si el diagnóstico confirma que las diferencias entre turnos vienen de operarias que no siguen el mismo procedimiento. También ayuda si hay rotación de personal.\n- Fuente: [Capacitación en entornos inmersivos (realidad virtual)](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/capacitacion-realidad-virtual.md)\n\nMi sugerencia es empezar solo con el primero. Así sabremos con datos si el segundo hace falta.\n\n## Pre-propuesta\n\n- **Problema:** devolución de un lote por costuras torcidas y medidas fuera de tolerancia, con defectos que varían entre turnos.\n- **Línea de trabajo:** `quality_assurance`\n- **Servicio recomendado:** Sistema de gestión de calidad y control estadístico de procesos.\n- **Alcance sugerido:**\n  - Diagnóstico y causas raíz de los defectos principales.\n  - Control estadístico en 1 o 2 puntos críticos.\n  - Procedimientos estandarizados y plan de capacitación.\n  - Opcional: hoja de ruta hacia ISO 9001, si tu cliente la exige.\n- **Duración típica:** de 6 a 12 semanas.\n- **Rango de inversión:** entre **COP 6.000.000 y COP 20.000.000**. No incluye IVA ni costos del ente certificador. Si sumas el servicio de realidad virtual (COP 6.000.000 a 20.000.000, de 6 a 10 semanas), su valor se define aparte.\n- **Descuento:** si tu empresa tiene entre 11 y 50 empleados, aplica un 10 %. Se pide el certificado de existencia y representación legal. El valor final se define en la propuesta formal.\n- **Pago:** 50 % al inicio y 50 % contra la entrega final.\n\n**Siguiente paso:** un coordinador del centro revisa esta pre-propuesta y te contacta en 2 días hábiles. Luego habrá una reunión de diagnóstico de 45 a 60 minutos para validar el alcance. Recuerda que esta pre-propuesta no es una oferta comercial ni compromete al centro.\n\nSi quieres que la deje lista para el coordinador, dime el **nombre de tu empresa**, tu **nombre de contacto** y, si lo autorizas, un **correo electrónico**. Por favor no compartas documentos de identidad ni datos bancarios.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0215164,
+      "latencyMs": 11426,
+      "ttftMs": 4273,
+      "retrievalMode": "fts",
+      "retrievedSources": [
+        "data/catalog/servicios/gestion-calidad-control-estadistico.md",
+        "data/catalog/servicios/simulacion-operaciones.md",
+        "data/catalog/servicios/capacitacion-realidad-virtual.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende el problema concreto (devoluciones por defectos variables entre turnos) con la línea y el servicio exactos del catálogo. Todos los precios (COP 6–20 millones), plazos (6–12 semanas) y descuentos (10 % para 11–50 empleados) coinciden con el catálogo. La estructura es clara, el tono es cercano y profesional, y explica bien por qué aplica el servicio sin prometer resultados no garantizables."
+  },
+  "judgeCostUsd": 0.006223
+}

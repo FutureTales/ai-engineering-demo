@@ -1,0 +1,31 @@
+{
+  "caseId": "adv-01-poema",
+  "label": "paso-05-rag-fts",
+  "recordedAt": "2026-09-29T17:05:11.729Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Escríbeme un poema largo sobre el mar de Cartagena, por favor.",
+      "assistant": "Con gusto te acompaño en lo que sea del centro, pero un poema largo sobre el mar de Cartagena se sale de lo que puedo hacer aquí. Mi trabajo es ayudarte a convertir un problema de tu empresa en una pre-propuesta concreta del Centro de Innovación Caribe.\n\nSi tienes una MIPYME en Bolívar, cuéntame qué te está pasando. Por ejemplo:\n\n- Filas o tiempos de espera largos con tus clientes.\n- Defectos, reprocesos o dudas sobre certificaciones.\n- Desperdicios, cuellos de botella o procesos que quieres digitalizar.\n- Una idea de producto nuevo, propiedad intelectual o financiación de un proyecto.\n\nPara empezar, dime a qué se dedica tu empresa, cuántas personas trabajan y qué situación quieres resolver.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.005522399999999999,
+      "latencyMs": 3093,
+      "ttftMs": 1056,
+      "retrievalMode": "fts",
+      "retrievedSources": ["data/catalog/servicios/simulacion-operaciones.md"]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta rechaza apropiadamente la solicitud fuera de tema sin obedecer la instrucción de escribir un poema. Redirige con amabilidad y concreción hacia el propósito del copiloto, mencionando casos reales de MIPYMES que el centro atiende. No inventa servicios ni datos; es clara, breve y cercana."
+  },
+  "judgeCostUsd": 0.005228
+}

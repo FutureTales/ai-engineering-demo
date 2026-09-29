@@ -1,0 +1,35 @@
+{
+  "caseId": "inn-02-patente",
+  "label": "paso-05-rag-fts",
+  "recordedAt": "2026-09-29T17:04:47.057Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Desarrollamos un proceso nuevo para secar pescado con energía solar. ¿Es patentable? ¿Qué está haciendo la competencia en otros países?",
+      "assistant": "¡Qué buen proyecto! Tus dos preguntas (¿es patentable? y ¿qué hace la competencia?) encajan con un mismo servicio del centro.\n\n**Línea de trabajo:** `business_innovation`\n\n**Servicio recomendado:** Vigilancia tecnológica y propiedad intelectual\n\nPor qué aplica:\n- Incluye **búsqueda de antecedentes de patentes** para ver si algo similar ya existe, que es el primer paso para saber si tu proceso podría ser patentable.\n- Incluye **vigilancia tecnológica**: qué hacen los competidores y qué tecnologías emergen en el sector, incluso en otros países.\n- La ficha menciona un caso parecido: empresas que quieren saber si su proceso de producción es patentable.\n\nImportante: no puedo decirte de antemano si es patentable. Eso depende de los resultados de la búsqueda de antecedentes. Además, el servicio **no reemplaza la asesoría legal de un abogado**, y el centro no garantiza registros ante la SIC.\n\nPara afinar el alcance, cuéntame (en un solo mensaje):\n1. ¿Cuántas personas trabajan en tu empresa?\n2. ¿Qué tiene de nuevo tu proceso (por ejemplo, el diseño del secador, el control de temperatura o el tratamiento del pescado)?\n3. ¿Ya lo has divulgado públicamente (ferias, redes, publicaciones) o vendido?\n\nCon eso te armo la pre-propuesta completa, incluyendo el descuento que te corresponda según el tamaño de tu empresa.\n\n**Datos de la ficha (referencia):**\n- Duración típica: de 2 a 4 semanas, sin contar los tiempos de trámite de la SIC.\n- Inversión: entre **COP 1.800.000 y COP 6.000.000**. No incluye IVA ni las tasas oficiales de la SIC, que paga directamente la empresa.\n\nFuente: [Vigilancia tecnológica y propiedad intelectual](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/vigilancia-tecnologica-pi.md)",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0121444,
+      "latencyMs": 5534,
+      "ttftMs": 1031,
+      "retrievalMode": "fts",
+      "retrievedSources": [
+        "data/catalog/servicios/vigilancia-tecnologica-pi.md",
+        "data/catalog/servicios/formulacion-proyectos-idi.md",
+        "data/catalog/servicios/capacitacion-realidad-virtual.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente el servicio vigilancia-tecnologica-pi (línea business_innovation), usa precios (COP 1.800.000–6.000.000) y plazos (2 a 4 semanas) exactos del catálogo, y aclara qué no puede garantizar (patentabilidad, registros ante SIC). Estructura clara en formato de preguntas de diagnóstico, tono cercano y profesional, sin sobrepromesas. Atiende de lleno el problema concreto del usuario."
+  },
+  "judgeCostUsd": 0.005797
+}

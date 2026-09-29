@@ -1,0 +1,50 @@
+{
+  "caseId": "cal-05-variacion",
+  "label": "paso-05-rag-fts",
+  "recordedAt": "2026-09-29T17:04:51.599Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Producimos bloques de concreto y la resistencia varía mucho entre lotes. Algunos clientes se quejan. Queremos controlar la calidad del proceso.",
+      "assistant": "¡Gracias por contarnos! Lo que describes (resistencia que varía entre lotes y quejas de clientes) encaja bien con un trabajo de control de calidad del proceso. Para armarte una pre-propuesta ajustada, necesito saber tres cosas:\n\n1. **Tamaño de la empresa:** ¿cuántos empleados tienen? (Esto define el descuento que te aplica).\n2. **Proceso actual:** ¿hacen alguna prueba de resistencia hoy (por ejemplo, ensayos de compresión) y con qué frecuencia? ¿Cambian proveedores de cemento, agregados o la dosificación entre lotes?\n3. **Alcance de la queja:** ¿los clientes exigen alguna norma o certificación, o el problema son sobre todo devoluciones y reclamos?\n\nCon eso te entrego la recomendación y la pre-propuesta completa.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0078004,
+      "latencyMs": 3447,
+      "ttftMs": 1129,
+      "retrievalMode": "fts",
+      "retrievedSources": [
+        "data/catalog/servicios/gestion-calidad-control-estadistico.md",
+        "data/catalog/servicios/simulacion-operaciones.md",
+        "data/catalog/servicios/prototipado-3d.md"
+      ]
+    },
+    {
+      "user": "Producimos unos 8.000 bloques al día en dos turnos. Probamos resistencia de vez en cuando, sin un plan fijo. Los reclamos vienen de dos constructoras grandes.",
+      "assistant": "Gracias, con eso ya tengo lo necesario.\n\n**Línea de trabajo:** `quality_assurance`\n\n## Por qué este servicio\nProducen mucho volumen en dos turnos, la resistencia varía entre lotes y las pruebas no tienen un plan fijo. Ese es el caso típico para el control estadístico: medir con regularidad, ver dónde se origina la variación (turno, materiales, dosificación, curado) y actuar antes de que el lote llegue al cliente.\n\n**Servicio recomendado:** Sistema de gestión de calidad y control estadístico de procesos\n\nFuente: [Sistema de gestión de calidad y control estadístico de procesos](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/gestion-calidad-control-estadistico.md)\n\n## Pre-propuesta\n\n- **Problema:** La resistencia de los bloques de concreto varía entre lotes, las pruebas se hacen sin plan fijo y dos constructoras grandes han presentado reclamos.\n- **Línea de trabajo:** Aseguramiento de la calidad.\n- **Servicio:** Sistema de gestión de calidad y control estadístico de procesos.\n- **Alcance sugerido:**\n  - Diagnóstico de calidad y análisis de causas raíz de la variación de resistencia.\n  - Control estadístico en 1 o 2 puntos críticos (por ejemplo, dosificación de la mezcla y ensayo de resistencia), con un plan de muestreo fijo.\n  - Procedimientos estandarizados y capacitación para ambos turnos.\n  - Opcional: hoja de ruta hacia ISO 9001, si las constructoras lo exigen.\n- **Duración típica:** de 6 a 12 semanas.\n- **Rango de inversión:** entre **COP 6.000.000 y COP 20.000.000**. No incluye IVA ni los costos del ente certificador, si decides certificarte. El valor exacto se define en la propuesta formal.\n- **Descuento:** depende del número de empleados, porque no me lo indicaste. Para microempresas es del 20 % y para pequeñas del 10 %. Se aplica presentando el certificado de existencia y representación legal.\n- **Siguiente paso:** un coordinador revisa esta pre-propuesta y te contacta en 2 días hábiles. Luego sigue una reunión de diagnóstico de 45 a 60 minutos para validar el alcance, en particular qué exigen exactamente las constructoras.\n\nEsta pre-propuesta no es una oferta comercial ni compromete al centro.\n\n## ¿La guardamos?\nSi quieres que la enviemos al centro, necesito tu autorización expresa y estos datos:\n- Nombre de la empresa\n- Tu nombre como contacto\n- Correo electrónico (opcional)\n\nNo compartas documentos de identidad ni datos bancarios.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0201484,
+      "latencyMs": 11122,
+      "ttftMs": 4928,
+      "retrievalMode": "fts",
+      "retrievedSources": [
+        "data/catalog/servicios/gestion-calidad-control-estadistico.md",
+        "data/catalog/servicios/prototipado-3d.md",
+        "data/catalog/servicios/simulacion-operaciones.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente el servicio 'gestion-calidad-control-estadistico' del catálogo y respeta todos los datos: rango COP 6–20 millones y plazo 6–12 semanas. Atiende el problema concreto (variación de resistencia entre lotes), estructura la pre-propuesta según el proceso del centro, aplica la política de descuentos correctamente (solicita el tamaño de empresa para determinarlo), no inventa servicios ni precios, explica por qué encaja el servicio, mantiene tono cercano y profesional, y no promete resultados que no pueda garantizar. Legible y bien organizada."
+  },
+  "judgeCostUsd": 0.006418
+}

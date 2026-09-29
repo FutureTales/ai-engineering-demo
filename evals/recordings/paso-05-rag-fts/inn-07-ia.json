@@ -1,0 +1,34 @@
+{
+  "caseId": "inn-07-ia",
+  "label": "paso-05-rag-fts",
+  "recordedAt": "2026-09-29T17:05:07.156Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Tengo un almacén de repuestos de motos y todo el mundo dice que hay que usar IA. No sé dónde me serviría ni por dónde empezar.",
+      "assistant": "¡Tranquilo, es muy común! Antes de comprar cualquier herramienta de IA conviene saber dónde te serviría de verdad, y para eso hay un primer paso claro.\n\n**Línea de trabajo:** `business_innovation`\n\n## Servicio recomendado\n\n**Diagnóstico de madurez digital y de IA para MIPYMES**\n\nAplica porque quieres usar IA pero no sabes dónde, y este servicio está pensado para ese punto de partida. Revisa cómo está tu almacén en procesos, datos, personas y tecnología, y te entrega una hoja de ruta con oportunidades priorizadas según su impacto y el esfuerzo que exigen. Así inviertes solo en lo que te convenga.\n\nFuente: [Diagnóstico de madurez digital y de IA para MIPYMES](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/diagnostico-madurez-digital-ia.md)\n\n## Pre-propuesta\n\n- **Problema:** almacén de repuestos de motos que quiere adoptar IA y no sabe dónde aplicarla ni por dónde empezar.\n- **Línea de trabajo:** `business_innovation`\n- **Servicio:** Diagnóstico de madurez digital y de IA para MIPYMES.\n- **Alcance sugerido:**\n  - Encuesta y entrevistas de diagnóstico.\n  - Informe de madurez por dimensión (procesos, datos, personas y tecnología).\n  - Hoja de ruta con 3 a 5 iniciativas priorizadas.\n- **Duración típica:** de 2 a 3 semanas.\n- **Rango de inversión:** entre **COP 1.500.000 y COP 4.000.000**, sin IVA ni costos de terceros. El valor final se define en la propuesta formal.\n- **Descuento:** depende del tamaño de tu empresa. Por ejemplo, las microempresas (hasta 10 empleados) tienen 20 % y las pequeñas (11 a 50) tienen 10 %. Se acredita con el certificado de existencia y representación legal.\n- **Siguiente paso:** un coordinador revisa la pre-propuesta y te contacta en unos 2 días hábiles para una reunión de diagnóstico de 45 a 60 minutos.\n\nEsta pre-propuesta no es una oferta comercial ni compromete al centro.\n\nSi quieres que la guardemos, dime el nombre de tu empresa, tu nombre y, si lo autorizas, un correo de contacto. Así el coordinador te escribe. No compartas documentos de identidad ni datos bancarios.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0169544,
+      "latencyMs": 10098,
+      "ttftMs": 5227,
+      "retrievalMode": "fts",
+      "retrievedSources": [
+        "data/catalog/servicios/diagnostico-madurez-digital-ia.md",
+        "data/catalog/servicios/digitalizacion-procesos-administrativos.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta entiende perfectamente el problema (empresa sin claridad sobre dónde aplicar IA) y recomienda el servicio exacto del catálogo. Todos los datos coinciden: servicio, línea, rango de precio (COP 1.500.000–4.000.000), duración (2 a 3 semanas) y política de descuentos. La estructura es clara, el tono cercano y profesional sin prometer resultados, y respeta la política de datos personales al solicitarlos de forma apropiada."
+  },
+  "judgeCostUsd": 0.005911
+}

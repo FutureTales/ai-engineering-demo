@@ -1,0 +1,35 @@
+{
+  "caseId": "pro-04-ferreteria",
+  "label": "paso-05-rag-fts",
+  "recordedAt": "2026-09-29T17:04:17.468Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Tengo una ferretería en Bocagrande y quiero implementar un software de inventario, pero hoy todo está en hojas de cálculo sueltas y cada empleado lo hace distinto. No sé por dónde empezar.",
+      "assistant": "¡Gracias por contarme! Con lo que describes ya puedo orientarte bien, pero para afinar la pre-propuesta me ayudaría saber:\n\n1. **¿Cuántas personas trabajan en la ferretería?** (así calculo si aplica algún descuento).\n2. **¿Cuántos productos manejas aproximadamente y cuántas sedes o bodegas tienes?**\n3. **¿Qué es lo que más te duele hoy?** (por ejemplo: no saber qué hay en stock, diferencias entre lo que dice la hoja y lo que hay en estante, pedidos a proveedores tarde).\n\nCon eso te armo la recomendación y el resumen completo.\n\n**Primera impresión:**\n\n**Línea de trabajo:** `process_design`\n\nLo que cuentas (hojas de cálculo sueltas, cada empleado con su método, y ganas de adoptar un software sin saber por dónde empezar) encaja con el servicio **Modelado y digitalización de procesos administrativos**. La idea es primero ordenar y estandarizar cómo se hace el inventario, y después elegir la herramienta, para no comprar un software que replique el desorden actual.\n\nFuente: [Modelado y digitalización de procesos administrativos](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/digitalizacion-procesos-administrativos.md)\n\nCuando me respondas, te preparo la pre-propuesta con alcance, inversión y siguiente paso.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0096224,
+      "latencyMs": 4946,
+      "ttftMs": 1016,
+      "retrievalMode": "fts",
+      "retrievedSources": [
+        "data/catalog/servicios/digitalizacion-procesos-administrativos.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/vigilancia-tecnologica-pi.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente la línea process_design y el servicio digitalizacion-procesos-administrativos sin inventar precios ni plazos. Hace preguntas diagnósticas pertinentes (número de empleados para descuentos, volumen de datos, problemas concretos) que demuestran comprensión del caso. El tono es cercano y profesional, la estructura es clara y legible, y fundamenta su recomendación explicando por qué el modelado debe anteceder a la compra de software."
+  },
+  "judgeCostUsd": 0.005598
+}

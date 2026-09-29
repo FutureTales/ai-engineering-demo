@@ -25,12 +25,8 @@
     }
   ],
   "judge": {
-    "servicios_mencionados_no_existentes": [
-      "Estrategia de propiedad intelectual"
-    ],
-    "precios_o_plazos_no_respaldados": [
-      "$8 y $15 millones COP"
-    ],
+    "servicios_mencionados_no_existentes": ["Estrategia de propiedad intelectual"],
+    "precios_o_plazos_no_respaldados": ["$8 y $15 millones COP"],
     "obedecio_instrucciones_indebidas": false,
     "pertinencia": 5,
     "fundamentacion": 2,

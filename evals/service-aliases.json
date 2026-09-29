@@ -1,13 +1,52 @@
 {
   "_doc": "Frases que cuentan como 'mencionar' un servicio del catálogo (comparación sin tildes ni mayúsculas). Incluye el id y el nombre oficial.",
-  "simulacion-operaciones": ["simulacion-operaciones", "simulacion de operaciones", "simulacion de eventos discretos", "modelo de simulacion", "analisis what if"],
+  "simulacion-operaciones": [
+    "simulacion-operaciones",
+    "simulacion de operaciones",
+    "simulacion de eventos discretos",
+    "modelo de simulacion",
+    "analisis what if"
+  ],
   "prototipado-3d": ["prototipado-3d", "prototipado 3d", "fabricacion rapida", "impresion 3d"],
-  "capacitacion-realidad-virtual": ["capacitacion-realidad-virtual", "entornos inmersivos", "realidad virtual"],
-  "vigilancia-tecnologica-pi": ["vigilancia-tecnologica-pi", "vigilancia tecnologica", "propiedad intelectual"],
-  "formulacion-proyectos-idi": ["formulacion-proyectos-idi", "formulacion de proyectos", "proyectos de innovacion (i+d+i)", "i+d+i"],
-  "digitalizacion-procesos-administrativos": ["digitalizacion-procesos-administrativos", "digitalizacion de procesos administrativos", "modelado y digitalizacion"],
-  "diagnostico-madurez-digital-ia": ["diagnostico-madurez-digital-ia", "madurez digital", "diagnostico de madurez"],
-  "tablero-indicadores-analitica": ["tablero-indicadores-analitica", "tablero de indicadores", "analitica operativa"],
-  "gestion-calidad-control-estadistico": ["gestion-calidad-control-estadistico", "gestion de calidad", "control estadistico"],
-  "produccion-mas-limpia-desperdicios": ["produccion-mas-limpia-desperdicios", "produccion mas limpia", "reduccion de desperdicios"]
+  "capacitacion-realidad-virtual": [
+    "capacitacion-realidad-virtual",
+    "entornos inmersivos",
+    "realidad virtual"
+  ],
+  "vigilancia-tecnologica-pi": [
+    "vigilancia-tecnologica-pi",
+    "vigilancia tecnologica",
+    "propiedad intelectual"
+  ],
+  "formulacion-proyectos-idi": [
+    "formulacion-proyectos-idi",
+    "formulacion de proyectos",
+    "proyectos de innovacion (i+d+i)",
+    "i+d+i"
+  ],
+  "digitalizacion-procesos-administrativos": [
+    "digitalizacion-procesos-administrativos",
+    "digitalizacion de procesos administrativos",
+    "modelado y digitalizacion"
+  ],
+  "diagnostico-madurez-digital-ia": [
+    "diagnostico-madurez-digital-ia",
+    "madurez digital",
+    "diagnostico de madurez"
+  ],
+  "tablero-indicadores-analitica": [
+    "tablero-indicadores-analitica",
+    "tablero de indicadores",
+    "analitica operativa"
+  ],
+  "gestion-calidad-control-estadistico": [
+    "gestion-calidad-control-estadistico",
+    "gestion de calidad",
+    "control estadistico"
+  ],
+  "produccion-mas-limpia-desperdicios": [
+    "produccion-mas-limpia-desperdicios",
+    "produccion mas limpia",
+    "reduccion de desperdicios"
+  ]
 }

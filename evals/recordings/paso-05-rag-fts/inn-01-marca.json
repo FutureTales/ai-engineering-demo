@@ -1,0 +1,35 @@
+{
+  "caseId": "inn-01-marca",
+  "label": "paso-05-rag-fts",
+  "recordedAt": "2026-09-29T17:04:44.467Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Somos una startup que hace bolsos con fibras recicladas. Queremos exportar y alguien nos dijo que primero deberíamos proteger la marca. No sabemos si el nombre ya está registrado.",
+      "assistant": "¡Qué buen proyecto! Tu caso encaja bien con lo que hacemos, y tengo información suficiente para orientarte sin más preguntas.\n\n**Lo que entiendo:** son una startup de bolsos con fibras recicladas, quieren exportar y necesitan saber si su nombre ya está registrado antes de protegerlo.\n\n**Línea de trabajo:** `business_innovation`\n\n**Servicio recomendado: Vigilancia tecnológica y propiedad intelectual**\n\nAplica porque incluye justo lo que necesitas:\n- Búsqueda de antecedentes de marcas para saber si el nombre (o uno muy parecido) ya está registrado.\n- Estrategia de protección y preparación de la solicitud de registro de marca ante la SIC.\n- Vigilancia tecnológica opcional, útil para ver qué hace la competencia en bolsos sostenibles.\n\nFuente: [Vigilancia tecnológica y propiedad intelectual](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/vigilancia-tecnologica-pi.md)\n\n---\n\n## Pre-propuesta\n\n- **Problema:** startup de bolsos con fibras recicladas que quiere exportar y no sabe si su marca está disponible ni cómo protegerla.\n- **Línea de trabajo:** `business_innovation`\n- **Servicio recomendado:** Vigilancia tecnológica y propiedad intelectual.\n- **Alcance sugerido:**\n  1. Informe de búsqueda de antecedentes de marcas.\n  2. Recomendación de estrategia de protección.\n  3. Acompañamiento en la solicitud de registro ante la SIC.\n  4. Informe de vigilancia tecnológica (si les interesa).\n- **Duración típica:** de 2 a 4 semanas, sin contar los tiempos de trámite de la SIC.\n- **Rango de inversión:** entre **COP 1.800.000 y COP 6.000.000**, sin IVA. Las tasas oficiales de la SIC no están incluidas y las paga directamente la empresa.\n- **Descuento posible:** según el tamaño de la empresa (por ejemplo, 20 % si es microempresa con hasta 10 empleados, o 10 % si es pequeña con 11 a 50). Se aplica presentando el certificado de existencia y representación legal.\n- **Siguiente paso:** un coordinador revisa la pre-propuesta y te contacta en 2 días hábiles para una reunión de diagnóstico de 45 a 60 minutos. Luego recibirías la propuesta formal con el valor definitivo.\n\n**Ten en cuenta:**\n- Esta pre-propuesta no es una oferta comercial ni compromete al centro.\n- El servicio no reemplaza la asesoría de un abogado, y el centro no garantiza que la SIC apruebe el registro.\n- Si van a exportar, conviene preguntar en la reunión cómo proteger la marca en los países destino, porque el registro ante la SIC aplica en Colombia.\n\nSi quieres que dejemos la pre-propuesta guardada para el seguimiento, necesito tu autorización expresa y estos datos: nombre de la empresa, nombre de la persona de contacto y, opcionalmente, un correo. Por favor no compartas documentos de identidad ni datos bancarios.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0159364,
+      "latencyMs": 7924,
+      "ttftMs": 1207,
+      "retrievalMode": "fts",
+      "retrievedSources": [
+        "data/catalog/servicios/vigilancia-tecnologica-pi.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/diagnostico-madurez-digital-ia.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente el problema (protección de marca antes de exportar), recomienda el servicio exacto del catálogo (vigilancia-tecnologica-pi), usa precios y plazos verificados (COP 1.800.000–6.000.000, 2 a 4 semanas), respeta las políticas de descuentos y datos personales, y estructura la pre-propuesta de forma clara y profesional sin prometer garantías imposibles (aclara que no garantiza aprobación de la SIC)."
+  },
+  "judgeCostUsd": 0.006071
+}

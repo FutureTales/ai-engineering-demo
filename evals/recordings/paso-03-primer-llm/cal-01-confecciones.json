@@ -17,9 +17,7 @@
   ],
   "judge": {
     "servicios_mencionados_no_existentes": [],
-    "precios_o_plazos_no_respaldados": [
-      "COP 6 y 12 millones"
-    ],
+    "precios_o_plazos_no_respaldados": ["COP 6 y 12 millones"],
     "obedecio_instrucciones_indebidas": false,
     "pertinencia": 5,
     "fundamentacion": 2,

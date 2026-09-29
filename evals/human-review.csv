@@ -1,201 +1,290 @@
 label,case_id,category,user,copilot,auto_passed,judge_pertinencia,judge_fundamentacion,judge_claridad,judge_tono,judge_justificacion,human_pertinencia,human_fundamentacion,human_claridad,human_tono,human_notes
-"paso-03-primer-llm","sim-01-hotel","simulacion","Tengo un hotel boutique de 24 habitaciones en Getsemaní, el Hotel Brisas de Getsemaní. En temporada alta (diciembre y enero) se forman filas de hasta 40 minutos en el check-in entre las 2 y las 5 de la tarde. Tenemos 2 recepcionistas. Llegan unos 18 huéspedes por hora en el pico y cada check-in toma unos 6 minutos. Los huéspedes se quejan en las reseñas. ¿Qué me recomiendan?","¡Gracias por los detalles, con eso ya puedo orientarte sin más preguntas!
+"paso-05-rag-fts","sim-01-hotel","simulacion","Tengo un hotel boutique de 24 habitaciones en Getsemaní, el Hotel Brisas de Getsemaní. En temporada alta (diciembre y enero) se forman filas de hasta 40 minutos en el check-in entre las 2 y las 5 de la tarde. Tenemos 2 recepcionistas. Llegan unos 18 huéspedes por hora en el pico y cada check-in toma unos 6 minutos. Los huéspedes se quejan en las reseñas. ¿Qué me recomiendan?","¡Gracias por contarnos tan claro tu caso! Con lo que me dices ya tengo suficiente información, así que no necesito hacerte más preguntas.
+
+**Lo que entiendo:** en el pico (2 a 5 p. m.) llegan unos 18 huéspedes por hora, cada check-in toma unos 6 minutos y tienes 2 recepcionistas. Eso significa que la recepción está trabajando casi al límite de su capacidad, y en ese punto cualquier variación en las llegadas genera filas largas. Por eso tus huéspedes se quejan en las reseñas.
+
+**Línea de trabajo:** `process_design`
+
+**Servicio recomendado:** Simulación de operaciones y análisis ""what if""
+
+Por qué aplica a tu caso:
+- Tienes filas de espera en la recepción de un hotel, que es justo uno de los casos que cubre el servicio.
+- Dudas entre varias salidas (más personal en el pico, cambiar turnos, agilizar pasos con un check-in digital previo) y conviene comparar antes de invertir.
+- La demanda es de temporada, y el modelo permite probar escenarios para diciembre y enero sin arriesgar la operación.
+
+Fuente: [Simulación de operaciones y análisis ""what if""](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/simulacion-operaciones.md)
+
+**Opcional a futuro:** el *Tablero de indicadores y analítica operativa* sirve para dar seguimiento a la mejora después de la simulación. Por ahora no es necesario para arrancar.
+Fuente: [Tablero de indicadores y analítica operativa](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/tablero-indicadores-analitica.md)
+
+---
+
+## Pre-propuesta
+
+- **Empresa:** Hotel Brisas de Getsemaní (hotel boutique, 24 habitaciones, Cartagena)
+- **Problema:** filas de hasta 40 minutos en el check-in entre 2 y 5 p. m. en temporada alta, con 2 recepcionistas, unas 18 llegadas por hora y check-ins de unos 6 minutos. Hay quejas en reseñas.
+- **Línea de trabajo:** `process_design`
+- **Servicio recomendado:** Simulación de operaciones y análisis ""what if""
+- **Alcance sugerido:**
+  - Levantamiento del proceso de check-in y de los datos (llegadas, tiempos de servicio, recursos).
+  - Modelo de simulación validado con tu operación real.
+  - Comparación de 3 a 5 escenarios, por ejemplo con más recepcionistas en el pico, cambios de turno y check-in digital previo.
+  - Tablero con KPIs y recomendaciones priorizadas.
+  - Taller de transferencia con tu equipo.
+- **Duración típica:** de 4 a 8 semanas, según la disponibilidad de datos.
+- **Rango de inversión:** entre **COP 8.000.000 y COP 25.000.000**, sin IVA ni costos de terceros como licencias de software. Si tu hotel tiene hasta 10 empleados, aplica un descuento del 20 %; si tiene entre 11 y 50, del 10 % (no acumulables, y se requiere el certificado de existencia y representación legal).
+- **Pago:** 50 % al inicio y 50 % contra la entrega final.
+
+**Nota importante:** no puedo prometerte de antemano cuánto bajaría la fila. Ese resultado es justamente lo que calcularía la simulación con tus datos reales.
+
+**Siguiente paso:** un coordinador del centro revisaría esta pre-propuesta y te contactaría en unos 2 días hábiles para una reunión de diagnóstico de 45 a 60 minutos. Recuerda que la pre-propuesta no es una oferta comercial ni compromete al centro; el valor definitivo se fija en la propuesta formal.
+
+Si quieres que se guarde para seguimiento, necesito tu autorización expresa, el nombre de la persona de contacto y, si lo deseas, un correo. Por favor no compartas documentos de identidad ni datos bancarios.","false","5","5","5","5","La respuesta identifica correctamente el problema de colas, recomienda el servicio exacto del catálogo (simulación-operaciones), cita los precios y plazos verificables (COP 8–25 millones, 4 a 8 semanas), evita afirmar resultados sin simulación (""no puedo prometerte de antemano cuánto bajaría la fila""), y respeta las políticas de confidencialidad. Estructura clara, tono profesional y cercano, sin promesas infundadas.","","","","",""
+"paso-05-rag-fts","sim-04-cajas","simulacion","Tenemos un minimercado en el barrio Crespo con 2 cajas. Los sábados en la tarde llegan como 50 clientes por hora a pagar y cada cobro toma unos 2 minutos y medio. Las filas son larguísimas y la gente se va. ¿Qué hacemos?","Con lo que cuentas ya se ve el problema, y las cuentas son sencillas.
+
+**Lo que dicen tus números**
+- 50 clientes por hora × 2,5 minutos = **125 minutos de cobro por hora**.
+- Dos cajas ofrecen **120 minutos de trabajo por hora**.
+- Es decir, en el pico llega más trabajo del que las cajas pueden atender, así que la fila crece mientras dure la hora pico. Por eso se ve ""larguísima"" y la gente se va.
+
+Una tercera caja no se decide solo con esta cuenta. Conviene comparar opciones: cajero extra, cobro más rápido (por ejemplo, datáfono o pagos por QR), caja rápida para pocos productos, etc. Eso es justo lo que se resuelve con simulación.
+
+**Línea de trabajo:** `process_design`
+
+**Servicio recomendado:** Simulación de operaciones y análisis ""what if""
+- Modelamos tus cajas con tus datos de llegadas y tiempos de cobro.
+- Comparamos de 3 a 5 escenarios antes de que inviertas en personal o equipos.
+- Sirve para tu caso porque la ficha cubre filas en cajas de almacén y decisiones entre contratar personal o cambiar el proceso.
+
+Fuente: [Simulación de operaciones y análisis ""what if""](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/simulacion-operaciones.md)
+
+## Pre-propuesta
+
+- **Problema:** minimercado en Crespo, 2 cajas. Los sábados en la tarde llegan unos 50 clientes/hora con cobros de unos 2,5 min. Se forman filas largas y se pierden clientes.
+- **Línea de trabajo:** `process_design`
+- **Servicio:** Simulación de operaciones y análisis ""what if""
+- **Alcance sugerido:**
+  1. Levantamiento del proceso y de los datos de llegadas y tiempos de cobro.
+  2. Modelo de simulación validado con tu operación.
+  3. Comparación de 3 a 5 escenarios.
+  4. Tablero de indicadores y recomendaciones priorizadas.
+  5. Taller con tu equipo.
+- **Duración típica:** de 4 a 8 semanas.
+- **Inversión:** entre **COP 8.000.000 y COP 25.000.000**, sin IVA. Si tienes hasta 10 empleados, aplica un **20 % de descuento** al presentar el certificado de existencia y representación legal. El valor definitivo se fija en la propuesta formal.
+- **Pago:** 50 % al inicio y 50 % contra la entrega final.
+- **Siguiente paso:** un coordinador revisa la pre-propuesta y te contacta en unos 2 días hábiles para una reunión de diagnóstico de 45 a 60 minutos.
+
+Esta pre-propuesta no es una oferta comercial ni compromete al centro. Si quieres que se guarde para el seguimiento, dime el nombre del minimercado, tu nombre y, si lo autorizas, un correo. No compartas documentos de identidad ni datos bancarios.","false","5","5","5","5","La respuesta identifica correctamente el problema de capacidad con cálculos matemáticos simples y justificados. Recomienda el servicio exacto del catálogo (simulación-operaciones) con precios, rangos de tiempo y descuentos que coinciden con la política de tarifas. La estructura es clara, profesional y bien organizada para una MIPYME; respeta la política de confidencialidad al pedir datos solo para guardar la pre-propuesta.","","","","",""
+"paso-05-rag-fts","pro-02-hielo","procesos","Tenemos una planta de hielo en Mamonal y la factura de energía se nos disparó. Sospechamos que desperdiciamos agua y energía en el proceso, pero no sabemos dónde. / Somos 20 empleados y producimos unas 15 toneladas de hielo al día. No medimos el consumo por etapa; solo vemos la factura mensual, que subió cerca de un 30 % este año.","¡Hola! Gracias por contarnos. Por lo que describes, parece un caso de **producción más limpia y reducción de desperdicios**, pero antes de armar la pre-propuesta necesito aclarar tres cosas:
+
+1. **¿Cuántas personas trabajan en la planta?** Con eso sé si aplica algún descuento para MIPYMES.
+2. **¿Cuándo empezó a dispararse la factura y de cuánto fue el aumento aproximado?** Por ejemplo, si fue de un mes a otro o si viene subiendo poco a poco.
+3. **¿Ha cambiado algo en la operación?** Puede ser más producción, equipos nuevos o dañados, o cambios de turnos. También me sirve saber si ya tienen alguna medición del consumo de agua y energía.
+
+Con tus respuestas te preparo la recomendación y la pre-propuesta completa.
+---
+Gracias, con eso ya tengo lo necesario.
+
+**Línea de trabajo:** `process_design`
 
 ## Diagnóstico
-Con tus números, el cuello de botella se ve claro:
-
-- Llegan **18 huéspedes/hora** y cada check-in toma **6 minutos**.
-- Cada recepcionista atiende unos **10 por hora**, así que las 2 juntas atienden unos **20 por hora**.
-- Están casi al límite (**~90% de ocupación**). En ese punto, cualquier retraso (una consulta larga, una llamada, un pago con problemas) hace crecer la fila muy rápido.
-
-Por eso la fila llega a 40 minutos aunque en el papel ""alcance"" la capacidad.
-
-## Línea de trabajo
-**`process_design`**: Diseño, mejora y sostenibilidad de procesos. Se trata de filas, capacidad y cuellos de botella.
+Tienen una planta de 20 personas que produce unas 15 toneladas de hielo al día. La factura de energía subió cerca de un 30 % este año, y hoy solo ven el total mensual, sin saber cuánto consume cada etapa. Mientras no se mida por etapa, es difícil saber dónde está el desperdicio.
 
 ## Servicios recomendados
-1. **Diagnóstico y rediseño del proceso de check-in.** Medimos el proceso paso a paso y detectamos qué se puede quitar, mover o hacer en paralelo. Lo más probable es que podamos bajar de 6 a 3-4 minutos.
-2. **Digitalización del pre-check-in.** Los huéspedes llenan datos y documentos antes de llegar (por WhatsApp o un formulario web), y en recepción solo se confirma y se entrega la llave. Es lo que más impacto suele tener en filas.
+
+**1. Producción más limpia y reducción de desperdicios** (principal)
+Es el servicio que encaja con tu caso: busca reducir desperdicios de energía, agua y materia prima, y su ficha incluye como ejemplo una planta de hielo con consumo de energía elevado. Incluye mapa de flujo de valor con cuantificación de desperdicios, plan de mejora priorizado y medición de resultados al cierre.
+- Duración típica: 4 a 8 semanas.
+- Inversión: entre **COP 3.500.000 y COP 12.000.000**.
+
+Fuente: [Producción más limpia y reducción de desperdicios](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/produccion-mas-limpia-desperdicios.md)
+
+**2. Tablero de indicadores y analítica operativa** (complementario, opcional)
+Como hoy no miden por etapa, un tablero les permitiría seguir el consumo y el desperdicio de forma continua y comprobar si las mejoras se mantienen.
+- Duración típica: 3 a 6 semanas.
+- Inversión: entre **COP 4.000.000 y COP 14.000.000**.
+
+Fuente: [Tablero de indicadores y analítica operativa](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/tablero-indicadores-analitica.md)
 
 ## Pre-propuesta
 
-- **Empresa:** Hotel Brisas de Getsemaní
-- **Problema:** Filas de hasta 40 min en el check-in (2-5 p. m.) en temporada alta, con quejas en reseñas.
-- **Línea de trabajo:** `process_design`
-- **Servicios:** Rediseño del proceso de check-in + pre-check-in digital.
-- **Alcance sugerido:**
-  - Observación y medición de tiempos en recepción (1-2 días).
-  - Mapa del proceso actual y propuesta del nuevo.
-  - Formulario de pre-check-in y guion de mensajes a huéspedes.
-  - Capacitación al equipo de recepción.
-  - Seguimiento de resultados en las primeras semanas.
-- **Duración estimada:** 4 a 6 semanas. Conviene arrancar pronto para tenerlo listo antes de diciembre.
-- **Inversión aproximada:** entre **COP 6 y 12 millones**, según el nivel de digitalización que elijas. *(Es un rango de referencia de esta demo, no una cotización.)*
-- **Meta razonable:** reducir la espera a menos de 10 minutos en el pico.
-
-## Siguiente paso
-Para que un asesor del centro te contacte y agende la visita de medición, solo necesito el **nombre de la persona de contacto**. ¿Me lo compartes?","false","5","2","5","5","La respuesta atiende el problema con precisión y recomienda un servicio que existe (simulacion-operaciones está en la línea process_design). Sin embargo, cita un rango de inversión 'COP 6 a 12 millones' que no coincide con el catálogo (COP 8.000.000–25.000.000 para simulacion-operaciones). Además, afirma resultados específicos ('bajar de 6 a 3-4 minutos', 'reducir la espera a menos de 10 minutos') sin una simulación que los respalde, lo que reduce la fundamentación a 2. El tono, claridad y pertinencia son excelentes.","","","","",""
-"paso-03-primer-llm","sim-04-cajas","simulacion","Tenemos un minimercado en el barrio Crespo con 2 cajas. Los sábados en la tarde llegan como 50 clientes por hora a pagar y cada cobro toma unos 2 minutos y medio. Las filas son larguísimas y la gente se va. ¿Qué hacemos?","Con tus números el problema es matemático: **las 2 cajas no alcanzan** los sábados en la tarde.
-
-- Cada cobro toma 2,5 min, así que una caja atiende unos **24 clientes por hora**.
-- Las 2 cajas atienden **48 por hora**, y llegan 50 o más.
-- Como llega más gente de la que se atiende, la fila crece sin parar toda la tarde. Por eso se van.
-
-## Clasificación
-**Línea: `process_design`** (Diseño, mejora y sostenibilidad de procesos). Es un problema de capacidad y filas.
-
-## Servicios recomendados
-1. **Diagnóstico de flujo de atención y cuellos de botella.** Medimos cuánto toma cada paso del cobro (escanear, empacar, pagar) y cuándo llegan los picos.
-2. **Mejora y digitalización del proceso de cobro.** Por ejemplo, pagos con QR o datáfono más ágiles, código de barras en todos los productos y una caja rápida para compras pequeñas.
-
-Lo que más suele funcionar es bajar el cobro de 2,5 a 2 minutos. Así cada caja atendería 30 clientes por hora (60 en total) y la fila dejaría de crecer.
-
-## Pre-propuesta
-- **Problema:** filas largas los sábados en la tarde; 50 clientes por hora contra una capacidad de 48; se pierden ventas.
+- **Problema:** aumento cercano al 30 % en la factura de energía y sospecha de desperdicio de agua y energía, sin medición por etapa del proceso.
 - **Línea de trabajo:** `process_design`.
-- **Servicios:** diagnóstico de flujo de atención + mejora del proceso de cobro.
-- **Alcance sugerido:**
-  - Una visita para observar y medir un sábado de alta demanda.
-  - Un plan con mejoras rápidas: distribución de cajas, caja rápida, ayudante para empacar y medios de pago.
-  - Seguimiento de 2 a 4 semanas para verificar que las filas bajan.
-- **Inversión aproximada:** entre **$2.500.000 y $5.000.000 COP**, según el alcance y si incluye ajustes de digitalización. Es un estimado de la demo, sin valor contractual.
-- **Siguiente paso:** agendar la visita de diagnóstico un sábado. Para eso necesito el **nombre del minimercado** y el **nombre de la persona de contacto**.
+- **Servicios recomendados:** Producción más limpia y reducción de desperdicios (principal) y, si lo desean, Tablero de indicadores y analítica operativa.
+- **Alcance sugerido:** mapear el proceso de producción de hielo, cuantificar dónde se pierde energía y agua, priorizar acciones de mejora y medir resultados al cierre. Si se suma el tablero, quedaría un seguimiento continuo de los indicadores.
+- **Rango de inversión:**
+  - Solo producción más limpia: COP 3.500.000 a 12.000.000.
+  - Con ambos servicios: la suma de los dos rangos, es decir, COP 7.500.000 a 26.000.000.
+  - Los rangos no incluyen IVA ni costos de terceros. El valor exacto se define en la propuesta formal según el alcance.
+- **Descuento:** con 20 empleados serían una pequeña empresa (11 a 50 empleados), con un **10 %** de descuento sobre el valor del servicio. Para acceder, se debe presentar el certificado de existencia y representación legal.
+- **Forma de pago:** 50 % al inicio y 50 % contra la entrega final.
 
-¿Me los compartes para dejar lista la pre-propuesta?","false","5","2","5","5","La respuesta entiende bien el problema y el análisis de capacidad es correcto. Sin embargo, inventa dos servicios que no existen en el catálogo (el copiloto debería recomendar 'simulacion-operaciones' o 'digitalizacion-procesos-administrativos'), y el rango de precio COP 2.500.000–5.000.000 no corresponde a ningún servicio existente. El análisis matemático es claro y pertinente, pero carece de respaldo en servicios reales del centro.","","","","",""
-"paso-03-primer-llm","pro-02-hielo","procesos","Tenemos una planta de hielo en Mamonal y la factura de energía se nos disparó. Sospechamos que desperdiciamos agua y energía en el proceso, pero no sabemos dónde.","¡Gracias por contarnos! Con lo que describes ya puedo orientarte, pero para afinar la propuesta necesito tres datos:
-
-1. **Tamaño:** ¿cuántas personas trabajan en la planta y cuántas toneladas de hielo producen aproximadamente al día?
-2. **Cuándo y cuánto:** ¿desde cuándo subió la factura y en qué porcentaje o valor aproximado (por ejemplo, de $X a $Y al mes)?
-3. **Equipos y control:** ¿qué equipos principales tienen (tipo de máquinas de hielo, cuartos fríos, torres de enfriamiento) y llevan algún registro o medición de consumo de agua y energía?
-
-Con tus respuestas te clasifico el caso, te recomiendo los servicios del centro y te armo la pre-propuesta con alcance, rango de inversión y siguiente paso.
-
-*Adelanto:* por lo que cuentas, esto encaja en la línea de **diseño, mejora y sostenibilidad de procesos** (`process_design`), porque se trata de encontrar dónde se pierden recursos en la operación.","false","5","5","5","5","La respuesta atiende directamente el problema concreto (desperdicio de agua y energía en una planta de hielo) y clasifica correctamente en la línea process_design. Solicita información relevante y sin inventar servicios, precios ni plazos. El tono es cercano, profesional y sin promesas excesivas. Solo adelanta la línea sin nombrar servicios específicos, lo que evita compromisos prematuros.","","","","",""
-"paso-03-primer-llm","pro-05-indicadores","procesos","Tengo una fábrica pequeña de arepas congeladas. No sé con precisión cuánto produzco, vendo y desperdicio por día; los datos están regados en varias hojas de Excel. Quiero tomar decisiones con datos. / Somos 15 empleados. Producimos unas 4.000 arepas al día y vendemos a tiendas y supermercados. Tenemos Excel de producción, de ventas y de inventario, pero nadie los cruza.","¡Qué bueno que quieras decidir con datos! Es un problema muy común en fábricas pequeñas, y tiene solución.
-
-Para armarte una pre-propuesta ajustada, necesito tres datos:
-
-1. **¿Cuántas personas trabajan** en la fábrica y cuántas usan los Excel?
-2. **¿Qué tienes registrado hoy** en esas hojas (producción, ventas, inventario, mermas) y cada cuánto lo actualizan?
-3. **¿Cuál es la decisión que más te urge tomar?** Por ejemplo: cuánto producir, reducir desperdicio, o fijar precios.
-
-Con eso te clasifico el caso y te recomiendo los servicios del centro que mejor te sirvan.
----
-Con eso ya tengo lo necesario. Tienes datos, pero están aislados y nadie los cruza, así que no ves cuánto se produce, cuánto se vende y cuánto se pierde.
-
-## Clasificación
-**Línea: `process_design` (Diseño, mejora y sostenibilidad de procesos).** El reto es digitalizar y conectar el registro de producción, ventas e inventario, y hacer visible el desperdicio.
-
-## Servicios recomendados
-1. **Diagnóstico y mapeo de procesos:** Levantamos cómo fluye la información desde la producción hasta la entrega, y dónde se pierden datos o producto.
-2. **Digitalización de procesos con tablero de indicadores:** Unificamos tus tres Excel en una sola base y armamos un tablero sencillo con producción, ventas, inventario y merma por día.
-
-Con el diagnóstico sabrás *dónde* mejorar, y con el tablero podrás *seguirlo* cada día sin depender de cruzar hojas a mano.
-
-## Pre-propuesta
-- **Problema:** Fábrica de arepas congeladas (15 empleados, ~4.000 arepas/día) sin visión integrada de producción, ventas y desperdicio.
-- **Línea de trabajo:** Diseño, mejora y sostenibilidad de procesos.
-- **Servicios:** Diagnóstico y mapeo de procesos + digitalización con tablero de indicadores.
-- **Alcance sugerido:**
-  - Revisión de tus 3 Excel y del flujo de registro.
-  - Definición de 5 a 8 indicadores clave (por ejemplo, % de merma, producción vs. ventas, rotación de inventario).
-  - Base de datos unificada y tablero de consulta.
-  - Capacitación al personal que registra y consulta los datos.
-- **Duración estimada:** 6 a 8 semanas.
-- **Inversión aproximada:** entre **COP 6 y 12 millones**, según cuántos productos y puntos de registro incluyamos. Es un rango de referencia; se confirma tras el diagnóstico.
-- **Siguiente paso:** Envíame el **nombre de tu empresa** y el de la **persona de contacto**, y dejo la pre-propuesta lista para que el equipo del centro te llame y agende una visita de diagnóstico.
-
-Esto es una demo educativa: el centro, los servicios y los valores son ficticios.","false","5","1","5","5","La respuesta es pertinente, clara y de tono excelente; el copiloto entiende el problema y redirige bien. Sin embargo, inventa dos servicios ('Diagnóstico y mapeo de procesos' y 'Digitalización de procesos con tablero de indicadores') que no existen en el catálogo. El servicio correcto es 'tablero-indicadores-analitica' (COP 4–14 millones, 3–6 semanas). El precio de 'COP 6 y 12 millones' no coincide con ningún rango del catálogo. Fundamentación ≤ 1 por servicios y precio inventados.","","","","",""
-"paso-03-primer-llm","cal-02-certificacion","calidad","Hacemos salsas y encurtidos. Una cadena de supermercados quiere comprarnos, pero nos exige cumplir estándares de calidad y más adelante ISO 9001. Hoy no tenemos procedimientos escritos.","¡Qué buena noticia que una cadena quiera comprarles! Ya se ve el caso con bastante claridad: la línea es **aseguramiento de la calidad** (`quality_assurance`), porque el reto es documentar procedimientos y cumplir estándares.
-
-Para armarles una pre-propuesta ajustada, necesito 3 datos:
-
-1. **¿Cuántas personas trabajan en la empresa** y cuántas participan directamente en la producción?
-2. **¿Tienen hoy registro sanitario INVIMA o permisos sanitarios al día?** (solo sí/no y cuáles).
-3. **¿La cadena les dio una lista o un plazo concreto** de requisitos (por ejemplo, fecha límite para la primera compra o auditoría de proveedores)?
-
-Con eso les recomiendo los servicios del centro y les paso el resumen con alcance, rango de inversión y siguiente paso.","false","5","5","5","5","El copiloto identifica correctamente la línea esperada (quality_assurance) y señala el servicio pertinente sin nombrarlo prematuro ni inventar precios. Recopila información diagnóstica clave (número de empleados, estado sanitario, plazos del cliente) antes de hacer una pre-propuesta, lo que es procedimiento correcto. Tono cercano, profesional y sin promesas excesivas.","","","","",""
-"paso-03-primer-llm","cal-05-variacion","calidad","Producimos bloques de concreto y la resistencia varía mucho entre lotes. Algunos clientes se quejan. Queremos controlar la calidad del proceso. / Producimos unos 8.000 bloques al día en dos turnos. Probamos resistencia de vez en cuando, sin un plan fijo. Los reclamos vienen de dos constructoras grandes.","¡Gracias por contarnos! Con lo que describes ya tengo una buena idea, pero para afinar la pre-propuesta necesito tres datos:
-
-1. **¿Qué tan grande es tu operación?** (número de empleados y bloques que producen por semana, aproximadamente)
-2. **¿Hoy hacen alguna prueba de resistencia?** (por ejemplo, ensayos de compresión, propios o en laboratorio externo) ¿Con qué frecuencia?
-3. **¿Cómo dosifican y curan la mezcla?** (medida a ojo, por palas o por peso; cuánto tiempo y cómo dejan curar los bloques)
-
-Con eso te devuelvo la clasificación, los servicios recomendados y una pre-propuesta con alcance e inversión aproximada.
----
-Gracias, con eso ya puedo avanzar. No me contaste cómo dosifican y curan la mezcla. No voy a preguntarte más ahora: lo dejo como **primer punto a revisar en el diagnóstico**, porque suele ser la causa principal de la variación entre lotes.
-
-## Clasificación
-**Línea: Aseguramiento de la calidad (`quality_assurance`)**
-
-Tu problema es de variabilidad y falta de control del proceso: resistencia irregular, pruebas sin plan y reclamos de clientes.
-
-## Servicios recomendados
-1. **Diagnóstico de control de calidad en planta.** Revisamos materias primas, dosificación, mezclado, curado y forma de muestrear, para encontrar de dónde viene la variación entre lotes.
-2. **Diseño e implementación de un plan de control de calidad.** Definimos un plan de muestreo y ensayos de resistencia, con frecuencia fija y registros. También capacitamos al personal de los dos turnos y damos criterios claros para aceptar o rechazar un lote.
-
-Con 8.000 bloques diarios, un plan basado en datos te permite detectar problemas antes de despachar y responder con evidencia a las constructoras.
-
-## Pre-propuesta
-
-- **Problema:** la resistencia de los bloques varía entre lotes, hay reclamos de dos constructoras grandes y las pruebas se hacen sin un plan fijo.
-- **Línea de trabajo:** aseguramiento de la calidad.
-- **Servicios:** diagnóstico en planta más plan de control de calidad.
-- **Alcance sugerido (8 a 12 semanas):**
-  - Visita y revisión del proceso en ambos turnos.
-  - Análisis de los resultados de pruebas y reclamos existentes.
-  - Plan de muestreo y ensayos, con formatos de registro.
-  - Capacitación del equipo.
-  - Seguimiento de las primeras semanas de aplicación.
-- **Inversión aproximada:** entre **COP 12 y 25 millones**, según el número de ensayos y el nivel de acompañamiento. Es un rango de referencia que se confirma tras el diagnóstico.
-- **Siguiente paso:** una visita de diagnóstico inicial para validar el alcance y cerrar la propuesta formal.
-
-Para agendarla, dime el **nombre de tu empresa** y el de la **persona de contacto**.","false","5","2","5","5","La respuesta identifica correctamente la línea (quality_assurance) y el problema, con un tono cercano y excelente claridad. Sin embargo, inventa dos servicios que no existen en el catálogo ('Diagnóstico de control de calidad en planta' y 'Diseño e implementación de un plan de control de calidad') y propone un rango de precio (COP 12–25 millones) que no corresponde a ningún servicio existente. Debió recomendar 'Sistema de gestión de calidad y control estadístico de procesos' (COP 6–20 millones, 6–12 semanas) o 'Capacitación en entornos inmersivos' si incluye capacitación avanzada. La fundamentación cae a 2 por la invención de precios y servicios no respaldados.","","","","",""
-"paso-03-primer-llm","inn-03-cooperativa","innovacion","Somos una cooperativa de 45 pescadores en Bocachica. Queremos montar un centro de acopio con cadena de frío y buscar financiación, pero nunca hemos presentado un proyecto a una convocatoria.","¡Qué buen proyecto! Un centro de acopio con cadena de frío puede ayudarles a vender mejor, reducir pérdidas de pescado y negociar precios con más fuerza.
-
-Con lo que me cuentas ya puedo encuadrar el caso, pero para armar bien la pre-propuesta me ayudan **estas 3 preguntas** (respóndelas juntas si puedes):
-
-1. **¿Qué tan avanzada está la idea?** Por ejemplo: ¿ya tienen lote o local, cotizaciones de equipos, estudio de costos, o apenas están empezando?
-2. **¿Cuánto pescado manejan aproximadamente** (kilos por semana) y **cómo lo venden hoy**? (intermediarios, plaza, restaurantes, etc.)
-3. **¿Tienen ya una convocatoria en mente** o fecha límite cercana, o quieren que les ayudemos a identificar las opciones?
-
-**Clasificación preliminar**
-Este caso encaja en la línea **`business_innovation`** (Innovación y desarrollo empresarial), porque el centro de acopio es un proyecto nuevo y lo que necesitan es estructurarlo y conseguir financiación.
-
-Con tus respuestas te armo la recomendación de servicios y la pre-propuesta con alcance, rango de inversión y siguiente paso.","false","5","5","5","5","La respuesta atiende perfectamente el problema concreto (proyecto de centro de acopio para pescadores cooperativistas) e identifica correctamente la línea business_innovation. Utiliza únicamente información respaldada por el catálogo y políticas; no menciona precios ni servicios específicos hasta tener más datos. Las 3 preguntas de diagnóstico son pertinentes, claras y profesionales, sin prometer más de lo que puede garantizar. El tono es cercano y motivador sin ser exagerado.","","","","",""
-"paso-03-primer-llm","inn-06-pieza","innovacion","Una máquina de nuestra planta usa una pieza plástica importada que ya no fabrican. ¿Nos pueden ayudar a diseñarla y hacer un prototipo para probarla? / La pieza es un engranaje plástico de unos 8 cm. Tenemos una pieza vieja como muestra. La máquina lleva parada dos semanas.","¡Claro, es un caso que podemos trabajar! Reemplazar piezas descontinuadas mediante ingeniería inversa, diseño y prototipo es algo muy común en plantas con maquinaria importada.
-
-Para armarte una pre-propuesta ajustada, cuéntame por favor:
-
-1. **La pieza y su función:** ¿qué hace dentro de la máquina, qué tamaño aproximado tiene y está sometida a calor, fricción, golpes o químicos? Si tienes la pieza original (aunque esté rota), dilo.
-2. **Cantidad y urgencia:** ¿cuántas unidades necesitas (¿solo repuestos puntuales o una serie?) y qué tan parada o afectada está la producción hoy?
-3. **Tu empresa:** ¿a qué se dedica, cuántas personas son y cuántas máquinas usan esta misma pieza?
-
-Con eso te confirmo la línea de trabajo, los servicios recomendados y un rango de inversión.
----
-Con eso ya tengo lo necesario. La urgencia de dos semanas de parada cambia el enfoque: conviene ir rápido con un prototipo funcional.
-
-## Clasificación
-**Línea: `business_innovation`** (Innovación y desarrollo empresarial). Diseñar y validar una pieza nueva es desarrollo de producto, aunque sea un repuesto.
-
-## Servicios recomendados
-1. **Ingeniería inversa y modelado 3D:** escaneamos y medimos tu engranaje, incluso desgastado, y reconstruimos el diseño original (dientes, ejes, tolerancias).
-2. **Prototipado y pruebas funcionales:** fabricamos 1 o 2 prototipos y los probamos en tu máquina. Así confirmamos que encaja y aguanta antes de hacer más unidades.
-
-## Pre-propuesta
-- **Problema:** engranaje plástico importado de ~8 cm, descontinuado, con la máquina parada hace 2 semanas.
-- **Línea de trabajo:** `business_innovation`.
-- **Alcance sugerido:**
-  - Escaneo y toma de medidas de la pieza muestra.
-  - Modelo 3D y planos.
-  - Recomendación de material (por ejemplo nailon o acetal, según la carga).
-  - 1 o 2 prototipos y prueba en tu máquina.
-  - Informe breve con ajustes y opciones para producir en serie.
-- **Tiempo estimado:** unos 10 a 15 días hábiles, con prototipo de arranque rápido en la primera semana.
-- **Inversión aproximada:** **COP 3 a 7 millones**, según el material y la cantidad de prototipos.
-- **Supuestos que afectan el precio:** no tengo aún el material original ni las condiciones de trabajo (carga, calor, fricción), y asumo que necesitas pocas unidades. Si necesitas una serie, se cotiza aparte.
+No puedo asegurarte cuánto lograrían ahorrar. Eso solo se sabrá después de medir y analizar el proceso.
 
 ## Siguiente paso
-Envíanos el **nombre de tu empresa y de la persona de contacto**, y lleva la pieza muestra al centro para que un ingeniero la revise. Con eso te confirmamos fecha de inicio y cotización final.
+Esta pre-propuesta no es una oferta comercial ni compromete al centro. Un coordinador la revisaría y te contactaría en unos 2 días hábiles para agendar una reunión de diagnóstico de 45 a 60 minutos.
 
-*Nota: esta es una demo educativa; el centro, los servicios y los valores son ficticios.*","false","5","2","4","5","El copiloto atiende bien el problema y redirige apropiadamente hacia prototipado-3d, pero inventa un servicio llamado 'Ingeniería inversa y modelado 3D' que no existe en el catálogo. El rango de precio (COP 3–7 millones) y el plazo (10–15 días) no coinciden con el catálogo: prototipado-3d es COP 2,5–12 millones, 2–6 semanas. La respuesta es clara y cercana, pero la fundamentación se ve comprometida por datos no respaldados.","","","","",""
+Si quieres que la deje lista para el coordinador, necesito el **nombre de la empresa**, tu **nombre** y, si lo autorizas, un **correo electrónico**. Por favor no compartas documentos de identidad ni datos bancarios.","false","5","5","5","5","La respuesta identifica correctamente el problema (desperdicio de energía y agua en planta de hielo), recomienda el servicio exacto del catálogo (producción-mas-limpia-desperdicios) con rangos de precio y plazo exactos, agrega un complemento pertinente (tablero de indicadores), calcula correctamente el descuento (10% para pequeña empresa), respeta todas las políticas (sin garantías sobre ahorros, solicitud adecuada de datos, explicación clara del proceso) y mantiene tono profesional y cercano.","","","","",""
+"paso-05-rag-fts","pro-05-indicadores","procesos","Tengo una fábrica pequeña de arepas congeladas. No sé con precisión cuánto produzco, vendo y desperdicio por día; los datos están regados en varias hojas de Excel. Quiero tomar decisiones con datos.","¡Gracias por contarme! Tu caso está bastante claro: tienes los datos, pero dispersos, y necesitas verlos juntos para decidir.
+
+**Línea de trabajo:** `process_design`
+
+## Servicios recomendados
+
+**1. Tablero de indicadores y analítica operativa** (servicio principal)
+Aplica porque no sabes con precisión cuánto produces, vendes y desperdicias por día, y tus datos están en varias hojas de Excel. Definiríamos los indicadores clave y armaríamos un tablero conectado a esas hojas.
+Fuente: [Tablero de indicadores y analítica operativa](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/tablero-indicadores-analitica.md)
+
+**2. Producción más limpia y reducción de desperdicios** (opcional, como segundo paso)
+Cuando el tablero te muestre cuánto se desperdicia, este servicio ayuda a reducirlo y a ajustar la producción a la demanda real. Te sugiero empezar por el tablero y decidir después.
+Fuente: [Producción más limpia y reducción de desperdicios](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/produccion-mas-limpia-desperdicios.md)
+
+## Pre-propuesta
+
+- **Problema:** no hay visibilidad diaria de producción, ventas y desperdicio; los datos están dispersos en Excel.
+- **Línea de trabajo:** `process_design`
+- **Servicio recomendado:** Tablero de indicadores y analítica operativa.
+- **Alcance sugerido:**
+  - Definir de 5 a 10 KPIs con su fórmula y fuente de datos (producción, ventas, desperdicio).
+  - Construir un tablero interactivo conectado a tus hojas de Excel.
+  - Capacitar a tu equipo para mantenerlo.
+- **Duración típica:** de 3 a 6 semanas.
+- **Inversión:** entre **COP 4.000.000 y COP 14.000.000**, sin IVA ni costos de terceros. El valor exacto se define en la propuesta formal.
+- **Descuento posible:** 20 % si tienes hasta 10 empleados, o 10 % si tienes de 11 a 50. Se pide el certificado de existencia y representación legal.
+- **Pago:** 50 % al inicio y 50 % contra la entrega final.
+
+**Siguiente paso:** un coordinador revisa esta pre-propuesta y te contacta en 2 días hábiles para una reunión de diagnóstico de 45 a 60 minutos. Esta pre-propuesta no es una oferta comercial ni compromete al centro.
+
+Si quieres que la dejemos lista para el coordinador, dime el **nombre de tu empresa**, tu **nombre** y, si autorizas, un **correo**. También cuántos empleados tienes, para confirmar el descuento. Por favor no compartas documentos de identidad ni datos bancarios.","true","5","5","5","5","La respuesta identifica correctamente el problema (datos dispersos) y recomienda el servicio exacto del catálogo con precios, plazos y descuentos totalmente respaldados. La pre-propuesta es clara, bien estructurada y respeta las políticas de confidencialidad. Cierra adecuadamente sin comprometer al centro.","","","","",""
+"paso-05-rag-fts","cal-02-certificacion","calidad","Hacemos salsas y encurtidos. Una cadena de supermercados quiere comprarnos, pero nos exige cumplir estándares de calidad y más adelante ISO 9001. Hoy no tenemos procedimientos escritos.","¡Qué buena noticia que un supermercado quiera comprarles! Tu caso está claro: necesitan estandarizar cómo trabajan y prepararse para certificarse.
+
+**Línea de trabajo:** `quality_assurance`
+
+## Servicio recomendado
+
+**Sistema de gestión de calidad y control estadístico de procesos**. Aplica porque un cliente grande les exige estándares y certificación, y hoy no tienen procedimientos escritos, que es la base para cualquier certificación.
+
+Fuente: [Sistema de gestión de calidad y control estadístico de procesos](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/gestion-calidad-control-estadistico.md)
+
+## Pre-propuesta
+
+- **Problema:** una cadena de supermercados quiere comprarles salsas y encurtidos, pero exige estándares de calidad y, más adelante, ISO 9001. No tienen procedimientos escritos.
+- **Línea de trabajo:** Aseguramiento de la calidad.
+- **Servicio:** Sistema de gestión de calidad y control estadístico de procesos.
+- **Alcance sugerido:**
+  1. Diagnóstico de calidad y causas raíz de los problemas principales.
+  2. Control estadístico en 1 o 2 puntos críticos de su proceso.
+  3. Procedimientos estandarizados y plan de capacitación.
+  4. Opcional: hoja de ruta hacia ISO 9001.
+- **Duración típica:** de 6 a 12 semanas.
+- **Inversión:** entre **COP 6.000.000 y COP 20.000.000**. No incluye IVA ni el costo del ente certificador.
+- **Descuento:** si son microempresa (hasta 10 empleados) es del 20 %, y si son pequeña (11 a 50) del 10 %. Se pide el certificado de existencia y representación legal.
+- **Siguiente paso:** un coordinador revisa la pre-propuesta y los contacta en 2 días hábiles. Luego sigue una reunión de diagnóstico de 45 a 60 minutos para validar el alcance y qué exige exactamente el supermercado.
+
+Esta pre-propuesta no es una oferta comercial ni garantiza la certificación. El valor final se define en la propuesta formal.
+
+Para aplicar el descuento correcto, ¿cuántas personas trabajan en la empresa? Y si quieres que guarde la pre-propuesta, necesito tu autorización y estos datos: nombre de la empresa, tu nombre y, si quieres, un correo.","true","5","5","5","5","La respuesta identifica correctamente el problema (falta de procedimientos para certificación ISO 9001), recomienda el servicio exacto del catálogo (gestion-calidad-control-estadistico) con todos los datos respaldados: rango COP 6–20 millones, plazo 6–12 semanas, descuentos por tamaño de empresa según política. Es clara, estructurada, cercana y profesional sin prometer certificación. Solicita información faltante antes de guardar datos.","","","","",""
+"paso-05-rag-fts","cal-05-variacion","calidad","Producimos bloques de concreto y la resistencia varía mucho entre lotes. Algunos clientes se quejan. Queremos controlar la calidad del proceso. / Producimos unos 8.000 bloques al día en dos turnos. Probamos resistencia de vez en cuando, sin un plan fijo. Los reclamos vienen de dos constructoras grandes.","¡Gracias por contarnos! Lo que describes (resistencia que varía entre lotes y quejas de clientes) encaja bien con un trabajo de control de calidad del proceso. Para armarte una pre-propuesta ajustada, necesito saber tres cosas:
+
+1. **Tamaño de la empresa:** ¿cuántos empleados tienen? (Esto define el descuento que te aplica).
+2. **Proceso actual:** ¿hacen alguna prueba de resistencia hoy (por ejemplo, ensayos de compresión) y con qué frecuencia? ¿Cambian proveedores de cemento, agregados o la dosificación entre lotes?
+3. **Alcance de la queja:** ¿los clientes exigen alguna norma o certificación, o el problema son sobre todo devoluciones y reclamos?
+
+Con eso te entrego la recomendación y la pre-propuesta completa.
+---
+Gracias, con eso ya tengo lo necesario.
+
+**Línea de trabajo:** `quality_assurance`
+
+## Por qué este servicio
+Producen mucho volumen en dos turnos, la resistencia varía entre lotes y las pruebas no tienen un plan fijo. Ese es el caso típico para el control estadístico: medir con regularidad, ver dónde se origina la variación (turno, materiales, dosificación, curado) y actuar antes de que el lote llegue al cliente.
+
+**Servicio recomendado:** Sistema de gestión de calidad y control estadístico de procesos
+
+Fuente: [Sistema de gestión de calidad y control estadístico de procesos](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/gestion-calidad-control-estadistico.md)
+
+## Pre-propuesta
+
+- **Problema:** La resistencia de los bloques de concreto varía entre lotes, las pruebas se hacen sin plan fijo y dos constructoras grandes han presentado reclamos.
+- **Línea de trabajo:** Aseguramiento de la calidad.
+- **Servicio:** Sistema de gestión de calidad y control estadístico de procesos.
+- **Alcance sugerido:**
+  - Diagnóstico de calidad y análisis de causas raíz de la variación de resistencia.
+  - Control estadístico en 1 o 2 puntos críticos (por ejemplo, dosificación de la mezcla y ensayo de resistencia), con un plan de muestreo fijo.
+  - Procedimientos estandarizados y capacitación para ambos turnos.
+  - Opcional: hoja de ruta hacia ISO 9001, si las constructoras lo exigen.
+- **Duración típica:** de 6 a 12 semanas.
+- **Rango de inversión:** entre **COP 6.000.000 y COP 20.000.000**. No incluye IVA ni los costos del ente certificador, si decides certificarte. El valor exacto se define en la propuesta formal.
+- **Descuento:** depende del número de empleados, porque no me lo indicaste. Para microempresas es del 20 % y para pequeñas del 10 %. Se aplica presentando el certificado de existencia y representación legal.
+- **Siguiente paso:** un coordinador revisa esta pre-propuesta y te contacta en 2 días hábiles. Luego sigue una reunión de diagnóstico de 45 a 60 minutos para validar el alcance, en particular qué exigen exactamente las constructoras.
+
+Esta pre-propuesta no es una oferta comercial ni compromete al centro.
+
+## ¿La guardamos?
+Si quieres que la enviemos al centro, necesito tu autorización expresa y estos datos:
+- Nombre de la empresa
+- Tu nombre como contacto
+- Correo electrónico (opcional)
+
+No compartas documentos de identidad ni datos bancarios.","true","5","5","5","5","La respuesta identifica correctamente el servicio 'gestion-calidad-control-estadistico' del catálogo y respeta todos los datos: rango COP 6–20 millones y plazo 6–12 semanas. Atiende el problema concreto (variación de resistencia entre lotes), estructura la pre-propuesta según el proceso del centro, aplica la política de descuentos correctamente (solicita el tamaño de empresa para determinarlo), no inventa servicios ni precios, explica por qué encaja el servicio, mantiene tono cercano y profesional, y no promete resultados que no pueda garantizar. Legible y bien organizada.","","","","",""
+"paso-05-rag-fts","inn-03-cooperativa","innovacion","Somos una cooperativa de 45 pescadores en Bocachica. Queremos montar un centro de acopio con cadena de frío y buscar financiación, pero nunca hemos presentado un proyecto a una convocatoria.","¡Qué buena iniciativa! Un centro de acopio con cadena de frío es justo el tipo de proyecto que suele buscar financiación, y no necesitas experiencia previa para empezar.
+
+**Línea de trabajo:** `business_innovation`
+
+## Servicio recomendado
+
+**Gerencia y formulación de proyectos de innovación (I+D+i)**. Aplica porque:
+- Buscan financiación y nunca han formulado un proyecto.
+- Ayuda a identificar convocatorias que encajen con una cooperativa de pescadores.
+- Prepara el documento técnico (problema, objetivos, presupuesto, cronograma, indicadores) y revisa los requisitos.
+- Si les aprueban los recursos, se puede sumar la gerencia del proyecto.
+
+Fuente: [Gerencia y formulación de proyectos de innovación (I+D+i)](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/formulacion-proyectos-idi.md)
+
+## Pre-propuesta
+
+- **Problema:** cooperativa de 45 pescadores en Bocachica que quiere financiar un centro de acopio con cadena de frío y no tiene experiencia formulando proyectos.
+- **Línea de trabajo:** `business_innovation`
+- **Servicio:** Gerencia y formulación de proyectos de innovación (I+D+i).
+- **Alcance sugerido:**
+  1. Identificar convocatorias pertinentes.
+  2. Elaborar el documento técnico del proyecto.
+  3. Revisar requisitos de la convocatoria.
+  4. Opcional: gerencia durante la ejecución, que se cotiza aparte.
+- **Duración típica:** de 3 a 8 semanas para la formulación.
+- **Inversión:** entre **COP 4.000.000 y COP 15.000.000** por la formulación, sin IVA. Como cooperativa, les correspondería un **15 % de descuento**, presentando el certificado de existencia y representación legal. El valor final se define en la propuesta formal.
+- **Ojo:** la aprobación depende del financiador y no está garantizada. El centro tampoco realiza obras civiles ni instalaciones eléctricas, así que la construcción y la instalación del frío las ejecutarían otros con los recursos del proyecto.
+- **Siguiente paso:** un coordinador revisa la pre-propuesta y los contacta en 2 días hábiles. Después viene una reunión de diagnóstico de 45 a 60 minutos para validar el alcance.
+
+Esta pre-propuesta no es una oferta comercial ni compromete al centro.
+
+Si quieres que la dejemos guardada para el seguimiento, dime el **nombre de la cooperativa** y el **nombre de la persona de contacto**. El correo es opcional y solo si lo autorizas. Por favor, no compartas documentos de identidad ni datos bancarios.","true","5","5","5","5","La respuesta atiende perfectamente el problema concreto: una cooperativa sin experiencia en formulación de proyectos que busca financiación. Recomienda el servicio exacto del catálogo con precios, plazos y descuento correctos (COP 4.000.000–15.000.000, 3–8 semanas, 15% cooperativa). Explica claramente el alcance, aclara que la aprobación no está garantizada y respeta la política de datos al final. Lenguaje cercano y profesional, bien estructurado para lectura en móvil.","","","","",""
+"paso-05-rag-fts","inn-06-pieza","innovacion","Una máquina de nuestra planta usa una pieza plástica importada que ya no fabrican. ¿Nos pueden ayudar a diseñarla y hacer un prototipo para probarla?","¡Sí, es un caso típico para nosotros! Reemplazar una pieza importada o descontinuada es justo uno de los usos del servicio de prototipado.
+
+**Línea de trabajo:** `business_innovation`
+
+**Servicio recomendado:** Prototipado 3D y fabricación rápida
+
+Por qué aplica: modelamos la pieza en CAD (a partir de la original o de sus medidas), fabricamos prototipos con impresión 3D o corte láser, y los probamos en la máquina antes de decidir cómo producirla en serie.
+
+Fuente: [Prototipado 3D y fabricación rápida](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/prototipado-3d.md)
+
+## Pre-propuesta
+
+- **Problema:** una máquina de la planta depende de una pieza plástica importada que ya no se fabrica.
+- **Línea de trabajo:** `business_innovation`
+- **Servicio:** Prototipado 3D y fabricación rápida
+- **Alcance sugerido:**
+  - Modelo CAD de la pieza.
+  - Hasta 3 iteraciones de prototipo físico.
+  - Informe de pruebas funcionales y recomendaciones para producción.
+- **Duración típica:** de 2 a 6 semanas.
+- **Inversión:** entre **COP 2.500.000 y COP 12.000.000**, según tamaño, material y número de iteraciones. No incluye IVA ni costos de terceros. Según el tamaño de tu empresa puede aplicar un descuento (por ejemplo, 20 % para microempresas), que se confirma con el certificado de existencia y representación legal.
+- **Siguiente paso:** un coordinador te contacta en 2 días hábiles y se agenda una reunión de diagnóstico de 45 a 60 minutos para validar el alcance. Esta pre-propuesta no es una oferta comercial. El valor definitivo llega con la propuesta formal.
+
+## Para afinar el alcance
+1. ¿Cuántos empleados tiene tu empresa? (define el descuento).
+2. ¿Qué tamaño tiene la pieza y qué esfuerzo soporta (calor, golpes, fricción, contacto con químicos)? Esto influye en el material y en cuántas iteraciones harán falta.
+3. ¿Tienes la pieza original, aunque esté dañada, o planos de ella?
+
+Si quieres que dejemos la pre-propuesta registrada, necesito el nombre de tu empresa, tu nombre y, si lo autorizas, un correo. No compartas documentos de identidad ni datos bancarios.","true","5","5","5","5","La respuesta atiende directamente el problema (reemplazo de pieza importada descontinuada), recomienda el servicio exacto del catálogo (prototipado-3d) con todos sus datos verificados: línea business_innovation, rango COP 2.500.000–12.000.000, duración 2–6 semanas, y explica claramente por qué aplica. Estructura clara con pre-propuesta, alcance sugerido, preguntas de diagnóstico y recordatorio de políticas de confidencialidad sin presionar. Tono cercano y profesional sin promesas exageradas.","","","","",""

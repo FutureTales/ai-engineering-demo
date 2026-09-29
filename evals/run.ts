@@ -28,11 +28,10 @@ import {
   detectLine,
   runChecks,
   type CaseOutput,
-  type CheckName,
-  type Checks,
   type EvalCase,
 } from "../lib/evals/checks";
-import { judge, JUDGE_MODEL, type JudgeScores } from "../lib/evals/judge";
+import { judge, type JudgeScores } from "../lib/evals/judge";
+import { round, summarize, type Recording } from "../lib/evals/summary";
 import { createAdminClient } from "../lib/supabase/admin";
 
 config({ path: ".env.local", quiet: true });
@@ -55,6 +54,9 @@ const MOCK = flag("--mock");
 const USE_JUDGE = !flag("--no-judge");
 const CONCURRENCY = Number(opt("--concurrency", "4"));
 const HUMAN_SAMPLE = Number(opt("--human-sample", "8"));
+// Voyage without a payment method allows 3 requests/minute: evals wait and retry
+// instead of silently falling back to FTS (which would invalidate a hybrid run).
+const EMBED_RETRIES = Number(opt("--embed-retries", "4"));
 
 function git(cmd: string): string | null {
   try {
@@ -95,24 +97,6 @@ const catalog = loadServices().map((s) => ({ min: s.priceMinCop, max: s.priceMax
 // ---------------------------------------------------------------------------
 // One case
 // ---------------------------------------------------------------------------
-interface Recording {
-  caseId: string;
-  label: string;
-  recordedAt: string;
-  model: string;
-  promptVersion: string;
-  turns: {
-    user: string;
-    assistant: string;
-    toolCalls: CaseOutput["toolCalls"];
-    toolResults: CaseOutput["toolResults"];
-    costUsd: number;
-    latencyMs: number;
-    ttftMs: number | null;
-  }[];
-  judge: JudgeScores | null;
-  judgeCostUsd: number;
-}
 
 async function runLive(c: EvalCase): Promise<Recording> {
   const messages: ModelMessage[] = [];
@@ -121,7 +105,7 @@ async function runLive(c: EvalCase): Promise<Recording> {
 
   for (let i = 0; i < userTurns.length; i++) {
     messages.push({ role: "user", content: userTurns[i] });
-    const r = await runCopilot(messages);
+    const r = await runCopilot(messages, { embedRetries: EMBED_RETRIES });
     messages.push({ role: "assistant", content: r.text });
     turns.push({
       user: userTurns[i],
@@ -131,6 +115,8 @@ async function runLive(c: EvalCase): Promise<Recording> {
       costUsd: r.costUsd,
       latencyMs: r.latencyMs,
       ttftMs: r.ttftMs,
+      retrievalMode: r.retrieval?.mode ?? null,
+      retrievedSources: r.retrieval?.sources.map((x) => x.sourcePath) ?? [],
     });
     // If the copilot asked clarifying questions instead of classifying, answer once.
     if (
@@ -185,67 +171,6 @@ async function pool<T, R>(items: T[], n: number, fn: (t: T, i: number) => Promis
 // ---------------------------------------------------------------------------
 // Aggregation
 // ---------------------------------------------------------------------------
-const percentile = (xs: number[], p: number) => {
-  if (!xs.length) return null;
-  const s = [...xs].sort((a, b) => a - b);
-  return s[Math.min(s.length - 1, Math.ceil((p / 100) * s.length) - 1)];
-};
-const round = (x: number, d = 4) => Math.round(x * 10 ** d) / 10 ** d;
-
-function summarize(rows: { c: EvalCase; rec: Recording; checks: Checks; passed: boolean }[]) {
-  const names = Object.keys(rows[0].checks) as CheckName[];
-  const checks = Object.fromEntries(
-    names.map((n) => {
-      const applicable = rows.filter((r) => r.checks[n].pass !== null);
-      const passed = applicable.filter((r) => r.checks[n].pass).length;
-      return [
-        n,
-        {
-          passed,
-          applicable: applicable.length,
-          rate: applicable.length ? round(passed / applicable.length, 3) : null,
-        },
-      ];
-    }),
-  );
-  const judged = rows.filter((r) => r.rec.judge);
-  const avg = (k: "pertinencia" | "fundamentacion" | "claridad" | "tono") =>
-    judged.length ? round(judged.reduce((s, r) => s + r.rec.judge![k], 0) / judged.length, 2) : null;
-  const turnLatencies = rows.flatMap((r) => r.rec.turns.map((t) => t.latencyMs));
-  const ttfts = rows.flatMap((r) => r.rec.turns.map((t) => t.ttftMs).filter((x): x is number => x !== null));
-  const copilotCost = rows.reduce((s, r) => s + r.rec.turns.reduce((a, t) => a + t.costUsd, 0), 0);
-  const judgeCost = rows.reduce((s, r) => s + r.rec.judgeCostUsd, 0);
-  const byCategory = Object.fromEntries(
-    [...new Set(rows.map((r) => r.c.category))].map((cat) => {
-      const rs = rows.filter((r) => r.c.category === cat);
-      return [cat, { passed: rs.filter((r) => r.passed).length, total: rs.length }];
-    }),
-  );
-  return {
-    casePassRate: round(rows.filter((r) => r.passed).length / rows.length, 3),
-    casesPassed: rows.filter((r) => r.passed).length,
-    checks,
-    byCategory,
-    judge: {
-      model: JUDGE_MODEL,
-      judged: judged.length,
-      pertinencia: avg("pertinencia"),
-      fundamentacion: avg("fundamentacion"),
-      claridad: avg("claridad"),
-      tono: avg("tono"),
-    },
-    costUsd: { copilot: round(copilotCost), judge: round(judgeCost), total: round(copilotCost + judgeCost) },
-    costPerCaseUsd: round(copilotCost / rows.length),
-    latencyMs: {
-      turnP50: percentile(turnLatencies, 50),
-      turnP95: percentile(turnLatencies, 95),
-      ttftP50: percentile(ttfts, 50),
-      ttftP95: percentile(ttfts, 95),
-    },
-    turns: turnLatencies.length,
-  };
-}
-
 function csvCell(v: unknown): string {
   const s = String(v ?? "");
   return `"${s.replaceAll('"', '""')}"`;
@@ -414,6 +339,7 @@ async function main() {
   console.log(
     `Latencia por turno p50/p95: ${summary.latencyMs.turnP50} / ${summary.latencyMs.turnP95} ms · primer token p50/p95: ${summary.latencyMs.ttftP50} / ${summary.latencyMs.ttftP95} ms`,
   );
+  console.log(`Recuperación por turno: ${JSON.stringify(summary.retrievalModes)}`);
   console.log(`Resultados: ${path.relative(ROOT, outFile)}`);
 }
 
@@ -421,5 +347,3 @@ main().catch((err) => {
   console.error(err);
   process.exit(1);
 });
-
-export type { Recording };

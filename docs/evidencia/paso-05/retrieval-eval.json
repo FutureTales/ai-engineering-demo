@@ -1,0 +1,731 @@
+{
+  "recordedAt": "2026-09-29T17:12:08.903Z",
+  "gitSha": "09c3514",
+  "metric": "¿algún servicio esperado está entre los 3 documentos recuperados?",
+  "summary": {
+    "fts": {
+      "recallAt3": 1,
+      "hits": 27,
+      "cases": 27,
+      "fallbacksToFts": 0,
+      "latencyP50Ms": 189
+    },
+    "hybrid": {
+      "recallAt3": 1,
+      "hits": 27,
+      "cases": 27,
+      "fallbacksToFts": 0,
+      "latencyP50Ms": 441
+    }
+  },
+  "results": {
+    "fts": [
+      {
+        "id": "sim-01-hotel",
+        "expected": [
+          "simulacion-operaciones"
+        ],
+        "retrieved": [
+          "simulacion-operaciones",
+          "diagnostico-madurez-digital-ia",
+          "prototipado-3d"
+        ],
+        "hit": true,
+        "modeUsed": "fts"
+      },
+      {
+        "id": "sim-02-muelle",
+        "expected": [
+          "simulacion-operaciones"
+        ],
+        "retrieved": [
+          "simulacion-operaciones",
+          "tablero-indicadores-analitica",
+          "prototipado-3d"
+        ],
+        "hit": true,
+        "modeUsed": "fts"
+      },
+      {
+        "id": "sim-03-clinica",
+        "expected": [
+          "simulacion-operaciones"
+        ],
+        "retrieved": [
+          "simulacion-operaciones",
+          "diagnostico-madurez-digital-ia",
+          "vigilancia-tecnologica-pi"
+        ],
+        "hit": true,
+        "modeUsed": "fts"
+      },
+      {
+        "id": "sim-04-cajas",
+        "expected": [
+          "simulacion-operaciones"
+        ],
+        "retrieved": [
+          "simulacion-operaciones",
+          "prototipado-3d",
+          "diagnostico-madurez-digital-ia"
+        ],
+        "hit": true,
+        "modeUsed": "fts"
+      },
+      {
+        "id": "sim-05-precio",
+        "expected": [
+          "simulacion-operaciones"
+        ],
+        "retrieved": [
+          "simulacion-operaciones",
+          "capacitacion-realidad-virtual",
+          "tablero-indicadores-analitica"
+        ],
+        "hit": true,
+        "modeUsed": "fts"
+      },
+      {
+        "id": "pro-01-panaderia",
+        "expected": [
+          "produccion-mas-limpia-desperdicios",
+          "tablero-indicadores-analitica"
+        ],
+        "retrieved": [
+          "produccion-mas-limpia-desperdicios",
+          "vigilancia-tecnologica-pi",
+          "tablero-indicadores-analitica"
+        ],
+        "hit": true,
+        "modeUsed": "fts"
+      },
+      {
+        "id": "pro-02-hielo",
+        "expected": [
+          "produccion-mas-limpia-desperdicios"
+        ],
+        "retrieved": [
+          "produccion-mas-limpia-desperdicios",
+          "tablero-indicadores-analitica",
+          "digitalizacion-procesos-administrativos"
+        ],
+        "hit": true,
+        "modeUsed": "fts"
+      },
+      {
+        "id": "pro-03-facturacion",
+        "expected": [
+          "digitalizacion-procesos-administrativos"
+        ],
+        "retrieved": [
+          "digitalizacion-procesos-administrativos",
+          "vigilancia-tecnologica-pi",
+          "diagnostico-madurez-digital-ia"
+        ],
+        "hit": true,
+        "modeUsed": "fts"
+      },
+      {
+        "id": "pro-04-ferreteria",
+        "expected": [
+          "digitalizacion-procesos-administrativos"
+        ],
+        "retrieved": [
+          "digitalizacion-procesos-administrativos",
+          "tablero-indicadores-analitica",
+          "vigilancia-tecnologica-pi"
+        ],
+        "hit": true,
+        "modeUsed": "fts"
+      },
+      {
+        "id": "pro-05-indicadores",
+        "expected": [
+          "tablero-indicadores-analitica"
+        ],
+        "retrieved": [
+          "tablero-indicadores-analitica",
+          "produccion-mas-limpia-desperdicios",
+          "prototipado-3d"
+        ],
+        "hit": true,
+        "modeUsed": "fts"
+      },
+      {
+        "id": "pro-06-kpis",
+        "expected": [
+          "tablero-indicadores-analitica"
+        ],
+        "retrieved": [
+          "tablero-indicadores-analitica",
+          "simulacion-operaciones",
+          "diagnostico-madurez-digital-ia"
+        ],
+        "hit": true,
+        "modeUsed": "fts"
+      },
+      {
+        "id": "cal-01-confecciones",
+        "expected": [
+          "gestion-calidad-control-estadistico"
+        ],
+        "retrieved": [
+          "gestion-calidad-control-estadistico",
+          "simulacion-operaciones",
+          "capacitacion-realidad-virtual"
+        ],
+        "hit": true,
+        "modeUsed": "fts"
+      },
+      {
+        "id": "cal-02-certificacion",
+        "expected": [
+          "gestion-calidad-control-estadistico"
+        ],
+        "retrieved": [
+          "gestion-calidad-control-estadistico",
+          "vigilancia-tecnologica-pi",
+          "prototipado-3d"
+        ],
+        "hit": true,
+        "modeUsed": "fts"
+      },
+      {
+        "id": "cal-03-montacargas",
+        "expected": [
+          "capacitacion-realidad-virtual"
+        ],
+        "retrieved": [
+          "capacitacion-realidad-virtual",
+          "simulacion-operaciones",
+          "tablero-indicadores-analitica"
+        ],
+        "hit": true,
+        "modeUsed": "fts"
+      },
+      {
+        "id": "cal-04-procedimiento",
+        "expected": [
+          "capacitacion-realidad-virtual"
+        ],
+        "retrieved": [
+          "capacitacion-realidad-virtual",
+          "prototipado-3d",
+          "simulacion-operaciones"
+        ],
+        "hit": true,
+        "modeUsed": "fts"
+      },
+      {
+        "id": "cal-05-variacion",
+        "expected": [
+          "gestion-calidad-control-estadistico"
+        ],
+        "retrieved": [
+          "gestion-calidad-control-estadistico",
+          "prototipado-3d",
+          "simulacion-operaciones"
+        ],
+        "hit": true,
+        "modeUsed": "fts"
+      },
+      {
+        "id": "inn-01-marca",
+        "expected": [
+          "vigilancia-tecnologica-pi"
+        ],
+        "retrieved": [
+          "vigilancia-tecnologica-pi",
+          "gestion-calidad-control-estadistico",
+          "tablero-indicadores-analitica"
+        ],
+        "hit": true,
+        "modeUsed": "fts"
+      },
+      {
+        "id": "inn-02-patente",
+        "expected": [
+          "vigilancia-tecnologica-pi"
+        ],
+        "retrieved": [
+          "vigilancia-tecnologica-pi",
+          "formulacion-proyectos-idi",
+          "prototipado-3d"
+        ],
+        "hit": true,
+        "modeUsed": "fts"
+      },
+      {
+        "id": "inn-03-cooperativa",
+        "expected": [
+          "formulacion-proyectos-idi"
+        ],
+        "retrieved": [
+          "formulacion-proyectos-idi",
+          "prototipado-3d",
+          "capacitacion-realidad-virtual"
+        ],
+        "hit": true,
+        "modeUsed": "fts"
+      },
+      {
+        "id": "inn-04-cofinanciacion",
+        "expected": [
+          "formulacion-proyectos-idi"
+        ],
+        "retrieved": [
+          "formulacion-proyectos-idi",
+          "prototipado-3d",
+          "diagnostico-madurez-digital-ia"
+        ],
+        "hit": true,
+        "modeUsed": "fts"
+      },
+      {
+        "id": "inn-05-empaque",
+        "expected": [
+          "prototipado-3d"
+        ],
+        "retrieved": [
+          "prototipado-3d",
+          "vigilancia-tecnologica-pi",
+          "tablero-indicadores-analitica"
+        ],
+        "hit": true,
+        "modeUsed": "fts"
+      },
+      {
+        "id": "inn-06-pieza",
+        "expected": [
+          "prototipado-3d"
+        ],
+        "retrieved": [
+          "prototipado-3d",
+          "vigilancia-tecnologica-pi",
+          "tablero-indicadores-analitica"
+        ],
+        "hit": true,
+        "modeUsed": "fts"
+      },
+      {
+        "id": "inn-07-ia",
+        "expected": [
+          "diagnostico-madurez-digital-ia"
+        ],
+        "retrieved": [
+          "diagnostico-madurez-digital-ia",
+          "digitalizacion-procesos-administrativos",
+          "tablero-indicadores-analitica"
+        ],
+        "hit": true,
+        "modeUsed": "fts"
+      },
+      {
+        "id": "inn-08-turismo",
+        "expected": [
+          "diagnostico-madurez-digital-ia"
+        ],
+        "retrieved": [
+          "diagnostico-madurez-digital-ia",
+          "tablero-indicadores-analitica",
+          "vigilancia-tecnologica-pi"
+        ],
+        "hit": true,
+        "modeUsed": "fts"
+      },
+      {
+        "id": "pol-01-descuento",
+        "expected": [
+          "prototipado-3d"
+        ],
+        "retrieved": [
+          "prototipado-3d",
+          "vigilancia-tecnologica-pi",
+          "capacitacion-realidad-virtual"
+        ],
+        "hit": true,
+        "modeUsed": "fts"
+      },
+      {
+        "id": "adv-04-injection-oculta",
+        "expected": [
+          "produccion-mas-limpia-desperdicios"
+        ],
+        "retrieved": [
+          "produccion-mas-limpia-desperdicios",
+          "simulacion-operaciones",
+          "tablero-indicadores-analitica"
+        ],
+        "hit": true,
+        "modeUsed": "fts"
+      },
+      {
+        "id": "adv-05-datos-personales",
+        "expected": [
+          "gestion-calidad-control-estadistico"
+        ],
+        "retrieved": [
+          "gestion-calidad-control-estadistico",
+          "tablero-indicadores-analitica",
+          "capacitacion-realidad-virtual"
+        ],
+        "hit": true,
+        "modeUsed": "fts"
+      }
+    ],
+    "hybrid": [
+      {
+        "id": "sim-01-hotel",
+        "expected": [
+          "simulacion-operaciones"
+        ],
+        "retrieved": [
+          "simulacion-operaciones",
+          "digitalizacion-procesos-administrativos",
+          "tablero-indicadores-analitica"
+        ],
+        "hit": true,
+        "modeUsed": "hybrid"
+      },
+      {
+        "id": "sim-02-muelle",
+        "expected": [
+          "simulacion-operaciones"
+        ],
+        "retrieved": [
+          "simulacion-operaciones",
+          "tablero-indicadores-analitica",
+          "digitalizacion-procesos-administrativos"
+        ],
+        "hit": true,
+        "modeUsed": "hybrid"
+      },
+      {
+        "id": "sim-03-clinica",
+        "expected": [
+          "simulacion-operaciones"
+        ],
+        "retrieved": [
+          "simulacion-operaciones",
+          "tablero-indicadores-analitica",
+          "capacitacion-realidad-virtual"
+        ],
+        "hit": true,
+        "modeUsed": "hybrid"
+      },
+      {
+        "id": "sim-04-cajas",
+        "expected": [
+          "simulacion-operaciones"
+        ],
+        "retrieved": [
+          "simulacion-operaciones",
+          "tablero-indicadores-analitica",
+          "produccion-mas-limpia-desperdicios"
+        ],
+        "hit": true,
+        "modeUsed": "hybrid"
+      },
+      {
+        "id": "sim-05-precio",
+        "expected": [
+          "simulacion-operaciones"
+        ],
+        "retrieved": [
+          "simulacion-operaciones",
+          "capacitacion-realidad-virtual",
+          "tablero-indicadores-analitica"
+        ],
+        "hit": true,
+        "modeUsed": "hybrid"
+      },
+      {
+        "id": "pro-01-panaderia",
+        "expected": [
+          "produccion-mas-limpia-desperdicios",
+          "tablero-indicadores-analitica"
+        ],
+        "retrieved": [
+          "produccion-mas-limpia-desperdicios",
+          "tablero-indicadores-analitica",
+          "digitalizacion-procesos-administrativos"
+        ],
+        "hit": true,
+        "modeUsed": "hybrid"
+      },
+      {
+        "id": "pro-02-hielo",
+        "expected": [
+          "produccion-mas-limpia-desperdicios"
+        ],
+        "retrieved": [
+          "produccion-mas-limpia-desperdicios",
+          "tablero-indicadores-analitica",
+          "simulacion-operaciones"
+        ],
+        "hit": true,
+        "modeUsed": "hybrid"
+      },
+      {
+        "id": "pro-03-facturacion",
+        "expected": [
+          "digitalizacion-procesos-administrativos"
+        ],
+        "retrieved": [
+          "digitalizacion-procesos-administrativos",
+          "simulacion-operaciones",
+          "tablero-indicadores-analitica"
+        ],
+        "hit": true,
+        "modeUsed": "hybrid"
+      },
+      {
+        "id": "pro-04-ferreteria",
+        "expected": [
+          "digitalizacion-procesos-administrativos"
+        ],
+        "retrieved": [
+          "digitalizacion-procesos-administrativos",
+          "tablero-indicadores-analitica",
+          "gestion-calidad-control-estadistico"
+        ],
+        "hit": true,
+        "modeUsed": "hybrid"
+      },
+      {
+        "id": "pro-05-indicadores",
+        "expected": [
+          "tablero-indicadores-analitica"
+        ],
+        "retrieved": [
+          "tablero-indicadores-analitica",
+          "produccion-mas-limpia-desperdicios",
+          "gestion-calidad-control-estadistico"
+        ],
+        "hit": true,
+        "modeUsed": "hybrid"
+      },
+      {
+        "id": "pro-06-kpis",
+        "expected": [
+          "tablero-indicadores-analitica"
+        ],
+        "retrieved": [
+          "tablero-indicadores-analitica",
+          "simulacion-operaciones",
+          "diagnostico-madurez-digital-ia"
+        ],
+        "hit": true,
+        "modeUsed": "hybrid"
+      },
+      {
+        "id": "cal-01-confecciones",
+        "expected": [
+          "gestion-calidad-control-estadistico"
+        ],
+        "retrieved": [
+          "gestion-calidad-control-estadistico",
+          "simulacion-operaciones",
+          "prototipado-3d"
+        ],
+        "hit": true,
+        "modeUsed": "hybrid"
+      },
+      {
+        "id": "cal-02-certificacion",
+        "expected": [
+          "gestion-calidad-control-estadistico"
+        ],
+        "retrieved": [
+          "gestion-calidad-control-estadistico",
+          "vigilancia-tecnologica-pi",
+          "digitalizacion-procesos-administrativos"
+        ],
+        "hit": true,
+        "modeUsed": "hybrid"
+      },
+      {
+        "id": "cal-03-montacargas",
+        "expected": [
+          "capacitacion-realidad-virtual"
+        ],
+        "retrieved": [
+          "capacitacion-realidad-virtual",
+          "simulacion-operaciones",
+          "tablero-indicadores-analitica"
+        ],
+        "hit": true,
+        "modeUsed": "hybrid"
+      },
+      {
+        "id": "cal-04-procedimiento",
+        "expected": [
+          "capacitacion-realidad-virtual"
+        ],
+        "retrieved": [
+          "capacitacion-realidad-virtual",
+          "simulacion-operaciones",
+          "prototipado-3d"
+        ],
+        "hit": true,
+        "modeUsed": "hybrid"
+      },
+      {
+        "id": "cal-05-variacion",
+        "expected": [
+          "gestion-calidad-control-estadistico"
+        ],
+        "retrieved": [
+          "gestion-calidad-control-estadistico",
+          "produccion-mas-limpia-desperdicios",
+          "tablero-indicadores-analitica"
+        ],
+        "hit": true,
+        "modeUsed": "hybrid"
+      },
+      {
+        "id": "inn-01-marca",
+        "expected": [
+          "vigilancia-tecnologica-pi"
+        ],
+        "retrieved": [
+          "vigilancia-tecnologica-pi",
+          "prototipado-3d",
+          "produccion-mas-limpia-desperdicios"
+        ],
+        "hit": true,
+        "modeUsed": "hybrid"
+      },
+      {
+        "id": "inn-02-patente",
+        "expected": [
+          "vigilancia-tecnologica-pi"
+        ],
+        "retrieved": [
+          "vigilancia-tecnologica-pi",
+          "formulacion-proyectos-idi",
+          "prototipado-3d"
+        ],
+        "hit": true,
+        "modeUsed": "hybrid"
+      },
+      {
+        "id": "inn-03-cooperativa",
+        "expected": [
+          "formulacion-proyectos-idi"
+        ],
+        "retrieved": [
+          "formulacion-proyectos-idi",
+          "simulacion-operaciones",
+          "produccion-mas-limpia-desperdicios"
+        ],
+        "hit": true,
+        "modeUsed": "hybrid"
+      },
+      {
+        "id": "inn-04-cofinanciacion",
+        "expected": [
+          "formulacion-proyectos-idi"
+        ],
+        "retrieved": [
+          "formulacion-proyectos-idi",
+          "diagnostico-madurez-digital-ia",
+          "prototipado-3d"
+        ],
+        "hit": true,
+        "modeUsed": "hybrid"
+      },
+      {
+        "id": "inn-05-empaque",
+        "expected": [
+          "prototipado-3d"
+        ],
+        "retrieved": [
+          "prototipado-3d",
+          "vigilancia-tecnologica-pi",
+          "produccion-mas-limpia-desperdicios"
+        ],
+        "hit": true,
+        "modeUsed": "hybrid"
+      },
+      {
+        "id": "inn-06-pieza",
+        "expected": [
+          "prototipado-3d"
+        ],
+        "retrieved": [
+          "prototipado-3d",
+          "produccion-mas-limpia-desperdicios",
+          "gestion-calidad-control-estadistico"
+        ],
+        "hit": true,
+        "modeUsed": "hybrid"
+      },
+      {
+        "id": "inn-07-ia",
+        "expected": [
+          "diagnostico-madurez-digital-ia"
+        ],
+        "retrieved": [
+          "diagnostico-madurez-digital-ia",
+          "digitalizacion-procesos-administrativos",
+          "tablero-indicadores-analitica"
+        ],
+        "hit": true,
+        "modeUsed": "hybrid"
+      },
+      {
+        "id": "inn-08-turismo",
+        "expected": [
+          "diagnostico-madurez-digital-ia"
+        ],
+        "retrieved": [
+          "diagnostico-madurez-digital-ia",
+          "digitalizacion-procesos-administrativos",
+          "tablero-indicadores-analitica"
+        ],
+        "hit": true,
+        "modeUsed": "hybrid"
+      },
+      {
+        "id": "pol-01-descuento",
+        "expected": [
+          "prototipado-3d"
+        ],
+        "retrieved": [
+          "prototipado-3d",
+          "vigilancia-tecnologica-pi",
+          "simulacion-operaciones"
+        ],
+        "hit": true,
+        "modeUsed": "hybrid"
+      },
+      {
+        "id": "adv-04-injection-oculta",
+        "expected": [
+          "produccion-mas-limpia-desperdicios"
+        ],
+        "retrieved": [
+          "tablero-indicadores-analitica",
+          "produccion-mas-limpia-desperdicios",
+          "gestion-calidad-control-estadistico"
+        ],
+        "hit": true,
+        "modeUsed": "hybrid"
+      },
+      {
+        "id": "adv-05-datos-personales",
+        "expected": [
+          "gestion-calidad-control-estadistico"
+        ],
+        "retrieved": [
+          "gestion-calidad-control-estadistico",
+          "tablero-indicadores-analitica",
+          "simulacion-operaciones"
+        ],
+        "hit": true,
+        "modeUsed": "hybrid"
+      }
+    ]
+  }
+}

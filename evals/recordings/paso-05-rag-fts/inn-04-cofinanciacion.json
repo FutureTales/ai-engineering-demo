@@ -1,0 +1,35 @@
+{
+  "caseId": "inn-04-cofinanciacion",
+  "label": "paso-05-rag-fts",
+  "recordedAt": "2026-09-29T17:04:53.926Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Tenemos una empresa de software educativo y vimos una convocatoria para cofinanciar innovación. Cierra en 5 semanas y no sabemos formular el proyecto.",
+      "assistant": "¡Gracias por contarnos! Con lo que dices ya puedo encuadrar el caso, pero necesito tres datos para afinar la pre-propuesta:\n\n1. **Tamaño:** ¿cuántas personas trabajan en la empresa? (define si aplica descuento).\n2. **Idea:** ¿qué producto o mejora quieren desarrollar con la cofinanciación, en una o dos frases?\n3. **Convocatoria:** ¿quién la abre y ya tienen los términos de referencia (requisitos, presupuesto máximo, contrapartida)?\n\nMientras tanto, te adelanto la orientación:\n\n**Línea de trabajo:** `business_innovation`\n\n**Servicio recomendado:** Gerencia y formulación de proyectos de innovación (I+D+i)\n\n- Aplica porque buscan financiación para un proyecto de innovación y no tienen experiencia formulando.\n- Incluye identificar convocatorias, revisar requisitos y armar el documento técnico (problema, objetivos, metodología, presupuesto, cronograma e indicadores).\n- **Tiempo:** la ficha indica de 3 a 8 semanas para la formulación. Con 5 semanas hasta el cierre el margen es ajustado, así que conviene arrancar cuanto antes; el cronograma real se confirma en la reunión de diagnóstico.\n- **Inversión:** entre **COP 4.000.000 y COP 15.000.000** por la formulación, sin IVA. La aprobación depende del financiador y no está garantizada.\n\nFuente: [Gerencia y formulación de proyectos de innovación (I+D+i)](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/formulacion-proyectos-idi.md)\n\nCuando me respondas las tres preguntas, te entrego la pre-propuesta completa con alcance sugerido, descuento aplicable y siguiente paso.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0111284,
+      "latencyMs": 5349,
+      "ttftMs": 1047,
+      "retrievalMode": "fts",
+      "retrievedSources": [
+        "data/catalog/servicios/formulacion-proyectos-idi.md",
+        "data/catalog/servicios/diagnostico-madurez-digital-ia.md",
+        "data/catalog/servicios/digitalizacion-procesos-administrativos.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta es excelente: identifica correctamente la línea business_innovation y recomienda el único servicio pertinente (formulacion-proyectos-idi) con justificación clara. Todos los datos (rango COP 4–15 millones, plazo 3–8 semanas) coinciden exactamente con el catálogo. El copiloto reconoce la urgencia (5 semanas hasta cierre) sin sobreprometer, solicita información relevante (tamaño, idea, detalles de convocatoria) para afinar la propuesta, y mantiene un tono cercano y profesional. Estructura clara y legible."
+  },
+  "judgeCostUsd": 0.005854
+}

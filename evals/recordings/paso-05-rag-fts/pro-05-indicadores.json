@@ -1,0 +1,35 @@
+{
+  "caseId": "pro-05-indicadores",
+  "label": "paso-05-rag-fts",
+  "recordedAt": "2026-09-29T17:04:28.907Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Tengo una fábrica pequeña de arepas congeladas. No sé con precisión cuánto produzco, vendo y desperdicio por día; los datos están regados en varias hojas de Excel. Quiero tomar decisiones con datos.",
+      "assistant": "¡Gracias por contarme! Tu caso está bastante claro: tienes los datos, pero dispersos, y necesitas verlos juntos para decidir.\n\n**Línea de trabajo:** `process_design`\n\n## Servicios recomendados\n\n**1. Tablero de indicadores y analítica operativa** (servicio principal)\nAplica porque no sabes con precisión cuánto produces, vendes y desperdicias por día, y tus datos están en varias hojas de Excel. Definiríamos los indicadores clave y armaríamos un tablero conectado a esas hojas.\nFuente: [Tablero de indicadores y analítica operativa](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/tablero-indicadores-analitica.md)\n\n**2. Producción más limpia y reducción de desperdicios** (opcional, como segundo paso)\nCuando el tablero te muestre cuánto se desperdicia, este servicio ayuda a reducirlo y a ajustar la producción a la demanda real. Te sugiero empezar por el tablero y decidir después.\nFuente: [Producción más limpia y reducción de desperdicios](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/produccion-mas-limpia-desperdicios.md)\n\n## Pre-propuesta\n\n- **Problema:** no hay visibilidad diaria de producción, ventas y desperdicio; los datos están dispersos en Excel.\n- **Línea de trabajo:** `process_design`\n- **Servicio recomendado:** Tablero de indicadores y analítica operativa.\n- **Alcance sugerido:**\n  - Definir de 5 a 10 KPIs con su fórmula y fuente de datos (producción, ventas, desperdicio).\n  - Construir un tablero interactivo conectado a tus hojas de Excel.\n  - Capacitar a tu equipo para mantenerlo.\n- **Duración típica:** de 3 a 6 semanas.\n- **Inversión:** entre **COP 4.000.000 y COP 14.000.000**, sin IVA ni costos de terceros. El valor exacto se define en la propuesta formal.\n- **Descuento posible:** 20 % si tienes hasta 10 empleados, o 10 % si tienes de 11 a 50. Se pide el certificado de existencia y representación legal.\n- **Pago:** 50 % al inicio y 50 % contra la entrega final.\n\n**Siguiente paso:** un coordinador revisa esta pre-propuesta y te contacta en 2 días hábiles para una reunión de diagnóstico de 45 a 60 minutos. Esta pre-propuesta no es una oferta comercial ni compromete al centro.\n\nSi quieres que la dejemos lista para el coordinador, dime el **nombre de tu empresa**, tu **nombre** y, si autorizas, un **correo**. También cuántos empleados tienes, para confirmar el descuento. Por favor no compartas documentos de identidad ni datos bancarios.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0181604,
+      "latencyMs": 10498,
+      "ttftMs": 4405,
+      "retrievalMode": "fts",
+      "retrievedSources": [
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/produccion-mas-limpia-desperdicios.md",
+        "data/catalog/servicios/diagnostico-madurez-digital-ia.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente el problema (datos dispersos) y recomienda el servicio exacto del catálogo con precios, plazos y descuentos totalmente respaldados. La pre-propuesta es clara, bien estructurada y respeta las políticas de confidencialidad. Cierra adecuadamente sin comprometer al centro."
+  },
+  "judgeCostUsd": 0.005788
+}

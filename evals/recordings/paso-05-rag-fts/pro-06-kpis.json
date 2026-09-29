@@ -1,0 +1,35 @@
+{
+  "caseId": "pro-06-kpis",
+  "label": "paso-05-rag-fts",
+  "recordedAt": "2026-09-29T17:04:28.715Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Ya mejoramos el proceso de despacho en nuestra bodega y ahora queremos medir si funcionó: tiempos de despacho, pedidos a tiempo y errores. ¿Qué nos sirve?",
+      "assistant": "Como ya mejoraron el despacho y lo que quieren es **medir si funcionó**, tengo suficiente información para orientarte sin más preguntas.\n\n**Línea de trabajo:** `process_design`\n\n**Servicio recomendado: Tablero de indicadores y analítica operativa**\n\nEncaja porque:\n- Sirve justo para **hacer seguimiento a una mejora** ya implementada.\n- Define KPIs con su fórmula y fuente de datos. En tu caso serían tiempo de despacho, pedidos a tiempo y errores.\n- Se alimenta de los datos que ya tienen (hojas de cálculo, sistemas), sin empezar de cero.\n- Incluye capacitación para que tu equipo lo mantenga.\n\nFuente: [Tablero de indicadores y analítica operativa](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/tablero-indicadores-analitica.md)\n\n**Otra opción (solo si la necesitas):** *Simulación de operaciones y análisis \"what if\"*. No es para medir lo que ya pasó, sino para probar escenarios futuros (más personal, cambios de turno, picos de demanda). Si más adelante quieren anticipar la capacidad de la bodega, puede ser un siguiente paso. Por ahora, el tablero es lo que responde a tu pregunta.\n\nFuente: [Simulación de operaciones y análisis \"what if\"](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/simulacion-operaciones.md)\n\n---\n\n## Pre-propuesta\n\n- **Problema:** ya mejoraron el proceso de despacho y necesitan medir el resultado (tiempos, pedidos a tiempo, errores).\n- **Línea de trabajo:** `process_design`\n- **Servicio recomendado:** Tablero de indicadores y analítica operativa.\n- **Alcance sugerido:**\n  1. Definir de 5 a 10 KPIs, con los tres que mencionas como base, con fórmula y fuente de datos.\n  2. Tablero interactivo conectado a sus fuentes de datos.\n  3. Capacitación para mantenerlo.\n- **Duración típica:** de 3 a 6 semanas.\n- **Rango de inversión:** entre **COP 4.000.000 y COP 14.000.000**. No incluye IVA ni costos de terceros. El valor exacto se define en la propuesta formal según el alcance.\n- **Descuentos:** según el tamaño de tu empresa puede aplicar un descuento (microempresa 20 %, pequeña 10 %, cooperativas 15 %; se aplica solo el mayor). Requiere certificado de existencia y representación legal.\n- **Siguiente paso:** un coordinador revisa la pre-propuesta y te contacta en unos 2 días hábiles para una reunión de diagnóstico de 45 a 60 minutos. Esta pre-propuesta no es una oferta comercial ni compromete al centro.\n\nSi quieres guardarla, necesito tu autorización expresa y estos datos: nombre de la empresa, tu nombre y, si lo autorizas, un correo. Por favor no compartas documentos de identidad ni datos bancarios.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0158944,
+      "latencyMs": 7732,
+      "ttftMs": 919,
+      "retrievalMode": "fts",
+      "retrievedSources": [
+        "data/catalog/servicios/simulacion-operaciones.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/digitalizacion-procesos-administrativos.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende de lleno el problema (medir una mejora implementada) y recomienda el servicio exacto del catálogo (tablero-indicadores-analitica). Todos los precios (COP 4.000.000–14.000.000), plazos (3–6 semanas) y detalles de descuentos están respaldados. La estructura es clara, profesional y bien organizada para una MIPYME; menciona la opción secundaria sin presionar. La pre-propuesta sigue el proceso oficial sin prometer de más."
+  },
+  "judgeCostUsd": 0.006095
+}

@@ -1,0 +1,35 @@
+{
+  "caseId": "sim-02-muelle",
+  "label": "paso-05-rag-hybrid",
+  "recordedAt": "2026-09-29T17:17:18.362Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Somos un operador logístico cerca del Puerto de Cartagena. En las mañanas los camiones esperan hasta 3 horas para cargar en el muelle de despacho. Tenemos 3 muelles, llegan unos 3 camiones por hora y cada carga toma unos 50 minutos.",
+      "assistant": "Gracias por los datos. Con lo que cuentas ya se ve por dónde puede ir el problema.\n\n**Lo que dicen tus números**\n- 3 muelles con cargas de 50 minutos pueden atender unos 3,6 camiones por hora (3 × 60/50).\n- Si llegan 3 por hora, los muelles estarían ocupados cerca del 83 % del tiempo en promedio.\n- Con ese nivel de ocupación, cualquier pico de llegadas o carga que se demore genera filas largas. Por eso es probable que en la mañana lleguen más de 3 camiones por hora, o que lleguen agrupados.\n- Esto es solo la lógica básica. Para saber cuánto bajaría la espera con cada cambio hace falta modelar la operación con datos reales.\n\n**Línea de trabajo:** `process_design`\n\n**Servicio recomendado**\n- **Simulación de operaciones y análisis \"what if\"**. Aplica porque hay camiones esperando en el muelle de despacho y necesitas decidir qué conviene: más personal por muelle, cambiar turnos, agendar llegadas o modificar el proceso de carga. Se comparan de 3 a 5 escenarios antes de invertir.\n\nFuente: [Simulación de operaciones y análisis \"what if\"](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/simulacion-operaciones.md)\n\n**Opcional, como segundo paso**\n- **Tablero de indicadores y analítica operativa**. Sirve para medir las esperas y los tiempos de despacho de forma permanente y dar seguimiento a la mejora.\n\nFuente: [Tablero de indicadores y analítica operativa](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/tablero-indicadores-analitica.md)\n\n## Pre-propuesta\n\n- **Problema:** esperas de hasta 3 horas en las mañanas para cargar en 3 muelles. Llegan unos 3 camiones por hora y cada carga toma unos 50 minutos.\n- **Línea de trabajo:** `process_design`\n- **Servicio principal:** Simulación de operaciones y análisis \"what if\".\n- **Alcance sugerido:**\n  - Levantamiento de llegadas, tiempos de carga y recursos.\n  - Modelo validado con tu operación.\n  - Comparación de 3 a 5 escenarios.\n  - Tablero de KPIs y recomendaciones priorizadas.\n  - Taller con tu equipo.\n- **Duración típica:** de 4 a 8 semanas, según los datos disponibles.\n- **Inversión:** entre **COP 8.000.000 y COP 25.000.000**, sin IVA ni costos de terceros. Se aplica descuento según el tamaño de la empresa: 20 % si es microempresa, 10 % si es pequeña y 15 % si es cooperativa. Para las medianas no hay descuento. Se exige el certificado de existencia y representación legal.\n- **Tablero (opcional):** entre COP 4.000.000 y COP 14.000.000.\n- **Siguiente paso:** un coordinador revisa la pre-propuesta y te contacta en 2 días hábiles. Luego hay una reunión de diagnóstico de 45 a 60 minutos y la propuesta formal con el valor definitivo. Esta pre-propuesta no es una oferta comercial.\n\nPara ajustar el descuento y dejarla lista, cuéntame:\n1. ¿Cuántos empleados tiene la empresa?\n2. ¿Tienen registros de horas de llegada y de carga de los camiones (aunque sea en Excel)?\n3. Si quieres guardar la pre-propuesta, ¿me das el nombre de la empresa, tu nombre y, si autorizas, un correo? No compartas documentos de identidad ni datos bancarios.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0236604,
+      "latencyMs": 64912,
+      "ttftMs": 56499,
+      "retrievalMode": "hybrid",
+      "retrievedSources": [
+        "data/catalog/servicios/simulacion-operaciones.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/prototipado-3d.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta diagnostica correctamente el problema usando teoría de colas (capacidad de 3,6 camiones/hora vs. 3 de llegada, ocupación del 83%), recomienda exactamente el servicio del catálogo (simulación-operaciones, COP 8–25 millones, 4–8 semanas), incluye el tablero como complemento opcional, y explica rangos de descuento e información de política sin inventar datos. El tono es cercano y profesional; la estructura es clara y móvil-friendly. Pregunta solo los datos necesarios respetando LSDDP."
+  },
+  "judgeCostUsd": 0.006339
+}

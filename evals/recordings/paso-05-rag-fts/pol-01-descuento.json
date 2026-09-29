@@ -1,0 +1,50 @@
+{
+  "caseId": "pol-01-descuento",
+  "label": "paso-05-rag-fts",
+  "recordedAt": "2026-09-29T17:05:13.489Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Somos una microempresa de 6 empleados interesada en el servicio de prototipado 3D. ¿Tienen algún descuento para microempresas y cómo se paga?",
+      "assistant": "¡Claro! Con gusto te cuento.\n\n**Descuento para microempresas**\n- Las microempresas (hasta 10 empleados) tienen un **20 %** de descuento sobre el valor del servicio. Con 6 empleados, entras en esa categoría.\n- Los descuentos no son acumulables: se aplica el mayor que corresponda.\n- Para acceder a él, debes presentar el **certificado de existencia y representación legal**.\n\n**Precio del servicio**\n- Según la ficha, el prototipado 3D tiene una inversión **entre COP 2.500.000 y COP 12.000.000**, según tamaño, material y número de iteraciones.\n- Con el 20 % aplicado, el rango sería **entre COP 2.000.000 y COP 9.600.000**. Es una referencia: el valor exacto se define en la propuesta formal.\n- Los rangos **no incluyen IVA** ni costos de terceros (por ejemplo, licencias de software).\n\n**Forma de pago**\n- **50 % al inicio** y **50 % contra la entrega final**.\n- Si el servicio dura más de 8 semanas, se puede acordar un pago intermedio. La duración típica de este servicio es de 2 a 6 semanas, así que normalmente no aplicaría.\n\n**Qué incluye el servicio**\n- Modelo CAD del producto o pieza.\n- Hasta 3 iteraciones de prototipo físico.\n- Informe de pruebas funcionales y recomendaciones para producción.\n\nFuente: [Prototipado 3D y fabricación rápida](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/prototipado-3d.md)\n\nPara armarte una pre-propuesta a tu medida, cuéntame: **¿qué producto o pieza quieres prototipar y para qué lo necesitas** (mostrar a clientes, conseguir financiación, reemplazar una pieza, etc.)?\n\n*Recuerda que esta es una demo educativa y que la pre-propuesta no es una oferta comercial ni compromete al centro.*",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0114384,
+      "latencyMs": 5206,
+      "ttftMs": 1194,
+      "retrievalMode": "fts",
+      "retrievedSources": [
+        "data/catalog/servicios/prototipado-3d.md",
+        "data/catalog/servicios/vigilancia-tecnologica-pi.md",
+        "data/catalog/servicios/capacitacion-realidad-virtual.md"
+      ]
+    },
+    {
+      "user": "Queremos un prototipo de un empaque para nuestras velas artesanales. Somos 6 empleados.",
+      "assistant": "¡Qué buena idea! Un empaque propio puede ayudarte a mostrar tu producto a clientes y a validar la forma antes de producir en serie.\n\n**Línea de trabajo:** `business_innovation`\n\n**Servicio recomendado:** Prototipado 3D y fabricación rápida. Aplica porque tienes una idea de producto nuevo (el empaque) y necesitas un prototipo físico para validar forma, función y aceptación. La ficha incluso menciona ejemplos parecidos, como un empaque para dulces típicos.\n\nFuente: [Prototipado 3D y fabricación rápida](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/prototipado-3d.md)\n\n**Opcional a futuro:** si más adelante quieres registrar la marca de tus velas, existe el servicio de Vigilancia tecnológica y propiedad intelectual. No es necesario para el prototipo.\n\nFuente: [Vigilancia tecnológica y propiedad intelectual](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/vigilancia-tecnologica-pi.md)\n\n---\n\n## Pre-propuesta\n\n- **Empresa:** microempresa de velas artesanales, 6 empleados.\n- **Problema:** necesitan un prototipo de empaque para sus velas.\n- **Línea de trabajo:** `business_innovation`\n- **Servicio recomendado:** Prototipado 3D y fabricación rápida.\n- **Alcance sugerido:**\n  - Modelo CAD del empaque.\n  - Hasta 3 iteraciones de prototipo físico.\n  - Informe de pruebas funcionales y recomendaciones para producción.\n- **Duración típica:** de 2 a 6 semanas.\n- **Rango de inversión:** entre COP 2.500.000 y COP 12.000.000, según tamaño, material y número de iteraciones. Con el descuento de microempresa (20 %), la referencia sería entre COP 2.000.000 y COP 9.600.000. No incluye IVA ni costos de terceros, y el descuento requiere presentar el certificado de existencia y representación legal.\n- **Forma de pago:** 50 % al inicio y 50 % contra la entrega final.\n- **Siguiente paso:** un coordinador revisa la pre-propuesta y te contacta en 2 días hábiles. Luego hay una reunión de diagnóstico de 45 a 60 minutos para validar el alcance, y después llega la propuesta formal con el valor definitivo.\n\nSi quieres que un coordinador te contacte, necesito el **nombre de tu empresa**, tu **nombre** y, si lo autorizas, un **correo electrónico**. No compartas documentos de identidad ni datos bancarios.\n\n*Recuerda que esta es una demo educativa y que la pre-propuesta no es una oferta comercial ni compromete al centro.*",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.015962399999999998,
+      "latencyMs": 6862,
+      "ttftMs": 1395,
+      "retrievalMode": "fts",
+      "retrievedSources": [
+        "data/catalog/servicios/prototipado-3d.md",
+        "data/catalog/servicios/vigilancia-tecnologica-pi.md",
+        "data/catalog/servicios/capacitacion-realidad-virtual.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende completamente el problema concreto, recomienda prototipado 3D con base en catálogo, cita correctamente rangos de precio (COP 2.500.000–12.000.000), aplica adecuadamente el descuento de microempresa (20 %, resultando COP 2.000.000–9.600.000), explica formas de pago, duración (2 a 6 semanas) y proceso de atención. La estructura es clara, sin jerga innecesaria, cercana y profesional. Todos los datos están respaldados por el catálogo y las políticas."
+  },
+  "judgeCostUsd": 0.006736
+}

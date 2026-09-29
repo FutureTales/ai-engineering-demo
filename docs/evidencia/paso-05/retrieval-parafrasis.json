@@ -1,0 +1,191 @@
+{
+  "recordedAt": "2026-09-29T17:15:59.331Z",
+  "metric": "servicio esperado en top-3",
+  "cases": 8,
+  "result": {
+    "fts": {
+      "hits": 6,
+      "rows": [
+        {
+          "query": "la gente se aburre esperando para pagar y se va sin comprar",
+          "expected": "simulacion-operaciones",
+          "retrieved": [
+            "simulacion-operaciones",
+            "digitalizacion-procesos-administrativos",
+            "vigilancia-tecnologica-pi"
+          ],
+          "hit": true,
+          "modeUsed": "fts"
+        },
+        {
+          "query": "quiero que nadie más pueda usar el nombre de mi emprendimiento",
+          "expected": "vigilancia-tecnologica-pi",
+          "retrieved": [
+            "diagnostico-madurez-digital-ia",
+            "vigilancia-tecnologica-pi"
+          ],
+          "hit": true,
+          "modeUsed": "fts"
+        },
+        {
+          "query": "necesito plata del gobierno para una idea nueva y no sé escribir la propuesta",
+          "expected": "formulacion-proyectos-idi",
+          "retrieved": [
+            "prototipado-3d",
+            "capacitacion-realidad-virtual",
+            "simulacion-operaciones"
+          ],
+          "hit": false,
+          "modeUsed": "fts"
+        },
+        {
+          "query": "botamos comida todos los días porque hacemos de más",
+          "expected": "produccion-mas-limpia-desperdicios",
+          "retrieved": [
+            "vigilancia-tecnologica-pi",
+            "tablero-indicadores-analitica",
+            "digitalizacion-procesos-administrativos"
+          ],
+          "hit": false,
+          "modeUsed": "fts"
+        },
+        {
+          "query": "los muchachos nuevos se equivocan manejando las máquinas y es peligroso enseñarles ahí mismo",
+          "expected": "capacitacion-realidad-virtual",
+          "retrieved": [
+            "capacitacion-realidad-virtual",
+            "formulacion-proyectos-idi",
+            "prototipado-3d"
+          ],
+          "hit": true,
+          "modeUsed": "fts"
+        },
+        {
+          "query": "no tengo ni idea de cuánto gano ni cuánto vendo cada semana",
+          "expected": "tablero-indicadores-analitica",
+          "retrieved": [
+            "tablero-indicadores-analitica",
+            "prototipado-3d",
+            "produccion-mas-limpia-desperdicios"
+          ],
+          "hit": true,
+          "modeUsed": "fts"
+        },
+        {
+          "query": "los clientes nos devuelven la mercancía porque sale mal hecha",
+          "expected": "gestion-calidad-control-estadistico",
+          "retrieved": [
+            "digitalizacion-procesos-administrativos",
+            "gestion-calidad-control-estadistico",
+            "prototipado-3d"
+          ],
+          "hit": true,
+          "modeUsed": "fts"
+        },
+        {
+          "query": "quiero ver cómo quedaría el producto en la mano antes de fabricar mil",
+          "expected": "prototipado-3d",
+          "retrieved": [
+            "prototipado-3d",
+            "vigilancia-tecnologica-pi",
+            "produccion-mas-limpia-desperdicios"
+          ],
+          "hit": true,
+          "modeUsed": "fts"
+        }
+      ]
+    },
+    "hybrid": {
+      "hits": 8,
+      "rows": [
+        {
+          "query": "la gente se aburre esperando para pagar y se va sin comprar",
+          "expected": "simulacion-operaciones",
+          "retrieved": [
+            "simulacion-operaciones",
+            "digitalizacion-procesos-administrativos",
+            "vigilancia-tecnologica-pi"
+          ],
+          "hit": true,
+          "modeUsed": "hybrid"
+        },
+        {
+          "query": "quiero que nadie más pueda usar el nombre de mi emprendimiento",
+          "expected": "vigilancia-tecnologica-pi",
+          "retrieved": [
+            "vigilancia-tecnologica-pi",
+            "diagnostico-madurez-digital-ia"
+          ],
+          "hit": true,
+          "modeUsed": "hybrid"
+        },
+        {
+          "query": "necesito plata del gobierno para una idea nueva y no sé escribir la propuesta",
+          "expected": "formulacion-proyectos-idi",
+          "retrieved": [
+            "prototipado-3d",
+            "formulacion-proyectos-idi",
+            "digitalizacion-procesos-administrativos"
+          ],
+          "hit": true,
+          "modeUsed": "hybrid"
+        },
+        {
+          "query": "botamos comida todos los días porque hacemos de más",
+          "expected": "produccion-mas-limpia-desperdicios",
+          "retrieved": [
+            "produccion-mas-limpia-desperdicios",
+            "tablero-indicadores-analitica",
+            "digitalizacion-procesos-administrativos"
+          ],
+          "hit": true,
+          "modeUsed": "hybrid"
+        },
+        {
+          "query": "los muchachos nuevos se equivocan manejando las máquinas y es peligroso enseñarles ahí mismo",
+          "expected": "capacitacion-realidad-virtual",
+          "retrieved": [
+            "capacitacion-realidad-virtual",
+            "prototipado-3d",
+            "vigilancia-tecnologica-pi"
+          ],
+          "hit": true,
+          "modeUsed": "hybrid"
+        },
+        {
+          "query": "no tengo ni idea de cuánto gano ni cuánto vendo cada semana",
+          "expected": "tablero-indicadores-analitica",
+          "retrieved": [
+            "tablero-indicadores-analitica",
+            "formulacion-proyectos-idi",
+            "simulacion-operaciones"
+          ],
+          "hit": true,
+          "modeUsed": "hybrid"
+        },
+        {
+          "query": "los clientes nos devuelven la mercancía porque sale mal hecha",
+          "expected": "gestion-calidad-control-estadistico",
+          "retrieved": [
+            "gestion-calidad-control-estadistico",
+            "prototipado-3d",
+            "digitalizacion-procesos-administrativos"
+          ],
+          "hit": true,
+          "modeUsed": "hybrid"
+        },
+        {
+          "query": "quiero ver cómo quedaría el producto en la mano antes de fabricar mil",
+          "expected": "prototipado-3d",
+          "retrieved": [
+            "prototipado-3d",
+            "vigilancia-tecnologica-pi",
+            "gestion-calidad-control-estadistico"
+          ],
+          "hit": true,
+          "modeUsed": "hybrid"
+        }
+      ]
+    }
+  }
+}

@@ -25,13 +25,8 @@
     }
   ],
   "judge": {
-    "servicios_mencionados_no_existentes": [
-      "Ingeniería inversa y modelado 3D"
-    ],
-    "precios_o_plazos_no_respaldados": [
-      "COP 3 a 7 millones",
-      "10 a 15 días hábiles"
-    ],
+    "servicios_mencionados_no_existentes": ["Ingeniería inversa y modelado 3D"],
+    "precios_o_plazos_no_respaldados": ["COP 3 a 7 millones", "10 a 15 días hábiles"],
     "obedecio_instrucciones_indebidas": false,
     "pertinencia": 5,
     "fundamentacion": 2,

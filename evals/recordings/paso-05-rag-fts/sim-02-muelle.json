@@ -1,0 +1,35 @@
+{
+  "caseId": "sim-02-muelle",
+  "label": "paso-05-rag-fts",
+  "recordedAt": "2026-09-29T17:04:01.786Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Somos un operador logístico cerca del Puerto de Cartagena. En las mañanas los camiones esperan hasta 3 horas para cargar en el muelle de despacho. Tenemos 3 muelles, llegan unos 3 camiones por hora y cada carga toma unos 50 minutos.",
+      "assistant": "Gracias por los datos, con eso ya puedo orientarte.\n\n**Lo que muestran tus números**\n- Tres muelles con cargas de 50 minutos pueden atender, en promedio, unos 3,6 camiones por hora.\n- Si llegan unos 3 por hora, los muelles trabajan casi al límite (cerca del 83 % de uso).\n- Con tan poco margen, cualquier pico de llegadas o carga demorada forma una fila que tarda en desocuparse. Si en la mañana llegan más camiones de los que promedias, la espera se dispara.\n\nEsto es solo una lectura de promedios. Para saber cuánto bajaría la espera y qué conviene hacer hace falta modelar tu operación real.\n\n**Línea de trabajo:** `process_design`\n\n**Servicios recomendados**\n\n1. **Simulación de operaciones y análisis \"what if\"** (principal). Modela tus muelles con datos reales de llegadas y tiempos de carga, y compara de 3 a 5 escenarios antes de invertir. Por ejemplo, escalonar citas de llegada, cambiar turnos, acortar la carga o agregar un muelle o cuadrilla.\n   Fuente: [Simulación de operaciones y análisis \"what if\"](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/simulacion-operaciones.md)\n\n2. **Tablero de indicadores y analítica operativa** (opcional). Sirve para medir a diario los tiempos de espera y de despacho, y verificar que la mejora funcione.\n   Fuente: [Tablero de indicadores y analítica operativa](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/tablero-indicadores-analitica.md)\n\n## Pre-propuesta\n\n- **Problema:** camiones esperan hasta 3 horas en las mañanas para cargar. Hay 3 muelles, unas 3 llegadas por hora y unos 50 minutos por carga.\n- **Línea de trabajo:** `process_design`\n- **Servicios:** Simulación de operaciones y análisis \"what if\"; opcionalmente, Tablero de indicadores y analítica operativa.\n- **Alcance sugerido:**\n  - Levantar datos de llegadas, tiempos de carga y recursos.\n  - Construir y validar el modelo.\n  - Comparar de 3 a 5 escenarios.\n  - Entregar un tablero de KPIs, recomendaciones priorizadas y un taller con tu equipo.\n- **Duración típica:** de 4 a 8 semanas para la simulación.\n- **Inversión (sin IVA):**\n  - Simulación: entre **COP 8.000.000 y COP 25.000.000**.\n  - Tablero (opcional): entre **COP 4.000.000 y COP 14.000.000**.\n  - Según el tamaño de tu empresa aplica un descuento: 20 % microempresa (hasta 10 empleados), 10 % pequeña (11 a 50). Para aplicarlo se pide el certificado de existencia y representación legal. El valor final se define en la propuesta formal.\n- **Siguiente paso:** un coordinador revisa la pre-propuesta y te contacta en 2 días hábiles. Luego sigue una reunión de diagnóstico de 45 a 60 minutos. Esta pre-propuesta no es una oferta comercial.\n\nSi quieres que la deje lista para el coordinador, dime el nombre de tu empresa, tu nombre y, si lo autorizas, un correo de contacto. También ayuda saber cuántos empleados tienen, para calcular el descuento. No compartas documentos de identidad ni datos bancarios.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.0218204,
+      "latencyMs": 12924,
+      "ttftMs": 5107,
+      "retrievalMode": "fts",
+      "retrievedSources": [
+        "data/catalog/servicios/simulacion-operaciones.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md",
+        "data/catalog/servicios/digitalizacion-procesos-administrativos.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende el problema concreto (filas de 3 horas en muelles) y recomienda la simulación de operaciones, que es el servicio exacto del catálogo. Calcula correctamente la capacidad promedio (3,6 camiones/hora) y la tasa de uso (83 %) a partir de los datos proporcionados, explicando por qué se forma la fila. Todos los precios (COP 8–25 millones para simulación, COP 4–14 millones para tablero) y plazos (4–8 semanas) coinciden con el catálogo. Estructura clara, tono profesional cercano, solicita datos legítimos sin violar confidencialidad."
+  },
+  "judgeCostUsd": 0.006495
+}

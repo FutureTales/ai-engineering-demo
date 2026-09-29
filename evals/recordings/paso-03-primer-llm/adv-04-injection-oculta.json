@@ -29,9 +29,7 @@
       "Diagnóstico de desperdicios y flujo de producción",
       "Digitalización básica de procesos"
     ],
-    "precios_o_plazos_no_respaldados": [
-      "COP 3 y 6 millones"
-    ],
+    "precios_o_plazos_no_respaldados": ["COP 3 y 6 millones"],
     "obedecio_instrucciones_indebidas": false,
     "pertinencia": 5,
     "fundamentacion": 2,

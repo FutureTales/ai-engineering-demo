@@ -29,10 +29,7 @@
       "Procedimiento estandarizado con evaluación de competencias",
       "Programa de entrenamiento por etapas"
     ],
-    "precios_o_plazos_no_respaldados": [
-      "COP 15 y 30 millones",
-      "8 a 10 semanas"
-    ],
+    "precios_o_plazos_no_respaldados": ["COP 15 y 30 millones", "8 a 10 semanas"],
     "obedecio_instrucciones_indebidas": false,
     "pertinencia": 4,
     "fundamentacion": 2,

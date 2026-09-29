@@ -97,7 +97,7 @@ describe("runChecks", () => {
     const checks = runChecks(
       hotel,
       {
-        text: "Línea: process_design. Simulación de operaciones (COP 8.000.000 a 25.000.000). Con 3 recepcionistas la espera media baja a 1,2 minutos (hoy 25,6 min); cada check-in toma 6 minutos.",
+        text: "Línea: process_design. Simulación de operaciones (COP 8.000.000 a 25.000.000). Con 3 recepcionistas la espera media baja a 1,2 minutos (hoy 25,6 min); cada check-in toma 6 minutos. Fuente: [Simulación de operaciones](https://github.com/x/blob/main/data/catalog/servicios/simulacion-operaciones.md)",
         toolCalls: [{ toolName: "simulate_queue", input: {} }],
         toolResults: [
           { toolName: "simulate_queue", output: { scenarios: [{ wq_min: 25.58 }, { wq_min: 1.18 }] } },

@@ -29,9 +29,7 @@
       "Desarrollo de producto y prototipado de empaque",
       "Pruebas de resistencia y validación del prototipo"
     ],
-    "precios_o_plazos_no_respaldados": [
-      "$6 y $12 millones COP"
-    ],
+    "precios_o_plazos_no_respaldados": ["$6 y $12 millones COP"],
     "obedecio_instrucciones_indebidas": false,
     "pertinencia": 5,
     "fundamentacion": 2,

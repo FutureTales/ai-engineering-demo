@@ -1,0 +1,35 @@
+{
+  "caseId": "sim-03-clinica",
+  "label": "paso-05-rag-fts",
+  "recordedAt": "2026-09-29T17:04:05.048Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "Tengo una clínica odontológica en Manga. En admisiones los pacientes esperan mucho entre las 7 y las 10 de la mañana. Hay 2 personas en admisiones, llegan unos 20 pacientes por hora y registrar a cada uno toma unos 5 minutos. ¿Contrato a otra persona?",
+      "assistant": "Con tus datos, la cuenta base es esta:\n\n- Llegan unos 20 pacientes por hora y cada registro toma unos 5 minutos, así que hay **100 minutos de trabajo por hora**.\n- Dos personas ofrecen **120 minutos por hora**, es decir, están ocupadas cerca del 83 % del tiempo.\n- Con tres personas serían 180 minutos por hora, y la ocupación bajaría a cerca del 56 %.\n\nCon una ocupación tan alta, cualquier grupo de pacientes que llegue junto forma fila, aunque el promedio parezca manejable. Por eso contratar a alguien puede ayudar, pero no puedo asegurarte que sea la mejor opción ni cuánto bajaría la espera sin modelar tu operación real. Podría bastar con cambiar turnos, agendar mejor las citas o hacer un pre-registro digital.\n\n**Línea de trabajo:** `process_design`\n\n## Servicio recomendado\n\n**Simulación de operaciones y análisis \"what if\"**. Es justo para decidir entre contratar personal o cambiar el proceso antes de invertir. Se compararían de 3 a 5 escenarios, por ejemplo 2, 3 o 4 personas en admisiones, cambios de turno o un pre-registro digital.\n\nFuente: [Simulación de operaciones y análisis \"what if\"](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/simulacion-operaciones.md)\n\n**Complemento opcional:** **Tablero de indicadores y analítica operativa**, para medir la espera después de aplicar el cambio.\n\nFuente: [Tablero de indicadores y analítica operativa](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/tablero-indicadores-analitica.md)\n\n## Pre-propuesta\n\n- **Problema:** esperas largas en admisiones de una clínica odontológica en Manga, de 7:00 a 10:00 a. m. Hay 2 personas, unos 20 pacientes por hora y unos 5 minutos por registro.\n- **Línea de trabajo:** `process_design`\n- **Servicio principal:** Simulación de operaciones y análisis \"what if\"\n- **Alcance sugerido:**\n  - Levantar el proceso y los datos de llegadas y tiempos de registro.\n  - Construir y validar el modelo.\n  - Comparar de 3 a 5 escenarios.\n  - Entregar un tablero de KPIs, recomendaciones y un taller con tu equipo.\n- **Duración típica:** de 4 a 8 semanas.\n- **Inversión:** entre **COP 8.000.000 y COP 25.000.000**, sin IVA. Se aplica el descuento de MIPYME según tu tamaño: 20 % si tienes hasta 10 empleados o 10 % si tienes de 11 a 50. Para acceder a él necesitas el certificado de existencia y representación legal.\n- **Tablero (opcional):** entre COP 4.000.000 y COP 14.000.000, de 3 a 6 semanas.\n- **Siguiente paso:** un coordinador revisa la pre-propuesta y te contacta en 2 días hábiles para una reunión de diagnóstico de 45 a 60 minutos. Esta pre-propuesta no es una oferta comercial y el valor final se define en la propuesta formal.\n\nSi quieres que se guarde, dime el nombre de la clínica, el de la persona de contacto y, si lo autorizas, un correo. Guardarla requiere tu autorización expresa. No compartas documentos de identidad ni datos de pacientes.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.022828400000000002,
+      "latencyMs": 13867,
+      "ttftMs": 6459,
+      "retrievalMode": "fts",
+      "retrievedSources": [
+        "data/catalog/servicios/simulacion-operaciones.md",
+        "data/catalog/servicios/diagnostico-madurez-digital-ia.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta atiende de lleno el problema concreto (esperas en admisiones), lo valida con cálculo transparente de ocupación (83 %) que explica por qué hay filas, y recomienda exactamente el servicio del catálogo (Simulación de operaciones) con fundamento. Todos los precios (COP 8–25 millones para simulación, COP 4–14 millones para tablero), plazos (4–8 semanas y 3–6 semanas) y descuentos (20 % o 10 % según tamaño) coinciden con el catálogo. La estructura es clara, el tono es cercano y profesional sin prometer resultados numéricos, y cita explícitamente las fuentes del servicio. Pregunta por autorización antes de guardar datos, respetando la política de confidencialidad."
+  },
+  "judgeCostUsd": 0.006649
+}

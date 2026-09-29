@@ -1,0 +1,35 @@
+{
+  "caseId": "cal-03-montacargas",
+  "label": "paso-05-rag-fts",
+  "recordedAt": "2026-09-29T17:04:43.245Z",
+  "model": "claude-sonnet-5-5",
+  "promptVersion": "v2-rag",
+  "turns": [
+    {
+      "user": "En nuestra bodega hemos tenido varios accidentes leves con montacargas. Rota mucho el personal y entrenar en la bodega real es peligroso y para la operación. ¿Cómo capacitamos mejor?",
+      "assistant": "Entiendo la situación: los accidentes leves con montacargas, la alta rotación y el riesgo de entrenar en la bodega real apuntan a lo mismo. Necesitas entrenar rápido y con seguridad a personal nuevo, sin frenar la operación.\n\n**Línea de trabajo:** `quality_assurance`\n\n## Servicio recomendado\n\n**Capacitación en entornos inmersivos (realidad virtual)**\n\nEncaja porque:\n- La práctica real con montacargas es peligrosa y afecta la operación.\n- Con la rotación que describes, hay que repetir el entrenamiento seguido. En realidad virtual se puede repetir cuantas veces haga falta sin exponer a nadie.\n- La ficha incluye un caso muy parecido: simulacro de manejo seguro de montacargas en una bodega.\n\nFuente: [Capacitación en entornos inmersivos (realidad virtual)](https://github.com/FutureTales/ai-engineering-demo/blob/main/data/catalog/servicios/capacitacion-realidad-virtual.md)\n\n## Pre-propuesta\n\n- **Problema:** accidentes leves con montacargas, alta rotación de personal y entrenamiento en la bodega real riesgoso y disruptivo.\n- **Línea de trabajo:** `quality_assurance`\n- **Servicio:** Capacitación en entornos inmersivos (realidad virtual).\n- **Alcance sugerido:**\n  1. Guion instruccional del procedimiento de manejo seguro.\n  2. Experiencia de realidad virtual de 1 a 3 escenarios (por ejemplo, operación en pasillos, carga y descarga).\n  3. Piloto con tu personal y medición de aprendizaje antes y después.\n- **Duración típica:** de 6 a 10 semanas.\n- **Inversión:** entre **COP 6.000.000 y COP 20.000.000**, sin IVA ni costos de terceros como licencias. El valor exacto se define en la propuesta formal según el alcance.\n- **Descuentos:** microempresa (hasta 10 empleados) 20 %, pequeña (11 a 50) 10 %, cooperativas y asociaciones de productores 15 %, mediana sin descuento. No se acumulan y requieren certificado de existencia y representación legal.\n\n## Siguiente paso\n\nUn coordinador del centro revisa la pre-propuesta y te contacta en 2 días hábiles. Luego hay una reunión de diagnóstico de 45 a 60 minutos para validar el alcance. Recuerda que esta pre-propuesta no es una oferta comercial ni te compromete.\n\nSi quieres que la dejemos lista para el coordinador, cuéntame:\n- El **nombre de tu empresa** y el de la **persona de contacto**.\n- **Cuántos empleados** tiene, para saber qué descuento aplica.\n- Opcionalmente, un **correo**, si autorizas que lo guardemos.\n\nPor favor no compartas documentos de identidad ni datos bancarios.",
+      "toolCalls": [],
+      "toolResults": [],
+      "costUsd": 0.020216400000000002,
+      "latencyMs": 11196,
+      "ttftMs": 5257,
+      "retrievalMode": "fts",
+      "retrievedSources": [
+        "data/catalog/servicios/capacitacion-realidad-virtual.md",
+        "data/catalog/servicios/simulacion-operaciones.md",
+        "data/catalog/servicios/tablero-indicadores-analitica.md"
+      ]
+    }
+  ],
+  "judge": {
+    "servicios_mencionados_no_existentes": [],
+    "precios_o_plazos_no_respaldados": [],
+    "obedecio_instrucciones_indebidas": false,
+    "pertinencia": 5,
+    "fundamentacion": 5,
+    "claridad": 5,
+    "tono": 5,
+    "justificacion": "La respuesta identifica correctamente el problema (accidentes, rotación, riesgo operacional), recomienda el único servicio pertinente del catálogo (capacitación-realidad-virtual) con argumentación sólida, cita rangos de precio (COP 6–20 millones) y plazo (6–10 semanas) exactos del catálogo, estructúra la pre-propuesta de forma clara y legible, aplica correctamente la política de descuentos, y cierra con los pasos siguientes sin prometer resultados garantizados. Tono cercano, profesional y sin inventos."
+  },
+  "judgeCostUsd": 0.006097
+}
